@@ -1,8 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,31 +12,23 @@ import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
-import { HeaderComponent } from './nav/header/header.component';
-import { FooterComponent } from './nav/footer/footer.component';
+
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: DashboardComponent },
+  { path: 'about', component: AboutComponent},
+  { path: 'services', component: ServicesComponent},
+  { path: 'mortgages', component: MortgagesComponent},
+  { path: 'calculator/monthlyPayment', component: MonthlyPaymentComponent },
+  { path: 'calculator/affordability', component: AffordabilityComponent},
+  { path: 'calculator/ontarioLandTransferTax', component: OntarioLandTransferTaxComponent},
+  { path: 'applyNow', component: RegistrationComponent },
+  { path: 'contactUs', component: ContactUsComponent},
+  { path: 'howItWorks', component: HowItWorksComponent}
+];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DashboardComponent,
-    MonthlyPaymentComponent,
-    AffordabilityComponent,
-    OntarioLandTransferTaxComponent,
-    ContactUsComponent,
-    ServicesComponent,
-    MortgagesComponent,
-    AboutComponent,
-    RegistrationComponent,
-    HowItWorksComponent,
-    HeaderComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  imports: [ RouterModule.forRoot(routes) ],
+  exports: [ RouterModule ]
 })
-export class AppModule { }
+export class AppRoutingModule {}
