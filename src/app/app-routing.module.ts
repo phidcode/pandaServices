@@ -12,9 +12,10 @@ import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { SplashComponent } from './splash/splash.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: SplashComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'about', component: AboutComponent},
   { path: 'services', component: ServicesComponent},

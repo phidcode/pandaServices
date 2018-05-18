@@ -17,6 +17,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HeaderComponent } from './nav/header/header.component';
 import { FooterComponent } from './nav/footer/footer.component';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FooterComponent } from './nav/footer/footer.component';
     RegistrationComponent,
     HowItWorksComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,

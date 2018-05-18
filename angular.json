@@ -23,10 +23,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/assets/css/shards.css",
-              "src/assets/css/shards-extras.css",
-              "src/assets/css/splash.css"
+              "src/styles.css"
             ],
             "scripts": []
           },
