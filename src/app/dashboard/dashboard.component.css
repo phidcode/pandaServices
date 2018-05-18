@@ -2,3 +2,11 @@
     background: url("/assets/images/98184.webp");
     background-size: cover;
 }
+
+.card-text{
+    color: black
+}
+
+.section-title{
+    color: black
+}
