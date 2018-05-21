@@ -1,10 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { FormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
 import { AffordabilityComponent } from './calculator/affordability/affordability.component';
@@ -18,6 +23,7 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HeaderComponent } from './nav/header/header.component';
 import { FooterComponent } from './nav/footer/footer.component';
 import { SplashComponent } from './splash/splash.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +40,15 @@ import { SplashComponent } from './splash/splash.component';
     HowItWorksComponent,
     HeaderComponent,
     FooterComponent,
-    SplashComponent
+    SplashComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase, 'pandaServices'), // imports firebase/app needed for everything
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
     FormsModule,
     AppRoutingModule
   ],
