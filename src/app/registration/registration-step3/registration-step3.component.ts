@@ -4,20 +4,18 @@ import { AngularFireDatabase } from 'angularfire2/database'; // Realtime Databas
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css']
+  selector: 'app-registration-step3',
+  templateUrl: './registration-step3.component.html',
+  styleUrls: ['./registration-step3.component.css']
 })
-export class RegistrationComponent implements OnInit {
+export class RegistrationStep3Component implements OnInit {
   // items: Observable<any>;
 
   // constructor(db: AngularFirestore, db2: AngularFireDatabase) {
   //   this.items = db.collection('items').valueChanges();
   // }
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit() {
   }

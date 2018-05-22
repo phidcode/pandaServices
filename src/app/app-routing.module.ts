@@ -10,7 +10,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
 import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { SplashComponent } from './splash/splash.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
@@ -24,7 +23,6 @@ const routes: Routes = [
   { path: 'calculator/monthlyPayment', component: MonthlyPaymentComponent },
   { path: 'calculator/affordability', component: AffordabilityComponent},
   { path: 'calculator/ontarioLandTransferTax', component: OntarioLandTransferTaxComponent},
-  { path: 'applyNow', component: RegistrationComponent },
   { path: 'contactUs', component: ContactUsComponent},
   { path: 'howItWorks', component: HowItWorksComponent},
   { path: 'login', component: AuthenticationComponent}

@@ -5,7 +5,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,12 +18,13 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
 import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HeaderComponent } from './nav/header/header.component';
 import { FooterComponent } from './nav/footer/footer.component';
 import { SplashComponent } from './splash/splash.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+
+import { RegistrationModule } from './registration/registration.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,6 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     ServicesComponent,
     MortgagesComponent,
     AboutComponent,
-    RegistrationComponent,
     HowItWorksComponent,
     HeaderComponent,
     FooterComponent,
@@ -45,12 +45,16 @@ import { AuthenticationComponent } from './authentication/authentication.compone
   ],
   imports: [
     BrowserModule,
+    RegistrationModule,
     AngularFireModule.initializeApp(environment.firebase, 'pandaServices'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule
+  ],
+  exports: [
+    FooterComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
