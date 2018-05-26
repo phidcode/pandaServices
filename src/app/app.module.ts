@@ -25,6 +25,7 @@ import { SplashComponent } from './splash/splash.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 
 import { RegistrationModule } from './registration/registration.module';
+import { ApplynowComponent } from './applynow/applynow.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RegistrationModule } from './registration/registration.module';
     HeaderComponent,
     FooterComponent,
     SplashComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    ApplynowComponent
   ],
   imports: [
     BrowserModule,
