@@ -4,26 +4,26 @@
     <div class="card mb-4">
       <div class="card-body align-items-center">
         <div class="form-area">
-          <form role="form">
+
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
-              <input type="text" class="form-control" id="name" name="name" placeholder="Name" [(ngModel)]="name" required>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Name (No less than 2 characters)" formControlName="name">
+              <!--<span style="color:red" *ngIf="form.hasError('name', 'name') && form.get('name').touched"> Please enter a valid name. </span>-->
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" id="email" name="email" placeholder="Email" [(ngModel)]="email" required>
+              <input type="email" class="form-control" id="email" name="email" placeholder="Email" formControlName="email">
+              <span style="color:red" *ngIf="form.hasError('email', 'email') && form.get('email').touched"> Please enter the correct email. </span>
             </div>
             <div class="form-group">
-              <input type="phone" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" [(ngModel)]="mobile" required>
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" [(ngModel)]="subject" required>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" type="textarea" id="message" name="message" placeholder="Message" [(ngModel)]="message" maxlength="140" rows="7"></textarea>
+              <textarea class="form-control" type="textarea" id="message" name="message" maxlength="140" rows="7" placeholder="Message (No less than 10 characters)" formControlName="message"></textarea>
+              <!--<span style="color:red" *ngIf="form.hasError('message', 'message') && form.get('message').touched"> Message must be no less than 10 characters. </span>-->
             </div>
             <div class="col-md-auto text-center">
-              <button type="button" id="submit" name="submit" class="btn btn-primary btn-pill" (click)="save(name, email, mobile, subject, message)">Submit Form</button>
+              <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="form.invalid">Submit</button>
             </div>
+            <!--<span style="color:blue" *ngIf="ngSubmit==true"> Message Sent. </span>-->
           </form>
+
         </div>
       </div>
     </div>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFirestore } from 'angularfire2/firestore';
+
 
 @Component({
   selector: 'app-contact-us',
@@ -7,7 +10,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  form: FormGroup;
+  name: string;
+  email: string;
+  message: string;
+
+  constructor(private fb: FormBuilder, private af: AngularFirestore) {
+    this.createForm();
+  }
+
+  createForm() {
+    this.form = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
+    });
+  }
+
+  onSubmit() {
+    let sent = false;
+    const {name, email, message} = this.form.value;
+    const date = new Date(Date.now()).toLocaleString();
+    const request = {date, name, email, message};
+    this.af.collection('messages').add(request).then();
+    this.form.reset();
+    sent = true;
+    return sent;
+  }
 
   ngOnInit() {
   }
