@@ -13,6 +13,7 @@ import { AboutComponent } from './about/about.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { SplashComponent } from './splash/splash.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { PrivacyComponent } from './privacy/privacy.component';
 
 const routes: Routes = [
   { path: '', component: SplashComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'calculator/ontarioLandTransferTax', component: OntarioLandTransferTaxComponent},
   { path: 'contactUs', component: ContactUsComponent},
   { path: 'howItWorks', component: HowItWorksComponent},
+  { path: 'privacy', component: PrivacyComponent},
   { path: 'login', component: AuthenticationComponent}
 ];
 
