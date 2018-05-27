@@ -27,6 +27,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { RegistrationModule } from './registration/registration.module';
 import { ApplynowComponent } from './applynow/applynow.component';
 import { PrivacyComponent } from './privacy/privacy.component';
+import { AdviceComponent } from './advice/advice.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { PrivacyComponent } from './privacy/privacy.component';
     SplashComponent,
     AuthenticationComponent,
     ApplynowComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    AdviceComponent
   ],
   imports: [
     BrowserModule,
