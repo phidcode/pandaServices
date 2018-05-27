@@ -1,6 +1,195 @@
+<div class="welcome d-flex justify-content-center flex-column">
+  <div class="container">
+    <h1 class="welcome-heading display-4 text-white">MeeFinancial - DIY Mortgage Backed by a Full Service Team</h1>
+    <p class="text-white">Closing costs can be substantial, from lawyer fees to land transfer taxes. </p>
+    <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land  Transfer Tax</a>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="OntLandTransfer">
+      <h3>Ontario Land Transfer Price Calculator</h3>
+      <form id="OntLandTransferTaxForm">
+
+      <h2> Profile</h2>
+          <label>Enter the purchase price: $</label>
+          <input type="text" name="purchaseprice" id="purchaseprice">
+
+          <label>Is the property located in Toronto?</label>
+          <input type="checkbox" name="TorontoProperty" id="TorontoProperty">
+
+          <label>Are you a first time home buyer?</label>
+          <input type="checkbox" name="firsttimebuyer" id="firsttimebuyer">
+
+          <a class="btn btn-primary btn-pill" href="#">GO</a>
+        
+      </form>
+  </div>
+
+  <div class="CalResult">
+
+      <h2>Results:</h2>
+
+      <label>Provincial Land Transfer Tax Amount: $</label> <i class="fas fa-plus-circle"></i>
+      <input type="text" name="Provtax" id="Provtax" disabled>    
+
+      <label>Toronto Land Transfer Tax Amount: $</label> <i class="fas fa-plus-circle"></i>
+      <input type="text" name="Tortax" id="Tortax" disabled>  
+  
+
+      <label>Rebate: $</label> <i class="fas fa-minus-circle"></i>
+      <input type="text" name="Taxrebate" id="Taxrebate" disabled>  
+
+      <label>Total Land Transfer Tax Amount: $</label>
+      <input type="text" name="Totaltax" id="Totaltax" disabled>        
+  </div>
+</div>
+
+<hr>
+<h2>Land transfer tax rates in Ontario – Updated in 2017</h2>
 <p>
-  ontario-land-transfer-tax works!
+The Ontario land transfer tax (LTT) is a marginal tax and each portion of your home’s value is taxed at a unique rate. These tax rates are as follows:</p>
+<table class="rh-table text">
+  <thead>
+    <tr>
+      <th>
+        <b>Purchase price of home</b>
+      </th>
+      <th>
+        <b>Land title transfer fee</b>
+      </th>
+      <th>
+        <b>First-time homebuyer rebate</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Up to and including $55,000</td>
+      <td>0.5%</td>
+      <td>Full tax rebate</td>
+    </tr>
+    <tr>
+      <td>$55,000.01 to $250,000.00</td>
+      <td>1.0%</td>
+      <td>Full tax rebate</td>
+    </tr>
+    <tr>
+      <td>$250,000.01 to $368,333</td>
+      <td>1.5%</td>
+      <td>Full tax rebate</td>
+    </tr>
+    <tr>
+      <td>$368,334 to $400,000.00</td>
+      <td>1.5%</td>
+      <td>$4,000 tax rebate</td>
+    </tr>
+    <tr>
+      <td>$400,000.00 to $2,000,000.00</td>
+      <td>2.0%</td>
+      <td>$4,000 tax rebate</td>
+    </tr>
+    <tr>
+      <td>Over $2,000,000.00</td>
+      <td>2.5%</td>
+      <td>$4,000 tax rebate</td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+
+<h2>Ontario land transfer tax rebate in Ontario</h2>
+For first time home buyers, there is a maximum $4,000 tax rebate on the Ontario land transfer tax. Based on Ontario’s land transfer tax rates, this refund will cover the full tax for homes up to $368,333. For homes purchased for more than $368,333, buyers will receive the full $4,000 rebate and pay the remaining LTT balance.
+
+<p>
+For Example:</p>
+<table class="rh-table text">
+    <thead>
+      <tr>
+        <th>
+          <b>Purchase price of home</b>
+        </th>
+        <th>
+          <b>Land title transfer tax</b>
+        </th>
+        <th>
+          <b>First-time home buyer rebate</b>
+        </th>
+        <th>
+          <b>Net tax payable</b>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>$100,000</td>
+        <td>$725</td>
+        <td>$725</td>
+        <td>$0</td>
+      </tr>
+      <tr>
+        <td>$200,000</td>
+        <td>$1,725</td>
+        <td>$1,725</td>
+        <td>$0</td>
+      </tr>
+      <tr>
+        <td>$227,500</td>
+        <td>$2,000</td>
+        <td>$2,000</td>
+        <td>$0</td>
+      </tr>
+      <tr>
+        <td>$600,000</td>
+        <td>$8,475</td>
+        <td>$4,000</td>
+        <td>$4,475</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+
+
+<h2>First-time home buyer eligibility in Ontario</h2>
+<ul>
+  <li>You must be a Canadian citizen or permanent resident of Canada.</li>
+  <li>You must be 18 years or older.</li>
+  <li>You must occupy the home within 9 months of purchase.</li>
+  <li>You cannot have owned a home or interest in a home anywhere in the world.</li>
+  <li>Your spouse cannot have owned a home while being your spouse (but may be a previous home owner).</li>
+  <li>If the home is newly constructed, it must be eligible for home warranty.</li>
+  <li>Home buyers must apply for the refund within 18 months of purchase.</li>
+</ul>
+  <hr>
+<h2>First Time Home Buyer Rebate Application</h2>
+
+<p>
+Taxpayers can claim an immediate refund when registering the land transfer papers and paying their taxes. Generally, on closing, your lawyer will claim the tax rebate on your behalf. 
+
+If the rebate is not claimed at the time of registration, the full tax is paid and a refund claim can be made to the Ministry of Finance within 18 months. 
+
+Information required for the application include:
 </p>
+<ul>
+  <li>
+    A completed Ontario Land Transfer Tax Refund Affidavit for First-Time Purchasers of Eligible homes.
+  </li>
+  <li>
+    A copy of the registered land transfer deed.
+  </li>
+  <li>
+    A copy of the agreement of purchase and sale    
+  </li>
+  <li>
+    A copy of a document that provides proof of residence, such as a driver’s license, telephone/cable bills, etc.
+  </li>  
+</ul>
+<hr>
+
+References and Notes:
+<span><a href="http://www.fin.gov.on.ca/en/bulletins/ltt/2_2005.html">Calculating Land Transfer Tax, Ontario Ministry of Finance</a></span>
+<p><a href="http://www.fin.gov.on.ca/en/bulletins/ltt/1_2008.html">Land Transfer Tax Refunds for First-Time Homebuyers, Ontario Ministry of Finance</a></p>
 
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>

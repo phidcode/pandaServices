@@ -11,5 +11,8 @@ export class OntarioLandTransferTaxComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  submitted = false;
 
+  onSubmit() { this.submitted = true; }
 }
