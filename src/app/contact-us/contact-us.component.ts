@@ -27,18 +27,19 @@ export class ContactUsComponent implements OnInit {
     });
   }
 
+  msg_sent: boolean = false;
+
   onSubmit() {
-    let sent = false;
+    this.msg_sent = false;
     const {name, email, message} = this.form.value;
     const date = new Date(Date.now()).toLocaleString();
     const request = {date, name, email, message};
     this.af.collection('messages').add(request).then();
     this.form.reset();
-    sent = true;
-    return sent;
+    this.msg_sent = true;
+    //setTimeout(function() { this.msg_sent = true; }, 5000);
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

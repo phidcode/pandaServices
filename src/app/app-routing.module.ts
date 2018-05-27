@@ -13,6 +13,12 @@ import { AboutComponent } from './about/about.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { SplashComponent } from './splash/splash.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
+import { RegisterComponent } from './register/register.component';
+
+import { UserResolver } from './user/user.resolver';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
   { path: '', component: SplashComponent },
@@ -25,11 +31,18 @@ const routes: Routes = [
   { path: 'calculator/ontarioLandTransferTax', component: OntarioLandTransferTaxComponent},
   { path: 'contactUs', component: ContactUsComponent},
   { path: 'howItWorks', component: HowItWorksComponent},
-  { path: 'login', component: AuthenticationComponent}
+  //{ path: 'login', component: AuthenticationComponent},
+
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
+  { path: 'user', component: UserComponent, resolve: { data: UserResolver }}
+
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes,
+    {enableTracing: true}) ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

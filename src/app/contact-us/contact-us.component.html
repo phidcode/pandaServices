@@ -4,7 +4,7 @@
     <div class="card mb-4">
       <div class="card-body align-items-center">
         <div class="form-area">
-
+          <div style="color: blue" *ngIf="msg_sent" > Message Sent. </div>
           <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <input type="text" class="form-control" id="name" name="name" placeholder="Name (No less than 2 characters)" formControlName="name">
@@ -21,7 +21,6 @@
             <div class="col-md-auto text-center">
               <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="form.invalid">Submit</button>
             </div>
-            <!--<span style="color:blue" *ngIf="ngSubmit==true"> Message Sent. </span>-->
           </form>
 
         </div>
