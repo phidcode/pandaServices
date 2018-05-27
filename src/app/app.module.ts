@@ -9,6 +9,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './not-found.component';
+
+import { Router } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
@@ -43,16 +46,17 @@ import { ApplynowComponent } from './applynow/applynow.component';
     FooterComponent,
     SplashComponent,
     AuthenticationComponent,
-    ApplynowComponent
+    ApplynowComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    RegistrationModule,
     AngularFireModule.initializeApp(environment.firebase, 'pandaServices'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     ReactiveFormsModule,
+    RegistrationModule,
     AppRoutingModule
   ],
   exports: [
@@ -61,4 +65,8 @@ import { ApplynowComponent } from './applynow/applynow.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(router: Router) {
+    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+  }
+}

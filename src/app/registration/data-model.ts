@@ -2,11 +2,11 @@ export class User {
     firstName = '';
     lastName = '';
     emailAddress = '';
-    phoneNumbers: Phone[];
-    addresses: Address[];
-    jobs: Job[];
-    properties: Property[];
-    assets: Asset[];
+    phoneNumber: Phone;
+    address: Address;
+    job: Job;
+    properties: Property;
+    assets: Asset;
 }
 
 export class Phone {

@@ -3,10 +3,11 @@
 ## PandaServices Initial Setup
 1. `npm install`
 2. `npm install firebase angularfire2 --save`
-3. Update `environment.prod.ts` for Production deployment
-4. Update `environment.ts` for Testing deploying
-5. `ng build` or `ng build --prod`
-6. `firebase init`
+3. `npm install --save typescript-logging`
+4. Update `environment.prod.ts` for Production deployment
+5. Update `environment.ts` for Testing deploying
+6. `ng build` or `ng build --prod`
+7. `firebase init`
     a. Which Firebase CLI features do you want to setup for this folder? Press Space to select features, then Enter to confirm your choices
         `Hosting`
     b. Select a default Firebase project for this directory

@@ -1,0 +1,225 @@
+<div class="contact section-invert py-4">
+    <h3 class="section-title text-center m-5">Mortgage Application</h3>
+  
+    <div class="container py-4">
+      <div class="row justify-content-md-center px-4">
+        <div class="contact-form col-sm-12 col-md-10 col-lg-7 p-4 mb-4 card">
+          <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+            <div *ngIf="showSteps[0]">
+              <em>
+                <p>Step 1: Main Applicant Information</p>
+              </em>
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyFirstName">First Name
+                    </label>
+                    <input type="text" class="form-control" id="applyFirstName" placeholder="Enter your first name" formControlName="firstName"
+                      required>
+                  </div>
+                </div>
+  
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyLastName">Last Name</label>
+                    <input type="text" class="form-control" id="applyLastName" placeholder="Enter your last name" formControlName="lastName">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyFormEmail">Email address</label>
+                    <input type="email" class="form-control" id="applyFormEmail" placeholder="Enter your email address" formControlName="myEmailAddress">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyPhoneNumber">Best Number to reach you</label>
+                    <input type="tel" class="form-control" id="applyPhoneNumber" placeholder="Enter your contact number" formControlName="myPhoneNumber">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyCurrentStreetAddress">Current Street Address</label>
+                    <input type="text" class="form-control" id="applyCurrentStreetAddress" placeholder="Enter your street address" formControlName="myStreetAddress">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyCurrentCity">City</label>
+                    <input type="text" class="form-control" id="applyCurrentCity" placeholder="Enter city" formControlName="myCity">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyCurrentProvince">Province</label>
+                    <input type="text" class="form-control" id="applyCurrentProvince" placeholder="Enter province" formControlName="myProvince">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyCurrentPostal">Postal Code</label>
+                    <input type="text" class="form-control" id="applyCurrentPostal" placeholder="Enter postal code" formControlName="myPostalCode">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMainJob">Your Job</label>
+                    <input type="text" class="form-control" id="applyMainJob" placeholder="Enter your job title" formControlName="jobTitle">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMainIncome">Your Annual Income</label>
+                    <input type="number" class="form-control" id="applyMainIncome" placeholder="Enter your annual income" formControlName="jobAnnualIncome">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 pl-0 custom-dropdown-example">
+                  <div class="form-group">
+                    <h6 class="text-muted mb-3">Income Type</h6>
+                    <select class="form-control custom-select w-100" formControlName="jobIncomeType" required>
+                      <option value="">Select Income Type</option>
+                      <option *ngFor="let jobIncomeType of jobIncomeTypes" [value]="jobIncomeType">{{jobIncomeType}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <button type="button" (click)="onNext()" class="btn btn-danger">Next</button>
+  
+            </div>
+            <div *ngIf="showSteps[1]">
+              <p> </p>
+              <em>
+                <p>Step 2: Subject Property</p>
+              </em>
+              <div class="row">
+                <div class="col-md-6 pl-0 custom-dropdown-example">
+                  <div class="form-group">
+                    <h6 class="text-muted mb-3">Property Type</h6>
+                    <select class="form-control custom-select w-100" formControlName="propertyType" required>
+                      <option value="">Select Property Type</option>
+                      <option *ngFor="let propertyType of propertyTypes" [value]="propertyType">{{propertyType}}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 pl-0 custom-dropdown-example">
+                  <div class="form-group">
+                    <h6 class="text-muted mb-3">Property Type</h6>
+                    <select class="form-control custom-select w-100" formControlName="propertyUsage" required>
+                      <option value="">Select Property Type</option>
+                      <option *ngFor="let propertyUsage of propertyUsages" [value]="propertyUsage">{{propertyUsage}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMortgageStreetAddress">Property Street Address</label>
+                    <input type="text" class="form-control" id="applyMortgageStreetAddress" placeholder="Enter your street address" formControlName="mortgageStreetAddress">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMortgageCity">City</label>
+                    <input type="text" class="form-control" id="applyMortgageCity" placeholder="Enter city" formControlName="mortgageCity">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMortgageProvince">Province</label>
+                    <input type="text" class="form-control" id="applyMortgageProvince" placeholder="Enter province" formControlName="mortgageProvince">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMortgagePostal">Postal Code</label>
+                    <input type="text" class="form-control" id="applyMortgagePostal" placeholder="Enter postal code" formControlName="mortgagePostalCode">
+                  </div>
+                </div>
+              </div>
+  
+              <div class="row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMortgagePropertyTax">Property Tax</label>
+                    <input type="number" class="form-control" id="applyMortgagePropertyTax" placeholder="Enter Annual Property Tax" formControlName="mortgagePropertyTax">
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyMortgageCondoFee">Condo Fees
+                      <em>If Applicable</em>
+                    </label>
+                    <input type="number" class="form-control" id="applyMortgageCondoFee" placeholder="Enter condo fee if applicable" formControlName="mortgageCondoFee">
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <button type="button" (click)="onPrevious()" class="btn btn-danger">Back</button>
+              <button type="button" (click)="onNext()" class="btn btn-danger">Next</button>
+            </div>
+            <div *ngIf="showSteps[2]">
+              <em>
+                <p>Step 3: Assets</p>
+              </em>
+              <div class="row">
+  
+                <div class="custom-controls-example col-md-6 col-sm-12">
+                  <label for="applyDownPaymentSrc">Downpayment Source
+                    <em>[Select all that apply]</em>
+                  </label>
+  
+                  <div *ngFor="let downPmtSource of downPmtSources" class="custom-control custom-checkbox d-block my-2">
+                    <input type="checkbox" class="custom-control-input" [value]="downPmtSource" formControlName="downPmtSource">
+                    <label [for]="downPmtSource" class="custom-control-label">
+                      {{downPmtSource}}
+                    </label>
+                  </div>
+                </div>
+  
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyDownPayment">Downpayment Amount</label>
+                    <input type="text" class="form-control" id="applyDownPayment" placeholder="Enter downpayment amount" formControlName="downPmtAmt">
+                  </div>
+                </div>
+  
+                <div class="col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label for="applyNumberOfProperties">How Many Properties Do You Own</label>
+                    <input type="number" class="form-control" id="applyNumberOfProperties" placeholder="Enter Number of Properties that you own"
+                      formControlName="numOfProperties">
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <button type="button" (click)="onPrevious()" class="btn btn-danger">Back</button>
+              <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Apply Now">
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <app-footer></app-footer> -->
