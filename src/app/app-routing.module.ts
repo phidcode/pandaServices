@@ -35,14 +35,13 @@ const appRoutes: Routes = [
   { path: 'calculator/ontarioLandTransferTax', component: OntarioLandTransferTaxComponent },
   { path: 'contactUs', component: ContactUsComponent },
   { path: 'howItWorks', component: HowItWorksComponent },
-  { path: 'login', component: AuthenticationComponent },
-  { path: '**', component: PageNotFoundComponent },
   { path: 'privacy', component: PrivacyComponent },
   { path: 'advice', component: AdviceComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
-  { path: 'user', component: UserComponent, resolve: { data: UserResolver } }
+  { path: 'user', component: UserComponent, resolve: { data: UserResolver } },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
