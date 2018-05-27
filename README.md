@@ -1,5 +1,35 @@
 # PandaServices
 
+## PandaServices Initial Setup
+1. `npm install`
+2. `npm install firebase angularfire2 --save`
+3. Update `environment.prod.ts` for Production deployment
+4. Update `environment.ts` for Testing deploying
+5. `ng build` or `ng build --prod`
+6. `firebase init`
+    a. Which Firebase CLI features do you want to setup for this folder? Press Space to select features, then Enter to confirm your choices
+        `Hosting`
+    b. Select a default Firebase project for this directory
+        `MeeFinancial`
+    c. What do you want to use as your public directory?
+        `dist/pandaServices`
+    d. Configure as a single-page app (rewrite all urls to /index.html)?
+        `N`
+    e. File dist/pandaServices/index.html already exists. Overwrite?
+        `N`
+
+## deploy firebase locally
+1. `ng build`
+2. `firebase serve`
+3. `http://localhost:5000`
+
+## Deploy to firebase Production
+1. `ng build --prod`
+2. `firebase deploy`
+
+
+## Default documentation
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
 ## Development server
@@ -25,11 +55,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## Deploy to Firebase Production
-
-Run `firebase init` and `firebase deploy`
-
-## Deploy to Firebase locally
-
-Run `firebase init` and `firebase serve`

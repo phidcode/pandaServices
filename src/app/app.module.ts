@@ -19,7 +19,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
 import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
-//import { RegistrationComponent } from './registration/registration.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HeaderComponent } from './nav/header/header.component';
 import { FooterComponent } from './nav/footer/footer.component';
@@ -32,6 +31,11 @@ import { AuthGuard } from './core/auth.guard';
 import { AuthService } from './core/auth.service';
 import { UserService } from './core/user.service';
 import { RegisterComponent } from './register/register.component';
+
+import { RegistrationModule } from './registration/registration.module';
+import { ApplynowComponent } from './applynow/applynow.component';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { AdviceComponent } from './advice/advice.component';
 
 @NgModule({
   declarations: [
@@ -52,9 +56,13 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     UserComponent,
     RegisterComponent
+    ApplynowComponent,
+    PrivacyComponent,
+    AdviceComponent
   ],
   imports: [
     BrowserModule,
+    RegistrationModule,
     AngularFireModule.initializeApp(environment.firebase, 'pandaServices'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
@@ -62,6 +70,9 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule
+  ],
+  exports: [
+    FooterComponent
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
