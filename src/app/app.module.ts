@@ -55,7 +55,7 @@ import { AdviceComponent } from './advice/advice.component';
     AuthenticationComponent,
     LoginComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
     ApplynowComponent,
     PrivacyComponent,
     AdviceComponent
