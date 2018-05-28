@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/pandaServices",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
