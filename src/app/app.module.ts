@@ -26,7 +26,6 @@ import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HeaderComponent } from './nav/header/header.component';
 import { FooterComponent } from './nav/footer/footer.component';
 import { SplashComponent } from './splash/splash.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { UserResolver } from './user/user.resolver';
@@ -55,7 +54,6 @@ import { AdviceComponent } from './advice/advice.component';
     HeaderComponent,
     FooterComponent,
     SplashComponent,
-    AuthenticationComponent,
     ApplynowComponent,
     PageNotFoundComponent,
     LoginComponent,

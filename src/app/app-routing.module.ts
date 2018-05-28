@@ -15,7 +15,6 @@ import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { SplashComponent } from './splash/splash.component';
-import { AuthenticationComponent } from './authentication/authentication.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AdviceComponent } from './advice/advice.component';
 import { LoginComponent } from './login/login.component';
