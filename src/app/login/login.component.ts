@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../core/auth.service';
-import { Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { auth } from 'firebase/app';
 
 @Component({
   selector: 'app-login',
@@ -14,45 +15,34 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
 
   constructor(
-    public authService: AuthService,
-    private router: Router,
-    private fb: FormBuilder
+    public afAuth: AngularFireAuth,
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.createForm();
   }
 
   createForm() {
     this.loginForm = this.fb.group({
-      email: ['', Validators.required ],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
     });
   }
 
-  tryFacebookLogin() {
-    this.authService.doFacebookLogin()
-      .then(res => {
-        this.router.navigate(['/user']);
-      });
-  }
-
-  tryTwitterLogin() {
-    this.authService.doTwitterLogin()
-      .then(res => {
-        this.router.navigate(['/user']);
-      });
-  }
-
   tryGoogleLogin() {
-    this.authService.doGoogleLogin()
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
       .then(res => {
-        this.router.navigate(['/user']);
-      });
+          this.router.navigate(['/home']);
+        }, err => console.log(err)
+      );
   }
 
-  tryLogin(value) {
-    this.authService.doLogin(value)
+  tryLogin() {
+    const {email, password} = this.loginForm.value;
+    this.afAuth.auth.signInWithEmailAndPassword(String(email), String(password))
       .then(res => {
-        this.router.navigate(['/user']);
+        console.log(res);
+        this.router.navigate(['/home']);
       }, err => {
         console.log(err);
         this.errorMessage = err.message;

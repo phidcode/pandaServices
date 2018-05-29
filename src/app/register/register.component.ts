@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../core/auth.service';
-import { Router, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { auth } from 'firebase/app';
 
 @Component({
   selector: 'app-register',
@@ -15,50 +16,36 @@ export class RegisterComponent implements OnInit {
   successMessage = '';
 
   constructor(
-    public authService: AuthService,
-    private router: Router,
-    private fb: FormBuilder
+    public afAuth: AngularFireAuth,
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.createForm();
   }
 
   createForm() {
     this.registerForm = this.fb.group({
-      email: ['', Validators.required ],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]]
     });
   }
 
-  tryFacebookLogin() {
-    this.authService.doFacebookLogin()
-      .then(res => {
-          this.router.navigate(['/user']);
-        }, err => console.log(err)
-      );
-  }
-
-  tryTwitterLogin() {
-    this.authService.doTwitterLogin()
-      .then(res => {
-          this.router.navigate(['/user']);
-        }, err => console.log(err)
-      );
-  }
-
   tryGoogleLogin() {
-    this.authService.doGoogleLogin()
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider())
       .then(res => {
-          this.router.navigate(['/user']);
+          this.router.navigate(['/home']);
         }, err => console.log(err)
       );
   }
 
-  tryRegister(value) {
-    this.authService.doRegister(value)
+  tryRegister() {
+    const {email, password} = this.registerForm.value;
+    this.afAuth.auth.createUserWithEmailAndPassword(String(email), String(password))
       .then(res => {
         console.log(res);
         this.errorMessage = '';
         this.successMessage = 'Your account has been created';
+        this.registerForm.reset();
       }, err => {
         console.log(err);
         this.errorMessage = err.message;
