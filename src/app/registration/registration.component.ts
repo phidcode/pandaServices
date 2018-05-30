@@ -1,8 +1,9 @@
 import { factory } from '../log4j/configLog4j';
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { User } from './data-model';
+import { RegistrationService } from './registration.service';
 
 const log = factory.getLogger('RegistrationComponent');
 
@@ -12,6 +13,7 @@ const log = factory.getLogger('RegistrationComponent');
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit, OnChanges {
+  @Input() user: User;
 
   registrationForm: FormGroup;
   steps;
@@ -20,11 +22,15 @@ export class RegistrationComponent implements OnInit, OnChanges {
   jobIncomeTypes = ['Salaried', 'Commission', 'Self-Employed', 'Part-Time'];
   propertyTypes = ['Condo or Apartment', 'Townhouse', 'Semi-Detached', 'Detached'];
   propertyUsages = ['Principal Residence', 'Rental'];
-  downPmtSources = ['Personal Savings', 'RRSP',
-    'Gifts from Parents, Grandparents, Siblings',
-    'Gifts from someone else', 'I\'ll borrow it'];
+  downPmtSources = [
+    { name: 'Personal Savings', selected: false },
+    { name: 'RRSP', selected: false },
+    { name: 'Gifts from Parents, Grandparents, Siblings', selected: false },
+    { name: 'Gifts from someone else', selected: false },
+    { name: 'I`ll borrow it', selected: false },
+  ];
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private rs: RegistrationService) {
     this.createForm();
     this.showSteps = [true, false, false];
     this.steps = 0;
@@ -36,14 +42,8 @@ export class RegistrationComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log('ngOnChanges');
-    this.createForm();
-  }
-
-  onSubmit() {
-    console.log('onSubmit');
-    const formModel = this.registrationForm.value;
-    console.log(formModel);
+    // console.log('ngOnChanges');
+    // this.createForm();
   }
 
   onNext() {
@@ -68,26 +68,60 @@ export class RegistrationComponent implements OnInit, OnChanges {
     this.registrationForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      myEmailAddress: '',
-      myPhoneNumber: '',
-      myStreetAddress: '',
-      myCity: '',
-      myProvince: '',
-      myPostalCode: '',
-      jobTitle: '',
-      jobAnnualIncome: '',
-      jobIncomeType: '',
-      propertyType: '',
-      propertyUsage: '',
-      mortgageStreetAddress: '',
-      mortgageCity: '',
-      mortgageProvince: '',
-      mortgagePostalCode: '',
-      mortgagePropertyTax: '',
-      mortgageCondoFee: '',
-      downPmtSource: '',
-      downPmtAmt: '',
-      numOfProperties: ''
+      myEmailAddress: ['', Validators.required],
+      myPhoneNumber: ['', Validators.required],
+      address: this.fb.group({
+        streetAddress: ['', Validators.required],
+        city: ['', Validators.required],
+        province: ['', Validators.required],
+        postalCode: ['', Validators.required],
+      }),
+      jobInfo: this.fb.group({
+        title: ['', Validators.required],
+        annualIncome: ['', Validators.required],
+        incomeType: ['', Validators.required],
+      }),
+      property: this.fb.group({
+        type: ['', Validators.required],
+        usage: ['', Validators.required],
+      }),
+      mortgageAddress: this.fb.group({
+        streetAddress: ['', Validators.required],
+        city: ['', Validators.required],
+        province: ['', Validators.required],
+        postalCode: ['', Validators.required],
+      }),
+      mortgageInfo: this.fb.group({
+        propertyTax: '',
+        condoFee: ''
+      }),
+      downPmtSources: this.buildDownPmtSourcesFA(),
+      downPmtAmt: ['', Validators.required],
+      numOfProperties: ['', Validators.required],
+      vehicle: '',
     });
+  }
+
+  buildDownPmtSourcesFA() {
+    const arr = this.downPmtSources.map(source => {
+      return this.fb.control(source.selected);
+    });
+    return this.fb.array(arr);
+  }
+
+  get downPmtSourceFA() {
+    return this.registrationForm.get('downPmtSources');
+  }
+
+  onSubmit() {
+    console.log('onSubmit');
+    const user = this.prepareSaveUser();
+    // this.rs.addItem(user);
+  }
+
+  prepareSaveUser(): User {
+    const formModel = this.registrationForm.value;
+    console.log(formModel);
+    return null;
   }
 }
