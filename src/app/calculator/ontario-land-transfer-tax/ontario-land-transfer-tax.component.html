@@ -6,44 +6,36 @@
   </div>
 </div>
 
-
-<div class="container">
-  <div class="OntLandTransfer">
-      <h3>Ontario Land Transfer Price Calculator</h3>
-      <form id="OntLandTransferTaxForm">
-
-      <h2> Profile</h2>
-          <label>Enter the purchase price: $</label>
-          <input type="text" name="purchaseprice" id="purchaseprice">
-
-          <label>Is the property located in Toronto?</label>
-          <input type="checkbox" name="TorontoProperty" id="TorontoProperty">
-
-          <label>Are you a first time home buyer?</label>
-          <input type="checkbox" name="firsttimebuyer" id="firsttimebuyer">
-
-          <a class="btn btn-primary btn-pill" href="#">GO</a>
-        
-      </form>
-  </div>
-
-  <div class="CalResult">
-
-      <h2>Results:</h2>
-
-      <label>Provincial Land Transfer Tax Amount: $</label> <i class="fas fa-plus-circle"></i>
-      <input type="text" name="Provtax" id="Provtax" disabled>    
-
-      <label>Toronto Land Transfer Tax Amount: $</label> <i class="fas fa-plus-circle"></i>
-      <input type="text" name="Tortax" id="Tortax" disabled>  
-  
-
-      <label>Rebate: $</label> <i class="fas fa-minus-circle"></i>
-      <input type="text" name="Taxrebate" id="Taxrebate" disabled>  
-
-      <label>Total Land Transfer Tax Amount: $</label>
-      <input type="text" name="Totaltax" id="Totaltax" disabled>        
-  </div>
+<h2>Ontario Land Transfer Price Calculator</h2>
+<br>
+<div class="OntLandTransfer align-items-center">
+  <form [formGroup]="ontarioLandTransferTaxForm" (ngSubmit)="onSubmit()">
+    <h3>Profile:</h3>
+    <label>Enter the purchase price: $</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+    <br>
+    <label>Is the property located in Toronto?</label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
+    <br>
+    <label>Are you a first time home buyer?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
+    <br>
+    <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
+  </form>
+  <div></div>
+  <form >
+    <h3>Results:</h3>
+    <label>Provincial Land Transfer Tax Amount: </label><br><i class="fas fa-plus-circle"></i>$<span>{{provincialLTT}}</span>
+    <br>
+    <label>Toronto Land Transfer Tax Amount: </label><br><i class="fas fa-plus-circle"></i>$<span>{{torontoLTT}}</span>
+    <!--<input type="text" name="Tortax" id="Tortax" disabled>-->
+    <br>
+    <label>Rebate: </label><br><i class="fas fa-minus-circle"></i>$<span>{{totalRebate}}</span>
+    <!--<input type="text" name="Taxrebate" id="Taxrebate" disabled>-->
+    <br>
+    <label>Total Land Transfer Tax Amount: </label><br><i class="fas fa-arrow-circle-right"></i>$<span>{{totalLTT}}</span>
+    <!--<input type="text" name="Totaltax" id="Totaltax" disabled>-->
+  </form>
 </div>
 
 <hr>
@@ -165,9 +157,9 @@ For Example:</p>
 <h2>First Time Home Buyer Rebate Application</h2>
 
 <p>
-Taxpayers can claim an immediate refund when registering the land transfer papers and paying their taxes. Generally, on closing, your lawyer will claim the tax rebate on your behalf. 
+Taxpayers can claim an immediate refund when registering the land transfer papers and paying their taxes. Generally, on closing, your lawyer will claim the tax rebate on your behalf.
 
-If the rebate is not claimed at the time of registration, the full tax is paid and a refund claim can be made to the Ministry of Finance within 18 months. 
+If the rebate is not claimed at the time of registration, the full tax is paid and a refund claim can be made to the Ministry of Finance within 18 months.
 
 Information required for the application include:
 </p>
@@ -179,11 +171,11 @@ Information required for the application include:
     A copy of the registered land transfer deed.
   </li>
   <li>
-    A copy of the agreement of purchase and sale    
+    A copy of the agreement of purchase and sale
   </li>
   <li>
     A copy of a document that provides proof of residence, such as a driver’s license, telephone/cable bills, etc.
-  </li>  
+  </li>
 </ul>
 <hr>
 
