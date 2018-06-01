@@ -1,443 +1,313 @@
+
+<div class="monthlyPaymentCalc d-flex justify-content-center flex-column">
+	<div class="container">
+		<div class="inner-wrapper mt-auto mb-auto container">
+			<div class="row">
+				<div class="col-md-7">
+				<h1 class="welcome-heading display-4 text-white">MeeFinancial - DIY Mortgage Backed by a Full Service Team</h1>
+				<p class="text-white">Tech Savvy Online Mortgage Specialist with Canada's Best Rates, helping you get the product that is best suited for your needs.</p>
+				<a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Start My DIY Mortgage</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 <div class="container">
+
 <h1>Mortgage Payment Calculator</h1>
 
 Our mortgage payment calculator calculates your monthly payment and shows you the corresponding amortization schedule. If you are purchasing a home, our payment calculator allows you to test down payment and amortization scenarios, and compare variable and fixed mortgage rates. We also help you calculate CMHC insurance and land transfer tax.
 <hr>
 <!-- TODO: update for refinance/renewal -->
-<div class="rh-calc-tabs" style="">					
-    <div class="rh-holder first selected">
-      <h2><a class="purchase" href="#">Purchase</a></h2>
-    </div>
+				
+<div class="rh-holder first selected">
+	<h2><a class="purchase" href="#">Purchase</a></h2>
 </div>
 
-<div id="payment-calc" class="ratehub-calc full">
+<form [formGroup]="monthlyPaymentCalc" (ngSubmit)="onSubmit()">
+	<table>
+	<tr>
+		<td>
+			<h3>Asking Price</h3>
+		</td>
+		<td>
+			<label for="purchasePrice">Asking Price</label>
+			<input type="text" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">					
+		</td>
+		<td>
+		<button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="monthlyPaymentCalc.invalid">GO</button>
+		</td>
+	</tr>
+	</table>
+		
+<table class="rh-calc-main" >
+<tbody class="purchase" >
 
-<div class="rh-calc-wrapper lang-en">
+<tr class="downpayment percent">
+	<td class="col1" rowspan="2">
+		Down payment
+	</td>
+	<td class="col2" colspan="5" rowspan="2">
+		The amount of money you pay up front to obtain a mortgage. The minimum down payment in Canada is 5%. For down payments of less than 20%, home buyers are required to purchase mortgage default insurance, commonly referred to as CMHC insurance. 
+	</td>
 
-	<div>
-		<form novalidate>
-			<table>
-			<tr>
-				<td>
-					<h3>Asking Price</h3>
-				</td>
-				<td>
-					<label for="ask">Asking Price</label>
-					<input id="ask" name="ask" type="text" value="" />
-				</td>
-				<td>
-					<a class="go" href="#" tabindex="9"><span>Go</span></a>
-					<!-- <div class="calc-tip-wrapper calc-tip-step1" >
-						<div class="calc-tip nib-left"> -->
-							<!-- <div class="calc-tip-top"></div> -->
-							<!-- <div class="calc-tip-middle"> -->
-								<!-- <div class="calc-tip-title"><a href="#" class="calc-tip-close">&nbsp;</a>STEP 1</div> -->
-								<!-- <div class="calc-tip-content">
-									<span class="content-purchase">Enter the price of the home you&#039;re interested in and press GO.</span>
-									<span class="content-renew" style="display:none">Enter the amount of the mortgage you wish to renew or refinance and press GO.</span>
-								</div> -->
-							<!-- </div> -->
-							<!-- <div class="calc-tip-bottom"></div>
-							<div class="calc-tip-nib"></div> -->
-						<!-- </div>
-					</div> -->
-				</td>
-				<!-- <td class="social" colspan="2" style="text-align:right;">
-				</td> -->
-			</tr>
-		</table>
-		<table class="rh-calc-main" >
-		  <tbody class="purchase" style="">
-				<tr class="downpayment percent">
-					<td class="col1" rowspan="2">Down payment</td>
-					<td class="col2" colspan="5" rowspan="2"> The amount of money you pay up front to obtain a mortgage. The minimum down payment in Canada is 5%. For down payments of less than 20%, home buyers are required to purchase mortgage default insurance, commonly referred to as CMHC insurance. 
-		<!-- <span class="rh-tooltip-container top-right"> -->
-    <!-- <a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false">
-		<span class="fa-stack no-hover">
-      <i class="fa fa-circle-thin fa-stack-2x"></i>
-      <i class="fa fa-question fa-stack-1x"></i>
-		</span>
-		<span class="fa-stack is-hover">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-		</span>
-	</a> -->
-<!-- <span class="rh-title">
-Down payment
-</span> -->
-<!-- <span class="rh-content">
-</span> -->
-<!-- </span> -->
-				</td>
+	<td class="col3"></td>	
 
-					<td class="col3"></td>
-
-<td class="col4 scen1">
-<label for="dp_pc1" class="accessible">Down payment 1 (%)</label>
-<input id="dp_pc1" name="dp_pc[]" type="text" class="text input-number" value="5%"/>
-</td>
-<td class="col4 scen2">
-<label for="dp_pc2" class="accessible">Down payment 2 (%)</label>
-<input id="dp_pc2" name="dp_pc[]" type="text" class="text input-number" value="10%"/>
-</td>
-<td class="col4 scen3">
-<label for="dp_pc3" class="accessible">Down payment 3 (%)</label>
-<input id="dp_pc3" name="dp_pc[]" type="text" class="text input-number" value="15%"/>
-</td>
-<!-- <td class="col4 scen4">
-<label for="dp_pc4" class="accessible">Down payment 4 (%)</label>
-<input id="dp_pc4" name="dp_pc[]" type="text" class="text input-number" value="20%"/>
-</td> -->
+	<td class="col4 scen1">
+		<label for="dp_pc1" class="accessible">Down payment 1 (%)</label>
+		<input id="dp_pc1" name="dp_pc[]" type="text" class="text input-number" value="5%"/>
+	</td>
+	<td class="col4 scen2">
+		<label for="dp_pc2" class="accessible">Down payment 2 (%)</label>
+		<input id="dp_pc2" name="dp_pc[]" type="text" class="text input-number" value="10%"/>
+	</td>
+	<td class="col4 scen3">
+		<label for="dp_pc3" class="accessible">Down payment 3 (%)</label>
+		<input id="dp_pc3" name="dp_pc[]" type="text" class="text input-number" value="15%"/>
+	</td>
 </tr>
 
-				<tr class="downpayment alt">
-					<td class="col3"><span class="ico-minus">minus</span></td>
+<tr class="downpayment alt">
+	<td class="col3">
+		minus
+	</td>
+	<td class="col4 scen1">
+		<label for="dp_dol1" class="accessible">Down payment 1 ($)</label>
+		<input id="dp_dol1" name="dp_dol[]" type="text input-number" class="text" />
+	</td>
 
-										<td class="col4 scen1">
-						<label for="dp_dol1" class="accessible">Down payment 1 ($)</label>
-						<input id="dp_dol1" name="dp_dol[]" type="text input-number" class="text" />
-					</td>
-										<td class="col4 scen2">
-						<label for="dp_dol2" class="accessible">Down payment 2 ($)</label>
-						<input id="dp_dol2" name="dp_dol[]" type="text input-number" class="text" />
-					</td>
-										<td class="col4 scen3">
-						<label for="dp_dol3" class="accessible">Down payment 3 ($)</label>
-						<input id="dp_dol3" name="dp_dol[]" type="text input-number" class="text" />
-					</td>
-										<!-- <td class="col4 scen4">
-						<label for="dp_dol4" class="accessible">Down payment 4 ($)</label>
-						<input id="dp_dol4" name="dp_dol[]" type="text input-number" class="text" />
-					</td> -->
-									</tr>
+	<td class="col4 scen2">
+		<label for="dp_dol2" class="accessible">Down payment 2 ($)</label>
+		<input id="dp_dol2" name="dp_dol[]" type="text input-number" class="text" />
+	</td>
+
+	<td class="col4 scen3">
+		<label for="dp_dol3" class="accessible">Down payment 3 ($)</label>
+		<input id="dp_dol3" name="dp_dol[]" type="text input-number" class="text" />
+	</td>
+</tr>
 								
-									<tr class="cmhc">
-					<td class="col1">Mortgage insurance</td>
-					<td class="col2" colspan="5" rowspan="2"> 
-						 <!-- <span class="rh-tooltip-container top-right"> -->
-    <!-- <a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"> -->
-			
-			<!-- <span class="fa-stack no-hover">
-      <i class="fa fa-circle-thin fa-stack-2x"></i>
-      <i class="fa fa-question fa-stack-1x"></i>
-		</span> -->
-		<!-- <span class="fa-stack is-hover">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-		</span> -->
-	<!-- </a> -->
-      <!-- <span class="rh-title"> -->
-Mortgage insurance      
-<!-- </span> -->
-      <!-- <span class="rh-content"> -->
-Mortgage default insurance, commonly referred to as CMHC insurance, protects the lender in the case the borrower defaults on the mortgage. Mortgage default insurance is required on all mortgages with down payments of less than 20%, which are known as high ratio mortgages. Mortgage default insurance is calculated as a percentage applied to your mortgage amount.     
- <!-- </span> -->
-  <!-- </span> -->
+<tr class="cmhc">
+	<td class="col1" rowspan="1">
+		Mortgage insurance
+	</td>
 
-</td>
-					<td class="col3"><span class="ico-plus">plus</span></td>
-										<td class="col4 scen1">
-												<label for="mdi_dol1" class="accessible">Mortgage Default Insurance 1 ($)</label>
-												<input id="mdi_dol1" name="mdi_dol[]" type="text input-number" class="text" disabled>
-										</td>
-										<td class="col4 scen2">
-												<label for="mdi_dol2" class="accessible">Mortgage Default Insurance 2 ($)</label>
-												<input id="mdi_dol2" name="mdi_dol[]" type="text input-number" class="text" disabled>
-										</td>
-										<td class="col4 scen3">
-												<label for="mdi_dol3" class="accessible">Mortgage Default Insurance 3 ($)</label>
-												<input id="mdi_dol3" name="mdi_dol[]" type="text input-number" class="text" disabled>
-										</td>
-										<!-- <td class="col4 scen4"></td> -->
-	</tr>
-				<tr class="total">
-					<td class="rh-col" colspan="2"><span>Total Mortgage Required</span></td>
-					<td class="col3"><span class="ico-well">equals</span></td>
-										<td class="col4 scen1 ">
-												<label for="tm_dol1" class="accessible">Total Mortgage Required 1 ($)</label>
-												<input id="tm_dol1" name="tm_dol[]" type="text input-number" class="text" disabled>
-										</td>
-										<td class="col4 scen2 ">
-												<label for="tm_dol2" class="accessible">Total Mortgage Required 2 ($)</label>
-												<input id="tm_dol2" name="tm_dol[]" type="text input-number" class="text" disabled>
-										</td>
-										<td class="col4 scen3 ">
-												<label for="tm_dol3" class="accessible">Total Mortgage Required 3 ($)</label>
-												<input id="tm_dol3" name="tm_dol[]" type="text input-number" class="text" disabled>
-										</td>
-										<!-- <td class="col4 scen4 ">$-</td> -->
-									</tr>
-			</tbody>
-			<tbody class="mortgage-options">
-				<tr class="amortization">
-					<td class="col1">Amortization period</td>
-					<td class="col2" colspan="5" rowspan="2">  
-						<!-- <span class="rh-tooltip-container top-right"> -->
-    <!-- <a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"> -->
-			<!-- <span class="fa-stack no-hover"> -->
-      <!-- <i class="fa fa-circle-thin fa-stack-2x"></i>
-      <i class="fa fa-question fa-stack-1x"></i> -->
-		<!-- </span> -->
-		<!-- <span class="fa-stack is-hover"> -->
-      <!-- <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-question fa-inverse fa-stack-1x"></i> -->
-		<!-- </span> -->
-	<!-- </a> -->
-      <!-- <span class="rh-title"> -->
-<!-- Amortization period    -->
-   <!-- </span> -->
-      <!-- <span class="rh-content"> -->
+	<td class="col2" colspan="5" rowspan="1">    
+		Mortgage default insurance, commonly referred to as CMHC insurance, protects the lender in the case the borrower defaults on the mortgage. Mortgage default insurance is required on all mortgages with down payments of less than 20%, which are known as high ratio mortgages. Mortgage default insurance is calculated as a percentage applied to your mortgage amount.     
+	</td>
+
+	<td class="col3">
+		plus
+	</td>
+
+	<td class="col4 scen1">
+		<label for="mdi_dol1" class="accessible">Mortgage Default Insurance 1 ($)</label>
+		<input id="mdi_dol1" name="mdi_dol[]" type="text input-number" class="text" disabled>
+	</td>
+
+	<td class="col4 scen2">
+		<label for="mdi_dol2" class="accessible">Mortgage Default Insurance 2 ($)</label>
+		<input id="mdi_dol2" name="mdi_dol[]" type="text input-number" class="text" disabled>
+	</td>
+
+	<td class="col4 scen3">
+		<label for="mdi_dol3" class="accessible">Mortgage Default Insurance 3 ($)</label>
+		<input id="mdi_dol3" name="mdi_dol[]" type="text input-number" class="text" disabled>
+	</td>
+
+</tr>
+
+<tr class="total">
+	<td class="col1" rowspan="1">
+		Total Mortgage Required
+	</td>
+
+	<td class="col2" colspan="5" rowspan="1">    			
+	</td>
+
+	<td class="col3">
+		equals
+	</td>
+
+	<td class="col4 scen1 ">
+		<label for="tm_dol1" class="accessible">Total Mortgage Required 1 ($)</label>
+		<input id="tm_dol1" name="tm_dol[]" type="text input-number" class="text" disabled>
+	</td>
+
+	<td class="col4 scen2 ">
+		<label for="tm_dol2" class="accessible">Total Mortgage Required 2 ($)</label>
+		<input id="tm_dol2" name="tm_dol[]" type="text input-number" class="text" disabled>
+	</td>
+
+	<td class="col4 scen3 ">
+		<label for="tm_dol3" class="accessible">Total Mortgage Required 3 ($)</label>
+		<input id="tm_dol3" name="tm_dol[]" type="text input-number" class="text" disabled>
+	</td>
+</tr>
+
+</tbody>
+
+<tbody class="mortgage-options">
+
+<tr class="amortization">
+	<td class="col1" rowspan="1">
+		Amortization period
+	</td>
+
+	<td class="col2" colspan="5" rowspan="1">  
 The length of time it will take a homeowner to pay off his/her mortgage. 
 In Canada, the maximum amortization period for insurable mortgages is 25 years. 
 Longer amortization periods allow homeowners to make smaller monthly payments, but equate to more interest paid over the life of the mortgage.
-<!-- </span> -->
-  <!-- </span> -->
+	</td>
 
-</td>
-					<td class="col3">&#160;</td>
+	<td class="col3">&#160;		
+	</td>
 
-										<td class="col4 scen1">
-												<!-- <div class="calc-tip-wrapper calc-tip-step2" >
-							<div class="calc-tip nib-left"> -->
-								<!-- <div class="calc-tip-top"></div> -->
-								<!-- <div class="calc-tip-middle"> -->
-									<!-- <a href="#" class="calc-tip-close">&nbsp;</a> -->
-									<!-- <div class="calc-tip-title">STEP 2</div> -->
-									<!-- <div class="calc-tip-content">Choose an amortization period.</div> -->
-								<!-- </div> -->
-								<!-- <div class="calc-tip-bottom"></div>
-								<div class="calc-tip-nib"></div> -->
-							<!-- </div>
-						</div> -->
-						
-						<label for="amort1" class="accessible">Amortization period 1</label>
-						<select id="amort1" name="amort[]" >
-						<option value="" selected="selected" >
-						Select
-						</option>
-						<option value="5">5 years</option>
-						<option value="10">10 years</option>
-						<option value="15">15 years</option>
-						<option value="20">20 years</option>
-						<option value="25">25 years</option>
-						<option value="30">30 years</option>
-						<!-- <option value="other">Other</option> -->
-						</select>
+	<td class="col4 scen1">
+	<label for="amort1" class="accessible">Amortization period 1</label>
+	<select id="amort1" name="amort[]" >
+		<option value="" selected="selected">
+		Select
+		</option>
+		<option value="5">5 years</option>
+		<option value="10">10 years</option>
+		<option value="15">15 years</option>
+		<option value="20">20 years</option>
+		<option value="25">25 years</option>
+		<option value="30">30 years</option>
+	</select>
+	</td>
 
-					</td>
-					
-					<td class="col4 scen2">
-						
-					<label for="amort2" class="accessible">Amortization period 2</label>
-					<select id="amort2" name="amort[]" >
-					<option value="" selected="selected" >
-					Select
-					</option>
-					<option value="5">5 years</option>
-					<option value="10">10 years</option>
-					<option value="15">15 years</option>
-					<option value="20">20 years</option>
-					<option value="25">25 years</option>
-					<option value="30">30 years</option>
-					<!-- <option value="other">Other</option> -->
-					</select>
+	<td class="col4 scen2">
+		<label for="amort2" class="accessible">Amortization period 2</label>
+		<select id="amort2" name="amort[]" >
+		<option value="" selected="selected" >
+		Select
+		</option>
+		<option value="5">5 years</option>
+		<option value="10">10 years</option>
+		<option value="15">15 years</option>
+		<option value="20">20 years</option>
+		<option value="25">25 years</option>
+		<option value="30">30 years</option>
+		</select>
+	</td>
 
-					</td>
-					<td class="col4 scen3">
-						
-					<label for="amort3" class="accessible">Amortization period 3</label>
-					<select id="amort3" name="amort[]" >
-					<option value="" selected="selected" >
-					Select
-				</option>
-					<option value="5">5 years</option>
-					<option value="10">10 years</option>
-					<option value="15">15 years</option>
-					<option value="20">20 years</option>
-					<option value="25">25 years</option>
-					<option value="30">30 years</option>
-					<!-- <option value="other">Other</option> -->
-					</select>
+	<td class="col4 scen3">
+		<label for="amort3" class="accessible">Amortization period 3</label>
+		<select id="amort3" name="amort[]" >
+		<option value="" selected="selected" >
+		Select
+		</option>
+		<option value="5">5 years</option>
+		<option value="10">10 years</option>
+		<option value="15">15 years</option>
+		<option value="20">20 years</option>
+		<option value="25">25 years</option>
+		<option value="30">30 years</option>
+		</select>
+	</td>
 
-					</td>
-										<!-- <td class="col4 scen4">
-						
-						<label for="amort4" class="accessible">Amortization period 4</label>
-								<select id="amort4" name="amort[]" >
-			<option value="" selected="selected" >
-				Select			</option>
-					<option value="5">5 years</option>
-				<option value="10">10 years</option>
-				<option value="15">15 years</option>
-				<option value="20">20 years</option>
-				<option value="25">25 years</option>
-				<option value="30">30 years</option>
-				<option value="other">Other</option>
-				</select>
-					</td> -->
-				</tr>
-				<tr class="mortgage-rate">
-					<td class="col1">Mortgage rate</td>
-					<td class="col2" colspan="5" rowspan="2">  
-						<!-- <span class="rh-tooltip-container top-right"> -->
-    <!-- <a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"> -->
-			<!-- <span class="fa-stack no-hover"> -->
-      <!-- <i class="fa fa-circle-thin fa-stack-2x"></i>
-      <i class="fa fa-question fa-stack-1x"></i> -->
-		<!-- </span> -->
-		<!-- <span class="fa-stack is-hover"> -->
-      <!-- <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-question fa-inverse fa-stack-1x"></i> -->
-		<!-- </span> -->
-	<!-- </a> -->
-      <!-- <span class="rh-title">
-Mortgage rate      </span> -->
-      <!-- <span class="rh-content"> -->
-The rate of interest you will pay on the outstanding balance of your mortgage. 
-This is determined by the mortgage type and mortgage provider.
- <!-- To see how rates vary by type and provider, click on &quot;Select Rate&quot; link on the right. -->
-<!-- </span> -->
-  <!-- </span> -->
+</tr>
 
-</td>
-					<td class="col3">&nbsp;<br/>&nbsp;</td>
-										<td class="col4 scen1">
-												<!-- <div class="calc-tip-wrapper calc-tip-step3" > -->
-							<!-- <div class="calc-tip nib-left"> -->
-								<!-- <div class="calc-tip-top"></div>
-								<div class="calc-tip-middle"><div class="calc-tip-title">
-									<a href="#" class="calc-tip-close">&nbsp;</a>
-									STEP 3
-								</div> -->
-									<!-- <div class="calc-tip-content">Choose a mortgage rate to calculate the corresponding payment.</div> -->
-								<!-- </d/iv> -->
-								<!-- <div class="calc-tip-bottom"></div>
-								<div class="calc-tip-nib"></div> -->
-							<!-- </div> -->
-						<!-- </div> -->
-																		<!-- <span class="rate-value"></span> -->
-													<!-- <div class="details"> -->
-							<a class="rate-selector" href="#">Select rate</a>
-						<!-- </div> -->
-											</td>
+<tr class="mortgage-rate">
+	<td class="col1" rowspan="1">Mortgage rate</td>
 
-<td class="col4 scen2" >
-<!-- <span class="rate-value"></span> -->
-<!-- <div class="details"> -->
-<a class="rate-selector" href="#">Select rate</a>
-<!-- </div> -->
-</td>
-<td class="col4 scen3" >
-<!-- <span class="rate-value"></span> -->
-<!-- <div class="details"> -->
-<a class="rate-selector" href="#">Select rate</a>
-<!-- </div> -->
-</td>
-										<!-- <td class="col4 scen4" style="position:relative;"> -->
-																		<!-- <span class="rate-value"></span> -->
-													<!-- <div class="details">
-							<a class="rate-selector" href="#">Select rate</a>
-						</div> -->
-											<!-- </td> -->
-				</tr>
+	<td class="col2" colspan="5" rowspan="1">  
+The rate of interest you will pay on the outstanding balance of your mortgage. This is determined by the mortgage type and mortgage provider. Until you have been approved for the mortgage, the rate can change at anytime.
+	</td>
 
+	<td class="col3">&nbsp;<br/>&nbsp;</td>
 
-  <tr class="mortgage-type">
-  <td class="col1">Mortgage type</td>
-  <td class="col2" colspan="5" rowspan="2">  
-		<!-- <span class="rh-tooltip-container top-right"> -->
-<!-- <a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"> -->
-	<!-- <span class="fa-stack no-hover"> -->
-<!-- <i class="fa fa-circle-thin fa-stack-2x"></i>
-<i class="fa fa-question fa-stack-1x"></i> -->
-<!-- </span> -->
-<!-- <span class="fa-stack is-hover"> -->
-<!-- <i class="fa fa-circle fa-stack-2x"></i>
-<i class="fa fa-question fa-inverse fa-stack-1x"></i> -->
-<!-- </span> -->
-<!-- </a> -->
-<!-- <span class="rh-title">
-Mortgage type      </span> -->
-<!-- <span class="rh-content"> -->
-The mortgage type includes the term of the mortgage, between 1-10 years, and the rate type, variable or fixed. The mortgage term is the length of time you commit to the terms, conditions and mortgage rate with a specific lender. The mortgage rate type can be fixed for the duration of the term or variable, fluctuating with the prime rate. Fixed rates are most popular in Canada and represent 66% of all mortgages, according to the Canadian Association of Accredited Mortgage Professionals (CAAMP).
-<!-- </span> -->
-<!-- </span> -->
+	<td class="col4 scen1">
+		<label for="rate1" class="accessible">Select Rate</label>
+		<select id="rate1" name="amort[]" >
+		<option value="" selected="selected" >
+		Select
+		</option>
+		<option value="1YRFixed">1 Year Fixed - 2.99%</option>
+		<option value="2YRFixed">2 Year Fixed - 3.29%</option>
+		<option value="3YRFixed">3 Year Fixed - 3.54%</option>
+		<option value="4YRFixed">4 Year Fixed - 3.64%</option>
+		<option value="5YRFixed">5 Year Fixed - 3.59%</option>
+		<option value="5YRVar">5 Year Variable - 2.45%</option>
+		</select>
+	</td>
 
-</td>
-  <!-- <td class="col3">&nbsp;</td>
-            <td class="col4 scen1">&nbsp;</td>
-            <td class="col4 scen2">&nbsp;</td>
-            <td class="col4 scen3">&nbsp;</td>
-            <td class="col4 scen4">&nbsp;</td>
-        </tr>
-        <tr class="total-mortgage-payment">
-  <td colspan="3" class="rh-col"><h4>Total Mortgage Payment</h4></td>
+	<td class="col4 scen2" >
+		<label for="rate2" class="accessible">Select Rate</label>
+		<select id="rate2" name="amort[]" >
+		<option value="" selected="selected" >
+		Select
+		</option>
+		<option value="1YRFixed">1 Year Fixed - 2.99%</option>
+		<option value="2YRFixed">2 Year Fixed - 3.29%</option>
+		<option value="3YRFixed">3 Year Fixed - 3.54%</option>
+		<option value="4YRFixed">4 Year Fixed - 3.64%</option>
+		<option value="5YRFixed">5 Year Fixed - 3.59%</option>
+		<option value="5YRVar">5 Year Variable - 2.45%</option>
+		</select>
+	</td>
 
-            <td class="col4 scen1" rowspan="2">
-                <a class="details simple">
-      <span class="amount">$-</span>
-      <hr/>
-      <span class="get-details">Get rate</span>
-    </a>
-              </td>
-            <td class="col4 scen2" rowspan="2">
-                <a class="details simple">
-      <span class="amount">$-</span>
-      <hr/>
-      <span class="get-details">Get rate</span>
-    </a>
-              </td>
-            <td class="col4 scen3" rowspan="2">
-                <a class="details simple">
-      <span class="amount">$-</span>
-      <hr/>
-      <span class="get-details">Get rate</span>
-    </a>
-              </td> -->
-            <!-- <td class="col4 scen4" rowspan="2">
-                <a class="details simple">
-      <span class="amount">$-</span>
-      <hr/>
-      <span class="get-details">Get rate</span>
-    </a>
-              </td> -->
-        </tr>
-				<tr class="payment-freq">
-					<td class="col1">
-						<label for="freq">Frequency</label>
-						<select id="freq" name="freq">
-							<option value="12,1">Monthly</option>
-							<option value="26,1">Bi-weekly</option>
-							<option value="12,2">Accelerated Bi-weekly</option>
-						</select>
-					</td>
-					<td class="col2" colspan="5" rowspan="2">  
-						<!-- <span class="rh-tooltip-container top-right"> -->
-    <!-- <a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover"> -->
-      <!-- <i class="fa fa-circle-thin fa-stack-2x"></i>
-      <i class="fa fa-question fa-stack-1x"></i> -->
-		<!-- </span> -->
-		<!-- <span class="fa-stack is-hover"> -->
-      <!-- <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-question fa-inverse fa-stack-1x"></i> -->
-		<!-- </span> -->
-	<!-- </a> -->
-      <!-- <span class="rh-title">
-Mortgage payment      </span> -->
-      <!-- <span class="rh-content"> -->
-The monthly mortgage payment is calculated based on the inputs you provided: the mortgage amount, rate type (fixed or variable), term, amortization period, and payment frequency. 
-A general affordability rule, as outlined by the Canada Mortgage and Housing Corporation, is that your monthly housing costs should not exceed 32% of your gross household monthly income.
-<!-- </span> -->
-  <!-- </span> -->
-</td>
-      </tr>
+	<td class="col4 scen3" >
+		<label for="rate3" class="accessible">Select Rate</label>
+		<select id="rate3" name="amort[]" >
+		<option value="" selected="selected" >
+		Select
+		</option>
+		<option value="1YRFixed">1 Year Fixed - 2.99%</option>
+		<option value="2YRFixed">2 Year Fixed - 3.29%</option>
+		<option value="3YRFixed">3 Year Fixed - 3.54%</option>
+		<option value="4YRFixed">4 Year Fixed - 3.64%</option>
+		<option value="5YRFixed">5 Year Fixed - 3.59%</option>
+		<option value="5YRVar">5 Year Variable - 2.45%</option>
+		</select>
+	</td>
+</tr>
+
+<tr class="payments">
+		<td class="col1" rowspan="1">
+			Estimated  Monthly Payment
+		</td>
+	
+		<td class="col2" colspan="5" rowspan="1">    			
+		</td>
+	
+		<td class="col3">
+			equals
+		</td>
+	
+		<td class="col4 scen1 ">
+			<label for="estpay1" class="accessible">Estimated Monthly Payment 1 ($)</label>
+			<input id="estpay1" name="tm_pay[]" type="text input-number" class="text" disabled>
+		</td>
+	
+		<td class="col4 scen2 ">
+			<label for="estpay2" class="accessible">Estimated Monthly Payment 2 ($)</label>
+			<input id="estpay2" name="tm_pay[]" type="text input-number" class="text" disabled>
+		</td>
+	
+		<td class="col4 scen3 ">
+			<label for="estpay3" class="accessible">Estimated Monthly Payment 3 ($)</label>
+			<input id="estpay3" name="tm_pay[]" type="text input-number" class="text" disabled>
+		</td>
+	</tr>
+
+	
 </tbody>
 </table>
 </form>
-</div>
-</div>
+
+
+
+
+The mortgage type includes the term of the mortgage, between 1-10 years, and the rate type, variable or fixed. The mortgage term is the length of time you commit to the terms, conditions and mortgage rate with a specific lender. The mortgage rate type can be fixed for the duration of the term or variable, fluctuating with the prime rate. Fixed rates are most popular in Canada and represent 66% of all mortgages, according to the Canadian Association of Accredited Mortgage Professionals (CAAMP).
+The monthly mortgage payment is calculated based on the inputs you provided: the mortgage amount, rate type (fixed or variable), term, amortization period, and payment frequency. 
+A general affordability rule, as outlined by the Canada Mortgage and Housing Corporation, is that your monthly housing costs should not exceed 32% of your gross household monthly income.
 </div>
 
-</div>
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>
