@@ -53,8 +53,14 @@
   .OntLandTransfer{
     background:#f9feff;
     display: grid;
-    grid-template-columns: 5fr 1fr 10fr;
+    grid-template-columns: 5fr 5fr;
     grid-gap: 50px;
+  }
+
+  .custom-tab{
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    vertical-align: middle;
   }
 
   /* FORM STYLES */

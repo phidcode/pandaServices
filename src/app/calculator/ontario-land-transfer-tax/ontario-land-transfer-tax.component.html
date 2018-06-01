@@ -11,31 +11,42 @@
 <div class="OntLandTransfer align-items-center">
   <form [formGroup]="ontarioLandTransferTaxForm" (ngSubmit)="onSubmit()">
     <h3>Profile:</h3>
-    <label>Enter the purchase price: $</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="text" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
-    <br>
-    <label>Is the property located in Toronto?</label>&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
-    <br>
-    <label>Are you a first time home buyer?</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <input type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
-    <br>
-    <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
+    <div class="custom-tab align-items-center">
+      <label>Enter the purchase price ($): </label>
+      <input type="text" inputmode="numeric" lang="en-150" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+    </div>
+    <div class="custom-tab align-items-center">
+      <label>Is the property located in Toronto?</label>
+      <input type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
+    </div>
+    <div class="custom-tab align-items-center">
+      <label>Are you a first time home buyer?</label>
+      <input type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
+    </div>
+    <div class="custom-tab align-items-center">
+      <div></div>
+      <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
+    </div>
   </form>
-  <div></div>
-  <form >
+  <div>
     <h3>Results:</h3>
-    <label>Provincial Land Transfer Tax Amount: </label><br><i class="fas fa-plus-circle"></i>$<span>{{provincialLTT}}</span>
-    <br>
-    <label>Toronto Land Transfer Tax Amount: </label><br><i class="fas fa-plus-circle"></i>$<span>{{torontoLTT}}</span>
-    <!--<input type="text" name="Tortax" id="Tortax" disabled>-->
-    <br>
-    <label>Rebate: </label><br><i class="fas fa-minus-circle"></i>$<span>{{totalRebate}}</span>
-    <!--<input type="text" name="Taxrebate" id="Taxrebate" disabled>-->
-    <br>
-    <label>Total Land Transfer Tax Amount: </label><br><i class="fas fa-arrow-circle-right"></i>$<span>{{totalLTT}}</span>
-    <!--<input type="text" name="Totaltax" id="Totaltax" disabled>-->
-  </form>
+    <div class="custom-tab align-items-center" style="color: red">
+      <label>Provincial Land Transfer Tax Amount: </label>
+      <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
+    </div>
+    <div class="custom-tab align-items-center" style="color: red">
+      <label>Toronto Land Transfer Tax Amount: </label>
+      <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
+    </div>
+    <div class="custom-tab align-items-center" style="color: green">
+      <label>Rebate: </label>
+      <div><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
+    </div>
+    <div class="custom-tab align-items-center" style="color: blue">
+      <label>Total Land Transfer Tax Amount: </label>
+      <div><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
+    </div>
+  </div>
 </div>
 
 <hr>

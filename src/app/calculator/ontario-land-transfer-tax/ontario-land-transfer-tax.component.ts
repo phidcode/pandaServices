@@ -13,8 +13,6 @@ export class OntarioLandTransferTaxComponent implements OnInit {
   ontarioLandTransferTaxForm: FormGroup;
   submitted = false;
 
-  ontarioTaxRate = [0.005, 0.01, 0.015, 0.02, 0.025];
-
   provincialLTT = 0.0;
   torontoLTT = 0.0;
   provincialRebate = 0.0;
@@ -33,7 +31,7 @@ export class OntarioLandTransferTaxComponent implements OnInit {
 
   createForm() {
     this.ontarioLandTransferTaxForm = this.fb.group({
-      purchasePrice: [0.00, Validators.required],
+      purchasePrice: [0.00, [Validators.required, Validators.min(0.01)]],
       torontoProperty: [false],
       firstTimeBuyer: [false],
     });
@@ -44,47 +42,42 @@ export class OntarioLandTransferTaxComponent implements OnInit {
     this.submitted = true;
     // this.ontarioLandTransferTaxForm.reset();
     const {purchasePrice, torontoProperty, firstTimeBuyer} = this.ontarioLandTransferTaxForm.value;
-    if (purchasePrice > 0 && purchasePrice <= 55000) {
+    this.calculateLLT(parseFloat(purchasePrice.replace(/[^0-9\.-]+/g,"")), torontoProperty, firstTimeBuyer);
+  }
+
+  calculateLLT(purchasePrice, torontoProperty, firstTimeBuyer) {
+    if (purchasePrice >= 0 && purchasePrice <= 55000) {
       this.provincialLTT = (0.005) * purchasePrice;
-      if (torontoProperty === true) { this.torontoLTT = (0.005) * purchasePrice; }
-      if (firstTimeBuyer === true) {
-        this.provincialRebate = this.provincialLTT;
-        if (torontoProperty === true) { this.torontoRebate = this.torontoLTT; }
-      }
+      this.torontoLTT = (0.005) * purchasePrice;
+      this.provincialRebate = this.provincialLTT;
+      this.torontoRebate = this.torontoLTT;
     } else if (purchasePrice > 55000 && purchasePrice <= 250000) {
       this.provincialLTT = (0.01) * (purchasePrice - 55000) + (275);
-      if (torontoProperty === true) { this.torontoLTT = (0.01) * (purchasePrice - 55000) + (275); }
-      if (firstTimeBuyer === true) {
-        this.provincialRebate = this.provincialLTT;
-        if (torontoProperty === true) { this.torontoRebate = this.torontoLTT; }
-      }
+      this.torontoLTT = (0.01) * (purchasePrice - 55000) + (275);
+      this.provincialRebate = this.provincialLTT;
+      this.torontoRebate = this.torontoLTT;
     } else if (purchasePrice > 250000 && purchasePrice <= 400000) {
       this.provincialLTT = (0.015) * (purchasePrice - 250000) + (2225);
-      if (torontoProperty === true) { this.torontoLTT = (0.015) * (purchasePrice - 250000) + (2225); }
-      if (firstTimeBuyer === true) {
-        if (torontoProperty === true) { this.torontoRebate = this.torontoLTT; }
-        if (purchasePrice <= 368333) {
-          this.provincialRebate = this.provincialLTT;
-        } else {
-          this.provincialRebate = 4000;
-        }
-      }
+      this.torontoLTT = (0.015) * (purchasePrice - 250000) + (2225);
+      if (purchasePrice <= 368333) { this.provincialRebate = this.provincialLTT; } else { this.provincialRebate = 4000; }
+      this.torontoRebate = this.torontoLTT;
     } else if (purchasePrice > 400000 && purchasePrice <= 2000000) {
       this.provincialLTT = (0.02) * (purchasePrice - 400000) + (4475);
-      if (torontoProperty === true) { this.torontoLTT = (0.02) * (purchasePrice - 400000) + (4475); }
-      if (firstTimeBuyer === true) {
-        this.provincialRebate = 4000;
-        if (torontoProperty === true) { this.torontoRebate = 4475; }
-      }
+      this.torontoLTT = (0.02) * (purchasePrice - 400000) + (4475);
+      this.provincialRebate = 4000;
+      this.torontoRebate = 4475;
     } else {
       this.provincialLTT = (0.025) * (purchasePrice - 2000000) + (36475);
-      if (torontoProperty === true) { this.torontoLTT = (0.025) * (purchasePrice - 2000000) + (36475); }
-      if (firstTimeBuyer === true) {
-        this.provincialRebate = 4000;
-        if (torontoProperty === true) { this.torontoRebate = 4475; }
-      }
+      this.torontoLTT = (0.025) * (purchasePrice - 2000000) + (36475);
+      this.provincialRebate = 4000;
+      this.torontoRebate = 4475;
+    }
+    if (torontoProperty === false) {
+      this.torontoLTT = 0.0;
+      this.torontoRebate = 0.0;
     }
     this.totalRebate = this.provincialRebate + this.torontoRebate;
+    if (firstTimeBuyer === false) { this.totalRebate = 0.0; }
     this.totalLTT = this.provincialLTT + this.torontoLTT - this.totalRebate;
   }
 
