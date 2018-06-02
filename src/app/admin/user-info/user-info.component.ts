@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'app-user-info',
@@ -12,78 +13,75 @@ export class UserInfoComponent implements OnInit {
   private gridColumnApi;
 
   private columnDefs;
-  private autoGroupColumnDef;
   private rowSelection;
-  private rowGroupPanelShow;
-  private pivotPanelShow;
   private defaultColDef;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private service: AdminService) {
     this.columnDefs = [
       {
-        headerName: 'Athlete',
-        field: 'athlete',
+        headerName: 'First Name',
+        field: 'firstName',
         width: 150,
         filterParams: { newRowsAction: 'keep' },
-        checkboxSelection: function (params) {
-          return params.columnApi.getRowGroupColumns().length === 0;
-        },
-        headerCheckboxSelection: function (params) {
-          return params.columnApi.getRowGroupColumns().length === 0;
-        }
       },
       {
-        headerName: 'Age',
-        field: 'age',
-        width: 90,
+        headerName: 'Last Name',
+        field: 'lastName',
+        width: 150,
         filterParams: { newRowsAction: 'keep' }
       },
       {
-        headerName: 'Country',
-        field: 'country',
+        headerName: 'Email Address',
+        field: 'emailAddress',
+        width: 150,
+        filterParams: { newRowsAction: 'keep' }
+      },
+      {
+        headerName: 'Contact Number',
+        field: 'phoneNumber',
+        width: 150,
+        filterParams: { newRowsAction: 'keep' }
+      },
+      {
+        headerName: 'Address',
+        field: 'address.street',
+        width: 150,
+        filterParams: { newRowsAction: 'keep' }
+      },
+      {
+        headerName: 'City',
+        field: 'address.city',
+        width: 80,
+        filterParams: { newRowsAction: 'keep' }
+      },
+      {
+        headerName: 'Province',
+        field: 'address.province',
+        width: 100,
+        filterParams: { newRowsAction: 'keep' }
+      },
+      {
+        headerName: 'Postal Code',
+        field: 'address.postalCode',
         width: 120,
         filterParams: { newRowsAction: 'keep' }
       },
       {
-        headerName: 'Year',
-        field: 'year',
-        width: 90,
+        headerName: 'Profession',
+        field: 'profession.jobTitle',
+        width: 150,
         filterParams: { newRowsAction: 'keep' }
       },
       {
-        headerName: 'Date',
-        field: 'date',
-        width: 110,
+        headerName: 'Income Type',
+        field: 'profession.type',
+        width: 120,
         filterParams: { newRowsAction: 'keep' }
       },
       {
-        headerName: 'Sport',
-        field: 'sport',
-        width: 110,
-        filterParams: { newRowsAction: 'keep' }
-      },
-      {
-        headerName: 'Gold',
-        field: 'gold',
-        width: 100,
-        filterParams: { newRowsAction: 'keep' }
-      },
-      {
-        headerName: 'Silver',
-        field: 'silver',
-        width: 100,
-        filterParams: { newRowsAction: 'keep' }
-      },
-      {
-        headerName: 'Bronze',
-        field: 'bronze',
-        width: 100,
-        filterParams: { newRowsAction: 'keep' }
-      },
-      {
-        headerName: 'Total',
-        field: 'total',
-        width: 100,
+        headerName: 'Annual Income',
+        field: 'profession.annualIncome',
+        width: 130,
         filterParams: { newRowsAction: 'keep' }
       }
     ];
@@ -98,11 +96,17 @@ export class UserInfoComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    this.http
-      .get('https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json')
+    this.service.
+      getAllRegisteredUserInfo()
       .subscribe(data => {
         params.api.setRowData(data);
       });
+
+    // this.http
+    //   .get('https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json')
+    //   .subscribe(data => {
+    //     params.api.setRowData(data);
+    //   });
   }
 
   ngOnInit() {
