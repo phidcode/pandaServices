@@ -66,11 +66,16 @@ export class OntarioLandTransferTaxComponent implements OnInit {
       this.torontoLTT = (0.02) * (purchasePrice - 400000) + (4475);
       this.provincialRebate = 4000;
       this.torontoRebate = 4475;
-    } else {
+    } else if (purchasePrice > 2000000) {
       this.provincialLTT = (0.025) * (purchasePrice - 2000000) + (36475);
       this.torontoLTT = (0.025) * (purchasePrice - 2000000) + (36475);
       this.provincialRebate = 4000;
       this.torontoRebate = 4475;
+    } else {
+      this.provincialLTT = 0.0;
+      this.torontoLTT = 0.0;
+      this.provincialRebate = 0.0;
+      this.torontoRebate = 0.0;
     }
     if (torontoProperty === false) {
       this.torontoLTT = 0.0;

@@ -7,13 +7,12 @@
 </div>
 
 <h2>Ontario Land Transfer Price Calculator</h2>
-<br>
 <div class="OntLandTransfer align-items-center">
   <form [formGroup]="ontarioLandTransferTaxForm" (ngSubmit)="onSubmit()">
     <h3>Profile:</h3>
     <div class="custom-tab align-items-center">
       <label>Enter the purchase price ($): </label>
-      <input type="text" inputmode="numeric" lang="en-150" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+      <input type="text" inputmode="numeric" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
     </div>
     <div class="custom-tab align-items-center">
       <label>Is the property located in Toronto?</label>
