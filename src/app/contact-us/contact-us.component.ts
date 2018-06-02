@@ -12,8 +12,7 @@ export class ContactUsComponent implements OnInit {
 
   form: FormGroup;
   name: string;
-  email: string;
-  message: string;
+  msg_sent = false;
 
   constructor(private fb: FormBuilder, private af: AngularFirestore) {
     this.createForm();
@@ -26,8 +25,6 @@ export class ContactUsComponent implements OnInit {
       message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
-
-  msg_sent: boolean = false;
 
   onSubmit() {
     this.msg_sent = false;
