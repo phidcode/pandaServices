@@ -2,7 +2,7 @@ import { factory } from '../log4j/configLog4j';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { User } from './data-model';
+import { User, Phone, Address, Profession, Property, Asset } from './data-model';
 import { RegistrationService } from './registration.service';
 
 const log = factory.getLogger('RegistrationComponent');
@@ -30,14 +30,13 @@ export class RegistrationComponent implements OnInit, OnChanges {
     { name: 'I`ll borrow it', selected: false },
   ];
 
-  constructor(private fb: FormBuilder, private rs: RegistrationService) {
+  constructor(private fb: FormBuilder, private service: RegistrationService) {
     this.createForm();
     this.showSteps = [true, false, false];
     this.steps = 0;
   }
 
   ngOnInit() {
-    console.log('ngOnInit');
     this.createForm();
   }
 
@@ -47,13 +46,11 @@ export class RegistrationComponent implements OnInit, OnChanges {
   }
 
   onNext() {
-    console.log('onNext');
     this.steps = Math.min(++this.steps, this.stepsRange[1]);
     this.updateShowSteps();
   }
 
   onPrevious() {
-    console.log('onPrevious');
     this.steps = Math.max(--this.steps, this.stepsRange[0]);
     this.updateShowSteps();
   }
@@ -102,6 +99,12 @@ export class RegistrationComponent implements OnInit, OnChanges {
     });
   }
 
+  revert() { this.rebuildForm(); }
+
+  rebuildForm() {
+    this.registrationForm.reset();
+  }
+
   buildDownPmtSourcesFA() {
     const arr = this.downPmtSources.map(source => {
       return this.fb.control(source.selected);
@@ -114,14 +117,53 @@ export class RegistrationComponent implements OnInit, OnChanges {
   }
 
   onSubmit() {
-    console.log('onSubmit');
     const user = this.prepareSaveUser();
-    // this.rs.addItem(user);
+    this.rebuildForm();
+    this.service.save(user);
   }
 
   prepareSaveUser(): User {
-    const formModel = this.registrationForm.value;
-    console.log(formModel);
-    return null;
+    const form = this.registrationForm.value;
+    const address = form.address;
+    const profession = form.jobInfo;
+    const property = form.property;
+    const propertyAddress = form.mortgageAddress;
+    const propertyInfo = form.mortgageInfo;
+
+    const user = {
+      firstName: form.firstName,
+      lastName: form.lastName,
+      emailAddress: form.myEmailAddress,
+      phoneNumber: form.myPhoneNumber,
+      address: {
+        street: address.streetAddress,
+        city: address.city,
+        province: address.province,
+        postalCode: address.postalCode,
+      },
+      profession: {
+        type: profession.incomeType,
+        jobTitle: profession.title,
+        annualIncome: profession.annualIncome,
+      },
+      properties: {
+        type: property.type,
+        usage: property.usage,
+        address: {
+          street: propertyAddress.streetAddress,
+          city: propertyAddress.city,
+          province: propertyAddress.province,
+          postalCode: propertyAddress.postalCode,
+        },
+        propertyTax: propertyInfo.propertyTax,
+        condoFees: propertyInfo.condoFee,
+      },
+      assets: {
+        numberOfAssets: form.numOfProperties,
+        downPmtAmt: form.downPmtAmt,
+        downPmtSources: [],
+      }
+    };
+    return user;
   }
 }

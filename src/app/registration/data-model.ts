@@ -4,7 +4,7 @@ export class User {
     emailAddress = '';
     phoneNumber: Phone;
     address: Address;
-    job: Job;
+    profession: Profession;
     properties: Property;
     assets: Asset;
 }
@@ -21,16 +21,16 @@ export class Address {
     postalCode = '';
 }
 
-export class Job {
+export class Profession {
     type = '';
-    title = '';
+    jobTitle = '';
     annualIncome = '';
 }
 
 export class Property {
     type = '';
     usage = '';
-    addresses: Address[];
+    address: Address;
     propertyTax = '';
     condoFees = '';
 }
@@ -38,4 +38,5 @@ export class Property {
 export class Asset {
     numberOfAssets = '';
     downPmtAmt = '';
+    downPmtSources = [];
 }

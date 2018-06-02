@@ -16,7 +16,8 @@ export class RegistrationService {
     // this.registrations = this.registrationCollection.valueChanges();
   }
 
-  addItem(user: User) {
+  save(user: User) {
+    console.log('Saving User:', user);
     this.registrationCollection.add(user);
   }
 }
