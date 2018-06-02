@@ -14,6 +14,7 @@ import { ServicesComponent } from './services/services.component';
 import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { FaqComponent } from './faq/faq.component';
 import { SplashComponent } from './splash/splash.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AdviceComponent } from './advice/advice.component';
@@ -34,6 +35,7 @@ const appRoutes: Routes = [
   { path: 'calculator/ontarioLandTransferTax', component: OntarioLandTransferTaxComponent },
   { path: 'contactUs', component: ContactUsComponent },
   { path: 'howItWorks', component: HowItWorksComponent },
+  { path: 'faq', component: FaqComponent },  
   { path: 'privacy', component: PrivacyComponent },
   { path: 'advice', component: AdviceComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
