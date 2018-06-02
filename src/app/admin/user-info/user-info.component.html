@@ -1,0 +1,18 @@
+<ag-grid-angular
+    #agGrid
+    style="width: 100%; height: 90vh;"
+    id="myGrid"
+    class="ag-theme-balham-dark"
+    [columnDefs]="columnDefs"
+    [enableSorting]="true"
+    [enableFilter]="true"
+    [suppressRowClickSelection]="true"
+    [debug]="true"
+    [rowSelection]="rowSelection"
+    [enableColResize]="true"
+    [enableRangeSelection]="true"
+    [paginationAutoPageSize]="true"
+    [pagination]="true"
+    [defaultColDef]="defaultColDef"
+    (gridReady)="onGridReady($event)"
+    ></ag-grid-angular>

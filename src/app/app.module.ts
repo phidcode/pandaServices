@@ -39,6 +39,7 @@ import { ApplynowComponent } from './applynow/applynow.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AdviceComponent } from './advice/advice.component';
 import { FaqComponent } from './faq/faq.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { FaqComponent } from './faq/faq.component';
     FormsModule,
     ReactiveFormsModule,
     RegistrationModule,
+    AdminModule,
     AppRoutingModule
   ],
   exports: [
