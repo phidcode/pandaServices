@@ -14,8 +14,7 @@
                 <div class="form-group">
                   <label for="applyFirstName">First Name
                   </label>
-                  <input type="text" class="form-control" id="applyFirstName" placeholder="Enter your first name" formControlName="firstName"
-                    required>
+                  <input type="text" class="form-control" id="applyFirstName" placeholder="Enter your first name" formControlName="firstName">
                 </div>
               </div>
 
@@ -89,10 +88,10 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 pl-0 custom-dropdown-example">
+                <div class="col-md-6 col-sm-12 custom-dropdown-example">
                   <div class="form-group">
                     <h6 class="text-muted mb-3">Income Type</h6>
-                    <select class="form-control custom-select w-100" formControlName="incomeType" required>
+                    <select class="form-control custom-select w-100" formControlName="incomeType">
                       <option value="">Select Income Type</option>
                       <option *ngFor="let jobIncomeType of jobIncomeTypes" [value]="jobIncomeType">{{jobIncomeType}}</option>
                     </select>
@@ -102,8 +101,11 @@
             </div>
 
             <hr>
-            <button type="button" (click)="onNext()" class="btn btn-danger">Next</button>
-
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <input class="btn btn-primary btn-pill" type="button" (click)="onNext()" value="Next">
+              </div>
+            </div>
           </div>
 
           <div *ngIf="showSteps[1]">
@@ -113,19 +115,19 @@
             </em>
             <div formGroupName="property">
               <div class="row">
-                <div class="col-md-6 pl-0 custom-dropdown-example">
+                <div class="col-md-6 col-sm-12 custom-dropdown-example">
                   <div class="form-group">
                     <h6 class="text-muted mb-3">Property Type</h6>
-                    <select class="form-control custom-select w-100" formControlName="type" required>
+                    <select class="form-control custom-select w-100" formControlName="type">
                       <option value="">Select Property Type</option>
                       <option *ngFor="let propertyType of propertyTypes" [value]="propertyType">{{propertyType}}</option>
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 pl-0 custom-dropdown-example">
+                <div class="col-md-6 col-sm-12 custom-dropdown-example">
                   <div class="form-group">
                     <h6 class="text-muted mb-3">Property Type</h6>
-                    <select class="form-control custom-select w-100" formControlName="usage" required>
+                    <select class="form-control custom-select w-100" formControlName="usage">
                       <option value="">Select Property Type</option>
                       <option *ngFor="let propertyUsage of propertyUsages" [value]="propertyUsage">{{propertyUsage}}</option>
                     </select>
@@ -185,8 +187,14 @@
             </div>
 
             <hr>
-            <button type="button" (click)="onPrevious()" class="btn btn-danger">Back</button>
-            <button type="button" (click)="onNext()" class="btn btn-danger">Next</button>
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <input class="btn btn-primary btn-pill" type="button" (click)="onPrevious()" value="Back">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <input class="btn btn-primary btn-pill" type="button" (click)="onNext()" value="Next">
+              </div>
+            </div>
           </div>
 
           <div *ngIf="showSteps[2]">
@@ -223,10 +231,15 @@
               </div>
             </div>
             <hr>
-            <button type="button" (click)="onPrevious()" class="btn btn-danger">Back</button>
-            <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Apply Now">
+            <div class="row">
+              <div class="col-md-6 col-sm-12">
+                <input class="btn btn-primary btn-pill" type="button" (click)="onPrevious()" value="Back">
+              </div>
+              <div class="col-md-6 col-sm-12">
+                <input class="btn btn-primary btn-pill d-flex ml-auto mr-auto" type="submit" value="Apply Now">
+              </div>
+            </div>
           </div>
-
         </form>
       </div>
     </div>

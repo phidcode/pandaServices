@@ -38,6 +38,8 @@ import { RegistrationModule } from './registration/registration.module';
 import { ApplynowComponent } from './applynow/applynow.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AdviceComponent } from './advice/advice.component';
+import { FaqComponent } from './faq/faq.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -61,7 +63,8 @@ import { AdviceComponent } from './advice/advice.component';
     RegisterComponent,
     ApplynowComponent,
     PrivacyComponent,
-    AdviceComponent
+    AdviceComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,7 @@ import { AdviceComponent } from './advice/advice.component';
     FormsModule,
     ReactiveFormsModule,
     RegistrationModule,
+    AdminModule,
     AppRoutingModule
   ],
   exports: [
