@@ -39,7 +39,7 @@ export class ContactusinfoComponent implements OnInit {
       {
         headerName: 'Create Date',
         field: 'date',
-        width: 150,
+        width: 200,
         filterParams: { newRowsAction: 'keep' }
       }
     ];

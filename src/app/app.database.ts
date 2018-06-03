@@ -1,2 +1,2 @@
 export const messagesCollection = 'messages';
-export const registrationCollection = 'registrations';
+export const registrationCollection = 'registration';
