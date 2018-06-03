@@ -33,7 +33,7 @@ export class ContactusinfoComponent implements OnInit {
       {
         headerName: 'Message',
         field: 'message',
-        width: 150,
+        width: 500,
         filterParams: { newRowsAction: 'keep' }
       },
       {
@@ -54,8 +54,8 @@ export class ContactusinfoComponent implements OnInit {
     this.gridApi = params.api;
     this.gridColumnApi = params.columnApi;
 
-    this.service.
-      getAllRegisteredUserInfo()
+    this.service
+      .getAllMessagesInfo()
       .subscribe(data => {
         params.api.setRowData(data);
       });
