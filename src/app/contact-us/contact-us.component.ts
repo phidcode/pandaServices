@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
+import { messagesCollection } from '../app.database';
 
 
 @Component({
@@ -31,7 +32,7 @@ export class ContactUsComponent implements OnInit {
     const {name, email, message} = this.form.value;
     const date = new Date(Date.now()).toLocaleString();
     const request = {date, name, email, message};
-    this.af.collection('messages').add(request).then();
+    this.af.collection(messagesCollection).add(request).then();
     this.form.reset();
     this.msg_sent = true;
     //setTimeout(function() { this.msg_sent = true; }, 5000);

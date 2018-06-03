@@ -101,12 +101,6 @@ export class UserInfoComponent implements OnInit {
       .subscribe(data => {
         params.api.setRowData(data);
       });
-
-    // this.http
-    //   .get('https://raw.githubusercontent.com/ag-grid/ag-grid-docs/master/src/olympicWinnersSmall.json')
-    //   .subscribe(data => {
-    //     params.api.setRowData(data);
-    //   });
   }
 
   ngOnInit() {
