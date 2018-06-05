@@ -10,3 +10,14 @@
 .section-title{
     color: black
 }
+
+.pink {
+    background: pink;
+    border: 1px solid purple;
+    height:50px;
+  }
+  .orange {
+    background: orange;
+    border: 1px dashed red;
+    height: 50px;
+  }
