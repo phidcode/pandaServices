@@ -1,0 +1,24 @@
+.orange {
+    /* background: orange;
+    border: 5px dashed red; */
+    /* height: 100px; */
+  }
+
+
+  /* img {
+    float: left;
+    width: 33.33%; 
+    padding: 5px;   
+} */
+
+.imgleft {
+    float: left;
+    width: 250px; /* three containers (use 25% for four, and 50% for two, etc) */
+    padding: 5px; /* if you want space between the images */    
+}
+
+.imgright {
+    float: right;
+    width: 250px ; /* three containers (use 25% for four, and 50% for two, etc) */
+    padding: 5px; /* if you want space between the images */    
+}
