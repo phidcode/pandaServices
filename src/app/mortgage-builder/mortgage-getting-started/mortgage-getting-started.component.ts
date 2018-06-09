@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
   templateUrl: './mortgage-getting-started.component.html',
   styleUrls: ['./mortgage-getting-started.component.css']
 })
-export class MortgageGettingStartedComponent implements OnInit {
+export class MortgageGettingStartedComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
 
@@ -15,4 +15,6 @@ export class MortgageGettingStartedComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges() {
+  }
 }

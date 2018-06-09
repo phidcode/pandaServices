@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 })
 export class MortgageBuilderComponent implements OnInit {
 
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
