@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-mortgage-qualification',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mortgage-qualification.component.css']
 })
 export class MortgageQualificationComponent implements OnInit {
+
+  @Input() formGroup: FormGroup;
 
   constructor() { }
 

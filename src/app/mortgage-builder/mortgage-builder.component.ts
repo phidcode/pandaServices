@@ -11,16 +11,26 @@ export class MortgageBuilderComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
     this.firstFormGroup = new FormGroup({
-      firstCtrl: new FormControl(),
+      ctrl: new FormControl(),
     });
 
     this.secondFormGroup = new FormGroup({
-      secondCtrl: new FormControl(),
+      ctrl: new FormControl(),
+    });
+
+    this.thirdFormGroup = new FormGroup({
+      ctrl: new FormControl(),
+    });
+
+    this.fourthFormGroup = new FormGroup({
+      ctrl: new FormControl(),
     });
   }
 

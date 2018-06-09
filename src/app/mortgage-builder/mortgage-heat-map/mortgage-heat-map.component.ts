@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-mortgage-heat-map',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mortgage-heat-map.component.css']
 })
 export class MortgageHeatMapComponent implements OnInit {
+
+  @Input() formGroup: FormGroup;
 
   constructor() { }
 
