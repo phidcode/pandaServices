@@ -5,216 +5,96 @@
     <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land  Transfer Tax</a>
   </div>
 </div>
+<form [formGroup]="affordabilityForm" (ngSubmit)="onSubmit()">
+  <div class="affordability_main_grid">
+    <h3>Annual Income</h3>
+    <div><h3>Living Costs</h3><span>(Check to include the selected field)</span></div>
+    <h3>Debt Payments</h3>
 
-<table>
-    <tr>
-      <th colspan="4"><h3>Annual Income</h3></th>
-      <th colspan="4"><h3>Living Costs</h3></th>
-      <th class="estimate">Estimate for me</th>
-    </tr>
-    <tr>
-      <td><label for="annual_income">Annual Income:</label><br/><span class="clarification">Before Tax</span></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Applicant Income      </span>
-  <span class="rh-content">
-Your gross income before-tax, including any bonuses and supplementary income.      </span>
-</span>
+    <div class="annual_income_grid" formGroupName="annualIncomeForm">
+      <div class="tooltip">
+        Annual Income (Before Tax):
+        <span class="tooltiptext">Your gross income before-tax, including any bonuses and supplementary income.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="annualIncome" id="annualIncome" formControlName="annualIncome">
+      <div class="tooltip">
+        Co-Applicant Income (Before Tax):
+        <span class="tooltiptext">Your co-applicant&#039;s before-tax gross income. Your combined income will be used to calculate the mortgage you can afford.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" id="coApplicantIncome" formControlName="coApplicantIncome">
+    </div>
 
-</td>
-      <td id="annual_income_field" colspan="2"><input type="text" class="text" id="annual_income" tabindex="1" /></td>
+    <div class="living_costs_grid" formGroupName="livingCostsForm">
+      <div class="tooltip">
+        Property Tax:
+        <span class="tooltiptext">An annual tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
+      <select id="propertyTaxMonYr">
+        <!--<option *ngFor="let propertyTaxMonYr of monyrs" [value]="propertyTaxMonYr.id">{{ propertyTaxMonYr.name }}</option>-->
+        <option selected value="month">/Month</option>
+        <option value="year">/Year</option>
+      </select>
+      <input type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax">
+      <div class="tooltip">
+        Condo Fees:
+        <span class="tooltiptext">Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
+      <select id="condoFeesMonYr">
+        <option selected value="month">/Month</option>
+        <option value="year">/Year</option>
+      </select>
+      <input type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees">
+      <div class="tooltip">
+        Heating Costs:
+        <span class="tooltiptext">The total costs associated with heating your home and water. We have used a default estimate based on provincial averages.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
+      <select id="heatingCostsMonYr">
+        <option selected value="month">/Month</option>
+        <option value="year">/Year</option>
+      </select>
+      <input type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts">
+    </div>
 
-      <td><label for="prop_tax">Property Tax:</label></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Property Tax      </span>
-  <span class="rh-content">
-An annual tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.      </span>
-</span>
+    <div class="debt_payments_grid" formGroupName="debtPaymentsForm">
+      <div class="tooltip">
+        Credit Card:
+        <span class="tooltiptext">The average monthly interest owed on outstanding credit card balances. This does not include the balances themselves, only the interest portion.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
+      <select id="creditCardMonYr">
+        <option selected value="month">/Month</option>
+        <option value="year">/Year</option>
+      </select>
+      <div class="tooltip">
+        Car Payment:
+        <span class="tooltiptext">Your monthly leasing or financing outlay on any household vehicles.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
+      <select id="carPaymentMonYr">
+        <option selected value="month">/Month</option>
+        <option value="year">/Year</option>
+      </select>
+      <div class="tooltip">
+        Other Loan Expenses:
+        <span class="tooltiptext">Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.</span>
+      </div>
+      <input type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
+      <select id="otherLoanExpensesMonYr">
+        <option selected value="month">/Month</option>
+        <option value="year">/Year</option>
+      </select>
+    </div>
 
-</td>
-      <td><input type="text" class="text" id="prop_tax" tabindex="6" /></td>
-      <td>
-        <select id="prop-tax-select" style="max-width: 65px" disabled>
-          <option selected value="month">/mo</option>
-          <option value="year">/yr</option>
-        </select>
-      </td>
-      <td class="estimate"><input type="checkbox" id="est_prop_tax" checked="checked" /></td>
-    </tr>
-    <tr>
-      <td><label for="co_income">Co-Applicant Income:</label><br/><span class="clarification">Before Tax</span></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Co-Applicant Income      </span>
-  <span class="rh-content">
-Your co-applicant&#039;s before-tax gross income. Your combined income will be used to calculate the mortgage you can afford.      </span>
-</span>
+    <div></div><button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button><div></div>
+  </div>
+</form>
 
-</td>
-      <td id="co_income_field" colspan="2"><input type="text" class="text" id="co_income" tabindex="2" /></td>
+<hr>
 
-      <td><label for="condo_fees">Condo Fees:</label></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Condo Fees      </span>
-  <span class="rh-content">
-Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.      </span>
-</span>
-
-</td>
-      <td><input type="text" class="text" id="condo_fees" tabindex="7" /></td>
-      <td>
-        <select id="condo-fees-select" style="max-width: 65px" disabled>
-          <option selected value="month">/mo</option>
-          <option value="year">/yr</option>
-        </select>
-      </td>
-      <td class="estimate"><input type="checkbox" id="est_condo_fees" checked="checked" /></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td colspan="2"></td>
-      <td><label for="heating">Heating Costs:</label></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Heating Costs      </span>
-  <span class="rh-content">
-The total costs associated with heating your home and water. We have used a default estimate based on provincial averages.      </span>
-</span>
-
-</td>
-      <td><input type="text" class="text" id="heating" tabindex="8" /></td>
-      <td>
-        <select id="heating-select" style="max-width: 65px" disabled>
-          <option selected value="month">/mo</option>
-          <option value="year">/yr</option>
-        </select>
-      </td>
-      <td class="estimate"><input type="checkbox" id="est_heating" checked="checked" /></td>
-    </tr>
-    <tr>
-      <th colspan="4"><h3>Debt Payments</h3></th>
-    </tr>
-    <tr>
-      <td><label for="credit_card">Credit Card:</label></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Credit Card      </span>
-  <span class="rh-content">
-The average monthly interest owed on outstanding credit card balances. This does not include the balances themselves, only the interest portion.      </span>
-</span>
-
-</td>
-      <td><input type="text" class="text" id="credit_card" tabindex="3" /></td>
-      <td>
-        <select id="credit-card-select" style="max-width: 65px">
-          <option selected value="month">/mo</option>
-          <option value="year">/yr</option>
-        </select>
-      </td>
-      <td class="afford-submit" colspan="5" rowspan="3">
-        <a href="#" tabindex="9"><span>How much can I afford?</span></a>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="car_payment">Car Payment:</label></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Car Payment      </span>
-  <span class="rh-content">
-Your monthly leasing or financing outlay on any household vehicles.      </span>
-</span>
-
-</td>
-      <td><input type="text" class="text" id="car_payment" tabindex="4"/></td>
-      <td>
-        <select id="car-payment-select" style="max-width: 65px">
-          <option selected value="month">/mo</option>
-          <option value="year">/yr</option>
-        </select>
-      </td>
-    </tr>
-    <tr>
-      <td><label for="loans">Other Loan Expenses:</label></td>
-      <td>  <span class="rh-tooltip-container top-right">
-<a class="rh-tooltip" data-trigger="hover" data-placement="top" show-by-default="false"><span class="fa-stack no-hover">
-  <i class="fa fa-circle-thin fa-stack-2x"></i>
-  <i class="fa fa-question fa-stack-1x"></i>
-</span><span class="fa-stack is-hover">
-  <i class="fa fa-circle fa-stack-2x"></i>
-  <i class="fa fa-question fa-inverse fa-stack-1x"></i>
-</span></a>
-  <span class="rh-title">
-Loan Expenses      </span>
-  <span class="rh-content">
-Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.      </span>
-</span>
-
-</td>
-      <td><input type="text" class="text" id="loans" tabindex="5" /></td>
-      <td>
-        <select id="loans-select" style="max-width: 65px">
-          <option selected value="month">/mo</option>
-          <option value="year">/yr</option>
-        </select>
-      </td>
-    </tr>
-  </table>
-
-  <hr>
-
- <h2> How to estimate affordability</h2>
+<h2> How to estimate affordability</h2>
 Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. They take into account your income, monthly housing costs and overall debt load.
 
 The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. For condominiums, P.I.T.H. also includes half of your monthly condominium fees. The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.
