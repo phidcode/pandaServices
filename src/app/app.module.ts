@@ -20,7 +20,6 @@ import { AffordabilityComponent } from './calculator/affordability/affordability
 import { OntarioLandTransferTaxComponent } from './calculator/ontario-land-transfer-tax/ontario-land-transfer-tax.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ServicesComponent } from './services/services.component';
-import { MortgagesComponent } from './mortgages/mortgages.component';
 import { AboutComponent } from './about/about.component';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HeaderComponent } from './nav/header/header.component';
@@ -40,6 +39,11 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { AdviceComponent } from './advice/advice.component';
 import { FaqComponent } from './faq/faq.component';
 import { AdminModule } from './admin/admin.module';
+import { MortgageBuilderComponent } from './mortgage-builder/mortgage-builder.component';
+import { MortgageGettingStartedComponent } from './mortgage-builder/mortgage-getting-started/mortgage-getting-started.component';
+import { MortgageSelectionComponent } from './mortgage-builder/mortgage-selection/mortgage-selection.component';
+import { MortgageHeatMapComponent } from './mortgage-builder/mortgage-heat-map/mortgage-heat-map.component';
+import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qualification/mortgage-qualification.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,6 @@ import { AdminModule } from './admin/admin.module';
     OntarioLandTransferTaxComponent,
     ContactUsComponent,
     ServicesComponent,
-    MortgagesComponent,
     AboutComponent,
     HowItWorksComponent,
     HeaderComponent,
@@ -64,7 +67,12 @@ import { AdminModule } from './admin/admin.module';
     ApplynowComponent,
     PrivacyComponent,
     AdviceComponent,
-    FaqComponent
+    FaqComponent,
+    MortgageBuilderComponent,
+    MortgageGettingStartedComponent,
+    MortgageSelectionComponent,
+    MortgageHeatMapComponent,
+    MortgageQualificationComponent
   ],
   imports: [
     BrowserModule,
