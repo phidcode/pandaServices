@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-mortgage-builder',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MortgageBuilderComponent implements OnInit {
 
+  isLinear = false;
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
   constructor() { }
 
   ngOnInit() {
+    this.firstFormGroup = new FormGroup({
+      firstCtrl: new FormControl(),
+    });
+
+    this.secondFormGroup = new FormGroup({
+      secondCtrl: new FormControl(),
+    });
   }
 
 }

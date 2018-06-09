@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
@@ -6,13 +7,17 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './not-found.component';
 
 import { Router } from '@angular/router';
+
+import { MatStepperModule, MatStepperIntl } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
@@ -76,12 +81,18 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'pandaServices'), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
     FormsModule,
     ReactiveFormsModule,
+
+    MatStepperModule,
+    MatFormFieldModule,
+    MatInputModule,
+
     RegistrationModule,
     AdminModule,
     AppRoutingModule
@@ -89,7 +100,16 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
   exports: [
     FooterComponent
   ],
-  providers: [AuthService, UserService, UserResolver, AuthGuard],
+  providers: [
+    AuthService,
+    UserService,
+    UserResolver,
+    AuthGuard,
+    // {
+    //   provide: MatStepperIntl,
+    //   useClass: MyIntl
+    // },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
