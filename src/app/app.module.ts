@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 import { MatStepperModule, MatStepperIntl } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
+import {MatIconModule} from '@angular/material/icon';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
@@ -92,13 +93,18 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
     MatStepperModule,
     MatFormFieldModule,
     MatInputModule,
-
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule,
     RegistrationModule,
     AdminModule,
     AppRoutingModule
   ],
   exports: [
-    FooterComponent
+    FooterComponent,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatIconModule
   ],
   providers: [
     AuthService,
