@@ -94,6 +94,17 @@
 
 <hr>
 
+<div  class="affordability_result" style="text-align: left">
+  <h3>Max Affordability: <span style="color: red"> {{maxAffordability | currency}} </span> </h3>
+  <h3>Down Payment (20%): <span style="color: red"> {{downPayment | currency}} </span> </h3>
+  <h3>Total Mortgage Payment per month: <span style="color: green"> {{monthlyMortgagePayment | currency}} </span> </h3>
+  <h3>Amortization Period: <span style="color: red"> {{ amortizationPeriod }} years </span> </h3>
+  <h3>Mortgage Rate: <span style="color: red"> {{ mortgageRate * 100 }}% </span> </h3>
+  <h3>Mortgage Type: <span style="color: red"> {{ mortgageType }} </span> </h3>
+</div>
+
+<hr>
+
 <h2> How to estimate affordability</h2>
 Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. They take into account your income, monthly housing costs and overall debt load.
 

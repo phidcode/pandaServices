@@ -33,6 +33,12 @@
     align-items: center;
   }
 
+  .affordability_result{
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    align-items: left;
+  }
+
   .tooltip {
     opacity: initial;
     position: relative;

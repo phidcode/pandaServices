@@ -15,6 +15,15 @@ export class AffordabilityComponent implements OnInit {
   //   {id: '2', name: '/Year'},
   // ];
   submitted = false;
+  GDSR = 0.32;
+  TDSR = 0.40;
+  maxAffordability = 0.0;
+  downPayment = 0.0;
+  downPaymentRate = 0.2;
+  amortizationPeriod = 30;
+  mortgageRate = 0.023;
+  mortgageType = '5-Year Fixed';
+  monthlyMortgagePayment = 0.0;
 
   constructor(private meta: Meta, title: Title, private fb: FormBuilder) {
     title.setTitle('Mortgage Affordability Calculator - MeeFinancial Inc.');
@@ -31,12 +40,12 @@ export class AffordabilityComponent implements OnInit {
           coApplicantIncome: [0.00, [Validators.required]],
         }),
         livingCostsForm: this.fb.group({
-          propertyTax: [0.00, [Validators.required]],
+          propertyTax: [472.0, [Validators.required]],
           // propertyTaxMonYr: ['1', [Validators.required]],
           chkPropertyTax: [false],
-          condoFees: [0.00, [Validators.required]],
+          condoFees: [300.0, [Validators.required]],
           chkCondoFees: [false],
-          heatingCosts: [0.00, [Validators.required]],
+          heatingCosts: [118.0, [Validators.required]],
           chkHeatingCosts: [false],
         }),
         debtPaymentsForm: this.fb.group({
@@ -48,18 +57,70 @@ export class AffordabilityComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.affordabilityForm);
     this.submitted = true;
-    const form = this.affordabilityForm.value;
-    const annualIncomeForm = form.annualIncomeForm;
-    const livingCostsForm = form.livingCostsForm;
-    const debtPaymentsForm = form.debtPaymentsForm;
+    var form = this.affordabilityForm.value;
+    var annualIncomeForm = form.annualIncomeForm;
+    var livingCostsForm = form.livingCostsForm;
+    var debtPaymentsForm = form.debtPaymentsForm;
 
-    const totalMonthlyIncome = (this.convertPriceToValidNum(annualIncomeForm.annualIncome) + this.convertPriceToValidNum(annualIncomeForm.coApplicantIncome)) / 12;
-    const totalLivingCosts = (this.convertPriceToValidNum(livingCostsForm.propertyTax) + this.convertPriceToValidNum(livingCostsForm.condoFees) + this.convertPriceToValidNum(livingCostsForm.heatingCosts));
-    const totalDebtPayments = (this.convertPriceToValidNum(debtPaymentsForm.creditCard) + this.convertPriceToValidNum(debtPaymentsForm.carPayment) + this.convertPriceToValidNum(debtPaymentsForm.otherLoanExpenses));
-    console.log(totalMonthlyIncome, totalLivingCosts, totalDebtPayments);
+    var totalMonthlyIncome = (this.convertPriceToValidNum(annualIncomeForm.annualIncome) + this.convertPriceToValidNum(annualIncomeForm.coApplicantIncome)) / 12;
+    var totalLivingCosts = (this.convertPriceToValidNum(livingCostsForm.propertyTax) + this.convertPriceToValidNum(livingCostsForm.condoFees) + this.convertPriceToValidNum(livingCostsForm.heatingCosts));
+    var totalDebtPayments = (this.convertPriceToValidNum(debtPaymentsForm.creditCard) + this.convertPriceToValidNum(debtPaymentsForm.carPayment) + this.convertPriceToValidNum(debtPaymentsForm.otherLoanExpenses));
+
+    if (totalMonthlyIncome <= 0) {
+      return;
+    }
+
+    if (totalDebtPayments > 0) {
+      this.monthlyMortgagePayment = totalMonthlyIncome * this.TDSR - totalLivingCosts;
+    }
+    else {
+      this.monthlyMortgagePayment = totalMonthlyIncome * this.GDSR - totalLivingCosts - totalDebtPayments;
+    }
+
+    var EffectiveMortgageRate = Math.pow((1 + this.mortgageRate / 2), 2) - 1;
+    this.maxAffordability = this.calculateAffordability(this.monthlyMortgagePayment, this.downPaymentRate, EffectiveMortgageRate/12, this.amortizationPeriod*12);
+    this.downPayment = this.maxAffordability * this.downPaymentRate;
   }
+
+  calculateAffordability(pmt, dp, ir, np) {
+    var maxHomePrice = 0.0;
+    var pvif = Math.pow(1 + ir, np); 
+    if(ir === 0){
+      maxHomePrice = pmt * np
+    }
+    else{
+      maxHomePrice = (pmt * (pvif - 1)) / (ir * pvif);
+    }
+    return maxHomePrice * (1 + dp);
+  }
+
+  PMT(ir, np, pv, fv, type) {
+    /*
+     * ir   - interest rate per month
+     * np   - number of periods (months)
+     * pv   - present value
+     * fv   - future value
+     * type - when the payments are due:
+     *        0: end of the period, e.g. end of month (default)
+     *        1: beginning of period
+     */
+    var pmt, pvif;
+
+    fv || (fv = 0);
+    type || (type = 0);
+
+    if (ir === 0)
+        return -(pv + fv)/np;
+
+    pvif = Math.pow(1 + ir, np);
+    pmt = - ir * pv * (pvif + fv) / (pvif - 1);
+
+    if (type === 1)
+        pmt /= (1 + ir);
+
+    return pmt;
+}
 
   convertPriceToValidNum(price) {
     return parseFloat(price.toString().replace(/[^0-9\.-]+/g, ''));
