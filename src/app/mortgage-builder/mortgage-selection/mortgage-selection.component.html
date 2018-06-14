@@ -1,14 +1,52 @@
 <form [formGroup]="formGroup">
-  <mat-form-field>
-    <input matInput placeholder="Enter here" formControlName="ctrl" required>
-  </mat-form-field>
 
-  <mat-form-field class="MortgageBuilder-form-field">
-    <input matInput type="text" placeholder="Home Price" [(ngModel)]="value"/>
-    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+  Purchase Option:
+  <div class="row">     
+    <div class="col-md-4 ">		
+      <mat-form-field class="MortgageBuilder-form-field-form-field">
+        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" required [(ngModel)]="value"/>
+      </mat-form-field>
+    </div>
+
+    <div class="col-md-4 ">	    
+      <mat-form-field>
+        <mat-select placeholder="Amortization Period" [(value)]="AmortPeriod_selected">
+          <mat-option value="5">5 Years</mat-option>
+          <mat-option value="10">10 Years</mat-option>
+          <mat-option value="15">15 Years</mat-option>
+          <mat-option value="20">20 Years</mat-option>
+          <mat-option value="25">25 Years</mat-option>                    
+        </mat-select>
+      </mat-form-field>
+    </div>     
+  </div>
+
+  <div class="row">     
+    <div class="col-md-4 ">	    
+      <mat-form-field class="MortgageBuilder-form-field-form-field">
+        <input matInput type="text" placeholder="Down Payment $" formControlName="DownPaymentDollar" required [(ngModel)]="value"/>
+      </mat-form-field>      
+    </div>    
+
+    <div class="col-md-4 ">	    
+        <mat-form-field>
+            <mat-select placeholder="Mortgage Payment Frequency" [(value)]="MortPaymentFreq_selected">
+              <mat-option value="Monthly">Monthly</mat-option>
+              <mat-option value="SemiMonthly">Semi-Monthly</mat-option>              
+              <mat-option value="BiWeekly">BiWeekly</mat-option>
+              <mat-option value="Weekly">Weekly</mat-option>                    
+            </mat-select>
+          </mat-form-field>           
+    </div>         
+  </div>
+
+  <div class="row">     
+    <div class="col-md-4 ">	    
+      <mat-form-field class="MortgageBuilder-form-field-form-field">
+        <input matInput type="text" placeholder="Mortgage Amount" formControlName="MortgageAmount" required disabled [(ngModel)]="mortgageValue"/>
+      </mat-form-field>      
+    </div>         
+  </div>
 
   <div>
     <button mat-button matStepperPrevious>Back</button>

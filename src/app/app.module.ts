@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 
 import { MatStepperModule, MatStepperIntl } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule, MatCheckboxModule, MatInputModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatInputModule,MatSelectModule } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -91,6 +91,7 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
     ReactiveFormsModule,
 
     MatStepperModule,
+    MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
@@ -104,6 +105,7 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
     FooterComponent,
     MatButtonModule,
     MatCheckboxModule,
+    MatSelectModule,
     MatIconModule
   ],
   providers: [
