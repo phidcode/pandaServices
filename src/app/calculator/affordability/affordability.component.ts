@@ -72,10 +72,10 @@ export class AffordabilityComponent implements OnInit {
     }
 
     if (totalDebtPayments > 0) {
-      this.monthlyMortgagePayment = totalMonthlyIncome * this.TDSR - totalLivingCosts;
+      this.monthlyMortgagePayment = totalMonthlyIncome * this.TDSR - totalLivingCosts - totalDebtPayments;
     }
     else {
-      this.monthlyMortgagePayment = totalMonthlyIncome * this.GDSR - totalLivingCosts - totalDebtPayments;
+      this.monthlyMortgagePayment = totalMonthlyIncome * this.GDSR - totalLivingCosts;
     }
 
     var EffectiveMortgageRate = Math.pow((1 + this.mortgageRate / 2), 2) - 1;
