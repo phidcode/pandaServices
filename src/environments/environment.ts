@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase : {
+    apiKey: 'AIzaSyAaIwJT2Ej27dCFJoLWIoSBXd1_cnmrXXM',
+    authDomain: 'phi-dream.firebaseapp.com',
+    databaseURL: 'https://phi-dream.firebaseio.com',
+    projectId: 'phi-dream',
+    storageBucket: 'phi-dream.appspot.com',
+    messagingSenderId: '940345732307'
+  }
 };
 
 /*

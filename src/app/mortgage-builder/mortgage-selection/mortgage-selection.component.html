@@ -1,236 +1,124 @@
 <form [formGroup]="formGroup">
-
-  Purchase Option:
-  <div class="row">
-    <div class="col-md-4 ">
+  <mat-card *ngIf="mode=='purchase'">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <mat-card-title>Purchase Option</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" required [(ngModel)]="value" />
+        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" [(ngModel)]="value" />
       </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
       <mat-form-field>
         <mat-select placeholder="Amortization Period" [(value)]="AmortPeriod_selected">
           <mat-option *ngFor="let option of amortizationPeriod" [value]="option.value">{{option.title}}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 ">
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Down Payment $" formControlName="DownPaymentDollar" required [(ngModel)]="value"
-        />
+        <input matInput type="text" placeholder="Down Payment $" formControlName="DownPaymentDollar" [(ngModel)]="value" />
       </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
       <mat-form-field>
         <mat-select placeholder="Mortgage Payment Frequency" [(value)]="MortPaymentFreq_selected">
           <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title}}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 ">
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="mode=='renewal'">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <mat-card-title>Renewal Option</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Mortgage Amount" formControlName="MortgageAmount" required disabled [(ngModel)]="mortgageValue"
+        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" [(ngModel)]="value" />
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field">
+        <input matInput type="text" placeholder="Current Mortgage Balance" formControlName="CurrentMortgageBalance" [(ngModel)]="value"
         />
       </mat-form-field>
-    </div>
-  </div>
-
-  <p></p>
-  Renewal Option:
-  <div class="row">
-    <div class="col-md-4 ">
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" required [(ngModel)]="value" />
+        <input matInput type="text" placeholder="Remaining Amortization" formControlName="RemainingAmort" [(ngModel)]="value" />
       </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Current Mortgage Balance" formControlName="CurrentMortgageBalance" required [(ngModel)]="value"
-        />
-      </mat-form-field>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 ">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Remaining Amortization" formControlName="RemainingAmort" required [(ngModel)]="value"
-        />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
       <mat-form-field>
         <mat-select placeholder="Mortgage Payment Frequency" [(value)]="MortPaymentFreq_selected">
           <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title}}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-  </div>
-
-  <p></p>
-  Refinance Option:
-  <div class="row">
-    <div class="col-md-4 ">
+    </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="mode=='refinance'">
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <mat-card-title>Refinance Option</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" required [(ngModel)]="value" />
+        <input matInput type="text" placeholder="Home Price" formControlName="HomePrice" [(ngModel)]="value" />
       </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Remaining Amortization" formControlName="RemainingAmort" required [(ngModel)]="value"
+        <input matInput type="text" placeholder="Remaining Amortization" formControlName="RemainingAmort" [(ngModel)]="value" />
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field">
+        <input matInput type="text" placeholder="Current Mortgage Balance" formControlName="CurrentMortgageBalance" [(ngModel)]="value"
         />
       </mat-form-field>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 ">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Current Mortgage Balance" formControlName="CurrentMortgageBalance" required [(ngModel)]="value"
-        />
-      </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
       <mat-form-field>
         <mat-select placeholder="Mortgage Payment Frequency" [(value)]="MortPaymentFreq_selected">
           <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title}}</mat-option>
         </mat-select>
       </mat-form-field>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 ">
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Additional Funds Needed" formControlName="AdditionalFundsNeeded" required [(ngModel)]="mortgageValue"
+        <input matInput type="text" placeholder="Additional Funds Needed" formControlName="AdditionalFundsNeeded" [(ngModel)]="mortgageValue"
         />
       </mat-form-field>
-    </div>
-
-    <div class="col-md-4 ">
       <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Mortgage Amount" formControlName="MortgageAmount" required disabled [(ngModel)]="mortgageValue"
+        <input matInput type="text" placeholder="Mortgage Amount" formControlName="MortgageAmount" disabled [(ngModel)]="mortgageValue"
         />
       </mat-form-field>
-    </div>
-  </div>
-
-
+    </mat-card-content>
+  </mat-card>
   <p></p>
-  Other Debts (show up for all)
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="fas fa-list"></i>
+      </div>
+      <mat-card-title>Other Debts (show up for all)</mat-card-title>
+    </mat-card-header>
+    <!-- <mat-card-content> -->
+    <mat-list>
+      <mat-list-item *ngFor="let otherDebt of otherDebts.controls; let i=index">
+        <mat-form-field>
+          <mat-select placeholder="Debt Type" [(value)]="DebtType1">
+            <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="MortgageBuilder-form-field-form-field">
+          <input matInput type="text" placeholder="Debt Amount" formControlName="Debt Amount" [(ngModel)]="value" />
+        </mat-form-field>
+        <mat-form-field class="MortgageBuilder-form-field-form-field">
+          <input matInput type="text" placeholder="Monthly Payment" formControlName="Monthly Amount" [(ngModel)]="value" />
+        </mat-form-field>
+        <!-- <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox> -->
+        <button mat-mini-fab color="warn" (click)="removeOtherDebts(i)">
+          <i class="fas fa-minus"></i>
+        </button>
+      </mat-list-item>
+    </mat-list>
+    <!-- </mat-card-content> -->
+    <mat-card-actions>
+      <button mat-mini-fab color="primary" (click)="addOtherDebts()">
+        <i class="fas fa-plus"></i>
+      </button>
+    </mat-card-actions>
+  </mat-card>
   <p></p>
-
-  <div class="row">
-    <i class="fas fa-minus-circle fa-2x"></i>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field>
-        <mat-select placeholder="Debt Type" [(value)]="DebtType1">
-          <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Debt Amount" formControlName="Debt Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Monthly Payment" formControlName="Monthly Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox>
-    </div>
-  </div>
-
-  <div class="row">
-    <i class="fas fa-minus-circle fa-2x"></i>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field>
-        <mat-select placeholder="Debt Type" [(value)]="DebtType1">
-          <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Debt Amount" formControlName="Debt Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Monthly Payment" formControlName="Monthly Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox>
-    </div>
-  </div>
-
-  <div class="row">
-    <i class="fas fa-minus-circle fa-2x"></i>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field>
-        <mat-select placeholder="Debt Type" [(value)]="DebtType1">
-          <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Debt Amount" formControlName="Debt Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Monthly Payment" formControlName="Monthly Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox>
-    </div>
-  </div>
-
-  <div class="row">
-    <i class="fas fa-minus-circle fa-2x"></i>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field>
-        <mat-select placeholder="Debt Type" [(value)]="DebtType1">
-          <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Debt Amount" formControlName="Debt Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-form-field class="MortgageBuilder-form-field-form-field">
-        <input matInput type="text" placeholder="Monthly Payment" formControlName="Monthly Amount" [(ngModel)]="value" />
-      </mat-form-field>
-    </div>
-    <div class="col-lg-3 align-items-center">
-      <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox>
-    </div>
-  </div>
-  <i class="fas fa-plus-circle fa-3x"></i>
-
-
-
   <!--Divider  -->
   <div>
     <button mat-button matStepperPrevious>Back</button>

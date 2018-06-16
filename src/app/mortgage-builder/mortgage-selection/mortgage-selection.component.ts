@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import { MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 
@@ -73,6 +73,14 @@ const debtType: DebtType[] =
       value: 'otherDebt'
     },
   ];
+
+export class Debt {
+  debtType: string;
+  debtAmount: number;
+  monthlyPayment: number;
+  estMonthlyPatment: number;
+}
+
 @Component({
   selector: 'app-mortgage-selection',
   templateUrl: './mortgage-selection.component.html',
@@ -84,6 +92,8 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   paymentFrequency = paymentFrequency;
   debtType = debtType;
 
+  otherDebitKey = 'otherDebit';
+
   value = '';
   homeprice = '';
   DownPaymentDollar = '';
@@ -92,12 +102,34 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   MortPaymentFreq_selected = 'Monthly';
 
   @Input() formGroup: FormGroup;
+  @Input() mode: string;
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.createForm();
+    this.mode = 'refinance';
   }
 
   ngOnChanges() {
+  }
+
+  createForm() {
+    this.formGroup.addControl(this.otherDebitKey, this.fb.array([]));
+    this.addOtherDebts();
+  }
+
+  get otherDebts(): FormArray {
+    return this.formGroup.get(this.otherDebitKey) as FormArray;
+  }
+
+  addOtherDebts() {
+    this.otherDebts.push(this.fb.group(new Debt()));
+    console.log(this.otherDebts.length);
+  }
+
+  removeOtherDebts(i) {
+    this.otherDebts.removeAt(i);
   }
 }
