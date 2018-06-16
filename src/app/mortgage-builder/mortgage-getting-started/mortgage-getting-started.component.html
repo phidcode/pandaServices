@@ -1,6 +1,53 @@
 <form [formGroup]="formGroup">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <mat-card-title>Let's get started</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <mat-button-toggle-group #selectedPurpose="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let option of purpose" [value]="option.value">
+            {{option.title}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-button-toggle-group #selectedType="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let option of type" [value]="option.value">
+            {{option.title}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-button-toggle-group #selectedTerm="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let option of term" [value]="option.value">
+            {{option.title}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-button-toggle-group #selectedOccupancy="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let option of occupancy" [value]="option.value">
+            {{option.title}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+      <p>
+        <mat-button-toggle-group #selectedCreditScore="matButtonToggleGroup">
+          <mat-button-toggle *ngFor="let option of creditScore" [value]="option.value">
+            {{option.title}}
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+      </p>
+    </mat-card-content>
+    <mat-card-actions></mat-card-actions>
+    <mat-card-footer></mat-card-footer>
+  </mat-card>
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="inner-wrapper mt-auto mb-auto container">
 
       <div class="row">
@@ -80,7 +127,7 @@
           600 to 649
         </div>
         <div class="col-md-2 orange">
-         650 to 699
+          650 to 699
         </div>
         <div class="col-md-2 orange">
           700 to 749
@@ -94,9 +141,9 @@
       </div>
 
     </div>
-  </div>
+  </div> -->
   <p></p>
   <div>
-      <button mat-raised-button matStepperNext color="primary">Next</button>
+    <button mat-raised-button matStepperNext color="primary">Next</button>
   </div>
 </form>
