@@ -15,10 +15,17 @@ import { PageNotFoundComponent } from './not-found.component';
 
 import { Router } from '@angular/router';
 
-import { MatStepperModule, MatStepperIntl } from '@angular/material/stepper';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule, MatCheckboxModule, MatInputModule,MatSelectModule } from '@angular/material';
-import {MatIconModule} from '@angular/material/icon';
+import {
+  MatStepperIntl,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatButtonModule,
+  MatCheckboxModule,
+  MatInputModule,
+  MatSelectModule,
+  MatListModule,
+  MatIconModule
+} from '@angular/material';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
@@ -97,6 +104,7 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
     MatButtonModule,
     MatCheckboxModule,
     MatIconModule,
+    MatListModule,
     RegistrationModule,
     AdminModule,
     AppRoutingModule
