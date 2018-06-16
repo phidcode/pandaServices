@@ -20,13 +20,9 @@
     <app-mortgage-qualification [formGroup]="fourthFormGroup"></app-mortgage-qualification>
   </mat-step>
 
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    You are now done.
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
+  <mat-step [stepControl]="fifthFormGroup">
+    <ng-template matStepLabel>Property</ng-template>
+    <app-mortgage-property [formGroup]="fifthFormGroup"></app-mortgage-property>
   </mat-step>
 </mat-vertical-stepper>
 <app-contact-us></app-contact-us>

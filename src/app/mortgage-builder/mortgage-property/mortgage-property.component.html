@@ -4,23 +4,19 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Personal Information</mat-card-title>
+      <mat-card-title>Property Information</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <p>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="First Name" formControlName="firstName" />
+          <mat-select placeholder="Property Type">
+            <mat-option *ngFor="let option of propertyType" [value]="option">{{option}}</mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="Last Name" formControlName="lastName" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="email" placeholder="Email Address" formControlName="emailAddress" />
-        </mat-form-field>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="tel" placeholder="Contact Number" formControlName="contactNumber" />
+          <mat-select placeholder="Property Usage">
+            <mat-option *ngFor="let option of propertyUsage" [value]="option">{{option}}</mat-option>
+          </mat-select>
         </mat-form-field>
       </p>
       <p>
@@ -41,41 +37,23 @@
           <input matInput type="text" placeholder="Postal Code" formControlName="postalCode" />
         </mat-form-field>
       </p>
-    </mat-card-content>
-    <mat-card-actions></mat-card-actions>
-    <mat-card-footer></mat-card-footer>
-  </mat-card>
-  <p></p>
-  <mat-card>
-    <mat-card-header>
-      <div mat-card-avatar>
-        <i class="fas fa-chevron-right"></i>
-      </div>
-      <mat-card-title>Job Reference</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
       <p>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="Profession" formControlName="jobTitle" />
+          <input matInput type="number" placeholder="Property Tax" formControlName="propertyTax" />
         </mat-form-field>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="Annual Income" formControlName="annualIncome" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <mat-select placeholder="Income Type">
-            <mat-option *ngFor="let option of jobIncomeType" [value]="option">{{option}}</mat-option>
-          </mat-select>
+          <input matInput type="number" placeholder="Condo Fee" formControlName="condoFee" />
         </mat-form-field>
       </p>
     </mat-card-content>
     <mat-card-actions></mat-card-actions>
     <mat-card-footer></mat-card-footer>
   </mat-card>
-  <p></p>
+  <p>
+  </p>
   <div>
     <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button matStepperNext color="primary">Next</button>
+    <!-- <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button> -->
+    <button mat-raised-button matStepperNext color="primary">Complete</button>
   </div>
 </form>

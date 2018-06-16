@@ -58,6 +58,7 @@ import { MortgageGettingStartedComponent } from './mortgage-builder/mortgage-get
 import { MortgageSelectionComponent } from './mortgage-builder/mortgage-selection/mortgage-selection.component';
 import { MortgageHeatMapComponent } from './mortgage-builder/mortgage-heat-map/mortgage-heat-map.component';
 import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qualification/mortgage-qualification.component';
+import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/mortgage-property.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qual
     MortgageGettingStartedComponent,
     MortgageSelectionComponent,
     MortgageHeatMapComponent,
-    MortgageQualificationComponent
+    MortgageQualificationComponent,
+    MortgagePropertyComponent
   ],
   imports: [
     BrowserModule,

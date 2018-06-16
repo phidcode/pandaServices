@@ -13,6 +13,7 @@ export class MortgageBuilderComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
+  fifthFormGroup: FormGroup;
 
   constructor() { }
 
@@ -30,6 +31,10 @@ export class MortgageBuilderComponent implements OnInit {
     });
 
     this.fourthFormGroup = new FormGroup({
+      ctrl: new FormControl(),
+    });
+
+    this.fifthFormGroup = new FormGroup({
       ctrl: new FormControl(),
     });
   }
