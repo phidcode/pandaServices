@@ -7,6 +7,11 @@
 npm install
 npm install firebase angularfire2 --save
 npm install --save typescript-logging
+
+#Carousel library
+npm install jquery --save
+npm install slick-carousel --save
+npm install ngx-slick-carousel --save
 ```
 2. Update `environment.prod.ts` for Production deployment
 3. Update `environment.ts` for Testing deploying
