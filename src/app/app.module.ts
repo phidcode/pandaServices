@@ -28,6 +28,7 @@ import {
   MatListModule,
   MatIconModule
 } from '@angular/material';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
@@ -113,7 +114,8 @@ import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/
     MatListModule,
     RegistrationModule,
     AdminModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlickCarouselModule.forRoot()
   ],
   exports: [
     FooterComponent,
