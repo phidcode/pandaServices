@@ -26,10 +26,15 @@ import {
   MatInputModule,
   MatSelectModule,
   MatListModule,
-  MatIconModule
+  MatIconModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatExpansionModule,
+  MatTableModule,
+  MatBadgeModule
 } from '@angular/material';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
 import { AffordabilityComponent } from './calculator/affordability/affordability.component';
@@ -112,6 +117,11 @@ import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/
     MatCardModule,
     MatIconModule,
     MatListModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatExpansionModule,
+    MatTableModule,
+    MatBadgeModule,
     RegistrationModule,
     AdminModule,
     AppRoutingModule,

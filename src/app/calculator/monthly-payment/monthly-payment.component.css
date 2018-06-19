@@ -1,11 +1,9 @@
-/* table, th, td {
-    border: 1px solid black;
-} */
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
 
-.monthlyPaymentCalc {
-    position: relative;
-    height: 100vh;
-    min-height: 700px;
-    background: url("../../../assets/images/rawpixel-594848-unsplash.jpg") no-repeat center center fixed;
-    background-size: cover;
-  }
+.example-right-align {
+  -moz-appearance: textfield;
+  text-align: center;
+}
