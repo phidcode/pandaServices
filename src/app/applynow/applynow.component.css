@@ -1,0 +1,54 @@
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+  
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column {
+    flex: 30%;
+    max-width: 30%;
+    padding: 0 4px;
+}
+
+.column2 {
+    flex: 70%;
+    max-width: 70%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+  .flex-container {
+    display: flex;
+    /* background-color: DodgerBlue; */
+    justify-content: flex-start;
+    align-items: center;    
+  }
+
+  .flex-container > div {
+    /* background-color: #f1f1f1; */
+    margin: 10px;
+    padding: 0 4px;
+    font-size: 30px;
+  }
+
+/* want to make it one column only when small v Jimmy */
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+    .column2 {
+        flex: 100%;
+        max-width: 100%;
+    }    
+}
