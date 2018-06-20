@@ -109,7 +109,6 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.createForm();
-    this.mode = 'refinance';
   }
 
   ngOnChanges() {
@@ -123,7 +122,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
     this.formGroup.addControl('selectedCurrentMortgageBalance', new FormControl());
     this.formGroup.addControl('selectedRemainingAmortization', new FormControl());
     this.formGroup.addControl('selectedAdditionalFundsNeeded', new FormControl());
-    this.formGroup.addControl('selectedMortgageAmount', new FormControl({value: '', disabled: true}));
+    this.formGroup.addControl('selectedMortgageAmount', new FormControl({ value: '', disabled: true }));
     this.formGroup.addControl(this.otherDebtKey, this.fb.array([]));
     this.addOtherDebts();
   }

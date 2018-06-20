@@ -33,7 +33,7 @@
       </p>
       <p>
         <mat-form-field>
-          <mat-select placeholder="Province">
+          <mat-select placeholder="Province" formControlName="province">
             <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -64,7 +64,7 @@
       </p>
       <p>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <mat-select placeholder="Income Type">
+          <mat-select placeholder="Income Type" formControlName="jobIncomeType">
             <mat-option *ngFor="let option of jobIncomeType" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>

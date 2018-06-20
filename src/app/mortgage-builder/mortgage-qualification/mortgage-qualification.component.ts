@@ -41,8 +41,24 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
   constructor() { }
 
   ngOnInit() {
+    this.createForm();
   }
 
   ngOnChanges() {
+  }
+
+  createForm() {
+    this.formGroup.addControl('firstName', new FormControl());
+    this.formGroup.addControl('lastName', new FormControl());
+    this.formGroup.addControl('emailAddress', new FormControl());
+    this.formGroup.addControl('contactNumber', new FormControl());
+    this.formGroup.addControl('streetAddress', new FormControl());
+    this.formGroup.addControl('city', new FormControl());
+    this.formGroup.addControl('province', new FormControl());
+    this.formGroup.addControl('postalCode', new FormControl());
+
+    this.formGroup.addControl('jobTitle', new FormControl());
+    this.formGroup.addControl('annualIncome', new FormControl());
+    this.formGroup.addControl('jobIncomeType', new FormControl());
   }
 }

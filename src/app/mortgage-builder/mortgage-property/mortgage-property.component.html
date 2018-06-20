@@ -9,12 +9,12 @@
     <mat-card-content>
       <p>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <mat-select placeholder="Property Type">
+          <mat-select placeholder="Property Type" formControlName="propertyType">
             <mat-option *ngFor="let option of propertyType" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <mat-select placeholder="Property Usage">
+          <mat-select placeholder="Property Usage" formControlName="propertyUsage">
             <mat-option *ngFor="let option of propertyUsage" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -29,7 +29,7 @@
       </p>
       <p>
         <mat-form-field>
-          <mat-select placeholder="Province">
+          <mat-select placeholder="Province" formControlName="province">
             <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
           </mat-select>
         </mat-form-field>
