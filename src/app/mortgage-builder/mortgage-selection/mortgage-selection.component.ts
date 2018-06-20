@@ -75,10 +75,10 @@ const debtType: DebtType[] =
   ];
 
 export class Debt {
-  debtType: string;
-  debtAmount: number;
-  monthlyPayment: number;
-  estMonthlyPatment: number;
+  debtType = '';
+  debtAmount = '';
+  monthlyPayment = '';
+  // estMonthlyPatment: number;
 }
 
 @Component({
@@ -92,7 +92,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   paymentFrequency = paymentFrequency;
   debtType = debtType;
 
-  otherDebitKey = 'otherDebit';
+  otherDebtKey = 'otherDebts';
 
   value = '';
   homeprice = '';
@@ -116,17 +116,24 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   }
 
   createForm() {
-    this.formGroup.addControl(this.otherDebitKey, this.fb.array([]));
+    this.formGroup.addControl('selectedHomePrice', new FormControl());
+    this.formGroup.addControl('selectedAmortizationPeriod', new FormControl());
+    this.formGroup.addControl('selectedDownPaymentDollar', new FormControl());
+    this.formGroup.addControl('selectedPaymentFrequency', new FormControl());
+    this.formGroup.addControl('selectedCurrentMortgageBalance', new FormControl());
+    this.formGroup.addControl('selectedRemainingAmortization', new FormControl());
+    this.formGroup.addControl('selectedAdditionalFundsNeeded', new FormControl());
+    this.formGroup.addControl('selectedMortgageAmount', new FormControl({value: '', disabled: true}));
+    this.formGroup.addControl(this.otherDebtKey, this.fb.array([]));
     this.addOtherDebts();
   }
 
   get otherDebts(): FormArray {
-    return this.formGroup.get(this.otherDebitKey) as FormArray;
+    return this.formGroup.get(this.otherDebtKey) as FormArray;
   }
 
   addOtherDebts() {
     this.otherDebts.push(this.fb.group(new Debt()));
-    console.log(this.otherDebts.length);
   }
 
   removeOtherDebts(i) {

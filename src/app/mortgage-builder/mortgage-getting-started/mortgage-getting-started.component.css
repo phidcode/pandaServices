@@ -1,0 +1,16 @@
+mat-button-toggle-group {
+    width: 100%;
+}
+
+mat-button-toggle {
+    /* border: 1px solid #f28628; */
+    /* border-radius: 4px; */
+    /* margin-left: 3px; */
+    /* margin-right:3px; */
+    /* width: 200px; */
+    height: 50px;
+    width: 100px;
+    /* font-family: 'Nunito Semibold', sans-serif; */
+    /* font-size: 14px; */
+    /* font-style: bold; */
+  }

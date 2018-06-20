@@ -55,11 +55,19 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.formGroup.addControl('selectedPurpose', new FormControl());
+    this.formGroup.addControl('selectedType', new FormControl());
+    this.formGroup.addControl('selectedTerm', new FormControl());
+    this.formGroup.addControl('selectedOccupancy', new FormControl());
+    this.formGroup.addControl('selectedCreditScore', new FormControl());
   }
 
   ngOnChanges() {
+    console.log('ngOnChanges');
   }
+
+
 }
