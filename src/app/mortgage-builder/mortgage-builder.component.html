@@ -1,4 +1,4 @@
-<mat-vertical-stepper [linear]="isLinear" #stepper>
+<mat-vertical-stepper [linear]="isLinear" [selectedIndex]="initialStep" #stepper>
 
   <mat-step [stepControl]="firstFormGroup">
     <ng-template matStepLabel>Getting Started</ng-template>

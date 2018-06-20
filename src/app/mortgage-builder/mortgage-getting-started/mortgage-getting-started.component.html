@@ -7,131 +7,40 @@
       <mat-card-title>Let's get started</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <mat-button-toggle-group formControlName="selectedPurpose">
-          <mat-button-toggle *ngFor="let option of purpose" [value]="option.value">
-            {{option.title}}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-        <mat-button-toggle-group formControlName="selectedType">
-          <mat-button-toggle *ngFor="let option of type" [value]="option.value">
-            {{option.title}}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-        <mat-button-toggle-group formControlName="selectedTerm">
-          <mat-button-toggle *ngFor="let option of term" [value]="option.value">
-            {{option.title}}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-        <mat-button-toggle-group formControlName="selectedOccupancy">
-          <mat-button-toggle *ngFor="let option of occupancy" [value]="option.value">
-            {{option.title}}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
-        <mat-button-toggle-group formControlName="selectedCreditScore">
-          <mat-button-toggle *ngFor="let option of creditScore" [value]="option.value">
-            {{option.title}}
-          </mat-button-toggle>
-        </mat-button-toggle-group>
+      <mat-button-toggle-group formControlName="selectedPurpose">
+        Mortgage Purpose:
+        <mat-button-toggle *ngFor="let option of purpose" [value]="option.value">
+          {{option.title}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-button-toggle-group formControlName="selectedType">
+        Mortgage Type:
+        <mat-button-toggle *ngFor="let option of type" [value]="option.value">
+          {{option.title}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-button-toggle-group formControlName="selectedTerm">
+        Mortgage Term:
+        <mat-button-toggle *ngFor="let option of term" [value]="option.value">
+          {{option.title}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-button-toggle-group formControlName="selectedOccupancy">
+        Occupancy:
+        <mat-button-toggle *ngFor="let option of occupancy" [value]="option.value">
+          {{option.title}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      <mat-button-toggle-group formControlName="selectedCreditScore">
+        Credit Score:
+        <mat-button-toggle *ngFor="let option of creditScore" [value]="option.value">
+          {{option.title}}
+        </mat-button-toggle>
+      </mat-button-toggle-group>
     </mat-card-content>
     <mat-card-actions></mat-card-actions>
     <mat-card-footer></mat-card-footer>
   </mat-card>
-
-  <!-- <div class="container">
-    <div class="inner-wrapper mt-auto mb-auto container">
-
-      <div class="row">
-        <div class="col-md-3 orange">
-          Mortgage Purpose:
-        </div>
-        <div class="col-md-3 orange">
-          Purchase
-        </div>
-        <div class="col-md-3 orange">
-          Renewal
-        </div>
-        <div class="col-md-3 orange">
-          Refinance
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-2 orange">
-          Mortgage Type:
-        </div>
-        <div class="col-md-2 orange">
-          Fixed
-        </div>
-        <div class="col-md-2 orange">
-          Variable
-        </div>
-        <div class="col-md-2 orange">
-          Variable-Open
-        </div>
-        <div class="col-md-2 orange">
-          Fixed-Open
-        </div>
-        <div class="col-md-2 orange">
-          I'm Not Sure
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-2 orange">
-          Mortgage Term:
-        </div>
-        <div class="col-md-2 orange">
-          1
-        </div>
-        <div class="col-md-2 orange">
-          2
-        </div>
-        <div class="col-md-2 orange">
-          3
-        </div>
-        <div class="col-md-2 orange">
-          4
-        </div>
-        <div class="col-md-2 orange">
-          5
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4 orange">
-          Occupancy:
-        </div>
-        <div class="col-md-4 orange">
-          Owner-Occupied
-        </div>
-        <div class="col-md-4 orange">
-          Tenant-Occupied
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-2 orange">
-          Credit Score:
-        </div>
-        <div class="col-md-2 orange">
-          600 to 649
-        </div>
-        <div class="col-md-2 orange">
-          650 to 699
-        </div>
-        <div class="col-md-2 orange">
-          700 to 749
-        </div>
-        <div class="col-md-2 orange">
-          750+
-        </div>
-        <div class="col-md-2 orange">
-          I'm Not Sure
-        </div>
-      </div>
-
-    </div>
-  </div> -->
   <p></p>
   <div>
     <button mat-raised-button matStepperNext color="primary">Next</button>

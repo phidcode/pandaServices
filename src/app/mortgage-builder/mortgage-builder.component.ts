@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class MortgageBuilderComponent implements OnInit {
 
   isLinear = true;
+  initialStep = 1;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
