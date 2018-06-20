@@ -114,12 +114,12 @@ export class MonthlyPaymentComponent implements OnInit {
     this.reqTotalMortgage1 = askingPrice - this.calDownPayment1 + this.dftMortgageInsurance1;
     this.reqTotalMortgage2 = askingPrice - this.calDownPayment2 + this.dftMortgageInsurance2;
     this.reqTotalMortgage3 = askingPrice - this.calDownPayment3 + this.dftMortgageInsurance3;
-    var effectiveMortgageRate1 = Math.pow((1 + rateMortgage1 / 2), 2) - 1;
-    var effectiveMortgageRate2 = Math.pow((1 + rateMortgage2 / 2), 2) - 1;
-    var effectiveMortgageRate3 = Math.pow((1 + rateMortgage3 / 2), 2) - 1;
-    this.estMonthlyPayment1 = this.PMT(effectiveMortgageRate1, yrsAmortizationPeriod1*12, this.reqTotalMortgage1, 0, 0)/12;
-    this.estMonthlyPayment2 = this.PMT(effectiveMortgageRate2, yrsAmortizationPeriod2*12, this.reqTotalMortgage2, 0, 0)/12;
-    this.estMonthlyPayment3 = this.PMT(effectiveMortgageRate3, yrsAmortizationPeriod3*12, this.reqTotalMortgage3, 0, 0)/12;
+    var effectiveMortgageRate1 = Math.pow((1 + (rateMortgage1 / 100) / 2), 2) - 1;
+    var effectiveMortgageRate2 = Math.pow((1 + (rateMortgage2 / 100) / 2), 2) - 1;
+    var effectiveMortgageRate3 = Math.pow((1 + (rateMortgage3 / 100) / 2), 2) - 1;
+    this.estMonthlyPayment1 = this.PMT(effectiveMortgageRate1/12, yrsAmortizationPeriod1*12, this.reqTotalMortgage1, 0, 0);
+    this.estMonthlyPayment2 = this.PMT(effectiveMortgageRate2/12, yrsAmortizationPeriod2*12, this.reqTotalMortgage2, 0, 0);
+    this.estMonthlyPayment3 = this.PMT(effectiveMortgageRate3/12, yrsAmortizationPeriod3*12, this.reqTotalMortgage3, 0, 0);
   }
 
   ngOnInit() {
