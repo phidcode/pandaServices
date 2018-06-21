@@ -13,8 +13,8 @@
     align-items: center;
     flex-direction: column;
     box-sizing: border-box;
-    width: 300px;
-    height: 300px;
+    width: auto;
+    height: auto;
 }
 
 .section-header.section-header--underlined {
