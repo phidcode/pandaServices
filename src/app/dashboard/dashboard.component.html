@@ -1,108 +1,51 @@
-
 <div class="welcome d-flex justify-content-center flex-column">
-<div class="container">
-<div class="inner-wrapper mt-auto mb-auto container">
+  <div class="container">
+    <div class="inner-wrapper mt-auto mb-auto container">
 
-  <div class="row">
-    <div class="col-md-3 orange">
-    Mortgage Purpose:
-    </div>
-    <div class="col-md-3 orange">
-    Purchase
-    </div>
-    <div class="col-md-3 orange">
-    Renewal
-    </div>
-    <div class="col-md-3 orange">
-    Refinance
+      <form [formGroup]="formGroup">
+        <mat-card>
+          <mat-card-content>
+            <mat-button-toggle-group formControlName="selectedPurpose">
+              Mortgage Purpose:
+              <mat-button-toggle *ngFor="let option of purpose" [value]="option.value">
+                {{option.title}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-button-toggle-group formControlName="selectedType">
+              Mortgage Type:
+              <mat-button-toggle *ngFor="let option of type" [value]="option.value">
+                {{option.title}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-button-toggle-group formControlName="selectedTerm">
+              Mortgage Term:
+              <mat-button-toggle *ngFor="let option of term" [value]="option.value">
+                {{option.title}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-button-toggle-group formControlName="selectedOccupancy">
+              Occupancy:
+              <mat-button-toggle *ngFor="let option of occupancy" [value]="option.value">
+                {{option.title}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+            <mat-button-toggle-group formControlName="selectedCreditScore">
+              Credit Score:
+              <mat-button-toggle *ngFor="let option of creditScore" [value]="option.value">
+                {{option.title}}
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </mat-card-content>
+          <mat-card-actions></mat-card-actions>
+          <mat-card-footer>
+            <a class="nav-link" routerLink="/mortgage">
+              <button type="button" class="btn btn-primary btn-sm">Mortgage Builder</button>
+            </a>
+          </mat-card-footer>
+        </mat-card>
+      </form>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-2 orange">
-    Mortgage Type:
-    </div>
-    <div class="col-md-2 orange">
-    Fixed
-    </div>
-    <div class="col-md-2 orange">
-    Variable
-    </div>
-    <div class="col-md-2 orange">
-    Variable-Open
-    </div>
-    <div class="col-md-2 orange">
-    Fixed-Open
-    </div>
-    <div class="col-md-2 orange">
-    I'm Not Sure
-    </div>                
-  </div>
-
-  <div class="row">
-      <div class="col-md-2 orange">
-      Mortgage Term:
-      </div>
-      <div class="col-md-2 orange">
-      1
-      </div>
-      <div class="col-md-2 orange">
-      2
-      </div>
-      <div class="col-md-2 orange">
-      3
-      </div>
-      <div class="col-md-2 orange">
-      4
-      </div>
-      <div class="col-md-2 orange">
-      5
-      </div>                
-    </div>  
-
-    <div class="row">
-        <div class="col-md-4 orange">
-        Occupancy:
-        </div>
-        <div class="col-md-4 orange">
-        Owner-Occupied
-        </div>
-        <div class="col-md-4 orange">
-        Tenant-Occupied
-        </div>               
-    </div>  
-
-    <div class="row">
-        <div class="col-md-2 orange">
-        Credit Score:
-        </div>
-        <div class="col-md-2 orange">
-        600 to 649
-        </div>
-        <div class="col-md-2 orange">
-        650 to 699
-        </div>
-        <div class="col-md-2 orange">
-        700 to 749
-        </div>
-        <div class="col-md-2 orange">
-        750+
-        </div>
-        <div class="col-md-2 orange">
-        I'm Not Sure
-        </div>                
-      </div>
-    
-      <div class="row">
-          <div class="col-md-12 orange">   
-          <a class="nav-link" routerLink="/mortgage">
-          <button type="button" class="btn btn-primary btn-sm">Mortgage Builder</button>
-          </a>
-          </div>
-      </div>
-      
-</div>
-</div>
 </div>
 
 
@@ -111,50 +54,62 @@
 
 <!-- Section -->
 <div id="our-services" class="our-services section py-4">
-    <h3 class="section-title text-center my-5">Mee Financial Inc. </h3>
-    <div class="features py-4 mb-4">
-      <div class="container">
-        <div class="row">
-  
-          <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon text-primary mr-3"><i class="fas fa-check-circle"></i></div>
-            <div class="px-4">
-                <h5>Sure Bet</h5>
-                <p><h6>Dedicated Service, Expert Advice.</h6>
-            </div>
+  <h3 class="section-title text-center my-5">Mee Financial Inc. </h3>
+  <div class="features py-4 mb-4">
+    <div class="container">
+      <div class="row">
+
+        <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon text-primary mr-3">
+            <i class="fas fa-check-circle"></i>
           </div>
-  
-          <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon text-primary mr-3"><i class="fas fa-user"></i></div>
-            <div class="px-4">
-                <h5>Honest Advisor</h5>
-                <p><h6>Personalized Mortgage Solution with tailor-made rates for speedy approvals.</h6>
-            </div>
+          <div class="px-4">
+            <h5>Sure Bet</h5>
+            <p>
+              <h6>Dedicated Service, Expert Advice.</h6>
           </div>
         </div>
-  
-        <div class="row">
-          <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon text-primary mr-3"><i class="fas fa-users"></i></div>
-            <div class="px-4">
-                <h5>Professional Partner</h5>
-                <p><h6>Clients First. We put your priorities first.</h6>
-            </div>
+
+        <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon text-primary mr-3">
+            <i class="fas fa-user"></i>
           </div>
-  
-          <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-            <div class="icon text-primary mr-3"><i class="fas fa-star"></i></div>
-            <div class="px-4">
-                <h5>Expert Negotiator</h5>
-                <p><h6>As your mortgage specialist, we offer benefits clients can't find in the banks.</h6>
-            </div>
+          <div class="px-4">
+            <h5>Honest Advisor</h5>
+            <p>
+              <h6>Personalized Mortgage Solution with tailor-made rates for speedy approvals.</h6>
           </div>
-          
         </div>
+      </div>
+
+      <div class="row">
+        <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon text-primary mr-3">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="px-4">
+            <h5>Professional Partner</h5>
+            <p>
+              <h6>Clients First. We put your priorities first.</h6>
+          </div>
+        </div>
+
+        <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+          <div class="icon text-primary mr-3">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="px-4">
+            <h5>Expert Negotiator</h5>
+            <p>
+              <h6>As your mortgage specialist, we offer benefits clients can't find in the banks.</h6>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-  <!-- /  Section -->
+</div>
+<!-- /  Section -->
 
 <!--  Section -->
 <div class="blog section section-invert py-4">
@@ -164,52 +119,54 @@
     <div class="py-4">
       <div class="row">
         <div class="card-deck">
-        <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/ashton-bingham-113943-unsplash.jpg" alt="Card image cap" style="height:150px">
-            <div class="card-body">
-              <h4 class="card-title">Clients First</h4>
-              <p class="card-text">Clients come first. Full Stop. We make it simple to help you get your mortgage.</p>
-              <!-- <a class="btn btn-primary btn-pill" href="#">Read More &rarr;</a> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/rawpixel-589073-unsplash.jpg" alt="Card image cap" style="height:150px">
-            <div class="card-body">
-              <h4 class="card-title">Objective Advice</h4>
-              <p class="card-text">Free advice to help you with your mortgage needs.</p>
-              <!-- <a class="btn btn-primary btn-pill" href="#">Learn More &rarr;</a> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
-          <div class="card mb-4">
-            <img class="card-img-top" src="assets/images/tim-evans-88330-unsplash.jpg" alt="Card image cap" style="height:150px">
-            <div class="card-body">
-              <h4 class="card-title">Open Shelves Platform</h4>
-              <p class="card-text">We are not restricted to one proprietary product. Our open product shelf enables us to find you the most suitable product with the best rate.
-              </p>
-              <!-- <a class="btn btn-primary btn-pill" href="#">Read More &rarr;</a> -->
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
+          <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
             <div class="card mb-4">
-              <img class="card-img-top" src="assets/images/handshake.jpg" alt="Card image cap" style="height:150px">
+              <img class="card-img-top" src="assets/images/ashton-bingham-113943-unsplash.jpg" alt="Card image cap" style="height:150px">
               <div class="card-body">
-                <h4 class="card-title">Professional Partnership</h4>
-                <p class="card-text">We work for you, not the Bank. You can count on our advice being impartial because we don't work for the lender. We always act in our clients' best interests.
+                <h4 class="card-title">Clients First</h4>
+                <p class="card-text">Clients come first. Full Stop. We make it simple to help you get your mortgage.</p>
+                <!-- <a class="btn btn-primary btn-pill" href="#">Read More &rarr;</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
+            <div class="card mb-4">
+              <img class="card-img-top" src="assets/images/rawpixel-589073-unsplash.jpg" alt="Card image cap" style="height:150px">
+              <div class="card-body">
+                <h4 class="card-title">Objective Advice</h4>
+                <p class="card-text">Free advice to help you with your mortgage needs.</p>
+                <!-- <a class="btn btn-primary btn-pill" href="#">Learn More &rarr;</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
+            <div class="card mb-4">
+              <img class="card-img-top" src="assets/images/tim-evans-88330-unsplash.jpg" alt="Card image cap" style="height:150px">
+              <div class="card-body">
+                <h4 class="card-title">Open Shelves Platform</h4>
+                <p class="card-text">We are not restricted to one proprietary product. Our open product shelf enables us to find you the most
+                  suitable product with the best rate.
                 </p>
                 <!-- <a class="btn btn-primary btn-pill" href="#">Read More &rarr;</a> -->
               </div>
             </div>
           </div>
-        
+
+          <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
+            <div class="card mb-4">
+              <img class="card-img-top" src="assets/images/handshake.jpg" alt="Card image cap" style="height:150px">
+              <div class="card-body">
+                <h4 class="card-title">Professional Partnership</h4>
+                <p class="card-text">We work for you, not the Bank. You can count on our advice being impartial because we don't work for the
+                  lender. We always act in our clients' best interests.
+                </p>
+                <!-- <a class="btn btn-primary btn-pill" href="#">Read More &rarr;</a> -->
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>

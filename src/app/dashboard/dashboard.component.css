@@ -1,23 +1,41 @@
-.jumbotron{
+.jumbotron {
     background: url("/assets/images/98184.webp");
     background-size: cover;
 }
 
-.card-text{
+.card-text {
     color: black
 }
 
-.section-title{
+.section-title {
     color: black
 }
 
 .pink {
     background: pink;
     border: 1px solid purple;
-    height:50px;
-  }
-  .orange {
+    height: 50px;
+}
+
+.orange {
     background: orange;
     border: 1px dashed red;
     height: 50px;
-  }
+}
+
+mat-button-toggle-group {
+    width: 100%;
+}
+
+mat-button-toggle {
+    /* border: 1px solid #f28628; */
+    /* border-radius: 4px; */
+    /* margin-left: 3px; */
+    /* margin-right:3px; */
+    /* width: 200px; */
+    height: 50px;
+    width: 100px;
+    /* font-family: 'Nunito Semibold', sans-serif; */
+    /* font-size: 14px; */
+    /* font-style: bold; */
+}

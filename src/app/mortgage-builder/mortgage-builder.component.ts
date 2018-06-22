@@ -19,25 +19,14 @@ export class MortgageBuilderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.firstFormGroup = new FormGroup({
-      ctrl: new FormControl(),
-    });
-
-    this.secondFormGroup = new FormGroup({
-      ctrl: new FormControl(),
-    });
-
-    this.thirdFormGroup = new FormGroup({
-      ctrl: new FormControl(),
-    });
-
-    this.fourthFormGroup = new FormGroup({
-      ctrl: new FormControl(),
-    });
-
-    this.fifthFormGroup = new FormGroup({
-      ctrl: new FormControl(),
-    });
+    this.createForm();
   }
 
+  createForm() {
+    this.firstFormGroup = new FormGroup({});
+    this.secondFormGroup = new FormGroup({});
+    this.thirdFormGroup = new FormGroup({});
+    this.fourthFormGroup = new FormGroup({});
+    this.fifthFormGroup = new FormGroup({});
+  }
 }

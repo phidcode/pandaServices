@@ -1,33 +1,6 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-
-const province = [
-  'Alberta',
-  'Briish Columbia',
-  'Manitoba',
-  'New Brunswick',
-  'Newfoundland and Labrador',
-  'Northwest Territories',
-  'Nova Scotia',
-  'Nunavut',
-  'Ontario',
-  'Prince Edward Island',
-  'Quebec',
-  'Saskatchewan',
-  'Yukon'
-];
-const propertyType = [
-  'Condo or Apartment',
-  'Townhouse',
-  'Semi-Detached',
-  'Detached'
-];
-
-const propertyUsage = [
-  'Principal Residence',
-  'Rental'
-];
-
+import { province, propertyType, propertyUsage } from '../constants';
 @Component({
   selector: 'app-mortgage-property',
   templateUrl: './mortgage-property.component.html',
