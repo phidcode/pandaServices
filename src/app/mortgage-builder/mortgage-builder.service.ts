@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from './data-model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MortgageBuilderService {
 
-  private mortgageData: BehaviorSubject<string>;
+  private mortgageData: BehaviorSubject<Mortgage>;
+  private mortgage: Mortgage;
 
   constructor() { }
 
-  saveMortgageBuilder() {
-
+  saveMortgageBuilder(mortgage: Mortgage) {
+    this.mortgage = mortgage;
   }
 
-  loadMortgageBuilder() {
-
+  loadMortgageBuilder(): Mortgage {
+    return this.mortgage;
   }
 }

@@ -1,6 +1,8 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { province, jobIncomeType } from '../constants';
+import { MortgageBuilderService } from '../mortgage-builder.service';
+import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 @Component({
   selector: 'app-mortgage-qualification',
   templateUrl: './mortgage-qualification.component.html',
@@ -13,7 +15,7 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
 
-  constructor() { }
+  constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
     this.createForm();

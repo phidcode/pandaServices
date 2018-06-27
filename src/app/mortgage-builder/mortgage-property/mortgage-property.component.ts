@@ -1,6 +1,9 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { province, propertyType, propertyUsage } from '../constants';
+import { MortgageBuilderService } from '../mortgage-builder.service';
+import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
+
 @Component({
   selector: 'app-mortgage-property',
   templateUrl: './mortgage-property.component.html',
@@ -14,7 +17,7 @@ export class MortgagePropertyComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
 
-  constructor() { }
+  constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
     this.createForm();
