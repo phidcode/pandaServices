@@ -23,6 +23,7 @@ import { RegisterComponent } from './register/register.component';
 import { UserResolver } from './user/user.resolver';
 import { AuthGuard } from './core/auth.guard';
 import { MortgageBuilderComponent } from './mortgage-builder/mortgage-builder.component';
+import { UploadComponent } from './upload/upload.component';
 
 const appRoutes: Routes = [
   { path: '', component: SplashComponent },
@@ -42,6 +43,7 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
   { path: 'user', component: UserComponent, resolve: { data: UserResolver } },
   { path: 'mortgage', component: MortgageBuilderComponent },
+  { path: 'upload', component: UploadComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 

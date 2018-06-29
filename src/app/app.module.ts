@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -66,6 +67,11 @@ import { MortgageSelectionComponent } from './mortgage-builder/mortgage-selectio
 import { MortgageHeatMapComponent } from './mortgage-builder/mortgage-heat-map/mortgage-heat-map.component';
 import { MortgageQualificationComponent } from './mortgage-builder/mortgage-qualification/mortgage-qualification.component';
 import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/mortgage-property.component';
+import { UploadFileService } from './upload/upload-file.service';
+import { DetailsUploadComponent } from './upload/details-upload/details-upload.component';
+import { FormUploadComponent } from './upload/form-upload/form-upload.component';
+import { ListUploadComponent } from './upload/list-upload/list-upload.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -95,18 +101,22 @@ import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/
     MortgageSelectionComponent,
     MortgageHeatMapComponent,
     MortgageQualificationComponent,
-    MortgagePropertyComponent
+    MortgagePropertyComponent,
+    DetailsUploadComponent,
+    FormUploadComponent,
+    ListUploadComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase, 'pandaServices'), // imports firebase/app needed for everything
+    AngularFireModule.initializeApp(environment.firebase), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    AngularFireDatabaseModule, // import firebase/database only needed for database features
     FormsModule,
     ReactiveFormsModule,
-
     MatStepperModule,
     MatSelectModule,
     MatFormFieldModule,
@@ -139,6 +149,7 @@ import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/
     UserService,
     UserResolver,
     AuthGuard,
+    UploadFileService
     // {
     //   provide: MatStepperIntl,
     //   useClass: MyIntl
