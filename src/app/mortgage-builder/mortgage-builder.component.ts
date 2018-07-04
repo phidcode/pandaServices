@@ -17,6 +17,7 @@ export class MortgageBuilderComponent implements OnInit {
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
   fifthFormGroup: FormGroup;
+  sixthFormGroup: FormGroup;
 
   constructor(private mbs: MortgageBuilderService) { }
 
@@ -52,5 +53,6 @@ export class MortgageBuilderComponent implements OnInit {
     this.thirdFormGroup = new FormGroup({});
     this.fourthFormGroup = new FormGroup({});
     this.fifthFormGroup = new FormGroup({});
+    this.sixthFormGroup = new FormGroup({});
   }
 }

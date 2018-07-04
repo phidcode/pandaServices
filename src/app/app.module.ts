@@ -72,6 +72,7 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { UploadComponent } from './upload/upload.component';
+import { MortgageConsentComponent } from './mortgage-builder/mortgage-consent/mortgage-consent.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { UploadComponent } from './upload/upload.component';
     DetailsUploadComponent,
     FormUploadComponent,
     ListUploadComponent,
-    UploadComponent
+    UploadComponent,
+    MortgageConsentComponent
   ],
   imports: [
     BrowserModule,
