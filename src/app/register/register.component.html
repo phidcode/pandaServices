@@ -7,7 +7,7 @@
           <div class="form-group">
             <label>Email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="Email" formControlName="email" >
-            <span style="color:red" *ngIf="registerForm.hasError('email', 'email') && registerForm.get('email').touched"> Please enter the correct email. </span>
+            <span style="color:red" *ngIf="registerForm.hasError('email') && registerForm.get('email').touched"> Please enter the correct email. </span>
           </div>
           <div class="form-group">
             <label>Password</label>

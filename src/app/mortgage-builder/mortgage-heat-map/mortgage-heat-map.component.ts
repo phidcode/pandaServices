@@ -11,11 +11,17 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
 
+  mortgage: Mortgage;
+
   constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
   }
 
   ngOnChanges() {
+  }
+
+  resetForm() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
   }
 }

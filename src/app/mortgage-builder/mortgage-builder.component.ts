@@ -19,6 +19,8 @@ export class MortgageBuilderComponent implements OnInit {
   fifthFormGroup: FormGroup;
   sixthFormGroup: FormGroup;
 
+  mortgage: Mortgage;
+
   constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
@@ -31,28 +33,15 @@ export class MortgageBuilderComponent implements OnInit {
   createForm() {
     console.log('createForm');
     this.firstFormGroup = new FormGroup({});
-
-    // this.firstFormGroup.addControl('selectedPurpose', new FormControl());
-    // this.firstFormGroup.addControl('selectedType', new FormControl());
-    // this.firstFormGroup.addControl('selectedTerm', new FormControl());
-    // this.firstFormGroup.addControl('selectedOccupancy', new FormControl());
-    // this.firstFormGroup.addControl('selectedCreditScore', new FormControl());
-
-    // const mortgage: Mortgage = this.mbs.loadMortgageBuilder();
-    // if (mortgage !== undefined) {
-    //   const m = this.firstFormGroup.value;
-    //   m.selectedPurpose = mortgage.purpose.type;
-    //   m.selectedType = mortgage.type;
-    //   m.selectedTerm = mortgage.term;
-    //   m.selectedOccupancy = mortgage.occupancy;
-    //   m.selectedCreditScore = mortgage.creditScore;
-    // }
-
-    console.log(this.firstFormGroup.value);
     this.secondFormGroup = new FormGroup({});
     this.thirdFormGroup = new FormGroup({});
     this.fourthFormGroup = new FormGroup({});
     this.fifthFormGroup = new FormGroup({});
     this.sixthFormGroup = new FormGroup({});
+  }
+
+  ngOnChange() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
+    console.log(this.mortgage);
   }
 }

@@ -17,6 +17,8 @@ export class MortgagePropertyComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
 
+  mortgage: Mortgage;
+
   constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
@@ -32,5 +34,33 @@ export class MortgagePropertyComponent implements OnInit {
     this.formGroup.addControl('postalCode', new FormControl());
     this.formGroup.addControl('propertyTax', new FormControl());
     this.formGroup.addControl('condoFee', new FormControl());
+  }
+
+  resetForm() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
+  }
+
+  save() {
+    const mortgageBuilder = this.mortgageBuilder();
+    this.mbs.saveMortgageBuilder(mortgageBuilder);
+    console.log(mortgageBuilder);
+  }
+
+  mortgageBuilder() {
+    const m = this.formGroup.value;
+    const savePropertyInfo: PropertyInfo = {
+      type: m.propertyType,
+      usage: m.propertyUsage,
+      tax: m.propertyTax,
+      fees: m.condoFee,
+      address: {
+        street: m.streetAddress,
+        city: m.city,
+        province: m.province,
+        postalCode: m.postalCode
+      }
+    };
+    Object.assign(this.mortgage.propertyInfo, savePropertyInfo);
+    return this.mortgage;
   }
 }

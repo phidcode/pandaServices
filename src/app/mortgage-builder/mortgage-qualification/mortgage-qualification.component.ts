@@ -15,6 +15,8 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
 
+  mortgage: Mortgage;
+
   constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
@@ -37,5 +39,39 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
     this.formGroup.addControl('jobTitle', new FormControl());
     this.formGroup.addControl('annualIncome', new FormControl());
     this.formGroup.addControl('jobIncomeType', new FormControl());
+  }
+
+  resetForm() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
+  }
+
+  save() {
+    const mortgageBuilder = this.mortgageBuilder();
+    this.mbs.saveMortgageBuilder(mortgageBuilder);
+    console.log(mortgageBuilder);
+  }
+
+  mortgageBuilder() {
+    const m = this.formGroup.value;
+    const savePersonalInfo: PersonalInfo = {
+      firstName: m.firstName,
+      lastName: m.lastName,
+      emailAddress: m.emailAddress,
+      contactNumber: m.contactNumber,
+      address: {
+        street: m.streetAddress,
+        city: m.city,
+        province: m.province,
+        postalCode: m.postalCode
+      }
+    };
+    const saveJobInfo: JobInfo = {
+      profession: m.jobTitle,
+      annualIncome: m.annualIncome,
+      incomeType: m.jobIncomeType
+    };
+    Object.assign(this.mortgage.personalInfo, savePersonalInfo);
+    Object.assign(this.mortgage.jobInfo, saveJobInfo);
+    return this.mortgage;
   }
 }

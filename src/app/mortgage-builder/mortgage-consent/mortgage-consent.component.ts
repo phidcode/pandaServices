@@ -12,8 +12,9 @@ import { MortgageBuilderService } from '../mortgage-builder.service';
 export class MortgageConsentComponent implements OnInit {
 
   @Input() formGroup: FormGroup;
+  mortgage: Mortgage;
 
-  constructor() { }
+  constructor(private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
     this.createForm();
@@ -21,5 +22,20 @@ export class MortgageConsentComponent implements OnInit {
 
   createForm() {
     this.formGroup.addControl('agree', new FormControl());
+  }
+
+  resetForm() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
+  }
+
+  save() {
+    const mortgageBuilder = this.mortgageBuilder();
+    this.mbs.saveMortgageBuilder(mortgageBuilder);
+    console.log(mortgageBuilder);
+  }
+
+  mortgageBuilder() {
+    const m = this.formGroup.value;
+    return this.mortgage;
   }
 }

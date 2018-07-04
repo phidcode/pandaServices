@@ -29,12 +29,15 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   @Input() formGroup: FormGroup;
   @Input() mode: string;
 
+  mortgage: Mortgage;
+
   constructor(
     private fb: FormBuilder,
     private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
     this.createForm();
+    this.resetForm();
   }
 
   ngOnChanges() {
@@ -53,6 +56,12 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
     this.addOtherDebts();
   }
 
+  resetForm() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
+
+    console.log(this.mortgage);
+  }
+
   get otherDebts(): FormArray {
     return this.formGroup.get(this.otherDebtKey) as FormArray;
   }
@@ -63,5 +72,27 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   removeOtherDebts(i) {
     this.otherDebts.removeAt(i);
+  }
+
+  save() {
+    const mortgageBuilder = this.mortgageBuilder();
+    this.mbs.saveMortgageBuilder(mortgageBuilder);
+    console.log(mortgageBuilder);
+  }
+
+  mortgageBuilder() {
+    const m = this.formGroup.value;
+    const savePurpose: Purpose = {
+      type: this.mortgage.purpose.type,
+      homePrice: m.selectedHomePrice,
+      amortizationPeriod: m.selectedAmortizationPeriod,
+      downPayment: m.selectedDownPaymentDollar,
+      paymentFrequency: m.selectedPaymentFrequency,
+      currentMortgageBalance: m.selectedCurrentMortgageBalance,
+      remainingAmortization: m.selectedRemainingAmortization,
+      mortgageAmount: m.selectedMortgageAmount
+    };
+    Object.assign(this.mortgage.purpose, savePurpose);
+    return this.mortgage;
   }
 }

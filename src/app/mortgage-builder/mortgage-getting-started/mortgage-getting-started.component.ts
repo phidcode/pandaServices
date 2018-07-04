@@ -19,6 +19,8 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
 
+  mortgage: Mortgage;
+
   constructor(private fb: FormBuilder, private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
@@ -36,14 +38,14 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
   }
 
   resetForm() {
-    const mortgage: Mortgage = this.mbs.loadMortgageBuilder();
-    if (mortgage !== undefined) {
+    this.mortgage = this.mbs.loadMortgageBuilder();
+    if (this.mortgage !== undefined) {
       this.formGroup.reset({
-        selectedPurpose: mortgage.purpose.type,
-        selectedType: mortgage.type,
-        selectedTerm: mortgage.term,
-        selectedOccupancy: mortgage.occupancy,
-        selectedCreditScore: mortgage.creditScore,
+        selectedPurpose: this.mortgage.purpose.type,
+        selectedType: this.mortgage.type,
+        selectedTerm: this.mortgage.term,
+        selectedOccupancy: this.mortgage.occupancy,
+        selectedCreditScore: this.mortgage.creditScore,
       });
     }
   }
@@ -53,5 +55,27 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
     console.log(this.formGroup.value);
   }
 
+  save() {
+    const mortgageBuilder = this.mortgageBuilder();
+    this.mbs.saveMortgageBuilder(mortgageBuilder);
+    console.log(mortgageBuilder);
+  }
+
+  mortgageBuilder() {
+    const m = this.formGroup.value;
+    const saveMortgage: Mortgage = {
+      purpose: {
+        type: m.selectedPurpose,
+      },
+      type: m.selectedType,
+      term: m.selectedTerm,
+      occupancy: m.selectedOccupancy,
+      creditScore: m.selectedCreditScore,
+    };
+    if (this.mortgage === undefined) {
+      return Object.assign({}, saveMortgage);
+    }
+    return Object.assign(this.mortgage, saveMortgage);
+  }
 
 }

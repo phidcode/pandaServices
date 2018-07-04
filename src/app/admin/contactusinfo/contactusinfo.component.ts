@@ -12,9 +12,9 @@ export class ContactusinfoComponent implements OnInit {
   private gridApi;
   private gridColumnApi;
 
-  private columnDefs;
-  private rowSelection;
-  private defaultColDef;
+  public columnDefs;
+  public rowSelection;
+  public defaultColDef;
 
   constructor(private http: HttpClient, private service: AdminService) {
     this.columnDefs = [
