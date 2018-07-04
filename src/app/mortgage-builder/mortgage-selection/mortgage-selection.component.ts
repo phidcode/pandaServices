@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@ang
 import { MatButtonModule, MatCheckboxModule, MatInputModule, MatSelectModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { amortizationPeriod, paymentFrequency, debtType, Debt } from '../constants';
-
+import { MortgageBuilderService } from '../mortgage-builder.service';
+import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 
 @Component({
   selector: 'app-mortgage-selection',
@@ -29,7 +30,8 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   @Input() mode: string;
 
   constructor(
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private mbs: MortgageBuilderService) { }
 
   ngOnInit() {
     this.createForm();

@@ -148,6 +148,6 @@ import { MortgagePropertyComponent } from './mortgage-builder/mortgage-property/
 })
 export class AppModule {
   constructor(router: Router) {
-    console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
+    // console.log('Routes: ', JSON.stringify(router.config, undefined, 2));
   }
 }
