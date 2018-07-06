@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-//import 'rxjs/add/operator/toPromise';
+// import 'rxjs/add/operator/toPromise';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
@@ -33,7 +33,7 @@ export class UserService {
         displayName: value.name,
         photoURL: user.photoURL
       }).then(res => {
-        resolve(res);
+        // resolve(res);
       }, err => reject(err));
     });
   }

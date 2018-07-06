@@ -137,7 +137,7 @@ import { MortgageConsentComponent } from './mortgage-builder/mortgage-consent/mo
     RegistrationModule,
     AdminModule,
     AppRoutingModule,
-    SlickCarouselModule.forRoot()
+    SlickCarouselModule
   ],
   exports: [
     FooterComponent,

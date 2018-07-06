@@ -31,7 +31,7 @@ export class MortgageBuilderComponent implements OnInit {
   }
 
   createForm() {
-    console.log('createForm');
+    // console.log('createForm');
     this.firstFormGroup = new FormGroup({});
     this.secondFormGroup = new FormGroup({});
     this.thirdFormGroup = new FormGroup({});
@@ -42,6 +42,6 @@ export class MortgageBuilderComponent implements OnInit {
 
   ngOnChange() {
     this.mortgage = this.mbs.loadMortgageBuilder();
-    console.log(this.mortgage);
+    // console.log(this.mortgage);
   }
 }
