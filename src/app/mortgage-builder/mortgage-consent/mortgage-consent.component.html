@@ -21,15 +21,15 @@
       Edward the Confessor, a former English king, canonised as a saint.
     </mat-card-content>
     <hr>
-    <mat-checkbox>I have read and agree to the terms and conditions and privacy & cookies notice.</mat-checkbox>
+    <mat-checkbox formControlName="consent">I have read and agree to the terms and conditions and privacy & cookies notice.</mat-checkbox>
     <p></p>
-    <mat-checkbox>MeFinance may contact you about products and services you may like</mat-checkbox>
+    <!-- <mat-checkbox>MeFinance may contact you about products and services you may like</mat-checkbox> -->
     <mat-card-actions></mat-card-actions>
     <mat-card-footer></mat-card-footer>
   </mat-card>
   <p></p>
   <div>
     <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button matStepperNext color="primary" [disabled]="formGroup.invalid">Create</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="consent()" [disabled]="formGroup.invalid">Create</button>
   </div>
 </form>

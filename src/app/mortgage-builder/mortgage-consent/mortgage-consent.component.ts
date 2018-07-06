@@ -21,16 +21,17 @@ export class MortgageConsentComponent implements OnInit {
   }
 
   createForm() {
-    this.formGroup.addControl('agree', new FormControl('', Validators.required));
+    this.formGroup.addControl('consent', new FormControl('', Validators.required));
   }
 
   resetForm() {
     this.mortgage = this.mbs.loadMortgageBuilder();
   }
 
-  save() {
+  consent() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder();
-    this.mbs.saveMortgageBuilder(mortgageBuilder);
+    this.mbs.saveMortgageBuilderToFireStore(mortgageBuilder);
     console.log(mortgageBuilder);
   }
 

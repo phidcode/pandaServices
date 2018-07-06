@@ -58,7 +58,19 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   resetForm() {
     this.mortgage = this.mbs.loadMortgageBuilder();
-
+    if (this.mortgage !== undefined && this.mortgage.purpose !== undefined) {
+      const info = this.mortgage.purpose;
+      this.formGroup.reset({
+        selectedHomePrice: info.homePrice,
+        selectedAmortizationPeriod: info.amortizationPeriod,
+        selectedDownPaymentDollar: info.downPayment,
+        selectedPaymentFrequency: info.paymentFrequency,
+        selectedCurrentMortgageBalance: info.currentMortgageBalance,
+        selectedRemainingAmortization: info.remainingAmortization,
+        selectedAdditionalFundsNeeded: info.additionalFundsNeeded,
+        selectedMortgageAmount: info.mortgageAmount
+      });
+    }
     console.log(this.mortgage);
   }
 

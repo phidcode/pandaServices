@@ -38,6 +38,19 @@ export class MortgagePropertyComponent implements OnInit {
 
   resetForm() {
     this.mortgage = this.mbs.loadMortgageBuilder();
+    if (this.mortgage !== undefined && this.mortgage.propertyInfo !== undefined) {
+      const info = this.mortgage.propertyInfo;
+      this.formGroup.reset({
+        propertyType: info.type,
+        propertyUsage: info.usage,
+        streetAddress: info.address.street,
+        city: info.address.city,
+        province: info.address.province,
+        postalCode: info.address.postalCode,
+        propertyTax: info.tax,
+        condoFee: info.fees
+      });
+    }
   }
 
   save() {

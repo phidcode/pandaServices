@@ -43,6 +43,27 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
 
   resetForm() {
     this.mortgage = this.mbs.loadMortgageBuilder();
+    if (this.mortgage !== undefined && this.mortgage.personalInfo !== undefined) {
+      const info = this.mortgage.personalInfo;
+      this.formGroup.reset({
+        firstName: info.firstName,
+        lastName: info.lastName,
+        emailAddress: info.emailAddress,
+        contactNumber: info.contactNumber,
+        streetAddress: info.address.street,
+        city: info.address.city,
+        province: info.address.province,
+        postalCode: info.address.postalCode
+      });
+    }
+    if (this.mortgage !== undefined && this.mortgage.jobInfo !== undefined) {
+      const info = this.mortgage.jobInfo;
+      this.formGroup.reset({
+        jobTitle: info.profession,
+        annualIncome: info.annualIncome,
+        jobIncomeType: info.incomeType
+      });
+    }
   }
 
   save() {
