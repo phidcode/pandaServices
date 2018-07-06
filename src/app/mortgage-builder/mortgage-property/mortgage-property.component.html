@@ -54,6 +54,6 @@
   <div>
     <button mat-raised-button matStepperPrevious>Back</button>
     <!-- <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button> -->
-    <button mat-raised-button matStepperNext color="primary" (click)="save()">Next</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">Next</button>
   </div>
 </form>

@@ -44,10 +44,10 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   }
 
   createForm() {
-    this.formGroup.addControl('selectedHomePrice', new FormControl());
+    this.formGroup.addControl('selectedHomePrice', new FormControl('', Validators.required));
     this.formGroup.addControl('selectedAmortizationPeriod', new FormControl());
     this.formGroup.addControl('selectedDownPaymentDollar', new FormControl());
-    this.formGroup.addControl('selectedPaymentFrequency', new FormControl());
+    this.formGroup.addControl('selectedPaymentFrequency', new FormControl('', Validators.required));
     this.formGroup.addControl('selectedCurrentMortgageBalance', new FormControl());
     this.formGroup.addControl('selectedRemainingAmortization', new FormControl());
     this.formGroup.addControl('selectedAdditionalFundsNeeded', new FormControl());
@@ -75,6 +75,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   }
 
   save() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder();
     this.mbs.saveMortgageBuilder(mortgageBuilder);
     console.log(mortgageBuilder);
@@ -92,7 +93,11 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
       remainingAmortization: m.selectedRemainingAmortization,
       mortgageAmount: m.selectedMortgageAmount
     };
-    Object.assign(this.mortgage.purpose, savePurpose);
+    if (this.mortgage.purpose === undefined) {
+      this.mortgage.purpose = savePurpose;
+    } else {
+      Object.assign(this.mortgage.purpose, savePurpose);
+    }
     return this.mortgage;
   }
 }

@@ -21,7 +21,7 @@ export class MortgageConsentComponent implements OnInit {
   }
 
   createForm() {
-    this.formGroup.addControl('agree', new FormControl());
+    this.formGroup.addControl('agree', new FormControl('', Validators.required));
   }
 
   resetForm() {

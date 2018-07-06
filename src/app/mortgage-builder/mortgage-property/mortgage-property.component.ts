@@ -26,14 +26,14 @@ export class MortgagePropertyComponent implements OnInit {
   }
 
   createForm() {
-    this.formGroup.addControl('propertyType', new FormControl());
-    this.formGroup.addControl('propertyUsage', new FormControl());
-    this.formGroup.addControl('streetAddress', new FormControl());
-    this.formGroup.addControl('city', new FormControl());
-    this.formGroup.addControl('province', new FormControl());
-    this.formGroup.addControl('postalCode', new FormControl());
-    this.formGroup.addControl('propertyTax', new FormControl());
-    this.formGroup.addControl('condoFee', new FormControl());
+    this.formGroup.addControl('propertyType', new FormControl('', Validators.required));
+    this.formGroup.addControl('propertyUsage', new FormControl('', Validators.required));
+    this.formGroup.addControl('streetAddress', new FormControl('', Validators.required));
+    this.formGroup.addControl('city', new FormControl('', Validators.required));
+    this.formGroup.addControl('province', new FormControl('', Validators.required));
+    this.formGroup.addControl('postalCode', new FormControl('', Validators.required));
+    this.formGroup.addControl('propertyTax', new FormControl('', Validators.required));
+    this.formGroup.addControl('condoFee', new FormControl('', Validators.required));
   }
 
   resetForm() {
@@ -41,6 +41,7 @@ export class MortgagePropertyComponent implements OnInit {
   }
 
   save() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder();
     this.mbs.saveMortgageBuilder(mortgageBuilder);
     console.log(mortgageBuilder);
@@ -60,7 +61,11 @@ export class MortgagePropertyComponent implements OnInit {
         postalCode: m.postalCode
       }
     };
-    Object.assign(this.mortgage.propertyInfo, savePropertyInfo);
+    if (this.mortgage.propertyInfo === undefined) {
+      this.mortgage.propertyInfo = savePropertyInfo;
+    } else {
+      Object.assign(this.mortgage.propertyInfo, savePropertyInfo);
+    }
     return this.mortgage;
   }
 }

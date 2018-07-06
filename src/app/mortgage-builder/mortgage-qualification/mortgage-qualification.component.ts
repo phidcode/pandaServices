@@ -27,18 +27,18 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
   }
 
   createForm() {
-    this.formGroup.addControl('firstName', new FormControl());
-    this.formGroup.addControl('lastName', new FormControl());
-    this.formGroup.addControl('emailAddress', new FormControl());
-    this.formGroup.addControl('contactNumber', new FormControl());
-    this.formGroup.addControl('streetAddress', new FormControl());
-    this.formGroup.addControl('city', new FormControl());
-    this.formGroup.addControl('province', new FormControl());
-    this.formGroup.addControl('postalCode', new FormControl());
+    this.formGroup.addControl('firstName', new FormControl('', Validators.required));
+    this.formGroup.addControl('lastName', new FormControl('', Validators.required));
+    this.formGroup.addControl('emailAddress', new FormControl('', Validators.required));
+    this.formGroup.addControl('contactNumber', new FormControl('', Validators.required));
+    this.formGroup.addControl('streetAddress', new FormControl('', Validators.required));
+    this.formGroup.addControl('city', new FormControl('', Validators.required));
+    this.formGroup.addControl('province', new FormControl('', Validators.required));
+    this.formGroup.addControl('postalCode', new FormControl('', Validators.required));
 
-    this.formGroup.addControl('jobTitle', new FormControl());
-    this.formGroup.addControl('annualIncome', new FormControl());
-    this.formGroup.addControl('jobIncomeType', new FormControl());
+    this.formGroup.addControl('jobTitle', new FormControl('', Validators.required));
+    this.formGroup.addControl('annualIncome', new FormControl('', Validators.required));
+    this.formGroup.addControl('jobIncomeType', new FormControl('', Validators.required));
   }
 
   resetForm() {
@@ -46,6 +46,7 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
   }
 
   save() {
+    this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder();
     this.mbs.saveMortgageBuilder(mortgageBuilder);
     console.log(mortgageBuilder);
@@ -70,8 +71,16 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
       annualIncome: m.annualIncome,
       incomeType: m.jobIncomeType
     };
-    Object.assign(this.mortgage.personalInfo, savePersonalInfo);
-    Object.assign(this.mortgage.jobInfo, saveJobInfo);
+    if (this.mortgage.personalInfo === undefined) {
+      this.mortgage.personalInfo = savePersonalInfo;
+    } else {
+      Object.assign(this.mortgage.personalInfo, savePersonalInfo);
+    }
+    if (this.mortgage.jobInfo === undefined) {
+      this.mortgage.jobInfo = saveJobInfo;
+    } else {
+      Object.assign(this.mortgage.jobInfo, saveJobInfo);
+    }
     return this.mortgage;
   }
 }
