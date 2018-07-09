@@ -4,7 +4,7 @@
 
 .how-it-works {
     text-align: center;
-    padding: 15px 20px;
+    padding: 20px 20px;
 }
 
 .how-it-works__step {
@@ -14,7 +14,7 @@
     flex-direction: column;
     box-sizing: border-box;
     width: auto;
-    height: auto;
+    height: 300px;
 }
 
 .section-header.section-header--underlined {
@@ -28,7 +28,7 @@
     text-rendering: optimizeLegibility;
     display: inline-block;
     font-size: 28px;
-    margin: 13px auto;
+    margin: 30px auto;
     padding: 6px 12px;
 }
 
