@@ -1,12 +1,135 @@
 <div class="welcome d-flex justify-content-center flex-column">
-  <div class="container">
-    <h1 class="welcome-heading display-4 text-white">MeeFinancial - DIY Mortgage Backed by a Full Service Team</h1>
-    <p class="text-white">Closing costs can be substantial, from lawyer fees to land transfer taxes. </p>
-    <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land  Transfer Tax</a>
+  <div class="inner-wrapper mt-auto mb-auto container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="welcome-heading display-4 text-white">MeeFinancial </h1>
+        <h1 class="welcome-heading display-8 text-white">- DIY Mortgage Backed by a Full Service Team</h1>
+        <p class="text-white">Closing costs can be substantial, from lawyer fees to land transfer taxes. </p>
+        <!-- <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land Transfer Tax</a> -->
+      </div>
+    </div>
   </div>
 </div>
+
 <form [formGroup]="affordabilityForm" (ngSubmit)="onSubmit()">
-  <div class="affordability_main_grid">
+  <div class="row" style="text-align: center; margin: 5px">
+    <div class="col-12 col-lg-3 d-flex" formGroupName="annualIncomeForm">
+      <div class="row">
+        <div class="col-12">
+          <h3>Annual Income</h3>
+          <span></span>
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col-8 tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Annual Income (Before Tax):
+            <span class="tooltiptext">Your gross income before-tax, including any bonuses and supplementary income.</span>
+          </div>
+          <input style="margin-top: auto; margin-bottom: auto;" class="col-4" type="text" inputmode="numeric" min="0.00" name="annualIncome" id="annualIncome" formControlName="annualIncome">
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col-8 tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Co-Applicant Income (Before Tax):
+            <span class="tooltiptext">Your co-applicant&#039;s before-tax gross income. Your combined income will be used to calculate the mortgage you can afford.</span>
+          </div>
+          <input style="margin-top: auto; margin-bottom: auto;" class="col-4" type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" id="coApplicantIncome" formControlName="coApplicantIncome">
+        </div>
+        <div class="col-12 d-flex"> </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-5 d-flex" formGroupName="livingCostsForm">
+      <div class="row">
+        <div class="col-12">
+          <h3>Living Costs</h3>
+          <span>(Check to include the selected field)</span>
+        </div>
+        <div class="col-12 d-flex align-items-stretch">
+          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Property Tax:
+            <span class="tooltiptext">An annual tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.</span>
+          </div>
+          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
+          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr">
+            <option selected value="month">/Month</option>
+            <option value="year">/Year</option>
+          </select>
+          <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax">
+        </div>
+        <div class="col-12 d-flex align-items-stretch">
+          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Condo Fees:
+            <span class="tooltiptext">Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.</span>
+          </div>
+          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
+          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr">
+            <option selected value="month">/Month</option>
+            <option value="year">/Year</option>
+          </select>
+          <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees">
+        </div>
+        <div class="col-12 d-flex align-items-stretch">
+          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Heating Costs:
+            <span class="tooltiptext">The total costs associated with heating your home and water. We have used a default estimate based on provincial averages.</span>
+          </div>
+          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
+          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr">
+            <option selected value="month">/Month</option>
+            <option value="year">/Year</option>
+          </select>
+          <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-4 d-flex" formGroupName="debtPaymentsForm">
+      <div class="row">
+        <div class="col-12">
+          <h3>Debt Payments</h3>
+          <span></span>
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Credit Card:
+            <span class="tooltiptext">The average monthly interest owed on outstanding credit card balances. This does not include the balances themselves, only the interest portion.</span>
+          </div>
+          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
+          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr">
+            <option selected value="month">/Month</option>
+            <option value="year">/Year</option>
+          </select>
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Car Payment:
+            <span class="tooltiptext">Your monthly leasing or financing outlay on any household vehicles.</span>
+          </div>
+          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
+          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr">
+            <option selected value="month">/Month</option>
+            <option value="year">/Year</option>
+          </select>
+        </div>
+        <div class="col-12 d-flex">
+          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Other Loan Expenses:
+            <span class="tooltiptext">Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.</span>
+          </div>
+          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
+          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr">
+            <option selected value="month">/Month</option>
+            <option value="year">/Year</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-12" style="margin-top: 1rem">
+      <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button>
+    </div>
+  </div>
+
+  <!-- <div class="affordability_main_grid">
     <h3>Annual Income</h3>
     <div><h3>Living Costs</h3><span>(Check to include the selected field)</span></div>
     <h3>Debt Payments</h3>
@@ -31,7 +154,6 @@
       </div>
       <input type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
       <select id="propertyTaxMonYr">
-        <!--<option *ngFor="let propertyTaxMonYr of monyrs" [value]="propertyTaxMonYr.id">{{ propertyTaxMonYr.name }}</option>-->
         <option selected value="month">/Month</option>
         <option value="year">/Year</option>
       </select>
@@ -89,18 +211,49 @@
     </div>
 
     <div></div><button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button><div></div>
-  </div>
+  </div> -->
 </form>
 
 <hr>
 
-<div  class="affordability_result" style="text-align: left">
+<!-- <div class="affordability_result" style="text-align: left">
   <h3>Max Affordability: <span style="color: red"> {{maxAffordability | currency}} </span> </h3>
   <h3>Down Payment (20%): <span style="color: red"> {{downPayment | currency}} </span> </h3>
   <h3>Total Mortgage Payment per month: <span style="color: green"> {{monthlyMortgagePayment | currency}} </span> </h3>
   <h3>Amortization Period: <span style="color: red"> {{ amortizationPeriod }} years </span> </h3>
   <h3>Mortgage Rate: <span style="color: red"> {{ mortgageRate * 100 }}% </span> </h3>
   <h3>Mortgage Type: <span style="color: red"> {{ mortgageType }} </span> </h3>
+</div> -->
+
+<div class="row" style="text-align: left; margin: 5px">
+  <div class="col-lg-6 col-12">
+    <div class="row">
+      <h4 class="col-8">Max Affordability: </h4> 
+      <h4 class="col-4" style="color: red"> {{maxAffordability | currency}} </h4>
+    </div>
+    <div class="row">
+      <h4 class="col-8">Down Payment (20%): </h4>
+      <h4 class="col-4" style="color: red"> {{downPayment | currency}} </h4>
+    </div>
+    <div class="row">
+      <h4 class="col-8">Total Mortgage Payment per month: </h4>
+      <h4 class="col-4" style="color: green"> {{monthlyMortgagePayment | currency}} </h4>
+    </div>
+  </div>
+  <div class="col-lg-5 col-12">
+    <div class="row">
+      <h4 class="col-8">Amortization Period: </h4>
+      <h4 class="col-4" style="color: red"> {{ amortizationPeriod }} years </h4>
+    </div>
+    <div class="row">
+      <h4 class="col-8">Mortgage Rate: </h4>
+      <h4 class="col-4" style="color: red"> {{ mortgageRate * 100 }}% </h4>
+    </div>
+    <div class="row">
+      <h4 class="col-8">Mortgage Type: </h4>
+      <h4 class="col-4" style="color: red"> {{ mortgageType }} </h4>
+    </div>
+  </div>
 </div>
 
 <hr>
