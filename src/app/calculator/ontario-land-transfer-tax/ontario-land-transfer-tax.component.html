@@ -1,112 +1,171 @@
 <div class="welcome d-flex justify-content-center flex-column">
-  <div class="container">
-    <h1 class="welcome-heading display-4 text-white">MeeFinancial - DIY Mortgage Backed by a Full Service Team</h1>
-    <p class="text-white">Closing costs can be substantial, from lawyer fees to land transfer taxes. </p>
-    <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land  Transfer Tax</a>
+  <div class="inner-wrapper mt-auto mb-auto container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="welcome-heading display-4 text-white">MeeFinancial </h1>
+        <h1 class="welcome-heading display-8 text-white">- DIY Mortgage Backed by a Full Service Team</h1>
+        <p class="text-white">Closing costs can be substantial, from lawyer fees to land transfer taxes. </p>
+        <!-- <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land Transfer Tax</a> -->
+      </div>
+    </div>
   </div>
 </div>
 
-<h2>Ontario Land Transfer Price Calculator</h2>
-<div class="OntLandTransfer align-items-center">
-  <form [formGroup]="ontarioLandTransferTaxForm" (ngSubmit)="onSubmit()">
-    <h3>Profile:</h3>
-    <div class="custom-tab align-items-center">
-      <label>Enter the purchase price ($): </label>
-      <input type="text" inputmode="numeric" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+<div class="container">
+  <h2>Ontario Land Transfer Price Calculator</h2>
+  <!-- <div class="OntLandTransfer align-items-center"> -->
+  <div class="row">
+    <div class="col-lg-6 col-12">
+      <form [formGroup]="ontarioLandTransferTaxForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <h3 class="col-12">Profile:</h3>
+          <div class="col-12">
+            <label class="col-9">Enter the purchase price ($): </label>
+            <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+          </div>
+          <div class="col-12">
+            <label class="col-9">Is the property located in Toronto?</label>
+            <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
+          </div>
+          <div class="col-12">
+            <label class="col-9">Are you a first time home buyer?</label>
+            <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
+          </div>
+          <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
+            <button class="col-6" type="submit" style="width: 100%; display: block" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
+          </div>
+        </div>
+        <!-- <h3>Profile:</h3>
+        <div class="custom-tab align-items-center">
+          <label>Enter the purchase price ($): </label>
+          <input type="text" inputmode="numeric" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+        </div>
+        <div class="custom-tab align-items-center">
+          <label>Is the property located in Toronto?</label>
+          <input type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
+        </div>
+        <div class="custom-tab align-items-center">
+          <label>Are you a first time home buyer?</label>
+          <input type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
+        </div>
+        <div class="custom-tab align-items-center">
+          <div></div>
+          <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
+        </div> -->
+      </form>
     </div>
-    <div class="custom-tab align-items-center">
-      <label>Is the property located in Toronto?</label>
-      <input type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
-    </div>
-    <div class="custom-tab align-items-center">
-      <label>Are you a first time home buyer?</label>
-      <input type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
-    </div>
-    <div class="custom-tab align-items-center">
-      <div></div>
-      <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
-    </div>
-  </form>
-  <div>
-    <h3>Results:</h3>
-    <div class="custom-tab align-items-center" style="color: red">
-      <label>Provincial Land Transfer Tax Amount: </label>
-      <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
-    </div>
-    <div class="custom-tab align-items-center" style="color: red">
-      <label>Toronto Land Transfer Tax Amount: </label>
-      <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
-    </div>
-    <div class="custom-tab align-items-center" style="color: green">
-      <label>Rebate: </label>
-      <div><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
-    </div>
-    <div class="custom-tab align-items-center" style="color: blue">
-      <label>Total Land Transfer Tax Amount: </label>
-      <div><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
+    <!-- <div>
+      <h3>Results:</h3>
+      <div class="custom-tab align-items-center" style="color: red">
+        <label>Provincial Land Transfer Tax Amount: </label>
+        <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
+      </div>
+      <div class="custom-tab align-items-center" style="color: red">
+        <label>Toronto Land Transfer Tax Amount: </label>
+        <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
+      </div>
+      <div class="custom-tab align-items-center" style="color: green">
+        <label>Rebate: </label>
+        <div><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
+      </div>
+      <div class="custom-tab align-items-center" style="color: blue">
+        <label>Total Land Transfer Tax Amount: </label>
+        <div><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
+      </div>
+    </div> -->
+    <div class="col-lg-6 col-12">
+      <div class="row">
+        <h3 class="col-12">Results:</h3>
+        <div class="col-12" style="color: red">
+          <div class="row">
+            <label class="col-8">Provincial Land Transfer Tax Amount: </label>
+            <div class="col-4"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
+          </div>
+        </div>
+        <div class="col-12" style="color: red">
+          <div class="row">
+            <label class="col-8">Toronto Land Transfer Tax Amount: </label>
+            <div class="col-4"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
+          </div>
+        </div>
+        <div class="col-12" style="color: green">
+          <div class="row">
+            <label class="col-8">Rebate: </label>
+            <div class="col-4"><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
+          </div>
+        </div>
+        <div class="col-12" style="color: blue">
+          <div class="row">
+            <label class="col-8">Total Land Transfer Tax Amount: </label>
+            <div class="col-4"><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <hr>
-<h2>Land transfer tax rates in Ontario – Updated in 2017</h2>
-<p>
-The Ontario land transfer tax (LTT) is a marginal tax and each portion of your home’s value is taxed at a unique rate. These tax rates are as follows:</p>
-<table class="rh-table text">
-  <thead>
-    <tr>
-      <th>
-        <b>Purchase price of home</b>
-      </th>
-      <th>
-        <b>Land title transfer fee</b>
-      </th>
-      <th>
-        <b>First-time homebuyer rebate</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Up to and including $55,000</td>
-      <td>0.5%</td>
-      <td>Full tax rebate</td>
-    </tr>
-    <tr>
-      <td>$55,000.01 to $250,000.00</td>
-      <td>1.0%</td>
-      <td>Full tax rebate</td>
-    </tr>
-    <tr>
-      <td>$250,000.01 to $368,333</td>
-      <td>1.5%</td>
-      <td>Full tax rebate</td>
-    </tr>
-    <tr>
-      <td>$368,334 to $400,000.00</td>
-      <td>1.5%</td>
-      <td>$4,000 tax rebate</td>
-    </tr>
-    <tr>
-      <td>$400,000.00 to $2,000,000.00</td>
-      <td>2.0%</td>
-      <td>$4,000 tax rebate</td>
-    </tr>
-    <tr>
-      <td>Over $2,000,000.00</td>
-      <td>2.5%</td>
-      <td>$4,000 tax rebate</td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="container">
+  <h2>Land transfer tax rates in Ontario – Updated in 2017</h2>
+  <p>The Ontario land transfer tax (LTT) is a marginal tax and each portion of your home’s value is taxed at a unique rate. These tax rates are as follows:</p>
+  <table class="rh-table text" cellpadding="10" cellspacing="10">
+    <thead>
+      <tr>
+        <th>
+          <b>Purchase price of home</b>
+        </th>
+        <th>
+          <b>Land title transfer fee</b>
+        </th>
+        <th>
+          <b>First-time homebuyer rebate</b>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Up to and including $55,000</td>
+        <td>0.5%</td>
+        <td>Full tax rebate</td>
+      </tr>
+      <tr>
+        <td>$55,000.01 to $250,000.00</td>
+        <td>1.0%</td>
+        <td>Full tax rebate</td>
+      </tr>
+      <tr>
+        <td>$250,000.01 to $368,333</td>
+        <td>1.5%</td>
+        <td>Full tax rebate</td>
+      </tr>
+      <tr>
+        <td>$368,334 to $400,000.00</td>
+        <td>1.5%</td>
+        <td>$4,000 tax rebate</td>
+      </tr>
+      <tr>
+        <td>$400,000.00 to $2,000,000.00</td>
+        <td>2.0%</td>
+        <td>$4,000 tax rebate</td>
+      </tr>
+      <tr>
+        <td>Over $2,000,000.00</td>
+        <td>2.5%</td>
+        <td>$4,000 tax rebate</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <hr>
 
-<h2>Ontario land transfer tax rebate in Ontario</h2>
-For first time home buyers, there is a maximum $4,000 tax rebate on the Ontario land transfer tax. Based on Ontario’s land transfer tax rates, this refund will cover the full tax for homes up to $368,333. For homes purchased for more than $368,333, buyers will receive the full $4,000 rebate and pay the remaining LTT balance.
-
-<p>
-For Example:</p>
-<table class="rh-table text">
+<div class="container">
+  <h2>Ontario land transfer tax rebate in Ontario</h2>
+  <p>For first time home buyers, there is a maximum $4,000 tax rebate on the Ontario land transfer tax. Based on Ontario’s land transfer tax rates, this refund will cover the full tax for homes up to $368,333. For homes purchased for more than $368,333, buyers will receive the full $4,000 rebate and pay the remaining LTT balance.</p>
+  <p>For Example:</p>
+  <table class="rh-table text" cellpadding="10" cellspacing="10">
     <thead>
       <tr>
         <th>
@@ -150,48 +209,54 @@ For Example:</p>
       </tr>
     </tbody>
   </table>
-  <hr>
+</div>
 
-
-<h2>First-time home buyer eligibility in Ontario</h2>
-<ul>
-  <li>You must be a Canadian citizen or permanent resident of Canada.</li>
-  <li>You must be 18 years or older.</li>
-  <li>You must occupy the home within 9 months of purchase.</li>
-  <li>You cannot have owned a home or interest in a home anywhere in the world.</li>
-  <li>Your spouse cannot have owned a home while being your spouse (but may be a previous home owner).</li>
-  <li>If the home is newly constructed, it must be eligible for home warranty.</li>
-  <li>Home buyers must apply for the refund within 18 months of purchase.</li>
-</ul>
-  <hr>
-<h2>First Time Home Buyer Rebate Application</h2>
-
-<p>
-Taxpayers can claim an immediate refund when registering the land transfer papers and paying their taxes. Generally, on closing, your lawyer will claim the tax rebate on your behalf.
-
-If the rebate is not claimed at the time of registration, the full tax is paid and a refund claim can be made to the Ministry of Finance within 18 months.
-
-Information required for the application include:
-</p>
-<ul>
-  <li>
-    A completed Ontario Land Transfer Tax Refund Affidavit for First-Time Purchasers of Eligible homes.
-  </li>
-  <li>
-    A copy of the registered land transfer deed.
-  </li>
-  <li>
-    A copy of the agreement of purchase and sale
-  </li>
-  <li>
-    A copy of a document that provides proof of residence, such as a driver’s license, telephone/cable bills, etc.
-  </li>
-</ul>
 <hr>
 
-References and Notes:
-<span><a href="http://www.fin.gov.on.ca/en/bulletins/ltt/2_2005.html">Calculating Land Transfer Tax, Ontario Ministry of Finance</a></span>
-<p><a href="http://www.fin.gov.on.ca/en/bulletins/ltt/1_2008.html">Land Transfer Tax Refunds for First-Time Homebuyers, Ontario Ministry of Finance</a></p>
+<div class="container">
+  <h2>First-time home buyer eligibility in Ontario</h2>
+  <ul>
+    <li>You must be a Canadian citizen or permanent resident of Canada.</li>
+    <li>You must be 18 years or older.</li>
+    <li>You must occupy the home within 9 months of purchase.</li>
+    <li>You cannot have owned a home or interest in a home anywhere in the world.</li>
+    <li>Your spouse cannot have owned a home while being your spouse (but may be a previous home owner).</li>
+    <li>If the home is newly constructed, it must be eligible for home warranty.</li>
+    <li>Home buyers must apply for the refund within 18 months of purchase.</li>
+  </ul>
+    <hr>
+  <h2>First Time Home Buyer Rebate Application</h2>
+
+  <p>
+  Taxpayers can claim an immediate refund when registering the land transfer papers and paying their taxes. Generally, on closing, your lawyer will claim the tax rebate on your behalf.
+
+  If the rebate is not claimed at the time of registration, the full tax is paid and a refund claim can be made to the Ministry of Finance within 18 months.
+
+  Information required for the application include:
+  </p>
+  <ul>
+    <li>
+      A completed Ontario Land Transfer Tax Refund Affidavit for First-Time Purchasers of Eligible homes.
+    </li>
+    <li>
+      A copy of the registered land transfer deed.
+    </li>
+    <li>
+      A copy of the agreement of purchase and sale
+    </li>
+    <li>
+      A copy of a document that provides proof of residence, such as a driver’s license, telephone/cable bills, etc.
+    </li>
+  </ul>
+</div>
+
+<hr>
+
+<div class="container">
+  References and Notes:
+  <span><a href="http://www.fin.gov.on.ca/en/bulletins/ltt/2_2005.html">Calculating Land Transfer Tax, Ontario Ministry of Finance</a></span>
+  <p><a href="http://www.fin.gov.on.ca/en/bulletins/ltt/1_2008.html">Land Transfer Tax Refunds for First-Time Homebuyers, Ontario Ministry of Finance</a></p>
+</div>
 
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>
