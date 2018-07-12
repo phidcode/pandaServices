@@ -11,9 +11,10 @@
   </div>
 </div>
 
+<div class="container">
 <form [formGroup]="affordabilityForm" (ngSubmit)="onSubmit()">
   <div class="row" style="text-align: center; margin: 5px">
-    <div class="col-12 col-lg-3 d-flex" formGroupName="annualIncomeForm">
+    <div class="col-12 col-lg-4 d-flex" formGroupName="annualIncomeForm">
       <div class="row">
         <div class="col-12">
           <h3>Annual Income</h3>
@@ -37,43 +38,43 @@
       </div>
     </div>
 
-    <div class="col-12 col-lg-5 d-flex" formGroupName="livingCostsForm">
+    <div class="col-12 col-lg-4 d-flex" formGroupName="livingCostsForm">
       <div class="row">
         <div class="col-12">
           <h3>Living Costs</h3>
           <span>(Check to include the selected field)</span>
         </div>
         <div class="col-12 d-flex align-items-stretch">
-          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+          <div class="col-5 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Property Tax:
             <span class="tooltiptext">An annual tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.</span>
           </div>
-          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
-          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr">
+          <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
+          <select class="col-3" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr">
             <option selected value="month">/Month</option>
             <option value="year">/Year</option>
           </select>
           <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax">
         </div>
         <div class="col-12 d-flex align-items-stretch">
-          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+          <div class="col-5 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Condo Fees:
             <span class="tooltiptext">Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.</span>
           </div>
-          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
-          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr">
+          <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
+          <select class="col-3" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr">
             <option selected value="month">/Month</option>
             <option value="year">/Year</option>
           </select>
           <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees">
         </div>
         <div class="col-12 d-flex align-items-stretch">
-          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
+          <div class="col-5 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Heating Costs:
             <span class="tooltiptext">The total costs associated with heating your home and water. We have used a default estimate based on provincial averages.</span>
           </div>
-          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
-          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr">
+          <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
+          <select class="col-3" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr">
             <option selected value="month">/Month</option>
             <option value="year">/Year</option>
           </select>
@@ -213,6 +214,7 @@
     <div></div><button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button><div></div>
   </div> -->
 </form>
+</div>
 
 <hr>
 
@@ -225,8 +227,9 @@
   <h3>Mortgage Type: <span style="color: red"> {{ mortgageType }} </span> </h3>
 </div> -->
 
+<div class="container">
 <div class="row" style="text-align: left; margin: 5px">
-  <div class="col-lg-6 col-12">
+  <div class="col-lg-7 col-12">
     <div class="row">
       <h4 class="col-8">Max Affordability: </h4> 
       <h4 class="col-4" style="color: red"> {{maxAffordability | currency}} </h4>
@@ -242,81 +245,97 @@
   </div>
   <div class="col-lg-5 col-12">
     <div class="row">
-      <h4 class="col-8">Amortization Period: </h4>
-      <h4 class="col-4" style="color: red"> {{ amortizationPeriod }} years </h4>
+      <h4 class="col-7">Amortization Period: </h4>
+      <h4 class="col-5" style="color: red"> {{ amortizationPeriod }} years </h4>
     </div>
     <div class="row">
-      <h4 class="col-8">Mortgage Rate: </h4>
-      <h4 class="col-4" style="color: red"> {{ mortgageRate * 100 }}% </h4>
+      <h4 class="col-7">Mortgage Rate: </h4>
+      <h4 class="col-5" style="color: red"> {{ mortgageRate * 100 }}% </h4>
     </div>
     <div class="row">
-      <h4 class="col-8">Mortgage Type: </h4>
-      <h4 class="col-4" style="color: red"> {{ mortgageType }} </h4>
+      <h4 class="col-7">Mortgage Type: </h4>
+      <h4 class="col-5" style="color: red"> {{ mortgageType }} </h4>
     </div>
   </div>
+</div>
 </div>
 
 <hr>
 
-<h2> How to estimate affordability</h2>
-Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. They take into account your income, monthly housing costs and overall debt load.
+<div class="container">
+  <h2> How to estimate affordability</h2>
+  Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. They take into account your income, monthly housing costs and overall debt load.
 
-The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. For condominiums, P.I.T.H. also includes half of your monthly condominium fees. The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.
+  The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. For condominiums, P.I.T.H. also includes half of your monthly condominium fees. The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.
 
-The CMHC’s second affordability rule is that your total monthly debt load, including housing costs, should not be more than 40% of your gross monthly income. In addition to housing costs, your total monthly debt load would include credit card interest, car payments, and other loan expenses. The sum of your total monthly debt load as a percentage of your gross household income is your TDS ratio.
+  The CMHC’s second affordability rule is that your total monthly debt load, including housing costs, should not be more than 40% of your gross monthly income. In addition to housing costs, your total monthly debt load would include credit card interest, car payments, and other loan expenses. The sum of your total monthly debt load as a percentage of your gross household income is your TDS ratio.
 
-Note that while the industry guideline for GDS and TDS is 32% and 40% respectively, most borrowers with good credit and steady income will be allowed to exceed these limits. The maximum allowed is 39% and 44%. The calculator uses these maximums to estimate affordability.
+  Note that while the industry guideline for GDS and TDS is 32% and 40% respectively, most borrowers with good credit and steady income will be allowed to exceed these limits. The maximum allowed is 39% and 44%. The calculator uses these maximums to estimate affordability.
 
-<div class="l-container"><div class="l-half">
-    <div class="rh-ratio-block">
-      <div class="title">
-  Gross Debt Service Ratio    </div><div class="equals">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-1x"></i>
-          <span class="fa-stack-1x" style="top:-2px">
-  =        </span>
-        </span>
-      </div><div class="calculation">
-          <div class="dividend">
-  Mortgage Principal &amp; Interest + Taxes + Heating Expenses        </div>
-          <div class="divisor">
-  Annual Income        </div>
-      </div>      <div class="footer">
-  Ratio should be &lt; 32%      </div>
+  <h4>Gross Debt Service Ratio = (Mortgage Principal &amp; Interest + Taxes + Heating Expenses) / Annual Income</h4>
+  <h5>Ratio should be &lt; 32% </h5>
+
+  <h4>Total Debt Service Ratio = (Housing Expenses + Credit Card Interest + Car Payments + Loan Expenses) / Annual Income</h4>
+  <h5>Ratio should be &lt; 40%  </h5>
+
+  <!-- <div class="l-container">
+    <div class="l-half">
+      <div class="rh-ratio-block">
+        <div class="title">Gross Debt Service Ratio </div>
+        <div class="equals">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-1x"></i>
+            <span class="fa-stack-1x" style="top:-2px">= </span>
+          </span>
+        </div>
+        <div class="calculation">
+          <div class="dividend">Mortgage Principal &amp; Interest + Taxes + Heating Expenses </div>
+          <div class="divisor">Annual Income </div>
+        </div>      
+        <div class="footer">Ratio should be &lt; 32% </div>
+      </div>
     </div>
-    </div><div class="l-half">
-    <div class="rh-ratio-block">
-      <div class="title">
-  Total Debt Service Ratio    </div><div class="equals">
-        <span class="fa-stack">
-          <i class="fa fa-circle fa-stack-1x"></i>
-          <span class="fa-stack-1x" style="top:-2px">
-  =        </span>
-        </span>
-      </div><div class="calculation">
-          <div class="dividend">
-  Housing Expenses + Credit Card Interest + Car Payments + Loan Expenses        </div>
-          <div class="divisor">
-  Annual Income        </div>
-      </div>      <div class="footer">
-  Ratio should be &lt; 40%      </div>
+    <div class="l-half">
+      <div class="rh-ratio-block">
+        <div class="title">Total Debt Service Ratio </div>
+        <div class="equals">
+          <span class="fa-stack">
+            <i class="fa fa-circle fa-stack-1x"></i>
+            <span class="fa-stack-1x" style="top:-2px">= </span>
+          </span>
+        </div>
+        <div class="calculation">
+          <div class="dividend">Housing Expenses + Credit Card Interest + Car Payments + Loan Expenses </div>
+          <div class="divisor">Annual Income </div>
+        </div>      
+        <div class="footer">Ratio should be &lt; 40% </div>
+      </div>
     </div>
-    </div></div>
+  </div> -->
+</div>
 
 <hr>
-<h2>Down Payment</h2>
-Your down payment is a benchmark used to determine your maximum affordability. Ignoring income and debt levels, you can determine how much you can afford to spend using a simple calculation:
 
-If your down payment is $25,000 or less, you can find your maximum purchase price using this formula: down payment / 5% = maximum affordability.
-If your down payment is $25,001 or more, you can find your maximum purchase price using this formula: down payment amount - $25,000 / 10% + $500,000. For example, if you have saved $50,000 for your down payment, the maximum home price you could afford would be $50,000 - $25,000 = $25,000 / 10% = $250,000 + $500,000 = $750,000.
-Any mortgage with less than a 20% down payment is known as a high-ratio mortgage, and requires you to purchase mortgage default insurance, commonly referred to as CMHC insurance.
+<div class="container">
+  <h2>Down Payment</h2>
+  Your down payment is a benchmark used to determine your maximum affordability. Ignoring income and debt levels, you can determine how much you can afford to spend using a simple calculation:
+
+  If your down payment is $25,000 or less, you can find your maximum purchase price using this formula: down payment / 5% = maximum affordability.
+  If your down payment is $25,001 or more, you can find your maximum purchase price using this formula: down payment amount - $25,000 / 10% + $500,000. For example, if you have saved $50,000 for your down payment, the maximum home price you could afford would be $50,000 - $25,000 = $25,000 / 10% = $250,000 + $500,000 = $750,000.
+  Any mortgage with less than a 20% down payment is known as a high-ratio mortgage, and requires you to purchase mortgage default insurance, commonly referred to as CMHC insurance.
+</div>
+
 <hr>
 
-<h2>Cash Requirements & Other Mortgage Qualification Factors </h2>
-In addition to your down payment and CMHC insurance, you should set aside 1.5% - 4% of your home's selling price to cover closing costs, which are payable on closing day. Many home buyers forget to account for closing costs in their cash requirement.
+<div class="container">
+  <h2>Cash Requirements & Other Mortgage Qualification Factors </h2>
+  In addition to your down payment and CMHC insurance, you should set aside 1.5% - 4% of your home's selling price to cover closing costs, which are payable on closing day. Many home buyers forget to account for closing costs in their cash requirement.
 
-In addition to your debt service ratios, down payment, and cash for closing costs, mortgage lenders will also consider your credit history and your income when qualifying you for a mortgage. All of these factors are equally important. For example even if you have good credit, a sizeable down payment, and no debts, but an unstable income, you might have difficulty getting approved for a mortgage.
+  In addition to your debt service ratios, down payment, and cash for closing costs, mortgage lenders will also consider your credit history and your income when qualifying you for a mortgage. All of these factors are equally important. For example even if you have good credit, a sizeable down payment, and no debts, but an unstable income, you might have difficulty getting approved for a mortgage.
 
-Keep in mind that the mortgage affordability calculator can only provide an estimate of how much you'll be approved for, and assumes you’re an ideal candidate for a mortgage. To get the most accurate picture of what you qualify for, speak to a mortgage broker about getting a mortgage pre-approval.
+  Keep in mind that the mortgage affordability calculator can only provide an estimate of how much you'll be approved for, and assumes you’re an ideal candidate for a mortgage. To get the most accurate picture of what you qualify for, speak to a mortgage broker about getting a mortgage pre-approval.
+  <h2></h2>
+</div>
+
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>
