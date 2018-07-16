@@ -1,12 +1,11 @@
-<div class="monthlyPaymentCalc d-flex justify-content-center flex-column">
-	<div class="container">
-		<div class="inner-wrapper mt-auto mb-auto container">
-			<div class="row">
-				<div class="col-md-7">
-				<h1 class="welcome-heading display-4 text-white">MeeFinancial - DIY Mortgage Backed by a Full Service Team</h1>
+<div class="welcome d-flex justify-content-center flex-column">
+	<div class="inner-wrapper mt-auto mb-auto container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="welcome-heading display-4 text-white">MeeFinancial </h1>
+				<h1 class="welcome-heading display-8 text-white">- DIY Mortgage Backed by a Full Service Team</h1>
 				<p class="text-white">Tech Savvy Online Mortgage Specialist with Canada's Best Rates, helping you get the product that is best suited for your needs.</p>
-				<a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Start My DIY Mortgage</a>
-				</div>
+				<!-- <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Start My DIY Mortgage</a> -->
 			</div>
 		</div>
 	</div>
@@ -20,7 +19,191 @@
 	<hr>
 
 	<form [formGroup]="monthlyPaymentCalculatorForm" (ngSubmit)="onSubmit()">
-		<table width="100%">
+		<div class="row">
+			<div class="col-12">
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-12"><h2>Asking Price: </h2></div>
+					<mat-form-field class="col-lg-6 col-md-6 col-8">
+						<input matInput placeholder="Asking Price" type="number" class="example-right-align" formControlName="askingPrice">
+						<span matPrefix>$&nbsp;</span>
+						<span matSuffix>.00</span>
+					</mat-form-field>
+					<div class="col-lg-3 col-md-3 col-4" style="margin-top: auto; margin-bottom: auto; text-align: center;"><button mat-raised-button color="primary" class="btn btn-primary btn-pill" name="submit">GO</button></div>
+				</div>
+			</div>
+			<div class="col-12"><br></div>
+			<div class="col-12">
+				<div class="row" style="margin-top: auto; margin-bottom: auto">
+					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
+						<h4 matBadge="?" matBadgePosition="before" matTooltip="The amount of money you pay up front to obtain a mortgage. The minimum down payment in Canada is 5%. For down payments of less than 20%, home buyers are required to purchase mortgage default insurance, commonly referred to as CMHC insurance.">
+							Down Payment: 
+						</h4>
+					</div>
+					<div class="col-lg-3 col-md-3 col-7">
+						<div class="row">
+							<mat-form-field class="example-right-align col-12">
+								<input matInput placeholder="Down Payment (%)" type="number" value=5 formControlName="rateDownPayment1">
+								<span matSuffix>%</span>
+							</mat-form-field>
+							<mat-label class="col-12" style="color: red;text-align: center; margin-top: 0; margin-bottom: 2rem">
+								${{calDownPayment1}}
+							</mat-label>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block">
+						<div class="row">
+							<mat-form-field class="example-right-align col-12">
+								<input matInput placeholder="Down Payment (%)" type="number" value=10 formControlName="rateDownPayment2">
+								<span matSuffix>%</span>
+							</mat-form-field>
+							<mat-label class="col-12" style="color: red;text-align: center; margin-top: 0; margin-bottom: 2rem">
+								${{calDownPayment2}}
+							</mat-label>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block">
+						<div class="row">
+							<mat-form-field class="example-right-align col-12">
+								<input matInput placeholder="Down Payment (%)" type="number" value=15 formControlName="rateDownPayment3">
+								<span matSuffix>%</span>
+							</mat-form-field>
+							<mat-label class="col-12" style="color: red;text-align: center; margin-top: 0; margin-bottom: 2rem">
+								${{calDownPayment3}}
+							</mat-label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="row" style="margin-top: auto; margin-bottom: auto">
+					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
+						<h4 matBadge="?" matBadgePosition="before" matTooltip="Mortgage default insurance, commonly referred to as CMHC insurance, protects the lender in the case the borrower defaults on the mortgage. Mortgage default insurance is required on all mortgages with down payments of less than 20%, which are known as high ratio mortgages. Mortgage default insurance is calculated as a percentage applied to your mortgage amount.">
+							Mortgage Insurance: 
+						</h4>
+					</div>
+					<div class="col-lg-3 col-md-3 col-7" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
+						<mat-label>
+							${{dftMortgageInsurance1}}
+						</mat-label>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
+						<mat-label>
+							${{dftMortgageInsurance2}}
+						</mat-label>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
+						<mat-label>
+							${{dftMortgageInsurance3}}
+						</mat-label>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="row" style="margin-top: auto; margin-bottom: auto">
+					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
+						<h4>
+							Total Mortgage Required: 
+						</h4>
+					</div>
+					<div class="col-lg-3 col-md-3 col-7" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
+						<mat-label>
+							${{reqTotalMortgage1}}
+						</mat-label>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
+						<mat-label>
+							${{reqTotalMortgage2}}
+						</mat-label>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
+						<mat-label>
+							${{reqTotalMortgage3}}
+						</mat-label>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="row" style="margin-top: auto; margin-bottom: auto">
+					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
+						<h4 matBadge="?" matBadgePosition="before" matTooltip="The length of time it will take a homeowner to pay off his/her mortgage. 
+						In Canada, the maximum amortization period for insurable mortgages is 25 years. 
+						Longer amortization periods allow homeowners to make smaller monthly payments, but equate to more interest paid over the life of the mortgage.">
+							Amortization Period: 
+						</h4>
+					</div>
+					<div class="col-lg-3 col-md-3 col-7" style="margin-top: auto; margin-bottom: auto">
+						<mat-form-field class="example-right-align col-12">
+							<input matInput placeholder="Amortization Period (years)" type="number" value=5 formControlName="yrsAmortizationPeriod1">
+							<span matSuffix>yrs</span>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
+						<mat-form-field class="example-right-align col-12">
+							<input matInput placeholder="Amortization Period (years)" type="number" value=15 formControlName="yrsAmortizationPeriod2">
+							<span matSuffix>yrs</span>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
+						<mat-form-field class="example-right-align col-12">
+							<input matInput placeholder="Amortization Period (years)" type="number" value=25 formControlName="yrsAmortizationPeriod3">
+							<span matSuffix>yrs</span>
+						</mat-form-field>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="row" style="margin-top: auto; margin-bottom: auto">
+					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
+						<h4 matBadge="?" matBadgePosition="before" matTooltip="The rate of interest you will pay on the outstanding balance of your mortgage. This is determined by the mortgage type and mortgage provider. Until you have been approved for the mortgage, the rate can change at anytime.">
+							Mortgage Rate: 
+						</h4>
+					</div>
+					<div class="col-lg-3 col-md-3 col-7" style="margin-top: auto; margin-bottom: auto">
+						<mat-form-field class="example-right-align col-12">
+							<input matInput placeholder="Mortgage Rate (%)" type="number" value=3.08 formControlName="rateMortgage1">
+							<span matSuffix>%</span>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
+						<mat-form-field class="example-right-align col-12">
+							<input matInput placeholder="Mortgage Rate (%)" type="number" value=3.08 formControlName="rateMortgage2">
+							<span matSuffix>%</span>
+						</mat-form-field>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
+						<mat-form-field class="example-right-align col-12">
+							<input matInput placeholder="Mortgage Rate (%)" type="number" value=3.08 formControlName="rateMortgage3">
+							<span matSuffix>%</span>
+						</mat-form-field>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="row" style="margin-top: auto; margin-bottom: auto">
+					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
+						<h4>
+							Estimated Monthly Payment: 
+						</h4>
+					</div>
+					<div class="col-lg-3 col-md-3 col-7" style="margin-top: auto; margin-bottom: auto; color: red; text-align: center">
+						<mat-label>
+							${{estMonthlyPayment1}}
+						</mat-label>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto; color: red; text-align: center">
+						<mat-label>
+							${{estMonthlyPayment2}}
+						</mat-label>
+					</div>
+					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto; color: red; text-align: center">
+						<mat-label>
+							${{estMonthlyPayment3}}
+						</mat-label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <table width="100%">
 			<tr>
 				<td>
 					<h2>Asking Price: </h2>
@@ -205,7 +388,7 @@
 				</td>
 			</tr>
 			<br>
-		</table>
+		</table> -->
 	</form>
 
 	<!-- 
