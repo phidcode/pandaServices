@@ -110,3 +110,13 @@
     margin-bottom:10px;
     display:none;
   }
+
+
+  .welcome {
+    position: relative;
+    height: 50vh;
+    min-height: 300px;
+    background: url("../../../assets/images/rawpixel-602154-unsplash.jpg") no-repeat bottom center fixed;
+    background-size: cover;
+  }
+  
