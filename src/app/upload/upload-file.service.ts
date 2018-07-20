@@ -10,7 +10,7 @@ export class UploadFileService {
 
   private basePath = '/uploads';
 
-  constructor(private db: AngularFireDatabase, private fb: FirebaseApp) { }
+  constructor(private db: AngularFireDatabase, private fb: FirebaseApp, private af: AngularFirestore) { }
 
   pushFileToStorage(fileUpload: FileUpload, progress: { percentage: number }) {
     const storageRef = this.fb.storage().ref();
@@ -28,9 +28,12 @@ export class UploadFileService {
       },
       () => {
         // success
-        fileUpload.url = uploadTask.snapshot.downloadURL;
+        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+          fileUpload.url = downloadURL;
+        });
         fileUpload.name = fileUpload.file.name;
         this.saveFileData(fileUpload);
+        // this.saveFileDataFirestore(fileUpload);
       }
     );
   }
@@ -38,6 +41,10 @@ export class UploadFileService {
   private saveFileData(fileUpload: FileUpload) {
     this.db.list(`${this.basePath}/`).push(fileUpload);
   }
+
+  // private saveFileDataFirestore(fileUpload: FileUpload) {
+  //   this.af.collection(this.basePath).add(fileUpload).then();
+  // }
 
   getFileUploads(numberItems): AngularFireList<FileUpload> {
     return this.db.list(this.basePath, ref =>
