@@ -1,21 +1,23 @@
-<div class="container">
-Lenders we work with:
-<!-- You can now use your library component in app.component.html -->
-<ngx-slick-carousel class="carousel" 
-#slickModal="slick-carousel" 
-[config]="slideConfig" 
-(init)="slickInit($event)"
-(breakpoint)="breakpoint($event)"
-(afterChange)="afterChange($event)"
-(beforeChange)="beforeChange($event)">
-<div ngxSlickItem *ngFor="let slide of slides" class="slide" >
-  <img src="{{ slide.img }}" alt="" width="100px">
-</div>
-</ngx-slick-carousel>
+<div class="testimonials section py-4">
+    <h3 class="section-title text-center m-5">Some of the Lenders We Partner With</h3>
+    <hr>
 
-<!-- <button (click)="addSlide()">Add</button>
-<button (click)="removeSlide()">Remove</button>
-<button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
-<button (click)="slickModal.unslick()">unslick</button> -->
-
+    <div class="container">
+        <!-- You can now use your library component in app.component.html -->
+        <ngx-slick-carousel class="carousel" 
+        #slickModal="slick-carousel" 
+        [config]="slideConfig" 
+        (init)="slickInit($event)"
+        (breakpoint)="breakpoint($event)"
+        (afterChange)="afterChange($event)"
+        (beforeChange)="beforeChange($event)">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide" >
+          <img src="{{ slide.img }}" alt="" width="100px">
+        </div>
+        </ngx-slick-carousel>
+        <!-- <button (click)="addSlide()">Add</button>
+        <button (click)="removeSlide()">Remove</button>
+        <button (click)="slickModal.slickGoTo(2)">slickGoto 2</button>
+        <button (click)="slickModal.unslick()">unslick</button> -->
+    </div>
 </div>
