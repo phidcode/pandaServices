@@ -1,3 +1,5 @@
 MortgageBuilder-form-field-form-field {
-    /* width: 200px; */
-  }
+  /* width: 200px; */
+}
+
+mat-list-item:nth-child(even) { background: lightgrey; }
