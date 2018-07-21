@@ -21,10 +21,17 @@ export class DashboardComponent implements OnInit {
   formGroup: FormGroup;
 
   constructor(private meta: Meta, title: Title, private mbs: MortgageBuilderService) {
-    title.setTitle('DIY Mortgage - MeeFinancial Inc.');
-    this.meta.addTag({ name: 'description', content: 'Buying a home? We can help. Get pre-approved and qualify for a mortgage.' }, true);
-    this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
-    this.meta.addTag({ name: 'keywords', content: 'mortgage, toronto mortgage, canada mortgage, DIY mortgage, real estate, buying home, ontario real estate, toronto mortgage, diy mortgage' }, true);
+    title.setTitle('MeeFinancial Inc., Your Digital Mortgage');
+    // this.meta.addTag({ name: 'description', content: 'Buying a home? We can help. Get pre-approved and qualify for a mortgage.' }, true);
+    // this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
+    // this.meta.addTag({ name: 'keywords', content: 'mortgage, toronto mortgage, canada mortgage, DIY mortgage, real estate, buying home, ontario real estate, toronto mortgage, diy mortgage' }, true);
+
+    this.meta.addTags([
+      {name: 'description', content: 'How to use Angular 4 meta service'},
+      {name: 'author', content: 'talkingdotnet'},
+      {name: 'keywords', content: 'Angular, Meta Service'}
+    ]);
+    
   }
 
   ngOnInit() {

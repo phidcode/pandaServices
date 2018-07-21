@@ -9,7 +9,7 @@ import { Meta, Title } from "@angular/platform-browser";
 export class HowItWorksComponent implements OnInit {
 
   constructor(private meta: Meta,title: Title) {    
-    title.setTitle('DIY Mortgage, How It Works - MeeFinancial Inc.');    
+    title.setTitle('How It Works - MeeFinancial Inc., Your Digital Mortgage');    
     this.meta.addTag({ name: 'description', content: 'Buying a home? We can help. Get pre-approved and qualify for a mortgage.' },true);    
     this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
     this.meta.addTag({ name: 'keywords', content: 'mortgage, toronto mortgage, canada mortgage, DIY mortgage, real estate, buying home, ontario real estate, toronto mortgage, diy mortgage' }, true);    

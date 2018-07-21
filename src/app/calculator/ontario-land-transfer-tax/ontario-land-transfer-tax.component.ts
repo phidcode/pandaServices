@@ -22,7 +22,7 @@ export class OntarioLandTransferTaxComponent implements OnInit {
 
 
   constructor(private meta: Meta, private title: Title, private fb: FormBuilder) {
-    title.setTitle('Ontario Land Transfer Tax Calculator - MeeFinancial Inc.');
+    title.setTitle('Ontario Land Transfer Tax Calculator  - MeeFinancial Inc., Your Digital Mortgage');
     this.meta.addTag({ name: 'description', content: 'Use this Land Transfer Tax Calculator to learn more about first time home buyer rebate, Provincial Land Transfer Tax (PLTT) and Municipal Land Transfer Tax (MLTT) in Ontario and Toronto.' }, true);
     this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
     this.meta.addTag({ name: 'keywords', content: 'ontario land transfer tax, ontario property closing cost, land transfer tax calculator, land transfer tax calculation, land transfer tax calculations, land tax calculator, land transfer tax ontario calculator, land transfer tax toronto calculator, toronto real estate' }, true);

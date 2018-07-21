@@ -9,7 +9,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class AboutComponent implements OnInit {
 
   constructor(private meta: Meta, title: Title) {
-    title.setTitle('About Us - MeeFinancial Inc.');
+    title.setTitle('About Us - MeeFinancial Inc., Your Digital Mortgage');
     this.meta.addTag({ name: 'description', content: 'Buying a home? We can help. Get pre-approved and qualify for a mortgage.' }, true);
     this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
     this.meta.addTag(
