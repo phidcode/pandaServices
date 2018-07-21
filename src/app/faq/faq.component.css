@@ -1,0 +1,8 @@
+.welcome {
+    position: relative;
+    height: 50vh;
+    min-height: 300px;
+    background: url("../../assets/images/ashes-sitoula-32544-unsplash.jpg") no-repeat bottom center fixed;
+    background-size: cover;
+  }
+  
