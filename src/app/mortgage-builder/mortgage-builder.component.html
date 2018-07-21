@@ -8,30 +8,30 @@
   </mat-step>
 
   <mat-step [stepControl]="secondFormGroup">
-    <ng-template matStepLabel>Selection</ng-template>
+    <ng-template matStepLabel>Tell Me Your Estimated Mortgage Size</ng-template>
     <app-mortgage-selection [formGroup]="secondFormGroup" [mode]="firstFormGroup.value.selectedPurpose"></app-mortgage-selection>
     <!-- <p>Second Form value: {{ secondFormGroup.value | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="thirdFormGroup">
-    <ng-template matStepLabel>Heatmap</ng-template>
+    <ng-template matStepLabel>Choose A Lender</ng-template>
     <app-mortgage-heat-map [formGroup]="thirdFormGroup"></app-mortgage-heat-map>
   </mat-step>
 
   <mat-step [stepControl]="fourthFormGroup">
-    <ng-template matStepLabel>Qualification</ng-template>
+    <ng-template matStepLabel>Tell Me About Yourself</ng-template>
     <app-mortgage-qualification [formGroup]="fourthFormGroup"></app-mortgage-qualification>
     <!-- <p>Fourth Form value: {{ fourthFormGroup.value | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="fifthFormGroup">
-    <ng-template matStepLabel>Property</ng-template>
+    <ng-template matStepLabel>Tell Me About Your Property</ng-template>
     <app-mortgage-property [formGroup]="fifthFormGroup"></app-mortgage-property>
     <!-- <p>Fifth Form value: {{ fifthFormGroup.value | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="sixthFormGroup">
-    <ng-template matStepLabel>Consent</ng-template>
+    <ng-template matStepLabel>Build My Mortgage Solution</ng-template>
     <app-mortgage-consent [formGroup]="sixthFormGroup"></app-mortgage-consent>
     <!-- <p>Fifth Form value: {{ sixthFormGroup.value | json}}</p> -->
     <!-- <p>Fifth Form value: {{ sixthFormGroup.status | json}}</p> -->
