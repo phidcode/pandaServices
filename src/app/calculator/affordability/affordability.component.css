@@ -1,88 +1,50 @@
-  .affordability_main_grid{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 10px;
-    text-align: center;
-  }
+.affordability_result{
+  align-items: left;
+}
 
-  .annual_income_grid{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-gap: 5px;
-    /*text-align: center;*/
-    align-items: center;
-  }
+.tooltip {
+  opacity: initial;
+  position: relative;
+  display: inline-block;
+}
 
-  .living_costs_grid{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 5px;
-    /*text-align: center;*/
-    align-items: center;
-  }
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0 0;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0%;
+}
 
-  .debt_payments_grid{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-gap: 5px;
-    text-align: center;
-    align-items: center;
-  }
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid;
+  border-bottom-color: black;
+}
 
-  .affordability_result{
-    /* display: grid;
-    grid-template-columns: auto auto; */
-    align-items: left;
-  }
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
-  .tooltip {
-    opacity: initial;
-    position: relative;
-    display: inline-block;
-  }
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+}
 
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 300px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    top: 100%;
-    left: 100%;
-  }
-
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border: 5px solid;
-    border-bottom-color: black;
-  }
-
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-
-  h3 {
-    margin-top: 1rem;
-    margin-bottom: 0rem;
-  }
-
-  .welcome {
-    position: relative;
-    height: 50vh;
-    min-height: 300px;
-    background: url("../../../assets/images/rawpixel-602154-unsplash.jpg") no-repeat bottom center fixed;
-    background-size: cover;
-  }
-  
+.welcome {
+  position: relative;
+  height: 50vh;
+  min-height: 300px;
+  background: url("../../../assets/images/rawpixel-602154-unsplash.jpg") no-repeat bottom center fixed;
+  background-size: cover;
+}

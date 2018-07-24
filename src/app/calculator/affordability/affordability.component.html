@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="welcome d-flex justify-content-center flex-column">
   <div class="inner-wrapper mt-auto mb-auto container">
     <div class="row">
@@ -12,120 +14,137 @@
 
 <div class="container">
 <form [formGroup]="affordabilityForm" (ngSubmit)="onSubmit()">
-  <div class="row" style="text-align: center; margin: 5px">
-    <div class="col-12 col-lg-4 d-flex" formGroupName="annualIncomeForm">
+  <div class="row" style="text-align: center; margin: 1px">
+    <div class="col-12 col-lg-3 d-flex" formGroupName="annualIncomeForm">
       <div class="row">
-        <div class="col-12">
+        <div class="col-12" style="height: auto">
           <h3>Annual Income</h3>
-          <span></span>
+          <span class="row"> </span>
         </div>
-        <div class="col-12 d-flex">
+        <div class="col-12 d-flex" style="text-align: left;">
           <div class="col-8 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Annual Income (Before Tax):
             <span class="tooltiptext">Your gross income before-tax, including any bonuses and supplementary income.</span>
           </div>
-          <input style="margin-top: auto; margin-bottom: auto;" class="col-4" type="text" inputmode="numeric" min="0.00" name="annualIncome" id="annualIncome" formControlName="annualIncome">
+          <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="annualIncome" id="annualIncome" formControlName="annualIncome">
+          </mat-form-field>
         </div>
-        <div class="col-12 d-flex">
+        <div class="col-12 d-flex" style="text-align: left;">
           <div class="col-8 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Co-Applicant Income (Before Tax):
             <span class="tooltiptext">Your co-applicant&#039;s before-tax gross income. Your combined income will be used to calculate the mortgage you can afford.</span>
           </div>
-          <input style="margin-top: auto; margin-bottom: auto;" class="col-4" type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" id="coApplicantIncome" formControlName="coApplicantIncome">
+          <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" id="coApplicantIncome" formControlName="coApplicantIncome">
+          </mat-form-field>
         </div>
         <div class="col-12 d-flex"> </div>
       </div>
     </div>
-
+    <div class="col-12 col-lg-1 d-flex" ></div>
     <div class="col-12 col-lg-4 d-flex" formGroupName="livingCostsForm">
       <div class="row">
-        <div class="col-12">
+        <div class="col-lg-12 col-md-12 col-10" style="height: auto">
           <h3>Living Costs</h3>
           <span>(Check to include the selected field)</span>
         </div>
-        <div class="col-12 d-flex align-items-stretch">
-          <div class="col-5 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Property Tax:
+        <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
+          <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
+            PropertyTax:
             <span class="tooltiptext">An annual tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.</span>
           </div>
-          <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
-          <select class="col-3" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr">
-            <option selected value="month">/Month</option>
-            <option value="year">/Year</option>
-          </select>
-          <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax">
+          <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
+          </mat-form-field>
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="Select">
+            <mat-option selected value="month">/Month</mat-option>
+            <mat-option value="year">/Year</mat-option>
+          </mat-select>
+          <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px; text-align: center" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax"></mat-checkbox>
         </div>
-        <div class="col-12 d-flex align-items-stretch">
-          <div class="col-5 tooltip" style="margin-top: auto; margin-bottom: auto;">
+        <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
+          <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Condo Fees:
             <span class="tooltiptext">Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.</span>
           </div>
-          <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
-          <select class="col-3" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr">
-            <option selected value="month">/Month</option>
-            <option value="year">/Year</option>
-          </select>
-          <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees">
+          <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
+          </mat-form-field>
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="Select">
+            <mat-option selected value="month">/Month</mat-option>
+            <mat-option value="year">/Year</mat-option>
+          </mat-select>
+          <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees"></mat-checkbox>
         </div>
-        <div class="col-12 d-flex align-items-stretch">
-          <div class="col-5 tooltip" style="margin-top: auto; margin-bottom: auto;">
+        <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
+          <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
             Heating Costs:
             <span class="tooltiptext">The total costs associated with heating your home and water. We have used a default estimate based on provincial averages.</span>
           </div>
-          <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
-          <select class="col-3" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr">
-            <option selected value="month">/Month</option>
-            <option value="year">/Year</option>
-          </select>
-          <input class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts">
+          <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
+          </mat-form-field>
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="Select">
+            <mat-option selected value="month">/Month</mat-option>
+            <mat-option value="year">/Year</mat-option>
+          </mat-select>
+          <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px; margin-left: 0; margin-right: auto" type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts"></mat-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-1 d-flex" ></div>
+    <div class="col-12 col-lg-3 d-flex" formGroupName="debtPaymentsForm">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-11" style="height: auto">
+          <h3>Debt Payments</h3>
+          <span class="row"> </span>
+        </div>
+        <div class="col-lg-12 col-md-12 col-11 d-flex" style="text-align: left;">
+          <div class="col-4 tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Credit Card:
+            <span class="tooltiptext">The average monthly interest owed on outstanding credit card balances. This does not include the balances themselves, only the interest portion.</span>
+          </div>
+          <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
+          </mat-form-field>
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr" placeholder="Select">
+            <mat-option selected value="month">/Month</mat-option>
+            <mat-option value="year">/Year</mat-option>
+          </mat-select>
+        </div>
+        <div class="col-lg-12 col-md-12 col-11 d-flex"  style="text-align: left;">
+          <div class="col-4 tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Car Payment:
+            <span class="tooltiptext">Your monthly leasing or financing outlay on any household vehicles.</span>
+          </div>
+          <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
+          </mat-form-field>
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr" placeholder="Select">
+            <mat-option selected value="month">/Month</mat-option>
+            <mat-option value="year">/Year</mat-option>
+          </mat-select>
+        </div>
+        <div class="col-lg-12 col-md-12 col-11 d-flex" style="text-align: left;">
+          <div class="col-4 tooltip" style="margin-top: auto; margin-bottom: auto;">
+            Other Loan Expenses:
+            <span class="tooltiptext">Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.</span>
+          </div>
+          <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
+          </mat-form-field>
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr" placeholder="Select">
+            <mat-option selected value="month">/Month</mat-option>
+            <mat-option value="year">/Year</mat-option>
+          </mat-select>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-lg-4 d-flex" formGroupName="debtPaymentsForm">
-      <div class="row">
-        <div class="col-12">
-          <h3>Debt Payments</h3>
-          <span></span>
-        </div>
-        <div class="col-12 d-flex">
-          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Credit Card:
-            <span class="tooltiptext">The average monthly interest owed on outstanding credit card balances. This does not include the balances themselves, only the interest portion.</span>
-          </div>
-          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
-          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr">
-            <option selected value="month">/Month</option>
-            <option value="year">/Year</option>
-          </select>
-        </div>
-        <div class="col-12 d-flex">
-          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Car Payment:
-            <span class="tooltiptext">Your monthly leasing or financing outlay on any household vehicles.</span>
-          </div>
-          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
-          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr">
-            <option selected value="month">/Month</option>
-            <option value="year">/Year</option>
-          </select>
-        </div>
-        <div class="col-12 d-flex">
-          <div class="col tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Other Loan Expenses:
-            <span class="tooltiptext">Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.</span>
-          </div>
-          <input class="col" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
-          <select class="col" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr">
-            <option selected value="month">/Month</option>
-            <option value="year">/Year</option>
-          </select>
-        </div>
-      </div>
-    </div>
-    
     <div class="col-12" style="margin-top: 1rem">
-      <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button>
+      <!-- <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button> -->
+      <button mat-raised-button color="primary" type="submit" id="submit" class="btn btn-primary btn-pill" name="submit">GO</button>
     </div>
   </div>
 
@@ -230,12 +249,12 @@
 <div class="row" style="text-align: left; margin: 5px">
   <div class="col-lg-7 col-12">
     <div class="row">
-      <h4 class="col-8">Max Affordability: </h4> 
-      <h4 class="col-4" style="color: red"> {{maxAffordability | currency}} </h4>
+      <h4 class="col-8">Max Affordability: </h4>
+      <h4 class="col-4"> {{maxAffordability | currency}} </h4>
     </div>
     <div class="row">
       <h4 class="col-8">Down Payment (20%): </h4>
-      <h4 class="col-4" style="color: red"> {{downPayment | currency}} </h4>
+      <h4 class="col-4"> {{downPayment | currency}} </h4>
     </div>
     <div class="row">
       <h4 class="col-8">Total Mortgage Payment per month: </h4>
@@ -245,15 +264,15 @@
   <div class="col-lg-5 col-12">
     <div class="row">
       <h4 class="col-7">Amortization Period: </h4>
-      <h4 class="col-5" style="color: red"> {{ amortizationPeriod }} years </h4>
+      <h4 class="col-5"> {{ amortizationPeriod }} years </h4>
     </div>
     <div class="row">
       <h4 class="col-7">Mortgage Rate: </h4>
-      <h4 class="col-5" style="color: red"> {{ mortgageRate * 100 }}% </h4>
+      <h4 class="col-5"> {{ mortgageRate * 100 }}% </h4>
     </div>
     <div class="row">
       <h4 class="col-7">Mortgage Type: </h4>
-      <h4 class="col-5" style="color: red"> {{ mortgageType }} </h4>
+      <h4 class="col-5"> {{ mortgageType }} </h4>
     </div>
   </div>
 </div>
@@ -271,11 +290,21 @@
 
   Note that while the industry guideline for GDS and TDS is 32% and 40% respectively, most borrowers with good credit and steady income will be allowed to exceed these limits. The maximum allowed is 39% and 44%. The calculator uses these maximums to estimate affordability.
 
-  <h4>Gross Debt Service Ratio = (Mortgage Principal &amp; Interest + Taxes + Heating Expenses) / Annual Income</h4>
+  <h4><br></h4>
+
+  <img alt="GDSR" style="width: 100%; height: auto" src="assets/images/GDSR.png">
+
+  <h4><br></h4>
+
+  <img alt="TDSR" style="width: 100%; height: auto" src="assets/images/TDSR.png">
+
+  <h4><br></h4>
+
+  <!-- <h4>Gross Debt Service Ratio = (Mortgage Principal &amp; Interest + Taxes + Heating Expenses) / Annual Income</h4>
   <h5>Ratio should be &lt; 32% </h5>
 
   <h4>Total Debt Service Ratio = (Housing Expenses + Credit Card Interest + Car Payments + Loan Expenses) / Annual Income</h4>
-  <h5>Ratio should be &lt; 40%  </h5>
+  <h5>Ratio should be &lt; 40%  </h5> -->
 
   <!-- <div class="l-container">
     <div class="l-half">
@@ -290,7 +319,7 @@
         <div class="calculation">
           <div class="dividend">Mortgage Principal &amp; Interest + Taxes + Heating Expenses </div>
           <div class="divisor">Annual Income </div>
-        </div>      
+        </div>
         <div class="footer">Ratio should be &lt; 32% </div>
       </div>
     </div>
@@ -306,7 +335,7 @@
         <div class="calculation">
           <div class="dividend">Housing Expenses + Credit Card Interest + Car Payments + Loan Expenses </div>
           <div class="divisor">Annual Income </div>
-        </div>      
+        </div>
         <div class="footer">Ratio should be &lt; 40% </div>
       </div>
     </div>
