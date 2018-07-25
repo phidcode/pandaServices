@@ -16,91 +16,60 @@
 <p></p>
 <div class="container">
   <h2>Ontario Land Transfer Price Calculator</h2>
-  <!-- <div class="OntLandTransfer align-items-center"> -->
+  <div><br></div>
   <div class="row">
     <div class="col-lg-6 col-12">
       <form [formGroup]="ontarioLandTransferTaxForm" (ngSubmit)="onSubmit()">
         <div class="row">
           <h3 class="col-12">Profile:</h3>
           <div class="col-12">
-            <label class="col-9">Enter the purchase price ($): </label>
-            <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="text" inputmode="numeric" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+            <label class="col-6">Enter the purchase price ($): </label>
+            <mat-form-field class="col-6" style="margin-top: auto; margin-bottom: auto;">
+              <input matInput placeholder="Amount" type="text" inputmode="numeric" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+              <span matPrefix>$&nbsp;</span>
+              <span matSuffix>.00</span>
+            </mat-form-field>
           </div>
           <div class="col-12">
-            <label class="col-9">Is the property located in Toronto?</label>
-            <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
+            <label class="col-11">Is the property located in Toronto?</label>
+            <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty"></mat-checkbox>
           </div>
           <div class="col-12">
-            <label class="col-9">Are you a first time home buyer?</label>
-            <input class="col-3" style="margin-top: auto; margin-bottom: auto;" type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
+            <label class="col-11">Are you a first time home buyer?</label>
+            <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: auto;" type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer"></mat-checkbox>
           </div>
           <div class="col-12" style="display: flex; align-items: center; justify-content: center;">
-            <button class="col-6" type="submit" style="width: 100%; display: block" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
+            <button mat-raised-button color="primary" class="col-6" type="submit" style="width: 80%; display: block" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
           </div>
         </div>
-        <!-- <h3>Profile:</h3>
-        <div class="custom-tab align-items-center">
-          <label>Enter the purchase price ($): </label>
-          <input type="text" inputmode="numeric" min="0.01" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
-        </div>
-        <div class="custom-tab align-items-center">
-          <label>Is the property located in Toronto?</label>
-          <input type="checkbox" class="custom-checkbox" value="No" name="torontoProperty" id="torontoProperty" formControlName="torontoProperty">
-        </div>
-        <div class="custom-tab align-items-center">
-          <label>Are you a first time home buyer?</label>
-          <input type="checkbox" class="custom-checkbox" value="No" name="firstTimeBuyer" id="firstTimeBuyer" formControlName="firstTimeBuyer">
-        </div>
-        <div class="custom-tab align-items-center">
-          <div></div>
-          <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill" [disabled]="ontarioLandTransferTaxForm.invalid">GO</button>
-        </div> -->
       </form>
     </div>
-    <!-- <div>
-      <h3>Results:</h3>
-      <div class="custom-tab align-items-center" style="color: red">
-        <label>Provincial Land Transfer Tax Amount: </label>
-        <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
-      </div>
-      <div class="custom-tab align-items-center" style="color: red">
-        <label>Toronto Land Transfer Tax Amount: </label>
-        <div><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
-      </div>
-      <div class="custom-tab align-items-center" style="color: green">
-        <label>Rebate: </label>
-        <div><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
-      </div>
-      <div class="custom-tab align-items-center" style="color: blue">
-        <label>Total Land Transfer Tax Amount: </label>
-        <div><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
-      </div>
-    </div> -->
-    <div class="col-lg-6 col-12">
+    <div class="col-lg-1 col-12"></div>
+    <div class="col-lg-5 col-12">
       <div class="row">
         <h3 class="col-12">Results:</h3>
-        <div class="col-12" style="color: red">
+        <div class="col-12">
           <div class="row">
             <label class="col-8">Provincial Land Transfer Tax Amount: </label>
-            <div class="col-4"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
+            <div class="col-4"><i style="color: red" class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{provincialLTT | currency}}</span></div>
           </div>
         </div>
-        <div class="col-12" style="color: red">
+        <div class="col-12">
           <div class="row">
             <label class="col-8">Toronto Land Transfer Tax Amount: </label>
-            <div class="col-4"><i class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
+            <div class="col-4"><i style="color: red" class="fas fa-plus-circle"></i>&nbsp;&nbsp;<span>{{torontoLTT | currency}}</span></div>
           </div>
         </div>
-        <div class="col-12" style="color: green">
+        <div class="col-12">
           <div class="row">
             <label class="col-8">Rebate: </label>
-            <div class="col-4"><i class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
+            <div class="col-4"><i style="color: green" class="fas fa-minus-circle"></i>&nbsp;&nbsp;<span>{{totalRebate | currency}}</span></div>
           </div>
         </div>
-        <div class="col-12" style="color: blue">
+        <div class="col-12">
           <div class="row">
             <label class="col-8">Total Land Transfer Tax Amount: </label>
-            <div class="col-4"><i class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
+            <div class="col-4"><i style="color: blue" class="fas fa-arrow-circle-right"></i>&nbsp;&nbsp;<span>{{totalLTT | currency}}</span></div>
           </div>
         </div>
       </div>
@@ -113,105 +82,111 @@
 <div class="container">
   <h2>Land transfer tax rates in Ontario – Updated in 2017</h2>
   <p>The Ontario land transfer tax (LTT) is a marginal tax and each portion of your home’s value is taxed at a unique rate. These tax rates are as follows:</p>
-  <table class="rh-table text" cellpadding="10" cellspacing="10">
-    <thead>
-      <tr>
-        <th>
-          <b>Purchase price of home</b>
-        </th>
-        <th>
-          <b>Land title transfer fee</b>
-        </th>
-        <th>
-          <b>First-time homebuyer rebate</b>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Up to and including $55,000</td>
-        <td>0.5%</td>
-        <td>Full tax rebate</td>
-      </tr>
-      <tr>
-        <td>$55,000.01 to $250,000.00</td>
-        <td>1.0%</td>
-        <td>Full tax rebate</td>
-      </tr>
-      <tr>
-        <td>$250,000.01 to $368,333</td>
-        <td>1.5%</td>
-        <td>Full tax rebate</td>
-      </tr>
-      <tr>
-        <td>$368,334 to $400,000.00</td>
-        <td>1.5%</td>
-        <td>$4,000 tax rebate</td>
-      </tr>
-      <tr>
-        <td>$400,000.00 to $2,000,000.00</td>
-        <td>2.0%</td>
-        <td>$4,000 tax rebate</td>
-      </tr>
-      <tr>
-        <td>Over $2,000,000.00</td>
-        <td>2.5%</td>
-        <td>$4,000 tax rebate</td>
-      </tr>
-    </tbody>
-  </table>
+  <mat-card>
+    <table style="margin: 0 auto" class="rh-table text" cellpadding="10" cellspacing="10">
+      <thead>
+        <tr>
+          <th>
+            <b>Purchase price of home</b>
+          </th>
+          <th>
+            <b>Land title transfer fee</b>
+          </th>
+          <th>
+            <b>First-time homebuyer rebate</b>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Up to and including $55,000</td>
+          <td>0.5%</td>
+          <td>Full tax rebate</td>
+        </tr>
+        <tr>
+          <td>$55,000.01 to $250,000.00</td>
+          <td>1.0%</td>
+          <td>Full tax rebate</td>
+        </tr>
+        <tr>
+          <td>$250,000.01 to $368,333</td>
+          <td>1.5%</td>
+          <td>Full tax rebate</td>
+        </tr>
+        <tr>
+          <td>$368,334 to $400,000.00</td>
+          <td>1.5%</td>
+          <td>$4,000 tax rebate</td>
+        </tr>
+        <tr>
+          <td>$400,000.00 to $2,000,000.00</td>
+          <td>2.0%</td>
+          <td>$4,000 tax rebate</td>
+        </tr>
+        <tr>
+          <td>Over $2,000,000.00</td>
+          <td>2.5%</td>
+          <td>$4,000 tax rebate</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+  <br>
 </div>
 
 <hr>
 
 <div class="container">
   <h2>Ontario land transfer tax rebate in Ontario</h2>
-  <p>For first time home buyers, there is a maximum $4,000 tax rebate on the Ontario land transfer tax. Based on Ontario’s land transfer tax rates, this refund will cover the full tax for homes up to $368,333. For homes purchased for more than $368,333, buyers will receive the full $4,000 rebate and pay the remaining LTT balance.</p>
-  <p>For Example:</p>
-  <table class="rh-table text" cellpadding="10" cellspacing="10">
-    <thead>
-      <tr>
-        <th>
-          <b>Purchase price of home</b>
-        </th>
-        <th>
-          <b>Land title transfer tax</b>
-        </th>
-        <th>
-          <b>First-time home buyer rebate</b>
-        </th>
-        <th>
-          <b>Net tax payable</b>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>$100,000</td>
-        <td>$725</td>
-        <td>$725</td>
-        <td>$0</td>
-      </tr>
-      <tr>
-        <td>$200,000</td>
-        <td>$1,725</td>
-        <td>$1,725</td>
-        <td>$0</td>
-      </tr>
-      <tr>
-        <td>$227,500</td>
-        <td>$2,000</td>
-        <td>$2,000</td>
-        <td>$0</td>
-      </tr>
-      <tr>
-        <td>$600,000</td>
-        <td>$8,475</td>
-        <td>$4,000</td>
-        <td>$4,475</td>
-      </tr>
-    </tbody>
-  </table>
+  <p>For first time home buyers, there is a maximum $4,000 tax rebate on the Ontario land transfer tax. Based on Ontario’s land transfer tax rates, this refund will cover the full tax for homes up to $368,333. For homes purchased for more than $368,333, buyers will receive the full $4,000 rebate and pay the remaining LTT balance.
+  For Example:</p>
+  <mat-card>
+    <table style="margin: 0 auto" class="rh-table text" cellpadding="10" cellspacing="10">
+      <thead>
+        <tr>
+          <th>
+            <b>Purchase price of home</b>
+          </th>
+          <th>
+            <b>Land title transfer tax</b>
+          </th>
+          <th>
+            <b>First-time home buyer rebate</b>
+          </th>
+          <th>
+            <b>Net tax payable</b>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>$100,000</td>
+          <td>$725</td>
+          <td>$725</td>
+          <td>$0</td>
+        </tr>
+        <tr>
+          <td>$200,000</td>
+          <td>$1,725</td>
+          <td>$1,725</td>
+          <td>$0</td>
+        </tr>
+        <tr>
+          <td>$227,500</td>
+          <td>$2,000</td>
+          <td>$2,000</td>
+          <td>$0</td>
+        </tr>
+        <tr>
+          <td>$600,000</td>
+          <td>$8,475</td>
+          <td>$4,000</td>
+          <td>$4,475</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+  <br>
 </div>
 
 <hr>
