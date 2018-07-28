@@ -1,18 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { FileUpload } from './fileupload';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css']
 })
-export class UploadComponent implements OnInit {
+export class UploadComponent implements OnInit, OnChanges {
 
-  title = 'File Upload';
-  description = 'Demo Version';
+  @Input() fileUploadList: FileUpload[];
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    console.log('UploadComponent' + this.fileUploadList);
+  }
 }

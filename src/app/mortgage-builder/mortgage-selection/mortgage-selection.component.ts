@@ -51,7 +51,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
     this.formGroup.addControl('selectedCurrentMortgageBalance', new FormControl());
     this.formGroup.addControl('selectedRemainingAmortization', new FormControl());
     this.formGroup.addControl('selectedAdditionalFundsNeeded', new FormControl());
-    this.formGroup.addControl('selectedMortgageAmount', new FormControl({ value: '', disabled: true }));
+    // this.formGroup.addControl('selectedMortgageAmount', new FormControl({ value: '', disabled: true }));
     this.formGroup.addControl(this.otherDebtKey, this.fb.array([]));
     this.addOtherDebts();
   }
@@ -68,7 +68,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
         selectedCurrentMortgageBalance: info.currentMortgageBalance,
         selectedRemainingAmortization: info.remainingAmortization,
         selectedAdditionalFundsNeeded: info.additionalFundsNeeded,
-        selectedMortgageAmount: info.mortgageAmount
+        // selectedMortgageAmount: info.mortgageAmount
       });
     }
     console.log(this.mortgage);
@@ -76,6 +76,11 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   get otherDebts(): FormArray {
     return this.formGroup.get(this.otherDebtKey) as FormArray;
+  }
+
+  get calculatedMortgageAmount(): FormControl {
+    const amount = this.formGroup.value.selectedCurrentMortgageBalance + this.formGroup.value.selectedAdditionalFundsNeeded;
+    return new FormControl({ value: amount, disabled: true });
   }
 
   addOtherDebts() {
@@ -95,6 +100,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   mortgageBuilder() {
     const m = this.formGroup.value;
+    // m.selectedMortgageAmount = m.selectedCurrentMortgageBalance + m.selectedAdditionalFundsNeeded;
     const savePurpose: Purpose = {
       type: this.mortgage.purpose.type,
       homePrice: m.selectedHomePrice,
@@ -103,7 +109,8 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
       paymentFrequency: m.selectedPaymentFrequency,
       currentMortgageBalance: m.selectedCurrentMortgageBalance,
       remainingAmortization: m.selectedRemainingAmortization,
-      mortgageAmount: m.selectedMortgageAmount
+      additionalFundsNeeded: m.selectedAdditionalFundsNeeded,
+      mortgageAmount: this.calculatedMortgageAmount.value
     };
     if (this.mortgage.purpose === undefined) {
       this.mortgage.purpose = savePurpose;

@@ -1,13 +1,13 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { FileUpload } from '../fileupload';
 import { UploadFileService } from '../upload-file.service';
 
 @Component({
-  selector: 'details-upload',
+  selector: 'app-details-upload',
   templateUrl: './details-upload.component.html',
   styleUrls: ['./details-upload.component.css']
 })
-export class DetailsUploadComponent implements OnInit {
+export class DetailsUploadComponent implements OnInit, OnChanges {
 
   @Input() fileUpload: FileUpload;
 
@@ -16,7 +16,11 @@ export class DetailsUploadComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges() {
+
+  }
+
   deleteFileUpload(fileUpload) {
-    this.uploadService.deleteFileUpload(fileUpload);
+    // this.uploadService.deleteFileUpload(fileUpload);
   }
 }

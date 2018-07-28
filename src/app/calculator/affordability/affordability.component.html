@@ -4,7 +4,7 @@
   <div class="inner-wrapper mt-auto mb-auto container">
     <div class="row">
       <div class="col-12">
-        <h1 class="welcome-heading display-4 text-white">Affordability Calculator Powered by MeeFinancial </h1>
+        <h1 class="welcome-heading display-4 text-white">Affordability Calculator</h1>
         <p class="text-white">This calculator helps you determine if you can afford your house.</p>
         <!-- <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land Transfer Tax</a> -->
       </div>
@@ -18,7 +18,7 @@
     <div class="col-12 col-lg-3 d-flex" formGroupName="annualIncomeForm">
       <div class="row">
         <div class="col-12" style="height: auto">
-          <h3>Annual Income</h3>
+          <h4>Annual Income</h4>
           <span class="row"> </span>
         </div>
         <div class="col-12 d-flex" style="text-align: left;">
@@ -46,7 +46,7 @@
     <div class="col-12 col-lg-4 d-flex" formGroupName="livingCostsForm">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-10" style="height: auto">
-          <h3>Living Costs</h3>
+          <h4>Living Costs</h4>
           <span>(Check to include the selected field)</span>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
@@ -57,7 +57,7 @@
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="Select">
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="/Month">
             <mat-option selected value="month">/Month</mat-option>
             <mat-option value="year">/Year</mat-option>
           </mat-select>
@@ -71,7 +71,7 @@
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="Select">
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="/Month">
             <mat-option selected value="month">/Month</mat-option>
             <mat-option value="year">/Year</mat-option>
           </mat-select>
@@ -85,7 +85,7 @@
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="Select">
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="/Month">
             <mat-option selected value="month">/Month</mat-option>
             <mat-option value="year">/Year</mat-option>
           </mat-select>
@@ -97,7 +97,7 @@
     <div class="col-12 col-lg-3 d-flex" formGroupName="debtPaymentsForm">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-11" style="height: auto">
-          <h3>Debt Payments</h3>
+          <h4>Debt Payments</h4>
           <span class="row"> </span>
         </div>
         <div class="col-lg-12 col-md-12 col-11 d-flex" style="text-align: left;">
@@ -108,7 +108,7 @@
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
           </mat-form-field>
-          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr" placeholder="Select">
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr" placeholder="/Month">
             <mat-option selected value="month">/Month</mat-option>
             <mat-option value="year">/Year</mat-option>
           </mat-select>
@@ -121,7 +121,7 @@
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
           </mat-form-field>
-          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr" placeholder="Select">
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr" placeholder="/Month">
             <mat-option selected value="month">/Month</mat-option>
             <mat-option value="year">/Year</mat-option>
           </mat-select>
@@ -134,7 +134,7 @@
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
           </mat-form-field>
-          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr" placeholder="Select">
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr" placeholder="/Month">
             <mat-option selected value="month">/Month</mat-option>
             <mat-option value="year">/Year</mat-option>
           </mat-select>
@@ -250,15 +250,15 @@
   <div class="col-lg-7 col-12">
     <div class="row">
       <h4 class="col-8">Max Affordability: </h4>
-      <h4 class="col-4"> {{maxAffordability | currency}} </h4>
+      <h4 class="col-4"> {{maxAffordability | currency:'USD':true:'1.0-0'}} </h4>
     </div>
     <div class="row">
       <h4 class="col-8">Down Payment (20%): </h4>
-      <h4 class="col-4"> {{downPayment | currency}} </h4>
+      <h4 class="col-4"> {{downPayment | currency:'USD':true:'1.0-0'}} </h4>
     </div>
     <div class="row">
       <h4 class="col-8">Total Mortgage Payment per month: </h4>
-      <h4 class="col-4" style="color: green"> {{monthlyMortgagePayment | currency}} </h4>
+      <h4 class="col-4" style="color: green"> {{monthlyMortgagePayment | currency:'USD':true:'1.0-0'}} </h4>
     </div>
   </div>
   <div class="col-lg-5 col-12">
@@ -268,7 +268,7 @@
     </div>
     <div class="row">
       <h4 class="col-7">Mortgage Rate: </h4>
-      <h4 class="col-5"> {{ mortgageRate * 100 }}% </h4>
+      <h4 class="col-5"> {{ mortgageRate | percent: '1.2-2' }} </h4>
     </div>
     <div class="row">
       <h4 class="col-7">Mortgage Type: </h4>
@@ -281,13 +281,19 @@
 <hr>
 
 <div class="container">
-  <h2> How to estimate affordability</h2>
-  Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. They take into account your income, monthly housing costs and overall debt load.
-
-  The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. For condominiums, P.I.T.H. also includes half of your monthly condominium fees. The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.
-
-  The CMHC’s second affordability rule is that your total monthly debt load, including housing costs, should not be more than 40% of your gross monthly income. In addition to housing costs, your total monthly debt load would include credit card interest, car payments, and other loan expenses. The sum of your total monthly debt load as a percentage of your gross household income is your TDS ratio.
-
+  <h3> How to estimate affordability</h3><p></p>
+  Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. 
+  These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. 
+  They take into account your income, monthly housing costs and overall debt load.
+  <p></p>
+  The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. 
+  For condominiums, P.I.T.H. also includes half of your monthly condominium fees. 
+  The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.
+  <p></p>
+  The CMHC’s second affordability rule is that your total monthly debt load, including housing costs, should not be more than 40% of your gross monthly income. 
+  In addition to housing costs, your total monthly debt load would include credit card interest, car payments, and other loan expenses. 
+  The sum of your total monthly debt load as a percentage of your gross household income is your TDS ratio.
+  <p></p>
   Note that while the industry guideline for GDS and TDS is 32% and 40% respectively, most borrowers with good credit and steady income will be allowed to exceed these limits. The maximum allowed is 39% and 44%. The calculator uses these maximums to estimate affordability.
 
   <h4><br></h4>
@@ -345,9 +351,10 @@
 <hr>
 
 <div class="container">
-  <h2>Down Payment</h2>
+  <h3>Down Payment</h3>
+  <p></p>
   Your down payment is a benchmark used to determine your maximum affordability. Ignoring income and debt levels, you can determine how much you can afford to spend using a simple calculation:
-
+<p></p>
   If your down payment is $25,000 or less, you can find your maximum purchase price using this formula: down payment / 5% = maximum affordability.
   If your down payment is $25,001 or more, you can find your maximum purchase price using this formula: down payment amount - $25,000 / 10% + $500,000. For example, if you have saved $50,000 for your down payment, the maximum home price you could afford would be $50,000 - $25,000 = $25,000 / 10% = $250,000 + $500,000 = $750,000.
   Any mortgage with less than a 20% down payment is known as a high-ratio mortgage, and requires you to purchase mortgage default insurance, commonly referred to as CMHC insurance.
@@ -356,14 +363,18 @@
 <hr>
 
 <div class="container">
-  <h2>Cash Requirements & Other Mortgage Qualification Factors </h2>
+  <h3>Cash Requirements & Other Mortgage Qualification Factors </h3>
+  <p></p>
   In addition to your down payment and CMHC insurance, you should set aside 1.5% - 4% of your home's selling price to cover closing costs, which are payable on closing day. Many home buyers forget to account for closing costs in their cash requirement.
-
   In addition to your debt service ratios, down payment, and cash for closing costs, mortgage lenders will also consider your credit history and your income when qualifying you for a mortgage. All of these factors are equally important. For example even if you have good credit, a sizeable down payment, and no debts, but an unstable income, you might have difficulty getting approved for a mortgage.
 
   Keep in mind that the mortgage affordability calculator can only provide an estimate of how much you'll be approved for, and assumes you’re an ideal candidate for a mortgage. To get the most accurate picture of what you qualify for, speak to a mortgage broker about getting a mortgage pre-approval.
   <h2></h2>
 </div>
 
+<p></p>
+
+
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>
+

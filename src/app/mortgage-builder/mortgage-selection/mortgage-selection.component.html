@@ -9,7 +9,7 @@
 
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Home Price" formControlName="selectedHomePrice" />
+        <input matInput type="number" placeholder="Home Price" formControlName="selectedHomePrice" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
         <mat-select placeholder="Amortization Period" formControlName="selectedAmortizationPeriod">
@@ -17,7 +17,7 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Down Payment $" formControlName="selectedDownPaymentDollar" />
+        <input matInput type="number" placeholder="Down Payment $" formControlName="selectedDownPaymentDollar" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
         <mat-select placeholder="Mortgage Payment Frequency" formControlName="selectedPaymentFrequency">
@@ -37,13 +37,13 @@
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Home Price" formControlName="selectedHomePrice" />
+        <input matInput type="number" placeholder="Home Price" formControlName="selectedHomePrice" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Current Mortgage Balance" formControlName="selectedCurrentMortgageBalance" />
+        <input matInput type="number" placeholder="Current Mortgage Balance" formControlName="selectedCurrentMortgageBalance" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Remaining Amortization" formControlName="selectedRemainingAmortization" />
+        <input matInput type="number" placeholder="Remaining Amortization" formControlName="selectedRemainingAmortization" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
         <mat-select placeholder="Mortgage Payment Frequency" formControlName="selectedPaymentFrequency">
@@ -62,13 +62,13 @@
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Home Price" formControlName="selectedHomePrice" />
+        <input matInput type="number" placeholder="Home Price" formControlName="selectedHomePrice" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Current Mortgage Balance" formControlName="selectedCurrentMortgageBalance" />
+        <input matInput type="number" placeholder="Current Mortgage Balance" formControlName="selectedCurrentMortgageBalance" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Remaining Amortization" formControlName="selectedRemainingAmortization" />
+        <input matInput type="number" placeholder="Remaining Amortization" formControlName="selectedRemainingAmortization" />
       </mat-form-field>
       <mat-form-field class="col-lg-4 col-md-4 col-12">
         <mat-select placeholder="Mortgage Payment Frequency" formControlName="selectedPaymentFrequency">
@@ -76,10 +76,10 @@
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Additional Funds Needed" formControlName="selectedAdditionalFundsNeeded" />
+        <input matInput type="number" placeholder="Additional Funds Needed" formControlName="selectedAdditionalFundsNeeded" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Mortgage Amount" formControlName="selectedMortgageAmount" />
+        <input matInput type="number" placeholder="Mortgage Amount" formControlName="calculatedMortgageAmount" />
       </mat-form-field>
     </mat-card-content>
   </mat-card>
@@ -101,10 +101,10 @@
             </mat-select>
           </mat-form-field>
           <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-            <input matInput type="text" placeholder="Debt Amount" formControlName="debtAmount" />
+            <input matInput type="number" placeholder="Debt Amount" formControlName="debtAmount" />
           </mat-form-field>
           <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-            <input matInput type="text" placeholder="Monthly Payment" formControlName="monthlyPayment" />
+            <input matInput type="number" placeholder="Monthly Payment" formControlName="monthlyPayment" />
           </mat-form-field>
         </div>
         <!-- <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox> -->

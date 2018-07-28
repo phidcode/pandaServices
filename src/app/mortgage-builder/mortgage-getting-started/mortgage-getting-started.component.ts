@@ -72,6 +72,7 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
       term: m.selectedTerm,
       occupancy: m.selectedOccupancy,
       creditScore: m.selectedCreditScore,
+      images: []
     };
     if (this.mortgage === undefined) {
       return Object.assign({}, saveMortgage);

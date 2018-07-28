@@ -27,11 +27,11 @@ export class DashboardComponent implements OnInit {
     // this.meta.addTag({ name: 'keywords', content: 'mortgage, toronto mortgage, canada mortgage, DIY mortgage, real estate, buying home, ontario real estate, toronto mortgage, diy mortgage' }, true);
 
     this.meta.addTags([
-      {name: 'description', content: 'How to use Angular 4 meta service'},
-      {name: 'author', content: 'talkingdotnet'},
-      {name: 'keywords', content: 'Angular, Meta Service'}
+      { name: 'description', content: 'How to use Angular 4 meta service' },
+      { name: 'author', content: 'talkingdotnet' },
+      { name: 'keywords', content: 'Angular, Meta Service' }
     ]);
-    
+
   }
 
   ngOnInit() {
@@ -62,6 +62,7 @@ export class DashboardComponent implements OnInit {
       term: m.selectedTerm,
       occupancy: m.selectedOccupancy,
       creditScore: m.selectedCreditScore,
+      images: []
     };
 
     return saveMortgage;
