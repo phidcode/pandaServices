@@ -7,44 +7,36 @@
       <mat-card-title>Property Information</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <mat-select placeholder="Property Type" formControlName="propertyType">
-            <mat-option *ngFor="let option of propertyType" [value]="option">{{option}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <mat-select placeholder="Property Usage" formControlName="propertyUsage">
-            <mat-option *ngFor="let option of propertyUsage" [value]="option">{{option}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="Address" formControlName="streetAddress" />
-        </mat-form-field>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="City" formControlName="city" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field>
-          <mat-select placeholder="Province" formControlName="province">
-            <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="text" placeholder="Postal Code" formControlName="postalCode" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="number" placeholder="Property Tax" formControlName="propertyTax" />
-        </mat-form-field>
-        <mat-form-field class="MortgageBuilder-form-field-form-field">
-          <input matInput type="number" placeholder="Condo Fee" formControlName="condoFee" />
-        </mat-form-field>
-      </p>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <mat-select placeholder="Property Type" formControlName="propertyType">
+          <mat-option *ngFor="let option of propertyType" [value]="option">{{option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <mat-select placeholder="Property Usage" formControlName="propertyUsage">
+          <mat-option *ngFor="let option of propertyUsage" [value]="option">{{option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <input matInput type="text" placeholder="Address" formControlName="streetAddress" />
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <input matInput type="text" placeholder="City" formControlName="city" />
+      </mat-form-field>
+      <mat-form-field class="col-lg-3 col-md-3 col-12">
+        <mat-select placeholder="Province" formControlName="province">
+          <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <input matInput type="text" placeholder="Postal Code" formControlName="postalCode" />
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <input matInput type="number" placeholder="Property Tax" formControlName="propertyTax" />
+      </mat-form-field>
+      <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
+        <input matInput type="number" placeholder="Condo Fee" formControlName="condoFee" />
+      </mat-form-field>
     </mat-card-content>
     <mat-card-actions></mat-card-actions>
     <mat-card-footer></mat-card-footer>
