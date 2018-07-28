@@ -10,11 +10,17 @@ export class UploadFileService {
 
   private basePath = '/uploads';
 
-  constructor(private db: AngularFireDatabase, private fb: FirebaseApp, private af: AngularFirestore) { }
+  constructor(private db: AngularFireDatabase, private fb: FirebaseApp) { }
 
-  pushFileToStorage(fileUpload: FileUpload, progress: { percentage: number }) {
+  pushFileToStorage(fileUpload: FileUpload, progress: { percentage: number }, uploadFiles: FileUpload[]) {
+
+    const uploadRefPath = this.basePath + '/' + fileUpload.file.name;
+    // Create a root reference
     const storageRef = this.fb.storage().ref();
-    const uploadTask = storageRef.child(`${this.basePath}/${fileUpload.file.name}`).put(fileUpload.file);
+    // Create a reference to the upload file
+    const uploadRef = storageRef.child(uploadRefPath);
+    // Upload the file
+    const uploadTask = uploadRef.put(fileUpload.file);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
@@ -28,43 +34,41 @@ export class UploadFileService {
       },
       () => {
         // success
-        uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+        uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
+          console.log('File available at', downloadURL);
           fileUpload.url = downloadURL;
+          fileUpload.uploadRefPath = uploadRefPath;
+          fileUpload.name = fileUpload.file.name;
+          fileUpload.file = undefined;
+          uploadFiles.push(fileUpload);
         });
-        fileUpload.name = fileUpload.file.name;
-        this.saveFileData(fileUpload);
-        // this.saveFileDataFirestore(fileUpload);
       }
     );
   }
 
-  private saveFileData(fileUpload: FileUpload) {
-    this.db.list(`${this.basePath}/`).push(fileUpload);
-  }
-
-  // private saveFileDataFirestore(fileUpload: FileUpload) {
-  //   this.af.collection(this.basePath).add(fileUpload).then();
+  // private saveFileData(fileUpload: FileUpload) {
+  //   this.db.list(`${this.basePath}/`).push(fileUpload);
   // }
 
-  getFileUploads(numberItems): AngularFireList<FileUpload> {
-    return this.db.list(this.basePath, ref =>
-      ref.limitToLast(numberItems));
-  }
+  // getFileUploads(numberItems): AngularFireList<FileUpload> {
+  //   return this.db.list(this.basePath, ref =>
+  //     ref.limitToLast(numberItems));
+  // }
 
-  deleteFileUpload(fileUpload: FileUpload) {
-    this.deleteFileDatabase(fileUpload.key)
-      .then(() => {
-        this.deleteFileStorage(fileUpload.name);
-      })
-      .catch(error => console.log(error));
-  }
+  // deleteFileUpload(fileUpload: FileUpload) {
+  //   this.deleteFileDatabase(fileUpload.key)
+  //     .then(() => {
+  //       this.deleteFileStorage(fileUpload.name);
+  //     })
+  //     .catch(error => console.log(error));
+  // }
 
-  private deleteFileDatabase(key: string) {
-    return this.db.list(`${this.basePath}/`).remove(key);
-  }
+  // private deleteFileDatabase(key: string) {
+  //   return this.db.list(`${this.basePath}/`).remove(key);
+  // }
 
-  private deleteFileStorage(name: string) {
-    const storageRef = firebase.storage().ref();
-    storageRef.child(`${this.basePath}/${name}`).delete();
-  }
+  // deleteFileStorage(name: string) {
+  //   const storageRef = firebase.storage().ref();
+  //   storageRef.child(`${this.basePath}/${name}`).delete();
+  // }
 }
