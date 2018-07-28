@@ -9,6 +9,19 @@
     z-index:1000;
 }
 
+.splash:before {
+    position: absolute;
+    z-index: 0;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .4;
+    background: rgb(125, 130, 136);
+  }
+
+
 body,
 html {
 
