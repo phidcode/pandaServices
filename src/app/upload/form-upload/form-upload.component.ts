@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 import { UploadFileService } from '../upload-file.service';
 import { FileUpload } from '../fileupload';
 
 @Component({
-  selector: 'form-upload',
+  selector: 'app-form-upload',
   templateUrl: './form-upload.component.html',
   styleUrls: ['./form-upload.component.css']
 })
-export class FormUploadComponent implements OnInit {
+export class FormUploadComponent implements OnInit, OnChanges {
 
+  @Input() fileUploadList: FileUpload[];
   selectedFiles: FileList;
   currentFileUpload: FileUpload;
   progress: { percentage: number } = { percentage: 0 };
@@ -19,6 +20,9 @@ export class FormUploadComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges() {
+    console.log('FormUpload' + this.fileUploadList);
+  }
   selectFile(event) {
     this.selectedFiles = event.target.files;
   }
@@ -28,6 +32,6 @@ export class FormUploadComponent implements OnInit {
     this.selectedFiles = undefined;
 
     this.currentFileUpload = new FileUpload(file);
-    this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress);
+    this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.fileUploadList);
   }
 }

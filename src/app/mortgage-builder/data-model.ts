@@ -1,3 +1,5 @@
+import { FileUpload } from '../upload/fileupload';
+
 export class Mortgage {
     purpose: Purpose;
     type: '';
@@ -8,6 +10,7 @@ export class Mortgage {
     personalInfo?: PersonalInfo;
     jobInfo?: JobInfo;
     propertyInfo?: PropertyInfo;
+    images: FileUpload[];
 }
 
 export class Purpose {
