@@ -24,13 +24,13 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
 
   constructor(private mbs: MortgageBuilderService) { }
 
-  displayedColumns: string[] = ['term', 'type', 'rate'];
+  displayedColumns: string[] = ['term'];
 
   lenderA: Lender[] = [
     {term: 1, type: 'Fixed', rate: '2.79%'}, 
     {term: 2, type: 'Fixed', rate: '3.14%'}, 
     {term: 3, type: 'Fixed', rate: '3.20%'}, 
-    {term: 4, type: 'Fixed', rate: '2.89%'}, 
+    {term: 4, type: 'Fixed', rate: '2.89% (Most Common)'}, 
     {term: 5, type: 'Fixed', rate: '3.04%'}, 
     {term: 3, type: 'Variable', rate: '3.56%'}, 
     {term: 5, type: 'Variable', rate: '2.46%'}, 
