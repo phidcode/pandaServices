@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +12,12 @@ export class HeaderComponent implements OnInit {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
 
-    const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|zh/) ? browserLang : 'en');
+    // const browserLang = translate.getBrowserLang();
+    // translate.use(browserLang.match(/en|zh/) ? browserLang : 'en');
+  }
+
+  switchLanguage(language: string) {
+    this.translate.use(language);
   }
 
   ngOnInit() {

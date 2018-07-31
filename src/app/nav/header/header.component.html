@@ -56,13 +56,19 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link circle" (click)="switchLanguage('en')">EN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link circle" (click)="switchLanguage('zh')">中</a>
+      </li>
+      <!-- <li class="nav-item">
           <label>
             {{ 'HEADER.SELECT_LANGUAGE' | translate }}
             <select #langSelect (change)="translate.use(langSelect.value)">
               <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
             </select>
           </label>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>
