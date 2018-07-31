@@ -55,6 +55,12 @@
       "MORTGAGE_BUILDER_OCCUPANCY": "居住性质：",
       "MORTGAGE_BUILDER_CRED_SCORE": "信用评分：",
       "MORTGAGE_BUILDER_SUBMIT_BUTTON": "自助贷款"
+    }, 
+
+    "HOW_IT_WORKS": {
+      "HOW_IT_WORKS_TITLE": "如何使用",
+      "HOW_IT_WORKS_INTRO": "只需三分钟，即可自助申请贷款！", 
+      "MORTGAGE_BUILDER_BUTTON": "自助申请贷款"
     }
 
   }
