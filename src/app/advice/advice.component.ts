@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-advice',
@@ -90,8 +91,9 @@ export class AdviceComponent implements OnInit {
   beforeChange(e) {
     console.log('beforeChange');
   }
-  constructor() {
-
+  constructor(public translate: TranslateService) {
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
   }
 
   ngOnInit() {
