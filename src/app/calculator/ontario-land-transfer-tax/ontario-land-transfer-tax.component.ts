@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Meta, Title } from '@angular/platform-browser';
-import {and} from '@angular/router/src/utils/collection';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ontario-land-transfer-tax',
@@ -21,12 +21,15 @@ export class OntarioLandTransferTaxComponent implements OnInit {
   totalLTT = 0.0;
 
 
-  constructor(private meta: Meta, private title: Title, private fb: FormBuilder) {
+  constructor(private meta: Meta, private title: Title, private fb: FormBuilder, public translate: TranslateService) {
     title.setTitle('Ontario Land Transfer Tax Calculator  - MeeFinancial Inc., Your Digital Mortgage');
     this.meta.addTag({ name: 'description', content: 'Use this Land Transfer Tax Calculator to learn more about first time home buyer rebate, Provincial Land Transfer Tax (PLTT) and Municipal Land Transfer Tax (MLTT) in Ontario and Toronto.' }, true);
     this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
     this.meta.addTag({ name: 'keywords', content: 'ontario land transfer tax, ontario property closing cost, land transfer tax calculator, land transfer tax calculation, land transfer tax calculations, land tax calculator, land transfer tax ontario calculator, land transfer tax toronto calculator, toronto real estate' }, true);
     this.createForm();
+
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
   }
 
   createForm() {

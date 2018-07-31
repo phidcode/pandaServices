@@ -32,5 +32,21 @@
       "SUBMIT": "Submit", 
       "MSG_SENT": "Message Sent", 
       "CORRECT_EMAIL": "Please enter the correct email"
+    },
+    
+    "CALCULATOR_AFFORDABILITY": {
+      "AFFORDABILITY_TITLE": "Affordability Calculator", 
+      "AFFORDABILITY_INTRO": "This calculator helps you determine if you can afford your house."
+    }, 
+
+    "CALCULATOR_MONTHLY_PAYMENT": {
+      "MONTHLY_PAYMENT_TITLE": "Monthly Payment Calculator", 
+      "MONTHLY_PAYMENT_INTRO": "This calculator helps determines your monthly mortgage payment"
+    }, 
+
+    "CALCULATOR_LAND_TRANSFER_TAX": {
+      "LAND_TRANSFER_TAX_TITLE": "Land Transfer Tax Calculator", 
+      "LAND_TRANSFER_TAX_INTRO": "This calculator helps your calculate your land transfer tax on your new purchase"
     }
+
   }

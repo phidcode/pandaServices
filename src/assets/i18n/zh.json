@@ -13,7 +13,7 @@
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "关于我们", 
-      "ABOUT_US_INTRO": "是一家多伦多成立的牛逼互联网金融公司", 
+      "ABOUT_US_INTRO": "是一家在多伦多成立的牛逼互联网金融公司", 
       "OUR_STORY_TITLE": "我们的故事",
       "OUR_SPECIALITIES_TITLE": "我们的职责",
       "OUR_KEY_VALUES_TITLE": "我们的核心价值"
@@ -31,5 +31,21 @@
       "SUBMIT": "提交", 
       "MSG_SENT": "内容已提交", 
       "CORRECT_EMAIL": "请输入正确的电子邮箱地址"
+    },
+    
+    "CALCULATOR_AFFORDABILITY": {
+      "AFFORDABILITY_TITLE": "负担能力计算", 
+      "AFFORDABILITY_INTRO": "计算是否能负担起所供房产"
+    }, 
+
+    "CALCULATOR_MONTHLY_PAYMENT": {
+      "MONTHLY_PAYMENT_TITLE": "月供能力计算", 
+      "MONTHLY_PAYMENT_INTRO": "计算是否能负担起月供费用"
+    }, 
+
+    "CALCULATOR_LAND_TRANSFER_TAX": {
+      "LAND_TRANSFER_TAX_TITLE": "所需地税计算", 
+      "LAND_TRANSFER_TAX_INTRO": "计算所供房产所需地税"
     }
+
   }

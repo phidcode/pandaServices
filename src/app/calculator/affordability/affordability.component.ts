@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-affordability',
@@ -10,10 +11,6 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 export class AffordabilityComponent implements OnInit {
 
   affordabilityForm: FormGroup;
-  // monyrs = [
-  //   {id: '1', name: '/Month'},
-  //   {id: '2', name: '/Year'},
-  // ];
   submitted = false;
   GDSR = 0.32;
   TDSR = 0.40;
@@ -25,12 +22,14 @@ export class AffordabilityComponent implements OnInit {
   mortgageType = '5-Year Fixed';
   monthlyMortgagePayment = 0.0;
 
-  constructor(private meta: Meta, title: Title, private fb: FormBuilder) {
+  constructor(private meta: Meta, title: Title, private fb: FormBuilder, public translate: TranslateService) {
     title.setTitle('Affordability Calculator - MeeFinancial Inc., Your Digital Mortgage');
     this.meta.addTag({ name: 'description', content: 'Find out how much you can afford to purchase your home. Receive free consultation and apply for your mortgage. At MeeFinancial Inc., we\'re here to help.' }, true);
     this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
     this.meta.addTag({ name: 'keywords', content: 'affordability calculator, mortgage affordibility' }, true);
     this.createForm();
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
   }
 
   createForm() {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from "@angular/platform-browser";
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-monthly-payment',
@@ -27,12 +28,15 @@ export class MonthlyPaymentComponent implements OnInit {
   estMonthlyPayment2 = 0;
   estMonthlyPayment3 = 0;
 
-  constructor(private meta: Meta,title: Title, private fb: FormBuilder) {   
+  constructor(private meta: Meta,title: Title, private fb: FormBuilder, public translate: TranslateService) {   
     title.setTitle('Mortgage Monthly Payment Calculator - MeeFinancial Inc., Your Digital Mortgage');        
     this.meta.addTag({ name: 'description', content: 'Use the Mortgage Payment Calculator to discover the estimated amount of your monthly mortgage payments based on the mortgage option you choose.' },true);    
     this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
     this.meta.addTag({ name: 'keywords', content: 'mortgage payment, mortgage payment calculator, mortgage, toronto mortgage, canada mortgage, DIY mortgage, mortgage agent, mortgage broker, mortgage monthly payment, mortgage calculator' }, true);    
     this.createForm();
+
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
   }
 
   createForm() {
