@@ -1,0 +1,21 @@
+{
+    "HEADER": {
+      "ABOUT": "关于我们",
+      "HOW_TO": "如何使用",
+      "CALCULATORS": "计算器",
+      "MONTHLY_PAYMENT": "月供",
+      "AFFORDABILITY": "负担能力",
+      "ONTARIO_LAND_TRANSFER_TAX": "安省地税",
+      "MORTGAGE_BUILDER": "自助贷款",
+      "SELECT_LANGUAGE": "请选择语言"
+    },
+  
+    "ABOUT_US": {
+      "ABOUT_US_TITLE": "关于我们", 
+      "ABOUT_US_INTRO": "是一家多伦多成立的牛逼互联网金融公司", 
+      "OUR_STORY_TITLE": "我们的故事",
+      "OUR_SPECIALITIES_TITLE": "我们的职责",
+      "OUR_KEY_VALUES_TITLE": "我们的核心价值", 
+      "OUR_PARTNERS": "合作伙伴"
+    }
+  }

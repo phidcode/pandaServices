@@ -1,0 +1,21 @@
+{
+    "HEADER": {
+      "ABOUT": "About",
+      "HOW_TO": "How To",
+      "CALCULATORS": "Calculators",
+      "MONTHLY_PAYMENT": "Monthly Payment",
+      "AFFORDABILITY": "Affordability",
+      "ONTARIO_LAND_TRANSFER_TAX": "Ontario Land Transfer Tax",
+      "MORTGAGE_BUILDER": "Mortgage Builder",
+      "SELECT_LANGUAGE": "Select Language"
+    },
+  
+    "ABOUT_US": {
+      "ABOUT_US_TITLE": "About Us", 
+      "ABOUT_US_INTRO": "Founded in Toronto, we are one of the leading fintech companies in the residential mortgage space.", 
+      "OUR_STORY_TITLE": "Our Story",
+      "OUR_SPECIALITIES_TITLE": "Our Specialities",
+      "OUR_KEY_VALUES_TITLE": "Our Key Values", 
+      "OUR_PARTNERS": "Some of the Lenders We Partner With"
+    }
+  }
