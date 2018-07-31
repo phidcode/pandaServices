@@ -61,6 +61,10 @@
       "HOW_IT_WORKS_TITLE": "如何使用",
       "HOW_IT_WORKS_INTRO": "只需三分钟，即可自助申请贷款！", 
       "MORTGAGE_BUILDER_BUTTON": "自助申请贷款"
+    },
+
+    "FAQ": {
+      "FAQ_TITLE": "常见问题"
     }
 
   }

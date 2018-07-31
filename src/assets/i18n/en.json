@@ -62,6 +62,10 @@
       "HOW_IT_WORKS_TITLE": "How It Works",
       "HOW_IT_WORKS_INTRO": "Build your own mortgage solution in less than 3 minutes!",
       "MORTGAGE_BUILDER_BUTTON": "Build My Mortgage"
+    },
+
+    "FAQ": {
+      "FAQ_TITLE": "Frequently Asked Questions"
     }
 
   }
