@@ -11,31 +11,31 @@
           <!-- Regular Screen -->
           <mat-card-content class="row d-none d-md-block">
             <mat-button-toggle-group class="col-12" formControlName="selectedPurpose">
-              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">Mortgage Purpose:</mat-label>
+              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'DASHBOARD.MORTGAGE_BUILDER_PURPOSE' | translate }}</mat-label>
               <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of purpose" [value]="option.value">
-                {{option.title}}
+                <a style="margin-top: auto; margin-bottom: auto">{{option.title}}</a>
               </mat-button-toggle>
             </mat-button-toggle-group>
             <mat-button-toggle-group class="col-12" formControlName="selectedType">
-              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">Mortgage Type:</mat-label>
+              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'DASHBOARD.MORTGAGE_BUILDER_TYPE' | translate }}</mat-label>
               <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of type" [value]="option.value">
                 {{option.title}}
               </mat-button-toggle>
             </mat-button-toggle-group>
             <mat-button-toggle-group class="col-12" formControlName="selectedTerm">
-              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">Mortgage Term:</mat-label>
+              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'DASHBOARD.MORTGAGE_BUILDER_TERM' | translate }}</mat-label>
               <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of term" [value]="option.value">
                 {{option.title}}
               </mat-button-toggle>
             </mat-button-toggle-group>
             <mat-button-toggle-group class="col-12" formControlName="selectedOccupancy">
-              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">Occupancy:</mat-label>
+              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'DASHBOARD.MORTGAGE_BUILDER_OCCUPANCY' | translate }}</mat-label>
               <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of occupancy" [value]="option.value">
                 {{option.title}}
               </mat-button-toggle>
             </mat-button-toggle-group>
             <mat-button-toggle-group class="col-12" formControlName="selectedCreditScore">
-              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">Credit Score:</mat-label>
+              <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'DASHBOARD.MORTGAGE_BUILDER_CRED_SCORE' | translate }}</mat-label>
               <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of creditScore" [value]="option.value">
                 {{option.title}}
               </mat-button-toggle>
@@ -45,35 +45,35 @@
           <!-- Mobile Screen -->
           <mat-card-content class="row d-md-none" style="margin-top: auto; margin-bottom: auto; text-align: left; display: block; position: relative; height: 50%">
             <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; display: inline-block">
-              <mat-select placeholder="Mortgage Purpose" formControlName="selectedPurpose">
+              <mat-select placeholder="{{ 'DASHBOARD.MORTGAGE_BUILDER_PURPOSE' | translate }}" formControlName="selectedPurpose">
                 <mat-option *ngFor="let option of purpose" [value]="option.value">
                   {{option.title}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
-              <mat-select placeholder="Mortgage Type" formControlName="selectedType">
+              <mat-select placeholder="{{ 'DASHBOARD.MORTGAGE_BUILDER_TYPE' | translate }}" formControlName="selectedType">
                 <mat-option *ngFor="let option of type" [value]="option.value">
                   {{option.title}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
-              <mat-select placeholder="Mortgage Term" formControlName="selectedTerm">
+              <mat-select placeholder="{{ 'DASHBOARD.MORTGAGE_BUILDER_TERM' | translate }}" formControlName="selectedTerm">
                 <mat-option *ngFor="let option of term" [value]="option.value">
                   {{option.title}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
-              <mat-select placeholder="Occupancy" formControlName="selectedOccupancy">
+              <mat-select placeholder="{{ 'DASHBOARD.MORTGAGE_BUILDER_OCCUPANCY' | translate }}" formControlName="selectedOccupancy">
                 <mat-option *ngFor="let option of occupancy" [value]="option.value">
                   {{option.title}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
-              <mat-select placeholder="Credit Score" formControlName="selectedCreditScore">
+              <mat-select placeholder="{{ 'DASHBOARD.MORTGAGE_BUILDER_CRED_SCORE' | translate }}" formControlName="selectedCreditScore">
                 <mat-option *ngFor="let option of creditScore" [value]="option.value">
                   {{option.title}}
                 </mat-option>
@@ -85,7 +85,7 @@
 
           <mat-card-footer class="row" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <a class="nav-link" routerLink="/mortgage">
-              <button type="button" class="btn btn-primary btn-md" (click)="save()">Mortgage Builder</button>
+              <button type="button" class="btn btn-primary btn-md" (click)="save()">{{ 'DASHBOARD.MORTGAGE_BUILDER_SUBMIT_BUTTON' | translate }}</button>
             </a>
           </mat-card-footer>
         </mat-card>

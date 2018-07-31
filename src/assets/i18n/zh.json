@@ -13,7 +13,7 @@
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "关于我们", 
-      "ABOUT_US_INTRO": "是一家在多伦多成立的牛逼互联网金融公司", 
+      "ABOUT_US_INTRO": "帮助用户实现自助贷款", 
       "OUR_STORY_TITLE": "我们的故事",
       "OUR_SPECIALITIES_TITLE": "我们的职责",
       "OUR_KEY_VALUES_TITLE": "我们的核心价值"
@@ -46,6 +46,15 @@
     "CALCULATOR_LAND_TRANSFER_TAX": {
       "LAND_TRANSFER_TAX_TITLE": "所需地税计算", 
       "LAND_TRANSFER_TAX_INTRO": "计算所供房产所需地税"
+    },
+
+    "DASHBOARD": {
+      "MORTGAGE_BUILDER_PURPOSE": "贷款目的：", 
+      "MORTGAGE_BUILDER_TYPE": "贷款类型：",
+      "MORTGAGE_BUILDER_TERM": "贷款期限：",
+      "MORTGAGE_BUILDER_OCCUPANCY": "居住性质：",
+      "MORTGAGE_BUILDER_CRED_SCORE": "信用评分：",
+      "MORTGAGE_BUILDER_SUBMIT_BUTTON": "自助贷款"
     }
 
   }

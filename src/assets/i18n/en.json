@@ -47,6 +47,15 @@
     "CALCULATOR_LAND_TRANSFER_TAX": {
       "LAND_TRANSFER_TAX_TITLE": "Land Transfer Tax Calculator", 
       "LAND_TRANSFER_TAX_INTRO": "This calculator helps your calculate your land transfer tax on your new purchase"
+    },
+
+    "DASHBOARD": {
+      "MORTGAGE_BUILDER_PURPOSE": "Mortgage Purpose:", 
+      "MORTGAGE_BUILDER_TYPE": "Mortgage Type:",
+      "MORTGAGE_BUILDER_TERM": "Mortgage Term:",
+      "MORTGAGE_BUILDER_OCCUPANCY": "Occupancy:",
+      "MORTGAGE_BUILDER_CRED_SCORE": "Credit Score:",
+      "MORTGAGE_BUILDER_SUBMIT_BUTTON": "Mortgage Builder"
     }
 
   }

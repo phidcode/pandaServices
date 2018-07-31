@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { purpose, type, term, occupancy, creditScore } from '../mortgage-builder/constants';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../mortgage-builder/data-model';
 import { MortgageBuilderService } from '../mortgage-builder/mortgage-builder.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -20,7 +21,7 @@ export class DashboardComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  constructor(private meta: Meta, title: Title, private mbs: MortgageBuilderService) {
+  constructor(private meta: Meta, title: Title, private mbs: MortgageBuilderService, public translate: TranslateService) {
     title.setTitle('MeeFinancial Inc., Your Digital Mortgage');
     // this.meta.addTag({ name: 'description', content: 'Buying a home? We can help. Get pre-approved and qualify for a mortgage.' }, true);
     // this.meta.addTag({ name: 'author', content: 'MeeFinancial Inc.' }, true);
@@ -32,6 +33,8 @@ export class DashboardComponent implements OnInit {
       { name: 'keywords', content: 'Angular, Meta Service' }
     ]);
 
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
   }
 
   ngOnInit() {
