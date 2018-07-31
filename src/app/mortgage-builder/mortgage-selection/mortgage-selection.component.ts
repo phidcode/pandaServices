@@ -51,9 +51,19 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
     this.formGroup.addControl('selectedCurrentMortgageBalance', new FormControl());
     this.formGroup.addControl('selectedRemainingAmortization', new FormControl());
     this.formGroup.addControl('selectedAdditionalFundsNeeded', new FormControl());
-    // this.formGroup.addControl('selectedMortgageAmount', new FormControl({ value: '', disabled: true }));
+    this.formGroup.addControl('selectedMortgageAmount', new FormControl({ value: '', disabled: true }));
     this.formGroup.addControl(this.otherDebtKey, this.fb.array([]));
     this.addOtherDebts();
+
+    this.formGroup.get('selectedCurrentMortgageBalance').valueChanges.subscribe(val => {
+      const amount = val + this.formGroup.value.selectedAdditionalFundsNeeded;
+      this.formGroup.get('selectedMortgageAmount').setValue(amount);
+    });
+
+    this.formGroup.get('selectedAdditionalFundsNeeded').valueChanges.subscribe(val => {
+      const amount = val + this.formGroup.value.selectedCurrentMortgageBalance;
+      this.formGroup.get('selectedMortgageAmount').setValue(amount);
+    });
   }
 
   resetForm() {
@@ -68,7 +78,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
         selectedCurrentMortgageBalance: info.currentMortgageBalance,
         selectedRemainingAmortization: info.remainingAmortization,
         selectedAdditionalFundsNeeded: info.additionalFundsNeeded,
-        // selectedMortgageAmount: info.mortgageAmount
+        selectedMortgageAmount: info.mortgageAmount
       });
     }
     console.log(this.mortgage);
@@ -78,10 +88,10 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
     return this.formGroup.get(this.otherDebtKey) as FormArray;
   }
 
-  get calculatedMortgageAmount(): FormControl {
-    const amount = this.formGroup.value.selectedCurrentMortgageBalance + this.formGroup.value.selectedAdditionalFundsNeeded;
-    return new FormControl({ value: amount, disabled: true });
-  }
+  // get calculatedMortgageAmount(): FormControl {
+  //   const amount = this.formGroup.value.selectedCurrentMortgageBalance + this.formGroup.value.selectedAdditionalFundsNeeded;
+  //   return new FormControl({ value: amount, disabled: true });
+  // }
 
   addOtherDebts() {
     this.otherDebts.push(this.fb.group(new Debt()));
@@ -99,18 +109,16 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   }
 
   mortgageBuilder() {
-    const m = this.formGroup.value;
-    // m.selectedMortgageAmount = m.selectedCurrentMortgageBalance + m.selectedAdditionalFundsNeeded;
     const savePurpose: Purpose = {
       type: this.mortgage.purpose.type,
-      homePrice: m.selectedHomePrice,
-      amortizationPeriod: m.selectedAmortizationPeriod,
-      downPayment: m.selectedDownPaymentDollar,
-      paymentFrequency: m.selectedPaymentFrequency,
-      currentMortgageBalance: m.selectedCurrentMortgageBalance,
-      remainingAmortization: m.selectedRemainingAmortization,
-      additionalFundsNeeded: m.selectedAdditionalFundsNeeded,
-      mortgageAmount: this.calculatedMortgageAmount.value
+      homePrice: this.formGroup.get('selectedHomePrice').value,
+      amortizationPeriod: this.formGroup.get('selectedAmortizationPeriod').value,
+      downPayment: this.formGroup.get('selectedDownPaymentDollar').value,
+      paymentFrequency: this.formGroup.get('selectedPaymentFrequency').value,
+      currentMortgageBalance: this.formGroup.get('selectedCurrentMortgageBalance').value,
+      remainingAmortization: this.formGroup.get('selectedRemainingAmortization').value,
+      additionalFundsNeeded: this.formGroup.get('selectedAdditionalFundsNeeded').value,
+      mortgageAmount: this.formGroup.get('selectedMortgageAmount').value
     };
     if (this.mortgage.purpose === undefined) {
       this.mortgage.purpose = savePurpose;
