@@ -15,19 +15,19 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/about">About</a>
+        <a class="nav-link" routerLink="/about">{{ 'HEADER.ABOUT' | translate }}</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/howItWorks">How To</a>
+        <a class="nav-link" routerLink="/howItWorks">{{ 'HEADER.HOW_TO' | translate }}</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Calculators
+          aria-expanded="false">{{ 'HEADER.CALCULATORS' | translate }}
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" routerLink="/calculator/monthlyPayment">Monthly Payment</a>
-          <a class="dropdown-item" routerLink="/calculator/affordability">Affordability</a>
-          <a class="dropdown-item" routerLink="/calculator/ontarioLandTransferTax">Ontario Land Transfer Tax</a>
+          <a class="dropdown-item" routerLink="/calculator/monthlyPayment">{{ 'HEADER.MONTHLY_PAYMENT' | translate }}</a>
+          <a class="dropdown-item" routerLink="/calculator/affordability">{{ 'HEADER.AFFORDABILITY' | translate }}</a>
+          <a class="dropdown-item" routerLink="/calculator/ontarioLandTransferTax">{{ 'HEADER.ONTARIO_LAND_TRANSFER_TAX' | translate }}</a>
         </div>
       </li>
       <!-- <li class="nav-item dropdown">
@@ -52,8 +52,16 @@
       </li> -->
       <li class="nav-item">
         <a class="nav-link" routerLink="/mortgage">
-          <button type="button" class="btn btn-primary btn-sm">Mortgage Builder</button>
+          <button type="button" class="btn btn-primary btn-sm">{{ 'HEADER.MORTGAGE_BUILDER' | translate }}</button>
         </a>
+      </li>
+      <li class="nav-item">
+          <label>
+            {{ 'HEADER.SELECT_LANGUAGE' | translate }}
+            <select #langSelect (change)="translate.use(langSelect.value)">
+              <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+            </select>
+          </label>
       </li>
     </ul>
   </div>

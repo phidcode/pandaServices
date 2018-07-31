@@ -24,6 +24,8 @@
     "@angular/platform-server": "^6.0.7",
     "@angular/router": "^6.0.7",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
+    "@ngx-translate/core": "^10.0.2",
+    "@ngx-translate/http-loader": "^3.0.1",
     "ag-grid": "^17.1.1",
     "ag-grid-angular": "^17.1.0",
     "angularfire2": "^5.0.0-rc.11",

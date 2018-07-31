@@ -36,6 +36,9 @@ import {
 } from '@angular/material';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MonthlyPaymentComponent } from './calculator/monthly-payment/monthly-payment.component';
 import { AffordabilityComponent } from './calculator/affordability/affordability.component';
@@ -73,6 +76,12 @@ import { FormUploadComponent } from './upload/form-upload/form-upload.component'
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { UploadComponent } from './upload/upload.component';
 import { MortgageConsentComponent } from './mortgage-builder/mortgage-consent/mortgage-consent.component';
+
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -137,7 +146,15 @@ import { MortgageConsentComponent } from './mortgage-builder/mortgage-consent/mo
     RegistrationModule,
     AdminModule,
     AppRoutingModule,
-    SlickCarouselModule
+    SlickCarouselModule, 
+    HttpClientModule, 
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader, 
+        useFactory: HttpLoaderFactory, 
+        deps: [HttpClient]
+      }
+    })
   ],
   exports: [
     FooterComponent,
