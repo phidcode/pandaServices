@@ -43,7 +43,7 @@ export class MortgageConsentComponent implements OnInit {
     const m = this.formGroup.value;
     console.log(this.fileUploadList);
     console.log(this.mortgage);
-    this.mortgage.images = this.fileUploadList;
+    // this.mortgage.images = this.fileUploadList;
     console.log(this.mortgage);
     return this.mortgage;
   }
