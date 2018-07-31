@@ -22,5 +22,15 @@
 
     "ADVICE": {
       "OUR_PARTNERS": "Some of the Lenders We Partner With"
+    },
+
+    "CONTACT_US": {
+      "TITLE": "Let's Connect", 
+      "NAME": "Name (No less than 2 characters)",
+      "EMAIL": "Email",
+      "MESSAGE": "Message (No less than 10 characters)",
+      "SUBMIT": "Submit", 
+      "MSG_SENT": "Message Sent", 
+      "CORRECT_EMAIL": "Please enter the correct email"
     }
   }

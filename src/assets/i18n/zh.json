@@ -21,5 +21,15 @@
 
     "ADVICE": {
       "OUR_PARTNERS": "合作伙伴"
+    },
+
+    "CONTACT_US": {
+      "TITLE": "联系我们", 
+      "NAME": "姓名（不少于两个字符）",
+      "EMAIL": "电子邮箱地址",
+      "MESSAGE": "内容（不少于十个字符）",
+      "SUBMIT": "提交", 
+      "MSG_SENT": "内容已提交", 
+      "CORRECT_EMAIL": "请输入正确的电子邮箱地址"
     }
   }

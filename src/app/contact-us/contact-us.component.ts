@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { messagesCollection } from '../app.database';
-
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact-us',
@@ -15,8 +15,10 @@ export class ContactUsComponent implements OnInit {
   name: string;
   msg_sent = false;
 
-  constructor(private fb: FormBuilder, private af: AngularFirestore) {
+  constructor(private fb: FormBuilder, private af: AngularFirestore, public translate: TranslateService) {
     this.createForm();
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
   }
 
   createForm() {
