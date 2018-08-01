@@ -4,6 +4,7 @@ import { purpose, type, term, occupancy, creditScore } from '../constants';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 import { FileUpload } from '../../upload/fileupload';
 import { MortgageBuilderService } from '../mortgage-builder.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mortgage-consent',
@@ -16,7 +17,10 @@ export class MortgageConsentComponent implements OnInit {
   mortgage: Mortgage;
   fileUploadList: FileUpload[] = [];
 
-  constructor(private mbs: MortgageBuilderService) { }
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) {
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.createForm();

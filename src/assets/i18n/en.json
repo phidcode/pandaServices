@@ -66,6 +66,65 @@
 
     "FAQ": {
       "FAQ_TITLE": "Frequently Asked Questions"
+    },
+
+    "MORTGAGE_BUILDER_CONSENT": {
+      "DOC_REQ": "Document Required", 
+      "DISCLOSURE": "Disclosure"
+    },
+
+    "MORTGAGE_BUILDER_START": {
+      "TITLE": "Let's get started",
+      "PURPOSE": "Mortgage Purpose:", 
+      "TYPE": "Mortgage Type:",
+      "TERM": "Mortgage Term:",
+      "OCCUPANCY": "Occupancy:",
+      "CRED_SCORE": "Credit Score:",
+      "NEXT": "Next"
+    },
+
+    "MORTGAGE_BUILDER_MAP": {
+      "A_LENDERS": "A Lenders", 
+      "B_LENDERS": "B Lenders",
+      "OTHER_LENDERS": "Other Lenders",
+      "NEXT_BUTTON": "Use This Lender [Next]", 
+      "BACK_BUTTON": "Back"
+    },
+
+    "MORTGAGE_BUILDER_PROPERTY": {
+      "PROPERTY_INFO": "Property Information",
+      "PROPERTY_TYPE": "Property Type", 
+      "PROPERTY_USAGE": "Property Usage",
+      "ADDRESS": "Address",
+      "CITY": "City", 
+      "PROVINCE": "Province", 
+      "POSTAL_CODE": "Postal Code", 
+      "PROPERTY_TAX": "Property Tax",
+      "CONDO_FEE": "Condo Fee",
+      "BACK_BUTTON": "Back",
+      "NEXT_BUTTON": "Next"
+    },
+
+    "MORTGAGE_BUILDER_QUALIFICATION": {
+      "PERSONAL_INFO": "Personal Information", 
+      "FIRST_NAME": "First Name",
+      "LAST_NAME": "Last Name",
+      "EMAIL": "Email Address",
+      "NUMBER": "Contact Number",
+      "ADDRESS": "Address",
+      "CITY": "City", 
+      "PROVINCE": "Province", 
+      "POSTAL_CODE": "Postal Code",
+      "BACK_BUTTON": "Back",
+      "NEXT_BUTTON": "Next"
+    },
+
+    "MORTGAGE_BUILDER_SELECTION": {
+      "PURCHASE_OPTION": "Purchase Option", 
+      "RENEWAL_OPTION": "Renewal Option",
+      "REFINANCE_OPTION": "Refinance Option",
+      "BACK_BUTTON": "Back",
+      "NEXT_BUTTON": "Next"
     }
 
   }

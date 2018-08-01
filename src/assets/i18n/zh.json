@@ -65,6 +65,65 @@
 
     "FAQ": {
       "FAQ_TITLE": "常见问题"
+    },
+
+    "MORTGAGE_BUILDER_CONSENT": {
+      "DOC_REQ": "所需文件", 
+      "DISCLOSURE": "条款细则"
+    },
+
+    "MORTGAGE_BUILDER_START": {
+      "TITLE": "开始",
+      "PURPOSE": "贷款目的：", 
+      "TYPE": "贷款类型：",
+      "TERM": "贷款期限：",
+      "OCCUPANCY": "居住性质：",
+      "CRED_SCORE": "信用评分：",
+      "NEXT": "下一步"
+    },
+
+    "MORTGAGE_BUILDER_MAP": {
+      "A_LENDERS": "A类贷款机构", 
+      "B_LENDERS": "B类贷款机构",
+      "OTHER_LENDERS": "其他类贷款机构",
+      "NEXT_BUTTON": "使用此类贷款机构【下一步】", 
+      "BACK_BUTTON": "上一步"
+    },
+
+    "MORTGAGE_BUILDER_PROPERTY": {
+      "PROPERTY_INFO": "房产信息",
+      "PROPERTY_TYPE": "房产类型", 
+      "PROPERTY_USAGE": "房产用途",
+      "ADDRESS": "地址",
+      "CITY": "城市", 
+      "PROVINCE": "省份", 
+      "POSTAL_CODE": "邮政编码", 
+      "PROPERTY_TAX": "房产税",
+      "CONDO_FEE": "物业管管理费",
+      "BACK_BUTTON": "上一步",
+      "NEXT_BUTTON": "下一步"
+    },
+
+    "MORTGAGE_BUILDER_QUALIFICATION": {
+      "PERSONAL_INFO": "个人信息", 
+      "FIRST_NAME": "名",
+      "LAST_NAME": "姓",
+      "EMAIL": "电子邮箱地址",
+      "NUMBER": "联系电话",
+      "ADDRESS": "地址",
+      "CITY": "城市", 
+      "PROVINCE": "省份", 
+      "POSTAL_CODE": "邮政编码",
+      "BACK_BUTTON": "上一步",
+      "NEXT_BUTTON": "下一步"
+    },
+
+    "MORTGAGE_BUILDER_SELECTION": {
+      "PURCHASE_OPTION": "购买", 
+      "RENEWAL_OPTION": "续贷",
+      "REFINANCE_OPTION": "再贷",
+      "BACK_BUTTON": "上一步",
+      "NEXT_BUTTON": "下一步"
     }
 
-  }
+}

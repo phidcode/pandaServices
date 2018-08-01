@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { amortizationPeriod, paymentFrequency, debtType, Debt } from '../constants';
 import { MortgageBuilderService } from '../mortgage-builder.service';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mortgage-selection',
@@ -31,9 +32,10 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(
-    private fb: FormBuilder,
-    private mbs: MortgageBuilderService) { }
+  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService, public translate: TranslateService) { 
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.createForm();

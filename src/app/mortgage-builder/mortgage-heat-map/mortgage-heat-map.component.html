@@ -4,7 +4,7 @@
     <div class="card-deck mb-3 text-center">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">A Lenders</h4>
+                <h4 class="my-0 font-weight-normal">{{ 'MORTGAGE_BUILDER_MAP.A_LENDERS' | translate }}</h4>
             </div>
             <div class="card-body">
                 <table mat-table [dataSource]="lenderA" class="mat-elevation-z8">
@@ -14,12 +14,12 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <ul class="list-unstyled mt-3 mb-4"></ul>
-                <button mat-raised-button matStepperNext color="primary" >Use This Lender [Next]</button>
+                <button mat-raised-button matStepperNext color="primary" >{{ 'MORTGAGE_BUILDER_MAP.NEXT_BUTTON' | translate }}</button>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">B Lenders</h4>
+                <h4 class="my-0 font-weight-normal">{{ 'MORTGAGE_BUILDER_MAP.B_LENDERS' | translate }}</h4>
             </div>
             <div class="card-body">
                 <table mat-table [dataSource]="lenderB" class="mat-elevation-z8">
@@ -29,12 +29,12 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <ul class="list-unstyled mt-3 mb-4"></ul>
-                <button mat-raised-button matStepperNext color="primary" >Use This Lender [Next]</button>
+                <button mat-raised-button matStepperNext color="primary" >{{ 'MORTGAGE_BUILDER_MAP.NEXT_BUTTON' | translate }}</button>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Other Lenders</h4>
+                <h4 class="my-0 font-weight-normal">{{ 'MORTGAGE_BUILDER_MAP.OTHER_LENDERS' | translate }}</h4>
             </div>
             <div class="card-body">
                 <table mat-table [dataSource]="lenderC" class="mat-elevation-z8">
@@ -44,12 +44,12 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <ul class="list-unstyled mt-3 mb-4"></ul>
-                <button mat-raised-button matStepperNext color="primary" >Use This Lender [Next]</button>
+                <button mat-raised-button matStepperNext color="primary" >{{ 'MORTGAGE_BUILDER_MAP.NEXT_BUTTON' | translate }}</button>
             </div>
         </div>
 
     </div>
 </div>
-<button mat-raised-button matStepperPrevious>Back</button>    
+<button mat-raised-button matStepperPrevious>{{ 'MORTGAGE_BUILDER_MAP.BACK_BUTTON' | translate }}</button>    
 
 </form>

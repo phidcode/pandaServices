@@ -4,7 +4,7 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Purchase Option</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.PURCHASE_OPTION' | translate }}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content class="row">
@@ -33,7 +33,7 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Renewal Option</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.RENEWAL_OPTION' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
@@ -58,7 +58,7 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Refinance Option</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.REFINANCE_OPTION' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
@@ -125,7 +125,7 @@
   <p></p>
   <!--Divider  -->
   <div>
-    <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">Next</button>
+    <button mat-raised-button matStepperPrevious>{{ 'MORTGAGE_BUILDER_SELECTION.BACK_BUTTON' | translate }}</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">{{ 'MORTGAGE_BUILDER_SELECTION.NEXT_BUTTON' | translate }}</button>
   </div>
 </form>

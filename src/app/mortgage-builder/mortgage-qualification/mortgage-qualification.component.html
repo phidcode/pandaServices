@@ -4,34 +4,34 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Personal Information</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_QUALIFICATION.PERSONAL_INFO' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="text" placeholder="First Name" formControlName="firstName" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.FIRST_NAME' | translate }}" formControlName="firstName" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="text" placeholder="Last Name" formControlName="lastName" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.LAST_NAME' | translate }}" formControlName="lastName" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="email" placeholder="Email Address" formControlName="emailAddress" />
+        <input matInput type="email" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.EMAIL' | translate }}" formControlName="emailAddress" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="tel" placeholder="Contact Number" formControlName="contactNumber" />
+        <input matInput type="tel" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.NUMBER' | translate }}" formControlName="contactNumber" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="text" placeholder="Address" formControlName="streetAddress" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.ADDRESS' | translate }}" formControlName="streetAddress" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="text" placeholder="City" formControlName="city" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.CITY' | translate }}" formControlName="city" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-6">
-        <mat-select placeholder="Province" formControlName="province">
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.PROVINCE' | translate }}" formControlName="province">
           <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
-        <input matInput type="text" placeholder="Postal Code" formControlName="postalCode" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.POSTAL_CODE' | translate }}" formControlName="postalCode" />
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions></mat-card-actions>
@@ -63,7 +63,7 @@
   </mat-card>
   <p></p>
   <div>
-    <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">Next</button>
+    <button mat-raised-button matStepperPrevious>{{ 'MORTGAGE_BUILDER_QUALIFICATION.BACK_BUTTON' | translate }}</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">{{ 'MORTGAGE_BUILDER_QUALIFICATION.NEXT_BUTTON' | translate }}</button>
   </div>
 </form>

@@ -4,38 +4,38 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Property Information</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_PROPERTY.PROPERTY_INFO' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <mat-select placeholder="Property Type" formControlName="propertyType">
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.PROPERTY_TYPE' | translate }}" formControlName="propertyType">
           <mat-option *ngFor="let option of propertyType" [value]="option">{{option}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <mat-select placeholder="Property Usage" formControlName="propertyUsage">
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.PROPERTY_USAGE' | translate }}" formControlName="propertyUsage">
           <mat-option *ngFor="let option of propertyUsage" [value]="option">{{option}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Address" formControlName="streetAddress" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.ADDRESS' | translate }}" formControlName="streetAddress" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="City" formControlName="city" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.CITY' | translate }}" formControlName="city" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
-        <mat-select placeholder="Province" formControlName="province">
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.PROVINCE' | translate }}" formControlName="province">
           <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="text" placeholder="Postal Code" formControlName="postalCode" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.POSTAL_CODE' | translate }}" formControlName="postalCode" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Property Tax" formControlName="propertyTax" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.PROPERTY_TAX' | translate }}" formControlName="propertyTax" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Condo Fee" formControlName="condoFee" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_PROPERTY.CONDO_FEE' | translate }}" formControlName="condoFee" />
       </mat-form-field>
     </mat-card-content>
     <mat-card-actions></mat-card-actions>
@@ -44,8 +44,8 @@
   <p>
   </p>
   <div>
-    <button mat-raised-button matStepperPrevious>Back</button>
+    <button mat-raised-button matStepperPrevious>{{ 'MORTGAGE_BUILDER_PROPERTY.BACK_BUTTON' | translate }}</button>
     <!-- <button mat-raised-button (click)="stepper.reset()" color="warn">Reset</button> -->
-    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">Next</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">{{ 'MORTGAGE_BUILDER_PROPERTY.NEXT_BUTTON' | translate }}</button>
   </div>
 </form>
