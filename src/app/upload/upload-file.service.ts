@@ -12,15 +12,15 @@ export class UploadFileService {
 
   constructor(private db: AngularFireDatabase, private fb: FirebaseApp) { }
 
-  pushFileToStorage(fileUpload: FileUpload, progress: { percentage: number }, uploadFiles: FileUpload[]) {
+  pushFileToStorage(file: File, progress: { percentage: number }, uploadFiles: FileUpload[]) {
 
-    const uploadRefPath = this.basePath + '/' + fileUpload.file.name;
+    const uploadRefPath = this.basePath + '/' + file.name;
     // Create a root reference
     const storageRef = this.fb.storage().ref();
     // Create a reference to the upload file
     const uploadRef = storageRef.child(uploadRefPath);
     // Upload the file
-    const uploadTask = uploadRef.put(fileUpload.file);
+    const uploadTask = uploadRef.put(file);
 
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
@@ -36,11 +36,16 @@ export class UploadFileService {
         // success
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
           console.log('File available at', downloadURL);
-          fileUpload.url = downloadURL;
-          fileUpload.uploadRefPath = uploadRefPath;
-          fileUpload.name = fileUpload.file.name;
-          fileUpload.file = undefined;
-          uploadFiles.push(fileUpload);
+          // fileUpload.url = downloadURL;
+          // fileUpload.uploadRefPath = uploadRefPath;
+          // fileUpload.name = fileUpload.file.name;
+          // fileUpload.file = undefined;
+          const newFile = {
+            url: downloadURL,
+            uploadRefPath: uploadRefPath,
+            name: file.name,
+          };
+          uploadFiles.push(newFile);
         });
       }
     );

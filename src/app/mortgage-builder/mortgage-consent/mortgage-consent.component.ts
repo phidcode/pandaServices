@@ -4,8 +4,6 @@ import { purpose, type, term, occupancy, creditScore } from '../constants';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 import { FileUpload } from '../../upload/fileupload';
 import { MortgageBuilderService } from '../mortgage-builder.service';
-import { log } from 'util';
-import { ReadModelAsStringFloatingFilterComp } from '../../../../node_modules/ag-grid/dist/lib/filter/floatingFilter';
 
 @Component({
   selector: 'app-mortgage-consent',
@@ -36,15 +34,15 @@ export class MortgageConsentComponent implements OnInit {
     this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder();
     this.mbs.saveMortgageBuilderToFireStore(mortgageBuilder);
-    console.log(mortgageBuilder);
+    // console.log(mortgageBuilder);
   }
 
   mortgageBuilder() {
     const m = this.formGroup.value;
-    console.log(this.fileUploadList);
-    console.log(this.mortgage);
-    // this.mortgage.images = this.fileUploadList;
-    console.log(this.mortgage);
+    // console.log(this.fileUploadList);
+    // console.log(this.mortgage);
+    this.mortgage.images = this.fileUploadList;
+    // console.log(this.mortgage);
     return this.mortgage;
   }
 }

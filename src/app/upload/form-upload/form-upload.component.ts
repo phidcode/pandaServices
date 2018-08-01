@@ -12,7 +12,7 @@ export class FormUploadComponent implements OnInit, OnChanges {
 
   @Input() fileUploadList: FileUpload[];
   selectedFiles: FileList;
-  currentFileUpload: FileUpload;
+  currentFile: File;
   progress: { percentage: number } = { percentage: 0 };
 
   constructor(private uploadService: UploadFileService) { }
@@ -31,7 +31,7 @@ export class FormUploadComponent implements OnInit, OnChanges {
     const file = this.selectedFiles.item(0);
     this.selectedFiles = undefined;
 
-    this.currentFileUpload = new FileUpload(file);
-    this.uploadService.pushFileToStorage(this.currentFileUpload, this.progress, this.fileUploadList);
+    this.currentFile = file;
+    this.uploadService.pushFileToStorage(file, this.progress, this.fileUploadList);
   }
 }
