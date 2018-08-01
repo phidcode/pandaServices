@@ -10,6 +10,11 @@
       "MORTGAGE_BUILDER": "Mortgage Builder",
       "SELECT_LANGUAGE": "Select Language"
     },
+
+    "FOOTER": {
+      "HOME": "Home",
+      "PRIVACY": "Privacy"
+    },
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "About Us", 

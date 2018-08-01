@@ -10,6 +10,11 @@
       "MORTGAGE_BUILDER": "自助贷款",
       "SELECT_LANGUAGE": "请选择语言"
     },
+
+    "FOOTER": {
+      "HOME": "主页",
+      "PRIVACY": "隐私政策"
+    },
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "关于我们", 
