@@ -129,6 +129,11 @@
       "REFINANCE_OPTION": "再贷",
       "BACK_BUTTON": "上一步",
       "NEXT_BUTTON": "下一步"
+    },
+
+    "PRIVACY": {
+      "TITLE": "隐私及安全",
+      "TITLE_DETAILS": "我们的隐私及安全政策"
     }
 
 }

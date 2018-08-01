@@ -130,6 +130,11 @@
       "REFINANCE_OPTION": "Refinance Option",
       "BACK_BUTTON": "Back",
       "NEXT_BUTTON": "Next"
+    },
+
+    "PRIVACY": {
+      "TITLE": "Privacy & Security Policy",
+      "TITLE_DETAILS": "Our Privacy & Security Policy"
     }
 
   }
