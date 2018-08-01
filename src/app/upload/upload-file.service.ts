@@ -14,7 +14,8 @@ export class UploadFileService {
 
   pushFileToStorage(file: File, progress: { percentage: number }, uploadFiles: FileUpload[]) {
 
-    const uploadRefPath = this.basePath + '/' + file.name;
+    const storedName = Date.now() + Math.random() + '.' + file.name.split('.').pop();
+    const uploadRefPath = this.basePath + '/' + storedName;
     // Create a root reference
     const storageRef = this.fb.storage().ref();
     // Create a reference to the upload file
