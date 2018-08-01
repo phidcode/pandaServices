@@ -83,6 +83,7 @@
       "OTHER_LOAN_EXPANSES_TOOLTIPTXT": "Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.", 
       "PER_MONTH": "/Month", 
       "PER_YEAR": "/Year",
+      "SUBMIT_BUTTON": "GO", 
       "MAX_AFFORDABILITY": "Max Affordability:", 
       "DOWN_PAY": "Down Payment (20%):",
       "TOTAL_MORTGAGE_PER_MONTH": "Total Mortgage Payment per month:", 
