@@ -25,7 +25,7 @@ export class AdviceComponent implements OnInit {
     { img: '../../assets/images/lenders/4-Street-Capital.png' }
   ];
   slideConfig = {
-    'slidesToShow': 10, 'slidesToScroll': 10,
+    'slidesToShow': 4, 'slidesToScroll': 4,
     'autoplay': true, 'speed': 1500,
     'infinite': true, 'dots': true,
     'arrows': true,
@@ -33,36 +33,36 @@ export class AdviceComponent implements OnInit {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 8,
-          slidesToScroll: 8
+          slidesToShow: 3,
+          slidesToScroll: 3
         }
       },
       {
         breakpoint: 800,
         settings: {
-          slidesToShow: 6,
-          slidesToScroll: 6
+          slidesToShow: 2,
+          slidesToScroll: 2
         }
       },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4
-        }
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 4,
-          slidesToScroll: 4
-        }
-      },
+      // {
+      //   breakpoint: 600,
+      //   settings: {
+      //     slidesToShow: 2,
+      //     slidesToScroll: 2
+      //   }
+      // },
+      // {
+      //   breakpoint: 500,
+      //   settings: {
+      //     slidesToShow: 1,
+      //     slidesToScroll: 1
+      //   }
+      // },
       {
         breakpoint: 400,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]
