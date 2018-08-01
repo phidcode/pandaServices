@@ -67,7 +67,7 @@
   max-width: 80px;
   overflow: hidden;
 }
-
+/* 
 .shards-app-promo-page--1 .welcome {
   position: relative;
   height: 100vh;
@@ -211,5 +211,5 @@
   .shards-app-promo-page--1 .subscribe input, .shards-app-promo-page--1 .subscribe button {
     width: 100%;
   }
-}
+} */
 /*# sourceMappingURL=shards-extras.css.map */
