@@ -24,8 +24,24 @@
       "ABOUT_US_TITLE": "关于我们", 
       "ABOUT_US_INTRO": "帮助用户实现自助贷款", 
       "OUR_STORY_TITLE": "我们的故事",
+      "STORY1": "",
+      "STORY2": "",
       "OUR_SPECIALITIES_TITLE": "我们的职责",
-      "OUR_KEY_VALUES_TITLE": "我们的核心价值"
+      "SPEC1_TITLE": "First Time Home Buyer", 
+      "SPEC1_DESCRIPTION": "", 
+      "SPEC2_TITLE": "Self Employed", 
+      "SPEC2_DESCRIPTION": "", 
+      "SPEC3_TITLE": "New to Canada", 
+      "SPEC3_DESCRIPTION": "", 
+      "SPEC4_TITLE": "Complicated Credit History", 
+      "SPEC4_DESCRIPTION": "", 
+      "OUR_KEY_VALUES_TITLE": "我们的核心价值", 
+      "KEY1_TITLE": "Simplicity", 
+      "KEY1_DESCRIPTION": "", 
+      "KEY2_TITLE": "Excellent Client Service", 
+      "KEY2_DESCRIPTION": "", 
+      "KEY3_TITLE": "Backed by an Experienced Full Service Team", 
+      "KEY3_DESCRIPTION": ""
     },
 
     "ADVICE": {
