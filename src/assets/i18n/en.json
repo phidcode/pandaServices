@@ -15,6 +15,10 @@
       "HOME": "Home",
       "PRIVACY": "Privacy"
     },
+
+    "APPLY_NOW": {
+      "MORTGAGE_BUILDER_BUTTON": "Build My Mortgage"
+    },
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "About Us", 

@@ -15,6 +15,10 @@
       "HOME": "主页",
       "PRIVACY": "隐私政策"
     },
+
+    "APPLY_NOW": {
+      "MORTGAGE_BUILDER_BUTTON": "自助办理贷款"
+    },
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "关于我们", 
