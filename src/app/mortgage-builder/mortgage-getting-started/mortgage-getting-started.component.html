@@ -12,13 +12,13 @@
       <mat-button-toggle-group class="col-12" formControlName="selectedPurpose">
         <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'MORTGAGE_BUILDER_START.PURPOSE' | translate }}</mat-label>
         <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of purpose" [value]="option.value">
-          {{option.title}}
+          {{option.title | translate}}
         </mat-button-toggle>
       </mat-button-toggle-group>
       <mat-button-toggle-group class="col-12" formControlName="selectedType">
         <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'MORTGAGE_BUILDER_START.TYPE' | translate }}</mat-label>
         <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of type" [value]="option.value">
-          {{option.title}}
+          {{option.title | translate}}
         </mat-button-toggle>
       </mat-button-toggle-group>
       <mat-button-toggle-group class="col-12" formControlName="selectedTerm">
@@ -30,13 +30,13 @@
       <mat-button-toggle-group class="col-12" formControlName="selectedOccupancy">
         <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'MORTGAGE_BUILDER_START.OCCUPANCY' | translate }}</mat-label>
         <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of occupancy" [value]="option.value">
-          {{option.title}}
+          {{option.title | translate}}
         </mat-button-toggle>
       </mat-button-toggle-group>
       <mat-button-toggle-group class="col-12" formControlName="selectedCreditScore">
         <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'MORTGAGE_BUILDER_START.CRED_SCORE' | translate }}</mat-label>
         <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of creditScore" [value]="option.value">
-          {{option.title}}
+          {{option.title | translate}}
         </mat-button-toggle>
       </mat-button-toggle-group>
     </mat-card-content>
@@ -46,14 +46,14 @@
       <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; display: inline-block">
         <mat-select placeholder="{{ 'MORTGAGE_BUILDER_START.PURPOSE' | translate }}" formControlName="selectedPurpose">
           <mat-option *ngFor="let option of purpose" [value]="option.value">
-            {{option.title}}
+            {{option.title | translate}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
         <mat-select placeholder="{{ 'MORTGAGE_BUILDER_START.TYPE' | translate }}" formControlName="selectedType">
           <mat-option *ngFor="let option of type" [value]="option.value">
-            {{option.title}}
+            {{option.title | translate}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -67,14 +67,14 @@
       <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
         <mat-select placeholder="{{ 'MORTGAGE_BUILDER_START.OCCUPANCY' | translate }}" formControlName="selectedOccupancy">
           <mat-option *ngFor="let option of occupancy" [value]="option.value">
-            {{option.title}}
+            {{option.title | translate}}
           </mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; margin-top: 0.7rem; margin-bottom: 0rem;">
         <mat-select placeholder="{{ 'MORTGAGE_BUILDER_START.CRED_SCORE' | translate }}" formControlName="selectedCreditScore">
           <mat-option *ngFor="let option of creditScore" [value]="option.value">
-            {{option.title}}
+            {{option.title | translate}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -84,6 +84,6 @@
   </mat-card>
   <p></p>
   <div>
-    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">Next</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">{{ 'MORTGAGE_BUILDER_START.NEXT' | translate }}</button>
   </div>
 </form>

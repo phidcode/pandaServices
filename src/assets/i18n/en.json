@@ -213,7 +213,7 @@
       "WORK3CONTENT": "We are not restricted to one proprietary product. Our open product shelf enables us to find you the most suitable product with the best rate.", 
       "WORK4TITLE": "Professional Partnership",
       "WORK4CONTENT": "We work for you, not the Bank. You can count on our advice being impartial because we don't work for the lender. We always act in our clients' best interests."                                        
-    }, 
+    },
 
     "HOW_IT_WORKS": {
       "HOW_IT_WORKS_TITLE": "How It Works",
@@ -306,6 +306,15 @@
       "FAQ12SECTION_LI3":"Your lawyer/notary will charge you a fee for drawing up the mortgage and conveyance of title. The amount of the fee will depend on the individual that you use. The typical cost is $900 to $1,200.",
       "FAQ12SECTION_LI4":"If you’re purchasing a single-family home, you’ll need to give your lender a survey certificate showing where the property sits within the property lines. Some exceptions are made, however, on low loan-to-value deals and acreage properties. A survey will cost approximately $300-$350, but the lender will often accept a copy of an existing survey.",   
       "FAQ12SECTION_LI5":"Other costs include such things as an appraisal fee (approximately $200), title insurance and a home inspection (approximately $350)."   
+    }, 
+
+    "MORTGAGE_BUILDER": {
+      "STEP1": "Getting Started", 
+      "STEP2": "Tell Me Your Estimated Mortgage Size", 
+      "STEP3": "Choose A Lender", 
+      "STEP4": "Tell Me About Yourself", 
+      "STEP5": "Tell Me About Your Property", 
+      "STEP6": "Build My Mortgage Solution"
     },
 
     "MORTGAGE_BUILDER_CONSENT": {
@@ -322,6 +331,25 @@
       "CRED_SCORE": "Credit Score:",
       "NEXT": "Next"
     },
+
+    "Purchase": "Purchase",
+    "Renewal": "Renewal", 
+    "Refinance": "Refinance", 
+
+    "Fixed": "Fixed", 
+    "Variable": "Variable", 
+    "Variable-Open": "Variable-Open", 
+    "Fixed-Open": "Fixed-Open", 
+    "Undecided": "Undecided", 
+
+    "Owner-Occupied": "Owner-Occupied", 
+    "Tenant-Occupied": "Tenant-Occupied", 
+
+    "600 to 649": "600 to 649", 
+    "650 to 699": "650 to 699", 
+    "700 to 749": "700 to 749", 
+    "750+": "750+", 
+    "Not sure": "Not sure", 
 
     "MORTGAGE_BUILDER_MAP": {
       "A_LENDERS": "A Lenders", 
