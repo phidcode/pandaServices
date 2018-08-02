@@ -391,9 +391,38 @@
       "PURCHASE_OPTION": "购买", 
       "RENEWAL_OPTION": "续贷",
       "REFINANCE_OPTION": "再贷",
+      "HOME_PRICE": "房产价格", 
+      "AMORTIZATION_PERIOD": "摊还期限", 
+      "DOWN_PAY": "首期付款（$）", 
+      "MORTGAGE_PAY_FREQ": "还贷频率", 
+      "CURRRENT_BALANCE": "当前贷款余额", 
+      "REMAIN_AMORTIZATION": "剩余摊还期", 
+      "ADDITIONAL_FUND": "所需额外资金", 
+      "MORTGAGE_AMT": "贷款金额", 
+      "OTHER_DEBTS": "其他债务（列出全部）", 
+      "DEBT_TYPE": "债务类型", 
+      "DEBY_AMT": "债务金额", 
+      "MONTH_PAY": "月供", 
       "BACK_BUTTON": "上一步",
       "NEXT_BUTTON": "下一步"
     },
+
+    "Monthly": "每月", 
+    "Semi-Monthly": "每半月", 
+    "Bi-Weekly": "每两周", 
+    "Weekly": "每周", 
+
+    "5 Years": "5 年期", 
+    "10 Years": "10 年期", 
+    "15 Years": "15 年期", 
+    "20 Years": "20 年期", 
+    "25 Years": "25 年期", 
+
+    "Credit Card": "信用卡", 
+    "Car Loan": "车贷", 
+    "Line of Credit": "信贷额度", 
+    "Second Mortgage": "额外贷款", 
+    "Other Debt": "其他债务", 
 
     "PRIVACY": {
       "TITLE": "隐私及安全",

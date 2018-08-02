@@ -390,10 +390,39 @@
     "MORTGAGE_BUILDER_SELECTION": {
       "PURCHASE_OPTION": "Purchase Option", 
       "RENEWAL_OPTION": "Renewal Option",
-      "REFINANCE_OPTION": "Refinance Option",
+      "REFINANCE_OPTION": "Refinance Option", 
+      "HOME_PRICE": "Home Price", 
+      "AMORTIZATION_PERIOD": "Amortization Period", 
+      "DOWN_PAY": "Down Payment ($)", 
+      "MORTGAGE_PAY_FREQ": "Mortgage Payment Frequency", 
+      "CURRRENT_BALANCE": "Current Mortgage Balance", 
+      "REMAIN_AMORTIZATION": "Remaining Amortization", 
+      "ADDITIONAL_FUND": "Additional Funds Needed", 
+      "MORTGAGE_AMT": "Mortgage Amount", 
+      "OTHER_DEBTS": "Other Debts (show up for all)", 
+      "DEBT_TYPE": "Debt Type", 
+      "DEBY_AMT": "Debt Amount", 
+      "MONTH_PAY": "Monthly Payment", 
       "BACK_BUTTON": "Back",
       "NEXT_BUTTON": "Next"
     },
+
+    "Monthly": "Monthly", 
+    "Semi-Monthly": "Semi-Monthly", 
+    "Bi-Weekly": "Bi-Weekly", 
+    "Weekly": "Weekly", 
+
+    "5 Years": "5 Years", 
+    "10 Years": "10 Years", 
+    "15 Years": "15 Years", 
+    "20 Years": "20 Years", 
+    "25 Years": "25 Years", 
+    
+    "Credit Card": "Credit Card", 
+    "Car Loan": "Car Loan", 
+    "Line of Credit": "Line of Credit", 
+    "Second Mortgage": "Second Mortgage", 
+    "Other Debt": "Other Debt", 
 
     "PRIVACY": {
       "TITLE": "Privacy & Security Policy",
