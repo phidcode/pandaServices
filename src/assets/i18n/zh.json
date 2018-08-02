@@ -93,6 +93,7 @@
       "AMORTIZATION_PERIOD": "分期偿还时限：", 
       "MORTGAGE_RATE": "贷款利率：", 
       "MORTGAGE_TYPE": "贷款类型：", 
+      "MORTGAGE_TYPE_CONTENT": "5年-固定利率",
       "HOW_TO_ESTIMATE_TITLE": "如何计算月供能力", 
       "HOW_TO_ESTIMATE_P1": "Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. They take into account your income, monthly housing costs and overall debt load.", 
       "HOW_TO_ESTIMATE_P2": "The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. For condominiums, P.I.T.H. also includes half of your monthly condominium fees. The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.", 
@@ -104,7 +105,8 @@
       "DOWN_PAYMENT_P1": "Your down payment is a benchmark used to determine your maximum affordability. Ignoring income and debt levels, you can determine how much you can afford to spend using a simple calculation:", 
       "DOWN_PAYMENT_P2": "If your down payment is $25,000 or less, you can find your maximum purchase price using this formula: down payment / 5% = maximum affordability. If your down payment is $25,001 or more, you can find your maximum purchase price using this formula: down payment amount - $25,000 / 10% + $500,000. For example, if you have saved $50,000 for your down payment, the maximum home price you could afford would be $50,000 - $25,000 = $25,000 / 10% = $250,000 + $500,000 = $750,000. Any mortgage with less than a 20% down payment is known as a high-ratio mortgage, and requires you to purchase mortgage default insurance, commonly referred to as CMHC insurance.", 
       "CASH_REQ_OTHER_QUALIFICATIONS_TITLE": "所需现金及其他满足贷款条件", 
-      "CASH_REQ_OTHER_QUALIFICATIONS_CONTENT": "In addition to your down payment and CMHC insurance, you should set aside 1.5% - 4% of your home's selling price to cover closing costs, which are payable on closing day. Many home buyers forget to account for closing costs in their cash requirement. In addition to your debt service ratios, down payment, and cash for closing costs, mortgage lenders will also consider your credit history and your income when qualifying you for a mortgage. All of these factors are equally important. For example even if you have good credit, a sizeable down payment, and no debts, but an unstable income, you might have difficulty getting approved for a mortgage. Keep in mind that the mortgage affordability calculator can only provide an estimate of how much you'll be approved for, and assumes you’re an ideal candidate for a mortgage. To get the most accurate picture of what you qualify for, speak to a mortgage broker about getting a mortgage pre-approval."
+      "CASH_REQ_OTHER_QUALIFICATIONS_CONTENT": "In addition to your down payment and CMHC insurance, you should set aside 1.5% - 4% of your home's selling price to cover closing costs, which are payable on closing day. Many home buyers forget to account for closing costs in their cash requirement. In addition to your debt service ratios, down payment, and cash for closing costs, mortgage lenders will also consider your credit history and your income when qualifying you for a mortgage. All of these factors are equally important. For example even if you have good credit, a sizeable down payment, and no debts, but an unstable income, you might have difficulty getting approved for a mortgage. Keep in mind that the mortgage affordability calculator can only provide an estimate of how much you'll be approved for, and assumes you’re an ideal candidate for a mortgage. To get the most accurate picture of what you qualify for, speak to a mortgage broker about getting a mortgage pre-approval.",
+      "YEARS":"年"
     }, 
 
     "CALCULATOR_MONTHLY_PAYMENT": {
@@ -168,15 +170,14 @@
       "FIRSTTIME_ELIGIBILITY_P6": "如果是新建房产则必须在房产保修期内", 
       "FIRSTTIME_ELIGIBILITY_P7": "购房者必须在购买房产后18个月内申请退款",
       "FIRSTTIME_REBATE_HEADING": "安大略省购置首套房买家退税申请", 
-      "FIRSTTIME_REBATE_P1": "Taxpayers can claim an immediate refund when registering the land transfer papers and paying their taxes. Generally, on closing, your lawyer will claim the tax rebate on your behalf. If the rebate is not claimed at the time of registration, the full tax is paid and a refund claim can be made to the Ministry of Finance within 18 months. Information required for the application include:", 
-      "FIRSTTIME_REBATE_P2": "A completed Ontario Land Transfer Tax Refund Affidavit for First-Time Purchasers of Eligible homes.", 
-      "FIRSTTIME_REBATE_P3": "A copy of the registered land transfer deed.", 
-      "FIRSTTIME_REBATE_P4": "A copy of the agreement of purchase and sale.", 
-      "FIRSTTIME_REBATE_P5": "A copy of a document that provides proof of residence, such as a driver’s license, telephone/cable bills, etc.", 
+      "FIRSTTIME_REBATE_P1": "纳税人可以在登记房产转让文件和缴纳税款时立即申请退款。通常情况下您的律师会在成交时代表您申请退税。如果您在登记时没有及时申请退税并支付了全额税款，您也可以在18个月内向财政部提出退税申请。申请所需的资料包括：", 
+      "FIRSTTIME_REBATE_P2": "安大略省房产转让税退税宣誓书（Ontario Land Transfer Tax Refund Affidavit）。仅适用于首次购买符合条件房产的买家", 
+      "FIRSTTIME_REBATE_P3": "注册房产转让契约（Registered Land Transfer Deed）（复印件）", 
+      "FIRSTTIME_REBATE_P4": "购买和销售协议（Agreement of Purchase and Sale）（复印件）", 
+      "FIRSTTIME_REBATE_P5": "能够充当居住证明的相关文件（例如驾驶执照，电话/网费账单等）（复印件）", 
       "REF_AND_NOTES": "详情参考：", 
-      "GOV_LAND_TRANSFER_TAX": "Calculating Land Transfer Tax, Ontario Ministry of Finance", 
-      "GOV_FIRST_TIME_BUYER_REFUNDS": "Land Transfer Tax Refunds for First-Time Homebuyers, Ontario Ministry of Finance"
-    
+      "GOV_LAND_TRANSFER_TAX": "“如何计算房产转让税”-安大略省财政部官网（英文）", 
+      "GOV_FIRST_TIME_BUYER_REFUNDS": "“首套房产购买者房产转让税退税指南”-安大略省财政部官网（英文）"
     },
 
     "DASHBOARD": {
@@ -186,7 +187,7 @@
       "MORTGAGE_BUILDER_OCCUPANCY": "居住性质：",
       "MORTGAGE_BUILDER_CRED_SCORE": "信用评分：",
       "MORTGAGE_BUILDER_SUBMIT_BUTTON": "自助贷款",
-      "TITLE1": "What we Offer",
+      "TITLE1": "服务范围",
       "OFFER1TITLE": "商业贷款",
       "OFFER1CONTENT": "我们可以帮助您提供商业贷款以资助您投资新的商业房产(如餐厅、商铺等)，帮助您实现房地产投资组合的多样化",
       "OFFER2TITLE": "房屋贷款续贷",
@@ -203,7 +204,7 @@
       "OFFER7CONTENT": "您的房屋可以成为您最有效的金融借贷工具。房屋资产净值信用贷款以您房屋的资产净值作抵押，让您获得低利率信用贷款",
       "OFFER8TITLE": "再贷款及債務重組",
       "OFFER8CONTENT": "了解再贷款及重組的原因、需要考虑的因素以及面对的不同选择。使用我們的平台按你喜好及需要隨心所慾地選擇重組或再贷款的細節",
-      "TITLE2": "Why Work With Us?",
+      "TITLE2": "服务优势",
       "WORK1TITLE": "Clients First",
       "WORK1CONTENT": "Clients come first. Full Stop. We make it simple to help you get your mortgage.",  
       "WORK2TITLE": "Objective Advice",
