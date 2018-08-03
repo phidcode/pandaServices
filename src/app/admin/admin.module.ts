@@ -13,6 +13,7 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { UserInfoComponent } from './user-info/user-info.component';
 import { ContactusinfoComponent } from './contactusinfo/contactusinfo.component';
+import { MortgageInfoComponent } from './mortgage-info/mortgage-info.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,6 @@ import { ContactusinfoComponent } from './contactusinfo/contactusinfo.component'
     AgGridModule.withComponents([])
   ],
   providers: [AdminService],
-  declarations: [AdminComponent, UserInfoComponent, ContactusinfoComponent]
+  declarations: [AdminComponent, UserInfoComponent, ContactusinfoComponent, MortgageInfoComponent]
 })
 export class AdminModule { }
