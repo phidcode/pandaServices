@@ -1,10 +1,31 @@
-.welcome {
+@media (min-width: 401px) {
+    .welcome {
+        position: relative;
+        height: 50vh;
+        min-height: 300px;
+        background: url("../../assets/images/aboutus.jpg") no-repeat bottom center fixed;
+        background-size: cover;
+        }
+}
+
+@media (max-width: 400px) {
+    .welcome {
+        position: relative;
+        height: 50vh;
+        min-height: 100px;
+        background: url("../../assets/images/aboutus_mobile.jpg") no-repeat bottom center fixed;
+        background-size: cover;
+        }
+}
+
+
+/* .welcome {
     position: relative;
     height: 50vh;
     min-height: 300px;
     background: url("../../assets/images/aboutus.jpg") no-repeat bottom center fixed;
     background-size: cover;
-  }
+  } */
   
 .imgleft {
     float: left;
