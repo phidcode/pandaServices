@@ -1,12 +1,12 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { MortgageBuilderService} from '../mortgage-builder.service';
+import { MortgageBuilderService } from '../mortgage-builder.service';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 
 
 export interface Lender {
-  term: number; 
-  type: string; 
+  term: number;
+  type: string;
   rate: string;
 }
 
@@ -27,28 +27,28 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['term'];
 
   lenderA: Lender[] = [
-    {term: 1, type: 'Fixed', rate: '2.79%'}, 
-    {term: 2, type: 'Fixed', rate: '3.14%'}, 
-    {term: 3, type: 'Fixed', rate: '3.20%'}, 
-    {term: 4, type: 'Fixed', rate: '2.89% (Most Common)'}, 
-    {term: 5, type: 'Fixed', rate: '3.04%'}, 
-    {term: 3, type: 'Variable', rate: '3.56%'}, 
-    {term: 5, type: 'Variable', rate: '2.46%'}, 
+    { term: 1, type: 'Fixed', rate: '2.79%' },
+    { term: 2, type: 'Fixed', rate: '3.14%' },
+    { term: 3, type: 'Fixed', rate: '3.20%' },
+    { term: 4, type: 'Fixed', rate: '2.89% (Most Common)' },
+    { term: 5, type: 'Fixed', rate: '3.04%' },
+    { term: 3, type: 'Variable', rate: '3.56%' },
+    { term: 5, type: 'Variable', rate: '2.46%' },
   ]
 
   lenderB: Lender[] = [
-    {term: 1, type: 'Fixed', rate: '3.09%'}, 
-    {term: 2, type: 'Fixed', rate: '3.34%'}, 
-    {term: 3, type: 'Fixed', rate: '3.53%'}, 
-    {term: 4, type: 'Fixed', rate: '3.09%'}, 
-    {term: 5, type: 'Fixed', rate: '4.53%'}, 
-    {term: 3, type: 'Variable', rate: '3.50%'}, 
-    {term: 5, type: 'Variable', rate: '3.20%'}, 
+    { term: 1, type: 'Fixed', rate: '3.09%' },
+    { term: 2, type: 'Fixed', rate: '3.34%' },
+    { term: 3, type: 'Fixed', rate: '3.53%' },
+    { term: 4, type: 'Fixed', rate: '3.09%' },
+    { term: 5, type: 'Fixed', rate: '4.53%' },
+    { term: 3, type: 'Variable', rate: '3.50%' },
+    { term: 5, type: 'Variable', rate: '3.20%' },
   ]
 
   lenderC: Lender[] = [
-    {term: 1, type: 'Fixed', rate: '7.33%'}, 
-    {term: 2, type: 'Fixed', rate: 'Call Us'}, 
+    { term: 1, type: 'Fixed', rate: '7.33%' },
+    { term: 2, type: 'Fixed', rate: 'Call Us' },
   ]
 
   ngOnInit() {
@@ -59,5 +59,12 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
 
   resetForm() {
     this.mortgage = this.mbs.loadMortgageBuilder();
+  }
+
+  save(lender: string) {
+    // this.mortgage = this.mbs.loadMortgageBuilder();
+    // const mortgageBuilder = this.mortgageBuilder();
+    // this.mbs.saveMortgageBuilder(mortgageBuilder);
+    console.log(lender);
   }
 }

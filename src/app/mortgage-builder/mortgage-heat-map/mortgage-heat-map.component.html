@@ -14,7 +14,7 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <ul class="list-unstyled mt-3 mb-4"></ul>
-                <button mat-raised-button matStepperNext color="primary" >Use This Lender [Next]</button>
+                <button mat-raised-button matStepperNext color="primary" (click)="save('A')">Use This Lender [Next]</button>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -29,7 +29,7 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <ul class="list-unstyled mt-3 mb-4"></ul>
-                <button mat-raised-button matStepperNext color="primary" >Use This Lender [Next]</button>
+                <button mat-raised-button matStepperNext color="primary" (click)="save('B')">Use This Lender [Next]</button>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -44,7 +44,7 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
                 <ul class="list-unstyled mt-3 mb-4"></ul>
-                <button mat-raised-button matStepperNext color="primary" >Use This Lender [Next]</button>
+                <button mat-raised-button matStepperNext color="primary" (click)="save('Other')">Use This Lender [Next]</button>
             </div>
         </div>
 
