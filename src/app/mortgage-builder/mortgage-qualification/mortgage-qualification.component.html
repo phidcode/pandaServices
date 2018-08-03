@@ -27,7 +27,7 @@
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-6">
         <mat-select placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.PROVINCE' | translate }}" formControlName="province">
-          <mat-option *ngFor="let option of province" [value]="option">{{option}}</mat-option>
+          <mat-option *ngFor="let option of province" [value]="option">{{option | translate}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-6">
@@ -43,18 +43,18 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Job Reference</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_QUALIFICATION.JOB_REF' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Profession" formControlName="jobTitle" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.JOB_TITLE' | translate }}" formControlName="jobTitle" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="text" placeholder="Annual Income" formControlName="annualIncome" />
+        <input matInput type="text" placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.INCOME_YR' | translate }}" formControlName="annualIncome" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <mat-select placeholder="Income Type" formControlName="jobIncomeType">
-          <mat-option *ngFor="let option of jobIncomeType" [value]="option">{{option}}</mat-option>
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_QUALIFICATION.INCOME_TYPE' | translate }}" formControlName="jobIncomeType">
+          <mat-option *ngFor="let option of jobIncomeType" [value]="option">{{option | translate}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-card-content>

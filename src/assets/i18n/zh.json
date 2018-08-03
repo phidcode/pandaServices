@@ -387,9 +387,32 @@
       "CITY": "城市", 
       "PROVINCE": "省份", 
       "POSTAL_CODE": "邮政编码",
+      "JOB_REF": "工作信息", 
+      "JOB_TITLE": "职位", 
+      "INCOME_YR": "年收入", 
+      "INCOME_TYPE": "收入类型", 
       "BACK_BUTTON": "上一步",
       "NEXT_BUTTON": "下一步"
     },
+
+    "Alberta": "阿尔伯塔省（阿省）", 
+    "Briish Columbia": "不列颠哥伦比亚省（卑诗省）", 
+    "Manitoba": "曼尼托巴省（曼省）", 
+    "New Brunswick": "新不伦瑞克省", 
+    "Newfoundland and Labrador": "纽芬兰省", 
+    "Northwest Territories": "西北领地", 
+    "Nova Scotia": "新斯科舍省", 
+    "Nunavut": "努纳武特省", 
+    "Ontario": "安大略省（安省）", 
+    "Prince Edward Island": "爱德华王子岛省", 
+    "Quebec": "魁北克省", 
+    "Saskatchewan": "萨斯喀彻温省（萨省）", 
+    "Yukon": "育空地区", 
+
+    "Salaried": "工薪", 
+    "Commission": "佣金", 
+    "Self-Employed": "自雇", 
+    "Part-Time": "兼职", 
 
     "MORTGAGE_BUILDER_SELECTION": {
       "PURCHASE_OPTION": "购买", 

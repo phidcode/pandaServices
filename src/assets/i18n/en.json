@@ -387,9 +387,32 @@
       "CITY": "City", 
       "PROVINCE": "Province", 
       "POSTAL_CODE": "Postal Code",
+      "JOB_REF": "Job Reference", 
+      "JOB_TITLE": "Profession", 
+      "INCOME_YR": "Annual Income", 
+      "INCOME_TYPE": "Income Type", 
       "BACK_BUTTON": "Back",
       "NEXT_BUTTON": "Next"
     },
+
+    "Alberta": "Alberta", 
+    "Briish Columbia": "Briish Columbia", 
+    "Manitoba": "Manitoba", 
+    "New Brunswick": "New Brunswick", 
+    "Newfoundland and Labrador": "Newfoundland and Labrador", 
+    "Northwest Territories": "Northwest Territories", 
+    "Nova Scotia": "Nova Scotia", 
+    "Nunavut": "Nunavut", 
+    "Ontario": "Ontario", 
+    "Prince Edward Island": "Prince Edward Island", 
+    "Quebec": "Quebec", 
+    "Saskatchewan": "Saskatchewan", 
+    "Yukon": "Yukon", 
+    
+    "Salaried": "Salaried", 
+    "Commission": "Commission", 
+    "Self-Employed": "Self-Employed", 
+    "Part-Time": "Part-Time", 
 
     "MORTGAGE_BUILDER_SELECTION": {
       "PURCHASE_OPTION": "Purchase Option", 
