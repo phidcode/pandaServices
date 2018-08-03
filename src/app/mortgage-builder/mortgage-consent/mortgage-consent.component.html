@@ -4,7 +4,7 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Document Required</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_CONSENT.DOC_REQ' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
         <app-upload [fileUploadList]="fileUploadList"></app-upload>
@@ -13,30 +13,20 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Disclosure</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_CONSENT.DISCLOSURE' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      I warrant and confirm that the information given in the mortgage application form is true and correct and I understand that
-      it is being used to determine my credit responsibility. MeeFinancial is authorized to obtain any information required
-      for these purposes from other sources (including, for example, credit bureau) and each such source is hereby authorized
-      to provide us with such information. I also understand that the information given in the mortgage application form
-      as well as other information we obtain in relation to my credit history may be disclosed to potential mortgage lenders,
-      financial intermediary and mortgage insurers, organizations providing technological or other support services required
-      in relation to this application and any other parties to obtain a financial relationship. MeeFinancial may retain this
-      application and other personal information whether or not any transaction is ultimately complete.
-
+      {{ 'MORTGAGE_BUILDER_CONSENT.CONTENT_P1' | translate }}
       <p></p>
       <p>
-        <b>CANADA'S ANTI-SPAM LEGISLATIONCANADA'S ANTI-SPAM LEGISLATION was effective as of July 1, 2014. </b>
+        <b>{{ 'MORTGAGE_BUILDER_CONSENT.CONTENT_P2' | translate }}</b>
       </p>
-      <p>Under this legislation, I provide consent to receive email communications.
-      </p>
-
+      <p>{{ 'MORTGAGE_BUILDER_CONSENT.CONTENT_P3' | translate }}</p>
     </mat-card-content>
     <hr>
     <div class="container row">
       <mat-checkbox class="col-0.5" style="margin-top: 10px; margin-bottom: 0px; text-align: right" formControlName="consent"></mat-checkbox>
-      <p class="col" style="margin-top: auto; margin-bottom: auto; margin-left: 0;">I have read and agree to the terms and conditions. </p>
+      <p class="col" style="margin-top: auto; margin-bottom: auto; margin-left: 0;">{{ 'MORTGAGE_BUILDER_CONSENT.CONTENT_P4' | translate }}</p>
     </div>
     <p></p>
     <!-- <mat-checkbox>MeFinance may contact you about products and services you may like</mat-checkbox> -->
@@ -45,7 +35,7 @@
   </mat-card>
   <p></p>
   <div>
-    <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button matStepperNext color="primary" (click)="consent()" [disabled]="formGroup.invalid">Build My Mortgage</button>
+    <button mat-raised-button matStepperPrevious>{{ 'MORTGAGE_BUILDER_CONSENT.BACK_BUTTON' | translate }}</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="consent()" [disabled]="formGroup.invalid">{{ 'MORTGAGE_BUILDER_CONSENT.SUBMIT_BUTTON' | translate }}</button>
   </div>
 </form>

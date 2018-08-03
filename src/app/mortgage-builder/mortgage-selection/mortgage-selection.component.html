@@ -4,24 +4,24 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Purchase Option</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.PURCHASE_OPTION' | translate }}</mat-card-title>
     </mat-card-header>
 
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Home Price" formControlName="selectedHomePrice" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.HOME_PRICE' | translate }}" formControlName="selectedHomePrice" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
-        <mat-select placeholder="Amortization Period" formControlName="selectedAmortizationPeriod">
-          <mat-option *ngFor="let option of amortizationPeriod" [value]="option.value">{{option.title}}</mat-option>
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.AMORTIZATION_PERIOD' | translate }}" formControlName="selectedAmortizationPeriod">
+          <mat-option *ngFor="let option of amortizationPeriod" [value]="option.value">{{option.title | translate}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Down Payment $" formControlName="selectedDownPaymentDollar" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.DOWN_PAY' | translate }}" formControlName="selectedDownPaymentDollar" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
-        <mat-select placeholder="Mortgage Payment Frequency" formControlName="selectedPaymentFrequency">
-          <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title}}</mat-option>
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.MORTGAGE_PAY_FREQ' | translate }}" formControlName="selectedPaymentFrequency">
+          <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title | translate}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-card-content>
@@ -33,21 +33,21 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Renewal Option</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.RENEWAL_OPTION' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Home Price" formControlName="selectedHomePrice" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.HOME_PRICE' | translate }}" formControlName="selectedHomePrice" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Current Mortgage Balance" formControlName="selectedCurrentMortgageBalance" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.CURRRENT_BALANCE' | translate }}" formControlName="selectedCurrentMortgageBalance" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-3 col-md-3 col-12">
-        <input matInput type="number" placeholder="Remaining Amortization" formControlName="selectedRemainingAmortization" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.REMAIN_AMORTIZATION' | translate }}" formControlName="selectedRemainingAmortization" />
       </mat-form-field>
       <mat-form-field class="col-lg-3 col-md-3 col-12">
-        <mat-select placeholder="Mortgage Payment Frequency" formControlName="selectedPaymentFrequency">
-          <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title}}</mat-option>
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.MORTGAGE_PAY_FREQ' | translate }}" formControlName="selectedPaymentFrequency">
+          <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title | translate}}</mat-option>
         </mat-select>
       </mat-form-field>
     </mat-card-content>
@@ -58,28 +58,28 @@
       <div mat-card-avatar>
         <i class="fas fa-chevron-right"></i>
       </div>
-      <mat-card-title>Refinance Option</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.REFINANCE_OPTION' | translate }}</mat-card-title>
     </mat-card-header>
     <mat-card-content class="row">
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="number" placeholder="Home Price" formControlName="selectedHomePrice" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.HOME_PRICE' | translate }}" formControlName="selectedHomePrice" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="number" placeholder="Current Mortgage Balance" formControlName="selectedCurrentMortgageBalance" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.CURRRENT_BALANCE' | translate }}" formControlName="selectedCurrentMortgageBalance" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="number" placeholder="Remaining Amortization" formControlName="selectedRemainingAmortization" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.REMAIN_AMORTIZATION' | translate }}" formControlName="selectedRemainingAmortization" />
       </mat-form-field>
       <mat-form-field class="col-lg-4 col-md-4 col-12">
-        <mat-select placeholder="Mortgage Payment Frequency" formControlName="selectedPaymentFrequency">
-          <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title}}</mat-option>
+        <mat-select placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.MORTGAGE_PAY_FREQ' | translate }}" formControlName="selectedPaymentFrequency">
+          <mat-option *ngFor="let option of paymentFrequency" [value]="option.value">{{option.title | translate}}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="number" placeholder="Additional Funds Needed" formControlName="selectedAdditionalFundsNeeded" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.ADDITIONAL_FUND' | translate }}" formControlName="selectedAdditionalFundsNeeded" />
       </mat-form-field>
       <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-        <input matInput type="number" placeholder="Mortgage Amount" formControlName="selectedMortgageAmount" />
+        <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.MORTGAGE_AMT' | translate }}" formControlName="selectedMortgageAmount" />
       </mat-form-field>
     </mat-card-content>
   </mat-card>
@@ -89,22 +89,22 @@
       <div mat-card-avatar>
         <i class="fas fa-list"></i>
       </div>
-      <mat-card-title>Other Debts (show up for all)</mat-card-title>
+      <mat-card-title>{{ 'MORTGAGE_BUILDER_SELECTION.OTHER_DEBTS' | translate }}</mat-card-title>
     </mat-card-header>
     <!-- <mat-card-content> -->
     <mat-list formArrayName="otherDebts">
       <mat-list-item class="row" style="height: auto;" *ngFor="let otherDebt of otherDebts.controls; let i=index" [formGroupName]="i">
         <div class="container col-10">
           <mat-form-field class="col-lg-4 col-md-4 col-12">
-            <mat-select placeholder="Debt Type" formControlName="debtType">
-              <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title}}</mat-option>
+            <mat-select placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.DEBT_TYPE' | translate }}" formControlName="debtType">
+              <mat-option *ngFor="let option of debtType" [value]="option.value">{{option.title | translate}}</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-            <input matInput type="number" placeholder="Debt Amount" formControlName="debtAmount" />
+            <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.DEBY_AMT' | translate }}" formControlName="debtAmount" />
           </mat-form-field>
           <mat-form-field class="MortgageBuilder-form-field-form-field col-lg-4 col-md-4 col-12">
-            <input matInput type="number" placeholder="Monthly Payment" formControlName="monthlyPayment" />
+            <input matInput type="number" placeholder="{{ 'MORTGAGE_BUILDER_SELECTION.MONTH_PAY' | translate }}" formControlName="monthlyPayment" />
           </mat-form-field>
         </div>
         <!-- <mat-checkbox id="EstMinPayment1" [(ngModel)]="checked">Estimate Monthly Payment</mat-checkbox> -->
@@ -125,7 +125,7 @@
   <p></p>
   <!--Divider  -->
   <div>
-    <button mat-raised-button matStepperPrevious>Back</button>
-    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">Next</button>
+    <button mat-raised-button matStepperPrevious>{{ 'MORTGAGE_BUILDER_SELECTION.BACK_BUTTON' | translate }}</button>
+    <button mat-raised-button matStepperNext color="primary" (click)="save()" [disabled]="formGroup.invalid">{{ 'MORTGAGE_BUILDER_SELECTION.NEXT_BUTTON' | translate }}</button>
   </div>
 </form>

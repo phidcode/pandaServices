@@ -4,8 +4,8 @@
   <div class="inner-wrapper mt-auto mb-auto container">
     <div class="row">
       <div class="col-12">
-        <h1 class="welcome-heading display-4 text-white"> {{ 'CALCULATOR_AFFORDABILITY.AFFORDABILITY_TITLE' | translate }} </h1>
-        <p class="text-white"> {{ 'CALCULATOR_AFFORDABILITY.AFFORDABILITY_INTRO' | translate }} </p>
+        <h1 class="welcome-heading display-4 text-white">{{ 'CALCULATOR_AFFORDABILITY.AFFORDABILITY_TITLE' | translate }}</h1>
+        <p class="text-white">{{ 'CALCULATOR_AFFORDABILITY.AFFORDABILITY_INTRO' | translate }}</p>
         <!-- <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Calculate The Land Transfer Tax</a> -->
       </div>
     </div>
@@ -18,13 +18,13 @@
     <div class="col-12 col-lg-3 d-flex" formGroupName="annualIncomeForm">
       <div class="row">
         <div class="col-12" style="height: auto">
-          <h4>Annual Income</h4>
+          <h4>{{ 'CALCULATOR_AFFORDABILITY.ANNUAL_INCOME_TITLE' | translate }}</h4>
           <span class="row"> </span>
         </div>
         <div class="col-12 d-flex" style="text-align: left;">
           <div class="col-8 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Annual Income (Before Tax):
-            <span class="tooltiptext">Your gross income before-tax, including any bonuses and supplementary income.</span>
+              {{ 'CALCULATOR_AFFORDABILITY.ANNUAL_INCOME_B4TAX' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.ANNUAL_INCOME_B4TAX_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="annualIncome" id="annualIncome" formControlName="annualIncome">
@@ -32,8 +32,8 @@
         </div>
         <div class="col-12 d-flex" style="text-align: left;">
           <div class="col-8 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Co-Applicant Income (Before Tax):
-            <span class="tooltiptext">Your co-applicant&#039;s before-tax gross income. Your combined income will be used to calculate the mortgage you can afford.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.COAPP_INCOME_B4TAX' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.COAPP_INCOME_B4TAX_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" id="coApplicantIncome" formControlName="coApplicantIncome">
@@ -46,48 +46,48 @@
     <div class="col-12 col-lg-4 d-flex" formGroupName="livingCostsForm">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-10" style="height: auto">
-          <h4>Living Costs</h4>
-          <span>(Check to include the selected field)</span>
+          <h4>{{ 'CALCULATOR_AFFORDABILITY.LIVING_COST_TITLE' | translate }}</h4>
+          <span>{{ 'CALCULATOR_AFFORDABILITY.LIVING_COST_TITLE_DESCRIPTION' | translate }}</span>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
           <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            PropertyTax:
-            <span class="tooltiptext">An annual tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.PROPERTY_TAX' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.PROPERTY_TAX_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="/Month">
-            <mat-option selected value="month">/Month</mat-option>
-            <mat-option value="year">/Year</mat-option>
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+            <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
+            <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
           <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px; text-align: center" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax"></mat-checkbox>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
           <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Condo Fees:
-            <span class="tooltiptext">Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.CONDO_FEES' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CONDO_FEES_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="/Month">
-            <mat-option selected value="month">/Month</mat-option>
-            <mat-option value="year">/Year</mat-option>
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+            <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
+            <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
           <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees"></mat-checkbox>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
           <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Heating Costs:
-            <span class="tooltiptext">The total costs associated with heating your home and water. We have used a default estimate based on provincial averages.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.HEATING_COSTS' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.HEATING_COSTS_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="/Month">
-            <mat-option selected value="month">/Month</mat-option>
-            <mat-option value="year">/Year</mat-option>
+          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+            <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
+            <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
           <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px; margin-left: 0; margin-right: auto" type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts"></mat-checkbox>
         </div>
@@ -97,46 +97,46 @@
     <div class="col-12 col-lg-3 d-flex" formGroupName="debtPaymentsForm">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-11" style="height: auto">
-          <h4>Debt Payments</h4>
+          <h4>{{ 'CALCULATOR_AFFORDABILITY.DEBT_PAYMENTS_TITLE' | translate }}</h4>
           <span class="row"> </span>
         </div>
         <div class="col-lg-12 col-md-12 col-11 d-flex" style="text-align: left;">
           <div class="col-4 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Credit Card:
-            <span class="tooltiptext">The average monthly interest owed on outstanding credit card balances. This does not include the balances themselves, only the interest portion.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.CREDIT_CARD' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CREDIT_CARD_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
           </mat-form-field>
-          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr" placeholder="/Month">
-            <mat-option selected value="month">/Month</mat-option>
-            <mat-option value="year">/Year</mat-option>
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+            <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
+            <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
         </div>
         <div class="col-lg-12 col-md-12 col-11 d-flex"  style="text-align: left;">
           <div class="col-4 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Car Payment:
-            <span class="tooltiptext">Your monthly leasing or financing outlay on any household vehicles.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.CAR_PAYMENT' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CAR_PAYMENT_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
           </mat-form-field>
-          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr" placeholder="/Month">
-            <mat-option selected value="month">/Month</mat-option>
-            <mat-option value="year">/Year</mat-option>
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+            <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
+            <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
         </div>
         <div class="col-lg-12 col-md-12 col-11 d-flex" style="text-align: left;">
           <div class="col-4 tooltip" style="margin-top: auto; margin-bottom: auto;">
-            Other Loan Expenses:
-            <span class="tooltiptext">Any other monthly loan expenses, such as lines of credit, student loans, alimony or child support.</span>
+            {{ 'CALCULATOR_AFFORDABILITY.OTHER_LOAN_EXPANSES' | translate }}
+            <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.OTHER_LOAN_EXPANSES_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <input matInput type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
           </mat-form-field>
-          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr" placeholder="/Month">
-            <mat-option selected value="month">/Month</mat-option>
-            <mat-option value="year">/Year</mat-option>
+          <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+            <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
+            <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
         </div>
       </div>
@@ -144,7 +144,7 @@
 
     <div class="col-12" style="margin-top: 1rem">
       <!-- <button type="submit" id="submit" name="submit" class="btn btn-primary btn-pill">Calculate</button> -->
-      <button mat-raised-button color="primary" type="submit" id="submit" class="btn btn-primary btn-pill" name="submit">GO</button>
+      <button mat-raised-button color="primary" type="submit" id="submit" class="btn btn-primary btn-pill" name="submit">{{ 'CALCULATOR_AFFORDABILITY.SUBMIT_BUTTON' | translate }}</button>
     </div>
   </div>
 
@@ -157,30 +157,30 @@
 <div class="row" style="text-align: left; margin: 5px">
   <div class="col-lg-7 col-12">
     <div class="row">
-      <h4 class="col-8">Max Affordability: </h4>
-      <h4 class="col-4"> {{maxAffordability | currency:'USD':true:'1.0-0'}} </h4>
+      <h5 class="col-8">{{ 'CALCULATOR_AFFORDABILITY.MAX_AFFORDABILITY' | translate }}</h5>
+      <h5 class="col-4"> {{maxAffordability | currency:'USD':true:'1.0-0'}} </h5>
     </div>
     <div class="row">
-      <h4 class="col-8">Down Payment (20%): </h4>
-      <h4 class="col-4"> {{downPayment | currency:'USD':true:'1.0-0'}} </h4>
+      <h5 class="col-8">{{ 'CALCULATOR_AFFORDABILITY.DOWN_PAY' | translate }}</h5>
+      <h5 class="col-4"> {{downPayment | currency:'USD':true:'1.0-0'}} </h5>
     </div>
     <div class="row">
-      <h4 class="col-8">Total Mortgage Payment per month: </h4>
-      <h4 class="col-4" style="color: green"> {{monthlyMortgagePayment | currency:'USD':true:'1.0-0'}} </h4>
+      <h5 class="col-8">{{ 'CALCULATOR_AFFORDABILITY.TOTAL_MORTGAGE_PER_MONTH' | translate }}</h5>
+      <h5 class="col-4" style="color: green"> {{monthlyMortgagePayment | currency:'USD':true:'1.0-0'}} </h5>
     </div>
   </div>
   <div class="col-lg-5 col-12">
     <div class="row">
-      <h4 class="col-7">Amortization Period: </h4>
-      <h4 class="col-5"> {{ amortizationPeriod }} years </h4>
+      <h5 class="col-7">{{ 'CALCULATOR_AFFORDABILITY.AMORTIZATION_PERIOD' | translate }}</h5>
+      <h5 class="col-5"> {{ amortizationPeriod }} {{ 'CALCULATOR_AFFORDABILITY.YEARS' | translate }} </h5>
     </div>
     <div class="row">
-      <h4 class="col-7">Mortgage Rate: </h4>
-      <h4 class="col-5"> {{ mortgageRate | percent: '1.2-2' }} </h4>
+      <h5 class="col-7">{{ 'CALCULATOR_AFFORDABILITY.MORTGAGE_RATE' | translate }}</h5>
+      <h5 class="col-5"> {{ mortgageRate | percent: '1.2-2' }} </h5>
     </div>
     <div class="row">
-      <h4 class="col-7">Mortgage Type: </h4>
-      <h4 class="col-5"> {{ mortgageType }} </h4>
+      <h5 class="col-7">{{ 'CALCULATOR_AFFORDABILITY.MORTGAGE_TYPE' | translate }}</h5>
+      <h5 class="col-5">{{ 'CALCULATOR_AFFORDABILITY.MORTGAGE_TYPE_CONTENT' | translate }}  </h5>
     </div>
   </div>
 </div>
@@ -189,28 +189,22 @@
 <hr>
 
 <div class="container">
-  <h3> How to estimate affordability</h3><p></p>
-  Lenders look at two ratios when determining the mortgage amount you qualify for, which generally indicate how much you can afford. 
-  These ratios are called the Gross Debt Service (GDS) ratio and Total Debt Service (TDS) ratio. 
-  They take into account your income, monthly housing costs and overall debt load.
+  <h3>{{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_TITLE' | translate }}</h3><p></p>
+  {{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_P1' | translate }}
   <p></p>
-  The first affordability rule, as set out by the Canada Mortgage and Housing Corporation (CMHC), is that your monthly housing costs – mortgage principal and interest, taxes and heating expenses (P.I.T.H.) - should not exceed 32% of your gross household monthly income. 
-  For condominiums, P.I.T.H. also includes half of your monthly condominium fees. 
-  The sum of these housing costs as a percentage of your gross monthly income is your GDS ratio.
+  {{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_P2' | translate }}
   <p></p>
-  The CMHC’s second affordability rule is that your total monthly debt load, including housing costs, should not be more than 40% of your gross monthly income. 
-  In addition to housing costs, your total monthly debt load would include credit card interest, car payments, and other loan expenses. 
-  The sum of your total monthly debt load as a percentage of your gross household income is your TDS ratio.
+  {{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_P3' | translate }}
   <p></p>
-  Note that while the industry guideline for GDS and TDS is 32% and 40% respectively, most borrowers with good credit and steady income will be allowed to exceed these limits. The maximum allowed is 39% and 44%. The calculator uses these maximums to estimate affordability.
+  {{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_P4' | translate }}
 
   <h4><br></h4>
 
-  <img alt="GDSR" style="width: 100%; height: auto" src="assets/images/GDSR.png">
+  <img alt="GDSR" style="width: 100%; height: auto" src="{{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_GDSR' | translate }}">
 
   <h4><br></h4>
 
-  <img alt="TDSR" style="width: 100%; height: auto" src="assets/images/TDSR.png">
+  <img alt="TDSR" style="width: 100%; height: auto" src="{{ 'CALCULATOR_AFFORDABILITY.HOW_TO_ESTIMATE_TDSR' | translate }}">
 
   <h4><br></h4>
 
@@ -219,24 +213,19 @@
 <hr>
 
 <div class="container">
-  <h3>Down Payment</h3>
+  <h3>{{ 'CALCULATOR_AFFORDABILITY.DOWN_PAYMENT_TITLE' | translate }}</h3>
   <p></p>
-  Your down payment is a benchmark used to determine your maximum affordability. Ignoring income and debt levels, you can determine how much you can afford to spend using a simple calculation:
-<p></p>
-  If your down payment is $25,000 or less, you can find your maximum purchase price using this formula: down payment / 5% = maximum affordability.
-  If your down payment is $25,001 or more, you can find your maximum purchase price using this formula: down payment amount - $25,000 / 10% + $500,000. For example, if you have saved $50,000 for your down payment, the maximum home price you could afford would be $50,000 - $25,000 = $25,000 / 10% = $250,000 + $500,000 = $750,000.
-  Any mortgage with less than a 20% down payment is known as a high-ratio mortgage, and requires you to purchase mortgage default insurance, commonly referred to as CMHC insurance.
+  {{ 'CALCULATOR_AFFORDABILITY.DOWN_PAYMENT_P1' | translate }}
+  <p></p>
+  {{ 'CALCULATOR_AFFORDABILITY.DOWN_PAYMENT_P2' | translate }}
 </div>
 
 <hr>
 
 <div class="container">
-  <h3>Cash Requirements & Other Mortgage Qualification Factors </h3>
+  <h3>{{ 'CALCULATOR_AFFORDABILITY.CASH_REQ_OTHER_QUALIFICATIONS_TITLE' | translate }}</h3>
   <p></p>
-  In addition to your down payment and CMHC insurance, you should set aside 1.5% - 4% of your home's selling price to cover closing costs, which are payable on closing day. Many home buyers forget to account for closing costs in their cash requirement.
-  In addition to your debt service ratios, down payment, and cash for closing costs, mortgage lenders will also consider your credit history and your income when qualifying you for a mortgage. All of these factors are equally important. For example even if you have good credit, a sizeable down payment, and no debts, but an unstable income, you might have difficulty getting approved for a mortgage.
-
-  Keep in mind that the mortgage affordability calculator can only provide an estimate of how much you'll be approved for, and assumes you’re an ideal candidate for a mortgage. To get the most accurate picture of what you qualify for, speak to a mortgage broker about getting a mortgage pre-approval.
+  {{ 'CALCULATOR_AFFORDABILITY.CASH_REQ_OTHER_QUALIFICATIONS_CONTENT' | translate }}
   <h2></h2>
 </div>
 

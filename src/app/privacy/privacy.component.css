@@ -1,11 +1,23 @@
-.welcomeprivacy {
+@media (min-width: 401px) {
+  .welcomeprivacy {
     position: relative;
     height: 50vh;
     min-height: 300px;
     background: url("../../assets/images/gilles-lambert-8649-unsplash.jpg") no-repeat bottom center fixed;
     background-size: cover;
   }
-
+}
+  
+@media (max-width: 400px) {
+  .welcomeprivacy {
+    position: relative;
+    height: 50vh;
+    min-height: 150px;
+    background: url("../../assets/images/gilles-lambert-8649-unsplash_mobile.jpg") no-repeat bottom center fixed;
+    background-size: cover;
+  }
+}
+  
   .welcomeprivacy:before {
     position: absolute;
     z-index: 0;

@@ -4,9 +4,9 @@
 	<div class="inner-wrapper mt-auto mb-auto container">
 		<div class="row">
 			<div class="col-12">
-				<h1 class="welcome-heading display-4 text-white"> {{ 'CALCULATOR_MONTHLY_PAYMENT.MONTHLY_PAYMENT_TITLE' | translate }} </h1>
+				<h1 class="welcome-heading display-4 text-white">{{ 'CALCULATOR_MONTHLY_PAYMENT.MONTHLY_PAYMENT_TITLE' | translate }}</h1>
 				
-				<p class="text-white"> {{ 'CALCULATOR_MONTHLY_PAYMENT.MONTHLY_PAYMENT_INTRO' | translate }} </p>
+				<p class="text-white">{{ 'CALCULATOR_MONTHLY_PAYMENT.MONTHLY_PAYMENT_INTRO' | translate }}</p>
 				<!-- <a href="#our-services" class="btn btn-lg btn-outline-white btn-pill align-self-center">Start My DIY Mortgage</a> -->
 			</div>
 		</div>
@@ -15,8 +15,8 @@
 <p></p>
 <div class="container">
 
-	<h1>Monthly Payment Calculator</h1>
-	Our monthly payment calculator calculates your monthly payment and shows you the corresponding amortization schedule. If you are purchasing a home, our payment calculator allows you to test down payment and amortization scenarios, and compare variable and fixed mortgage rates. We also help you calculate CMHC insurance and land transfer tax.
+	<h1>{{ 'CALCULATOR_MONTHLY_PAYMENT.MONTHLY_PAYMENT_CALCULATOR_TITLE' | translate }}</h1>
+	{{ 'CALCULATOR_MONTHLY_PAYMENT.MONTHLY_PAYMENT_CALCULATOR_DETAILS' | translate }}
 	
 	<hr>
 
@@ -24,27 +24,29 @@
 		<div class="row">
 			<div class="col-12">
 				<div class="row">
-					<div class="col-lg-3 col-md-3 col-12"><h2>Asking Price: </h2></div>
+					<div class="col-lg-3 col-md-3 col-12">
+						<h2>{{ 'CALCULATOR_MONTHLY_PAYMENT.ASKING_PRICE_TITLE' | translate }}</h2>
+					</div>
 					<mat-form-field class="col-lg-6 col-md-6 col-8">
-						<input matInput placeholder="Asking Price" type="number" class="example-right-align" formControlName="askingPrice">
+						<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.ASKING_PRICE_PLACEHOLD' | translate }}" type="number" class="example-right-align" formControlName="askingPrice">
 						<span matPrefix>$&nbsp;</span>
 						<span matSuffix></span>
 					</mat-form-field>
-					<div class="col-lg-3 col-md-3 col-4" style="margin-top: auto; margin-bottom: auto; text-align: center;"><button mat-raised-button color="primary" class="btn btn-primary btn-pill" name="submit">GO</button></div>
+					<div class="col-lg-3 col-md-3 col-4" style="margin-top: auto; margin-bottom: auto; text-align: center;"><button mat-raised-button color="primary" class="btn btn-primary btn-pill" name="submit">{{ 'CALCULATOR_MONTHLY_PAYMENT.SUBMIT_BUTTON' | translate }}</button></div>
 				</div>
 			</div>
 			<div class="col-12"><br></div>
 			<div class="col-12">
 				<div class="row" style="margin-top: auto; margin-bottom: auto;">
 					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
-						<h4 matBadge="i" matBadgePosition="before" matTooltip="The amount of money you pay up front to obtain a mortgage. The minimum down payment in Canada is 5%. For down payments of less than 20%, home buyers are required to purchase mortgage default insurance, commonly referred to as CMHC insurance.">
-							<p>Down Payment: </p>
+						<h4 matBadge="i" matBadgePosition="before" matTooltip="{{ 'CALCULATOR_MONTHLY_PAYMENT.DOWN_PAY_TOOLTIPTXT' | translate }}">
+							<p>{{ 'CALCULATOR_MONTHLY_PAYMENT.DOWN_PAY_TITLE' | translate }}</p>
 						</h4>
 					</div>
 					<div class="col-lg-3 col-md-3 col-7">
 						<div class="row">
 							<mat-form-field class="example-right-align col-12">
-								<input matInput placeholder="Down Payment (%)" type="number" value=5 formControlName="rateDownPayment1">
+								<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.DOWN_PAY_PLACEHOLD' | translate }}" type="number" value=5 formControlName="rateDownPayment1">
 								<span matSuffix>%</span>
 							</mat-form-field>
 							<mat-label class="col-12" style="color: red;text-align: center; margin-top: 0; margin-bottom: 2rem">
@@ -55,7 +57,7 @@
 					<div class="col-lg-3 col-md-3 d-none d-md-block">
 						<div class="row">
 							<mat-form-field class="example-right-align col-12">
-								<input matInput placeholder="Down Payment (%)" type="number" value=10 formControlName="rateDownPayment2">
+								<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.DOWN_PAY_PLACEHOLD' | translate }}" type="number" value=10 formControlName="rateDownPayment2">
 								<span matSuffix>%</span>
 							</mat-form-field>
 							<mat-label class="col-12" style="color: red;text-align: center; margin-top: 0; margin-bottom: 2rem">
@@ -66,7 +68,7 @@
 					<div class="col-lg-3 col-md-3 d-none d-md-block">
 						<div class="row">
 							<mat-form-field class="example-right-align col-12">
-								<input matInput placeholder="Down Payment (%)" type="number" value=15 formControlName="rateDownPayment3">
+								<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.DOWN_PAY_PLACEHOLD' | translate }}" type="number" value=15 formControlName="rateDownPayment3">
 								<span matSuffix>%</span>
 							</mat-form-field>
 							<mat-label class="col-12" style="color: red;text-align: center; margin-top: 0; margin-bottom: 2rem">
@@ -79,8 +81,8 @@
 			<div class="col-12">
 				<div class="row" style="margin-top: auto; margin-bottom: auto">
 					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
-						<h4 matBadge="i" matBadgePosition="before" matTooltip="Mortgage default insurance, commonly referred to as CMHC insurance, protects the lender in the case the borrower defaults on the mortgage. Mortgage default insurance is required on all mortgages with down payments of less than 20%, which are known as high ratio mortgages. Mortgage default insurance is calculated as a percentage applied to your mortgage amount.">
-							<p>Mortgage Insurance: </p>
+						<h4 matBadge="i" matBadgePosition="before" matTooltip="{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_INSURANCE_TOOLTIPTXT' | translate }}">
+							<p>{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_INSURANCE_TITLE' | translate }}</p>
 						</h4>
 					</div>
 					<div class="col-lg-3 col-md-3 col-7" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
@@ -104,7 +106,7 @@
 				<div class="row" style="margin-top: auto; margin-bottom: auto">
 					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto;">
 						<h4>
-							<p>Total Mortgage Required: </p>
+							<p>{{ 'CALCULATOR_MONTHLY_PAYMENT.TOTAL_MORTGAGE_REQ_TITLE' | translate }}</p>
 						</h4>
 					</div>
 					<div class="col-lg-3 col-md-3 col-7" style="color: red; text-align: center; margin-top: auto; margin-bottom: auto">
@@ -127,28 +129,26 @@
 			<div class="col-12">
 				<div class="row" style="margin-top: auto; margin-bottom: auto">
 					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
-						<h4 matBadge="i" matBadgePosition="before" matTooltip="The length of time it will take a homeowner to pay off his/her mortgage. 
-						In Canada, the maximum amortization period for insurable mortgages is 25 years. 
-						Longer amortization periods allow homeowners to make smaller monthly payments, but equate to more interest paid over the life of the mortgage.">
-							<p>Amortization Period: </p>
+						<h4 matBadge="i" matBadgePosition="before" matTooltip="{{ 'CALCULATOR_MONTHLY_PAYMENT.AMORTIZATION_PERIOD_TOOLTIPTXT' | translate }}">
+							<p>{{ 'CALCULATOR_MONTHLY_PAYMENT.AMORTIZATION_PERIOD_TITLE' | translate }}</p>
 						</h4>
 					</div>
 					<div class="col-lg-3 col-md-3 col-7" style="margin-top: auto; margin-bottom: auto">
 						<mat-form-field class="example-right-align col-12">
-							<input matInput placeholder="Amortization Period (years)" type="number" value=5 formControlName="yrsAmortizationPeriod1">
-							<span matSuffix>yrs</span>
+							<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.AMORTIZATION_PERIOD_PLACEHOLD' | translate }}" type="number" value=5 formControlName="yrsAmortizationPeriod1">
+							<span matSuffix>{{ 'CALCULATOR_MONTHLY_PAYMENT.SUFFIX_YR' | translate }}</span>
 						</mat-form-field>
 					</div>
 					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
 						<mat-form-field class="example-right-align col-12">
-							<input matInput placeholder="Amortization Period (years)" type="number" value=15 formControlName="yrsAmortizationPeriod2">
-							<span matSuffix>yrs</span>
+							<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.AMORTIZATION_PERIOD_PLACEHOLD' | translate }}" type="number" value=15 formControlName="yrsAmortizationPeriod2">
+							<span matSuffix>{{ 'CALCULATOR_MONTHLY_PAYMENT.SUFFIX_YR' | translate }}</span>
 						</mat-form-field>
 					</div>
 					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
 						<mat-form-field class="example-right-align col-12">
-							<input matInput placeholder="Amortization Period (years)" type="number" value=25 formControlName="yrsAmortizationPeriod3">
-							<span matSuffix>yrs</span>
+							<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.AMORTIZATION_PERIOD_PLACEHOLD' | translate }}" type="number" value=25 formControlName="yrsAmortizationPeriod3">
+							<span matSuffix>{{ 'CALCULATOR_MONTHLY_PAYMENT.SUFFIX_YR' | translate }}</span>
 						</mat-form-field>
 					</div>
 				</div>
@@ -156,25 +156,25 @@
 			<div class="col-12">
 				<div class="row" style="margin-top: auto; margin-bottom: auto">
 					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
-						<h4 matBadge="i" matBadgePosition="before" matTooltip="The rate of interest you will pay on the outstanding balance of your mortgage. This is determined by the mortgage type and mortgage provider. Until you have been approved for the mortgage, the rate can change at anytime.">
-							<p>Mortgage Rate: </p>
+						<h4 matBadge="i" matBadgePosition="before" matTooltip="{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_RATE_TOOLTIPTXT' | translate }}">
+							<p>{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_RATE_TITLE' | translate }}</p>
 						</h4>
 					</div>
 					<div class="col-lg-3 col-md-3 col-7" style="margin-top: auto; margin-bottom: auto">
 						<mat-form-field class="example-right-align col-12">
-							<input matInput placeholder="Mortgage Rate (%)" type="number" value=3.08 formControlName="rateMortgage1">
+							<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_RATE_PLACEHOLD' | translate }}" type="number" value=3.08 formControlName="rateMortgage1">
 							<span matSuffix>%</span>
 						</mat-form-field>
 					</div>
 					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
 						<mat-form-field class="example-right-align col-12">
-							<input matInput placeholder="Mortgage Rate (%)" type="number" value=3.08 formControlName="rateMortgage2">
+							<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_RATE_PLACEHOLD' | translate }}" type="number" value=3.08 formControlName="rateMortgage2">
 							<span matSuffix>%</span>
 						</mat-form-field>
 					</div>
 					<div class="col-lg-3 col-md-3 d-none d-md-block" style="margin-top: auto; margin-bottom: auto">
 						<mat-form-field class="example-right-align col-12">
-							<input matInput placeholder="Mortgage Rate (%)" type="number" value=3.08 formControlName="rateMortgage3">
+							<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.MORTGAGE_RATE_PLACEHOLD' | translate }}" type="number" value=3.08 formControlName="rateMortgage3">
 							<span matSuffix>%</span>
 						</mat-form-field>
 					</div>
@@ -184,7 +184,7 @@
 				<div class="row" style="margin-top: auto; margin-bottom: auto">
 					<div class="col-lg-3 col-md-3 col-5" style="margin-top: auto; margin-bottom: auto">
 						<h4>
-							<p>Estimated Monthly Payment: </p>
+							<p>{{ 'CALCULATOR_MONTHLY_PAYMENT.EST_MONTH_PAY_TITLE' | translate }}</p>
 						</h4>
 					</div>
 					<div class="col-lg-3 col-md-3 col-7" style="margin-top: auto; margin-bottom: auto; color: red; text-align: center">

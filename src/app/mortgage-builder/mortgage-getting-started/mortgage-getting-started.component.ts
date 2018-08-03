@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { purpose, type, term, occupancy, creditScore } from '../constants';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 import { MortgageBuilderService } from '../mortgage-builder.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-mortgage-getting-started',
@@ -21,7 +22,10 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService) { }
+  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService, public translate: TranslateService) { 
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.createForm();

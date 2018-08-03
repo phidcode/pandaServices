@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { province, jobIncomeType } from '../constants';
 import { MortgageBuilderService } from '../mortgage-builder.service';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-mortgage-qualification',
   templateUrl: './mortgage-qualification.component.html',
@@ -17,7 +19,10 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private mbs: MortgageBuilderService) { }
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) { 
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.createForm();

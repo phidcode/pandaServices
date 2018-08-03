@@ -3,37 +3,37 @@
 <mat-vertical-stepper [linear]="isLinear" [selectedIndex]="initialStep" #stepper>
 
   <mat-step [stepControl]="firstFormGroup">
-    <ng-template matStepLabel>Getting Started</ng-template>
+    <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP1' | translate }}</ng-template>
     <app-mortgage-getting-started [formGroup]="firstFormGroup"></app-mortgage-getting-started>
     <!-- <p>First Form value: {{ firstFormGroup.value | json}}</p> -->
     <!-- <p>First Form value: {{ firstFormGroup.status | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="secondFormGroup">
-    <ng-template matStepLabel>Tell Me Your Estimated Mortgage Size</ng-template>
+    <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP2' | translate }}</ng-template>
     <app-mortgage-selection [formGroup]="secondFormGroup" [mode]="firstFormGroup.value.selectedPurpose"></app-mortgage-selection>
     <!-- <p>Second Form value: {{ secondFormGroup.value | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="thirdFormGroup">
-    <ng-template matStepLabel>Choose A Lender</ng-template>
+    <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP3' | translate }}</ng-template>
     <app-mortgage-heat-map [formGroup]="thirdFormGroup"></app-mortgage-heat-map>
   </mat-step>
 
   <mat-step [stepControl]="fourthFormGroup">
-    <ng-template matStepLabel>Tell Me About Yourself</ng-template>
+    <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP4' | translate }}</ng-template>
     <app-mortgage-qualification [formGroup]="fourthFormGroup"></app-mortgage-qualification>
     <!-- <p>Fourth Form value: {{ fourthFormGroup.value | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="fifthFormGroup">
-    <ng-template matStepLabel>Tell Me About Your Property</ng-template>
+    <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP5' | translate }}</ng-template>
     <app-mortgage-property [formGroup]="fifthFormGroup"></app-mortgage-property>
     <!-- <p>Fifth Form value: {{ fifthFormGroup.value | json}}</p> -->
   </mat-step>
 
   <mat-step [stepControl]="sixthFormGroup">
-    <ng-template matStepLabel>Build My Mortgage Solution</ng-template>
+    <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP6' | translate }}</ng-template>
     <app-mortgage-consent [formGroup]="sixthFormGroup"></app-mortgage-consent>
     <!-- <p>Fifth Form value: {{ sixthFormGroup.value | json}}</p> -->
     <!-- <p>Fifth Form value: {{ sixthFormGroup.status | json}}</p> -->

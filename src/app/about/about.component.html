@@ -1,118 +1,105 @@
 <app-header></app-header>
 
 <div class="welcome d-flex justify-content-center flex-column">
-  <div class="inner-wrapper mt-auto mb-auto container">
-    <div class="row">
-      <div class="col-md-7">
-          <h1 class="welcome-heading display-4 text-white">{{ 'ABOUT_US.ABOUT_US_TITLE' | translate }}</h1>
-          <p class="text-white">{{ 'ABOUT_US.ABOUT_US_INTRO' | translate }}</p>
-          <!-- <a class="nav-link" routerLink="/howitworks" class="btn btn-lg btn-outline-white btn-pill align-self-center">Learn How It Works</a> -->
-      </div>
+    <div class="inner-wrapper mt-auto mb-auto container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1 class="welcome-heading display-4 text-white">{{ 'ABOUT_US.ABOUT_US_TITLE' | translate }}</h1>
+                <p class="text-white">{{ 'ABOUT_US.ABOUT_US_INTRO' | translate }}</p>
+                <!-- <a class="nav-link" routerLink="/howitworks" class="btn btn-lg btn-outline-white btn-pill align-self-center">Learn How It Works</a> -->
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <div class="container py-5">
     <h3 class="mb-1 text-center">{{ 'ABOUT_US.OUR_STORY_TITLE' | translate }}</h3>
     <hr>
     <div class="row">
-    <div class="col-12 testimonial text-center orange " >
-        <div class="row">
-            <div class="col-lg-4 col-12"><img src="../../assets/images/jordan-masse-685278-unsplash.jpg" width="350px" height="230px"></div>
-            <div class="col-lg-8 col-12" style="margin-top: auto; margin-bottom: auto">A proudly Canadian company, we are founded and based out of Toronto Ontario with one mission: Empower clients to build and obtain their mortgage with the best possible rates, backed by an experienced full service team. 
-                We offer a unique level of service that makes “shopping” the mortgage market easy. When you are ready to secure financing or are thinking of needing financing, be it for a purchase, refinance or switch, simply connect with us. We are able to provide you with unbiased advice and personal consultation throughout the process.
+        <div class="col-12 testimonial text-center orange " >
+            <div class="row">
+                <div class="col-lg-6 col-12"><img src="../../assets/images/jordan-masse-685278-unsplash.jpg" width="100%" height="100%"></div>
+                <div class="col-lg-6 col-12" style="margin-top: auto; margin-bottom: auto">{{ 'ABOUT_US.STORY1' | translate }}</div>
             </div>
         </div>
-    </div>
-
-    <div class="col-12 testimonial text-center orange" >
-        <br>
-        <div class="row"> 
-            <div class="col-lg-4 col-12 d-lg-none"><img src="../../assets/images/rawpixel-649916-unsplash.jpg" width="350px" height="230px"></div>
-            <div class="col-lg-8 col-12" style="margin-top: auto; margin-bottom: auto"> Our online DIY platform empowers our clients to fill out their application. We will evaluate the application and provide our clients the advice and plan they need to make the right decision with the best possible rate. All applications are secured and sent electronically to our network of lenders depending on specific financing requirements. Our service policy is to ensure all parties are kept informed throughout the transaction. Our commitment is to make the approval process seamless, efficient, and simple. </div>
-            <div class="col-lg-4 col-12 d-none d-lg-block"><img src="../../assets/images/rawpixel-649916-unsplash.jpg" width="350px" height="230px"></div>
-        </div> 
-    </div>
-
-    <!-- <div class="col-12 testimonial text-center orange" >
-        <br>    
-        <i class="fas fa-trophy"></i>  
-        <p>MeeFinancial has an experienced Leadership Team with a proven track record in the financial industry. We pride ourselves on providing excellent customer service that will make the mortgage process smooth and seamless for clients.</p>
-    </div>       -->
+        <div class="col-12"><br></div>
+        <div class="col-12 testimonial text-center orange" >
+            <div class="row"> 
+                <div class="col-lg-6 col-12 d-lg-none"><img src="../../assets/images/rawpixel-649916-unsplash.jpg" width="100%" height="100%"></div>
+                <div class="col-lg-6 col-12" style="margin-top: auto; margin-bottom: auto">{{ 'ABOUT_US.STORY2' | translate }}</div>
+                <div class="col-lg-6 col-12 d-none d-lg-block"><img src="../../assets/images/rawpixel-649916-unsplash.jpg" width="100%" height="85%"></div>
+            </div> 
+        </div>
     </div>
 </div>
 
 <div id="our-services" class="our-services section py-4">
-        <h3 class="section-title text-center my-5">{{ 'ABOUT_US.OUR_SPECIALITIES_TITLE' | translate }}</h3>
-        <div class="features py-4 mb-4">
-          <div class="container">
+    <h3 class="section-title text-center my-5">{{ 'ABOUT_US.OUR_SPECIALITIES_TITLE' | translate }}</h3>
+    <div class="features py-4 mb-4">
+        <div class="container">
             <div class="row">
-      
-              <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-                <div class="icon text-primary mr-3"><img src="../../assets/images/first.png" width="40px"></div>
-                <div class="px-4">
-                    <h5> First Time Home Buyer</h5>
-                    <p><h6>Buying your first home is a big financial decision and can be an overwhelming process, but you won’t be doing it alone. You’ll have a whole mortgage firm working with you.</h6>
+                <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+                    <div class="icon text-primary mr-3"><img src="../../assets/images/icons/first.png" width="40px"></div>
+                    <div class="px-4">
+                        <h5>{{ 'ABOUT_US.SPEC1_TITLE' | translate }}</h5>
+                        <p><h6>{{ 'ABOUT_US.SPEC1_DESCRIPTION' | translate }}</h6>
+                    </div>
                 </div>
-              </div>
-      
-              <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-                <div class="icon text-primary mr-3"><img src="../../assets/images/Selfemployed.svg" width="40px"></div>
-                <div class="px-4">
-                    <h5>Self Employed</h5>
-                    <p><h6>As entrepreneurs, we offer a unique understanding of the challenges involved in applying for a mortgage if you are self-employed. We have the knowledge to guide you through this process.</h6>
+        
+                <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+                    <div class="icon text-primary mr-3"><img src="../../assets/images/icons/Selfemployed.svg" width="40px"></div>
+                    <div class="px-4">
+                        <h5>{{ 'ABOUT_US.SPEC2_TITLE' | translate }}</h5>
+                        <p><h6>{{ 'ABOUT_US.SPEC2_DESCRIPTION' | translate }}</h6>
+                    </div>
                 </div>
-              </div>
             </div>
-      
+        
             <div class="row">
-              <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-                <div class="icon text-primary mr-3"><img src="../../assets/images/NewtoCanada.svg" width="40px"></div>
-                <div class="px-4">
-                    <h5>New to Canada</h5>
-                    <p><h6>In a new country, nothing says you’ve arrived like a new home. Our team has access to innovative programmes offered to single families.</h6>
+                <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+                    <div class="icon text-primary mr-3"><img src="../../assets/images/icons/NewtoCanada.svg" width="40px"></div>
+                    <div class="px-4">
+                        <h5>{{ 'ABOUT_US.SPEC3_TITLE' | translate }}</h5>
+                        <p><h6>{{ 'ABOUT_US.SPEC3_DESCRIPTION' | translate }}</h6>
+                    </div>
                 </div>
-              </div>
-      
-              <div class="feature py-4 col-md-6 d-flex align-items-stretch">
-                <div class="icon text-primary mr-3"><img src="../../assets/images/clipboard.svg" width="40px"></div>
-                <div class="px-4">
-                    <h5>Complicated Credit History</h5>
-                    <p><h6>Don’t qualify at the banks? We specialize in helping families with low credit score get their mortgage</h6>
+        
+                <div class="feature py-4 col-md-6 d-flex align-items-stretch">
+                    <div class="icon text-primary mr-3"><img src="../../assets/images/icons/clipboard.svg" width="40px"></div>
+                    <div class="px-4">
+                        <h5>{{ 'ABOUT_US.SPEC4_TITLE' | translate }}</h5>
+                        <p><h6>{{ 'ABOUT_US.SPEC4_DESCRIPTION' | translate }}</h6>
+                    </div>
                 </div>
-              </div>
-              
+                
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
 
 <div class="testimonials section py-4">
     <h3 class="section-title text-center m-5">{{ 'ABOUT_US.OUR_KEY_VALUES_TITLE' | translate }}</h3>
     <div class="container py-5">
       <div class="row">
           <div class="col-md-4 testimonial text-center">
-              <div class="icon text-primary mr-3"><img src="../../assets/images/simple.svg" width="40px">
-              </div>
+              <div class="icon text-primary mr-3"><img src="../../assets/images/icons/simple.svg" width="40px"></div>
               <p></p>
-              <h5 class="mb-1">Simplicity</h5>
-              <p>We believe in keeping things simple with no strings attached. We help clients build their mortgage plan and secure their funding. </p>
+              <h5 class="mb-1">{{ 'ABOUT_US.KEY1_TITLE' | translate }}</h5>
+              <p>{{ 'ABOUT_US.KEY1_DESCRIPTION' | translate }}</p>
           </div>
 
           <div class="col-md-4 testimonial text-center">
-              <div class="icon text-primary mr-3"><img src="../../assets/images/excellentservice.svg" width="40px">
-              </div>
+              <div class="icon text-primary mr-3"><img src="../../assets/images/icons/excellentservice.svg" width="40px"></div>
               <p></p>
-              <h5 class="mb-1">Excellent Client Service</h5>
-              <p>We believe every client, big or little, should receive a customized mortgage plan and receive the advice they need to make the right decision and find the product most suitable for their situation. Our client satisfaction rate is second to none</p>
+              <h5 class="mb-1">{{ 'ABOUT_US.KEY2_TITLE' | translate }}</h5>
+              <p>{{ 'ABOUT_US.KEY2_DESCRIPTION' | translate }}</p>
           </div>
 
           <div class="col-md-4 testimonial text-center">
-              <div class="icon text-primary mr-3"><img src="../../assets/images/bestservice.svg" width="40px">
-              </div>
+              <div class="icon text-primary mr-3"><img src="../../assets/images/icons/bestservice.svg" width="40px"></div>
               <p></p>
-              <h5 class="mb-1">Backed by an Experienced Full Service Team</h5>
-              <p> We believe clients can get the best online DIY mortgage rates and still receive the best service in the industry</p>
+              <h5 class="mb-1">{{ 'ABOUT_US.KEY3_TITLE' | translate }}</h5>
+              <p>{{ 'ABOUT_US.KEY3_DESCRIPTION' | translate }}</p>
           </div>
       </div>
     </div>

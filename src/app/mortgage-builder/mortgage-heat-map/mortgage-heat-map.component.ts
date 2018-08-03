@@ -2,7 +2,7 @@ import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MortgageBuilderService } from '../mortgage-builder.service';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
-
+import { TranslateService } from '@ngx-translate/core';
 
 export interface Lender {
   term: number;
@@ -22,7 +22,10 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private mbs: MortgageBuilderService) { }
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) { 
+    translate.addLangs(['en', 'zh']);
+    translate.setDefaultLang('en');
+  }
 
   displayedColumns: string[] = ['term'];
 

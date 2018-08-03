@@ -18,8 +18,8 @@ export class AffordabilityComponent implements OnInit {
   downPayment = 0.0;
   downPaymentRate = 0.2;
   amortizationPeriod = 30;
-  mortgageRate = 0.059;
-  mortgageType = '5-Year Fixed';
+  mortgageRate = 0.0304;
+  // mortgageType = '5-Year Fixed';
   monthlyMortgagePayment = 0.0;
 
   constructor(private meta: Meta, title: Title, private fb: FormBuilder, public translate: TranslateService) {
