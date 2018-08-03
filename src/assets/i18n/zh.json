@@ -319,7 +319,13 @@
 
     "MORTGAGE_BUILDER_CONSENT": {
       "DOC_REQ": "所需文件", 
-      "DISCLOSURE": "条款细则"
+      "DISCLOSURE": "条款细则", 
+      "CONTENT_P1": "I warrant and confirm that the information given in the mortgage application form is true and correct and I understand that it is being used to determine my credit responsibility. MeeFinancial is authorized to obtain any information required for these purposes from other sources (including, for example, credit bureau) and each such source is hereby authorized to provide us with such information. I also understand that the information given in the mortgage application form as well as other information we obtain in relation to my credit history may be disclosed to potential mortgage lenders, financial intermediary and mortgage insurers, organizations providing technological or other support services required in relation to this application and any other parties to obtain a financial relationship. MeeFinancial may retain this application and other personal information whether or not any transaction is ultimately complete.", 
+      "CONTENT_P2": "CANADA'S ANTI-SPAM LEGISLATIONCANADA'S ANTI-SPAM LEGISLATION was effective as of July 1, 2014.", 
+      "CONTENT_P3": "Under this legislation, I provide consent to receive email communications.", 
+      "CONTENT_P4": "I have read and agree to the terms and conditions.", 
+      "BACK_BUTTON": "上一步", 
+      "SUBMIT_BUTTON": "提交申请"
     },
 
     "MORTGAGE_BUILDER_START": {
@@ -376,6 +382,14 @@
       "BACK_BUTTON": "上一步",
       "NEXT_BUTTON": "下一步"
     },
+
+    "Condo or Apartment": "公寓", 
+    "Townhouse": "城市屋", 
+    "Semi-Detached": "半独立屋", 
+    "Detached": "独立屋", 
+
+    "Principal Residence": "自住", 
+    "Rental": "出租", 
 
     "MORTGAGE_BUILDER_QUALIFICATION": {
       "PERSONAL_INFO": "个人信息", 
