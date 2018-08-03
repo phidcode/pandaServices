@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { MortgageBuilderService } from '../mortgage-builder.service';
-import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
+import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo, LenderInfo } from '../data-model';
 import { TranslateService } from '@ngx-translate/core';
 
 export interface Lender {
@@ -22,7 +22,7 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) { 
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
@@ -37,7 +37,7 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
     { term: 5, type: 'Fixed', rate: '3.04%' },
     { term: 3, type: 'Variable', rate: '3.56%' },
     { term: 5, type: 'Variable', rate: '2.46%' },
-  ]
+  ];
 
   lenderB: Lender[] = [
     { term: 1, type: 'Fixed', rate: '3.09%' },
@@ -47,12 +47,12 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
     { term: 5, type: 'Fixed', rate: '4.53%' },
     { term: 3, type: 'Variable', rate: '3.50%' },
     { term: 5, type: 'Variable', rate: '3.20%' },
-  ]
+  ];
 
   lenderC: Lender[] = [
     { term: 1, type: 'Fixed', rate: '7.33%' },
     { term: 2, type: 'Fixed', rate: 'Call Us' },
-  ]
+  ];
 
   ngOnInit() {
   }
@@ -65,9 +65,21 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
   }
 
   save(lender: string) {
-    // this.mortgage = this.mbs.loadMortgageBuilder();
-    // const mortgageBuilder = this.mortgageBuilder();
-    // this.mbs.saveMortgageBuilder(mortgageBuilder);
+    this.mortgage = this.mbs.loadMortgageBuilder();
+    const mortgageBuilder = this.mortgageBuilder(lender);
+    this.mbs.saveMortgageBuilder(mortgageBuilder);
     console.log(lender);
+  }
+
+  mortgageBuilder(lender: string) {
+    const saveLenderInfo: LenderInfo = {
+      type: lender
+    };
+    if (this.mortgage.lenderInfo === undefined) {
+      this.mortgage.lenderInfo = saveLenderInfo;
+    } else {
+      Object.assign(this.mortgage.lenderInfo, saveLenderInfo);
+    }
+    return this.mortgage;
   }
 }

@@ -7,6 +7,7 @@ export class Mortgage {
     occupancy: '';
     creditScore: '';
     otherDebts?: OtherDebts[];
+    lenderInfo?: LenderInfo;
     personalInfo?: PersonalInfo;
     jobInfo?: JobInfo;
     propertyInfo?: PropertyInfo;
@@ -46,6 +47,9 @@ export class Address {
     postalCode: '';
 }
 
+export class LenderInfo {
+    type: string;
+}
 export class JobInfo {
     profession: '';
     annualIncome: '';
