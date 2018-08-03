@@ -355,9 +355,13 @@
       "A_LENDERS": "A Lenders", 
       "B_LENDERS": "B Lenders",
       "OTHER_LENDERS": "Other Lenders",
+      "YR": "Yr", 
       "NEXT_BUTTON": "Use This Lender [Next]", 
       "BACK_BUTTON": "Back"
     },
+
+    "2.89% (Most Common)": "2.89% (Most Common)", 
+    "Call Us": "Call Us", 
 
     "MORTGAGE_BUILDER_PROPERTY": {
       "PROPERTY_INFO": "Property Information",

@@ -355,9 +355,13 @@
       "A_LENDERS": "A类贷款机构", 
       "B_LENDERS": "B类贷款机构",
       "OTHER_LENDERS": "其他类贷款机构",
+      "YR": "年期", 
       "NEXT_BUTTON": "使用此类贷款机构【下一步】", 
       "BACK_BUTTON": "上一步"
     },
+
+    "2.89% (Most Common)": "2.89% (最普遍)", 
+    "Call Us": "联系我们", 
 
     "MORTGAGE_BUILDER_PROPERTY": {
       "PROPERTY_INFO": "房产信息",

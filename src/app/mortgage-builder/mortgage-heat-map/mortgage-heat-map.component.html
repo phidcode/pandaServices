@@ -9,7 +9,7 @@
             <div class="card-body">
                 <table mat-table [dataSource]="lenderA" class="mat-elevation-z8">
                     <ng-container matColumnDef="term">
-                        <td mat-cell style="font-weight:bold" *matCellDef="let lender"> {{lender.term}}Yr {{lender.type}} : {{lender.rate}} </td>
+                        <td mat-cell style="font-weight:bold" *matCellDef="let lender"> {{lender.term}}{{ 'MORTGAGE_BUILDER_MAP.YR' | translate }} {{lender.type | translate}} : {{lender.rate | translate}} </td>
                     </ng-container>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
@@ -24,7 +24,7 @@
             <div class="card-body">
                 <table mat-table [dataSource]="lenderB" class="mat-elevation-z8">
                     <ng-container matColumnDef="term">
-                        <td mat-cell style="font-weight:bold" *matCellDef="let lender"> {{lender.term}}Yr {{lender.type}} : {{lender.rate}} </td>
+                        <td mat-cell style="font-weight:bold" *matCellDef="let lender"> {{lender.term}}{{ 'MORTGAGE_BUILDER_MAP.YR' | translate }} {{lender.type | translate}} : {{lender.rate | translate}} </td>
                     </ng-container>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
@@ -39,7 +39,7 @@
             <div class="card-body">
                 <table mat-table [dataSource]="lenderC" class="mat-elevation-z8">
                     <ng-container matColumnDef="term">
-                        <td mat-cell style="font-weight:bold" *matCellDef="let lender"> {{lender.term}}Yr {{lender.type}} : {{lender.rate}} </td>
+                        <td mat-cell style="font-weight:bold" *matCellDef="let lender"> {{lender.term}}{{ 'MORTGAGE_BUILDER_MAP.YR' | translate }} {{lender.type | translate}} : {{lender.rate | translate}} </td>
                     </ng-container>
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
