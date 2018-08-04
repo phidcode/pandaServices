@@ -25,6 +25,7 @@
     "@angular/router": "^6.1.1",
     "@angular/service-worker": "^6.1.1",
     "@ng-toolkit/pwa": "^1.1.40",
+    "@ng-toolkit/serverless": "^1.1.40",
     "@ng-toolkit/universal": "^1.1.40",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "@ngx-translate/core": "^10.0.2",
