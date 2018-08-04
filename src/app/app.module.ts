@@ -32,7 +32,9 @@ import {
   MatTooltipModule,
   MatExpansionModule,
   MatTableModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatDialogModule,
+  MatDialog,
 } from '@angular/material';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -75,7 +77,7 @@ import { DetailsUploadComponent } from './upload/details-upload/details-upload.c
 import { FormUploadComponent } from './upload/form-upload/form-upload.component';
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { UploadComponent } from './upload/upload.component';
-import { MortgageConsentComponent } from './mortgage-builder/mortgage-consent/mortgage-consent.component';
+import { MortgageConsentComponent, MortgageConsentDialogComponent } from './mortgage-builder/mortgage-consent/mortgage-consent.component';
 
 
 // AoT requires an exported function for factories
@@ -116,7 +118,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormUploadComponent,
     ListUploadComponent,
     UploadComponent,
-    MortgageConsentComponent
+    MortgageConsentComponent,
+    MortgageConsentDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -143,15 +146,16 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatExpansionModule,
     MatTableModule,
     MatBadgeModule,
+    MatDialogModule,
     RegistrationModule,
     AdminModule,
     AppRoutingModule,
-    SlickCarouselModule, 
-    HttpClientModule, 
+    SlickCarouselModule,
+    HttpClientModule,
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateLoader, 
-        useFactory: HttpLoaderFactory, 
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
@@ -162,6 +166,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatCheckboxModule,
     MatSelectModule,
     MatIconModule
+  ],
+  entryComponents: [
+    MortgageConsentDialogComponent
   ],
   providers: [
     AuthService,

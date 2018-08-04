@@ -1,10 +1,12 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, Inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { purpose, type, term, occupancy, creditScore } from '../constants';
 import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from '../data-model';
 import { FileUpload } from '../../upload/fileupload';
 import { MortgageBuilderService } from '../mortgage-builder.service';
 import { TranslateService } from '@ngx-translate/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-mortgage-consent',
@@ -17,7 +19,7 @@ export class MortgageConsentComponent implements OnInit {
   mortgage: Mortgage;
   fileUploadList: FileUpload[] = [];
 
-  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) {
+  constructor(private mbs: MortgageBuilderService, public dialog: MatDialog, public translate: TranslateService, private router: Router) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
@@ -39,6 +41,15 @@ export class MortgageConsentComponent implements OnInit {
     const mortgageBuilder = this.mortgageBuilder();
     this.mbs.saveMortgageBuilderToFireStore(mortgageBuilder);
     // console.log(mortgageBuilder);
+    const dialogRef = this.dialog.open(MortgageConsentDialogComponent, {
+      width: '250px',
+      data: { status: 'SUCCESS' }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Redirect back to homepage');
+      this.router.navigate(['/home']);
+    });
   }
 
   mortgageBuilder() {
@@ -48,5 +59,20 @@ export class MortgageConsentComponent implements OnInit {
     this.mortgage.images = this.fileUploadList;
     // console.log(this.mortgage);
     return this.mortgage;
+  }
+}
+
+@Component({
+  selector: 'app-mortgage-consent-dialog',
+  templateUrl: './mortgage-consent-dialog.component.html',
+})
+export class MortgageConsentDialogComponent {
+
+  constructor(
+    public dialogRef: MatDialogRef<MortgageConsentDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 }
