@@ -19,38 +19,38 @@ export class AdviceComponent implements OnInit {
     { img: '../../assets/images/lenders/equitable_trust.png' },
     { img: '../../assets/images/lenders/duca.png' },
     { img: '../../assets/images/lenders/10-logo-B2B-Bank.png' },
-    { img: '../../assets/images/lenders/9-Mcap.jpg' },
+    { img: '../../assets/images/lenders/9-Mcap.png' },
     { img: '../../assets/images/lenders/7-Eclipse.png' },
     { img: '../../assets/images/lenders/6-Optimum-Mortgage.png' },
     { img: '../../assets/images/lenders/4-Street-Capital.png' }
   ];
   slideConfig = {
-    'slidesToShow': 4, 'slidesToScroll': 4,
+    'slidesToShow': 6, 'slidesToScroll': 6,
     'autoplay': true, 'speed': 1500,
     'infinite': true, 'dots': true,
     'arrows': true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1050,
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 5
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4
+        }
+      },
+      {
+        breakpoint: 650,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3
         }
       },
-      {
-        breakpoint: 800,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      },
-      // {
-      //   breakpoint: 600,
-      //   settings: {
-      //     slidesToShow: 2,
-      //     slidesToScroll: 2
-      //   }
-      // },
       // {
       //   breakpoint: 500,
       //   settings: {
@@ -59,10 +59,10 @@ export class AdviceComponent implements OnInit {
       //   }
       // },
       {
-        breakpoint: 400,
+        breakpoint: 500,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 2
         }
       }
     ]
