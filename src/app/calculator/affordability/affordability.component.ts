@@ -12,8 +12,8 @@ export class AffordabilityComponent implements OnInit {
 
   affordabilityForm: FormGroup;
   submitted = false;
-  GDSR = 0.32;
-  TDSR = 0.40;
+  GDSR = 0.39;
+  TDSR = 0.44;
   maxAffordability = 0.0;
   downPayment = 0.0;
   downPaymentRate = 0.2;
