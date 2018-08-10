@@ -81,7 +81,7 @@ export interface Province {
 }
 export const province = [
     'Alberta',
-    'Briish Columbia',
+    'British Columbia',
     'Manitoba',
     'New Brunswick',
     'Newfoundland and Labrador',
@@ -90,7 +90,7 @@ export const province = [
     'Nunavut',
     'Ontario',
     'Prince Edward Island',
-    'Quebec',
+    'Québec',
     'Saskatchewan',
     'Yukon'
 ];
