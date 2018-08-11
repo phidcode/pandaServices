@@ -182,15 +182,15 @@
     },
 
     "DASHBOARD": {
-      "DASHBOARD_TITLE": "我们是谁",
-      "DASHBOARD_INTRO": "一款创新的电子贷款申请平台，为贷款申请者在线提供一站式服务，让原本繁琐的贷款申请变得轻松自在。", 
-      "DASHBOARD_BUTTON": "了解我们更多", 
+      "DASHBOARD_TITLE": "在线贷款申请平台",
+      "DASHBOARD_INTRO": "为贷款申请者提供一站式服务，让原本繁琐的贷款申请变得轻松自在。", 
+      "DASHBOARD_BUTTON": "了解更多", 
       "MORTGAGE_BUILDER_PURPOSE": "贷款目的：", 
       "MORTGAGE_BUILDER_TYPE": "贷款类型：",
       "MORTGAGE_BUILDER_TERM": "贷款期限：",
       "MORTGAGE_BUILDER_OCCUPANCY": "居住性质：",
       "MORTGAGE_BUILDER_CRED_SCORE": "信用评分：",
-      "MORTGAGE_BUILDER_SUBMIT_BUTTON": "自助贷款",
+      "MORTGAGE_BUILDER_SUBMIT_BUTTON": "建立属于我的贷款方案",
       "TITLE1": "服务范围",
       "OFFER1TITLE": "商业贷款",
       "OFFER1CONTENT": "我们可以帮助您提供商业贷款以资助您投资新的商业房产(如餐厅、商铺等)，帮助您实现房地产投资组合的多样化",
@@ -210,11 +210,11 @@
       "OFFER8CONTENT": "了解再贷款及重组的原因、需要考虑的因素以及面对的不同选择。使用我们的平台按你喜好及需要随心所欲地选择重组或再贷款的细节",
       "TITLE2": "服务宗旨",
       "WORK1TITLE": "客户第一",
-      "WORK1CONTENT": "客户永远第一。我们让贷款申请变得轻松自在。",  
+      "WORK1CONTENT": "客户永远第一。我们让原本繁琐的贷款申请变得轻松自在。",  
       "WORK2TITLE": "意见专业",
-      "WORK2CONTENT": "在您需要时随时提供免费专业的意见。", 
+      "WORK2CONTENT": "在您需要的时候随时提供免费专业的意见。", 
       "WORK3TITLE": "选择多样",
-      "WORK3CONTENT": "我们不会只限制于一家贷款机构。我们有着强大的贷款机构网络，在我们这里一定能找到一套适合您的贷款方案。", 
+      "WORK3CONTENT": "不会仅限于一家贷款机构。我们拥有强大的贷款机构网络，在我们这里一定能找到一套适合您的贷款方案。", 
       "WORK4TITLE": "全程为您",
       "WORK4CONTENT": "我们始终代表的是贷款申请者方而不是贷款机构，我们的服务一定能为您争取最大利益。"
     }, 
@@ -353,8 +353,8 @@
     "Fixed-Open": "固定开放式", 
     "Undecided": "不确定", 
 
-    "Owner-Occupied": "房主自住", 
-    "Tenant-Occupied": "租客租房", 
+    "Owner-Occupied": "自住", 
+    "Tenant-Occupied": "租住", 
 
     "600 to 649": "600 至 649", 
     "650 to 699": "650 至 699", 
@@ -472,7 +472,7 @@
 
     "PRIVACY": {
       "TITLE": "隐私及安全",
-      "TITLE_DETAILS": "我们的隐私及安全政策", 
+      "TITLE_DETAILS": "我们的隐私及安全政策（仅提供英文版本）", 
       "PARAGRAPH1_BODY": "MeeFinancial Inc. is committed to protecting the confidentiality and security of its clients' personal information. This page answers some of your most frequently asked questions, and lets you know exactly how we are protecting the information you entrust to us. MeeFiancial aims to comply with the spirit and letter of all applicable privacy legislation. We disclose the privacy & security practices for www.meefinancial.com and will notify you of the following: ", 
       "PARAGRAPH1_L1": "What personally identifiable information is collected from you through the web site and how it is used and with whom it may be shared. ", 
       "PARAGRAPH1_L2": "What choices are available to you regarding the use of your data. ", 
