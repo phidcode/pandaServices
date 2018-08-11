@@ -60,10 +60,8 @@ export class MortgageConsentComponent implements OnInit, OnChanges {
 
   mortgageBuilder() {
     const m = this.formGroup.value;
-    // console.log(this.fileUploadList);
-    // console.log(this.mortgage);
     this.mortgage.images = this.fileUploadList;
-    // console.log(this.mortgage);
+    this.mortgage.createDate = new Date(Date.now());
     return this.mortgage;
   }
 }

@@ -12,6 +12,7 @@ export class Mortgage {
     jobInfo?: JobInfo;
     propertyInfo?: PropertyInfo;
     images: FileUpload[];
+    createDate?: Date;
 }
 
 export class Purpose {
