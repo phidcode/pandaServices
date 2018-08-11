@@ -28,7 +28,7 @@
 						<h2>{{ 'CALCULATOR_MONTHLY_PAYMENT.ASKING_PRICE_TITLE' | translate }}</h2>
 					</div>
 					<mat-form-field class="col-lg-6 col-md-6 col-8">
-						<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.ASKING_PRICE_PLACEHOLD' | translate }}" type="number" class="example-right-align" formControlName="askingPrice">
+						<input matInput placeholder="{{ 'CALCULATOR_MONTHLY_PAYMENT.ASKING_PRICE_PLACEHOLD' | translate }}" type="number" class="example-right-align" onfocus="this.value=''" formControlName="askingPrice">
 						<span matPrefix>$&nbsp;</span>
 						<span matSuffix></span>
 					</mat-form-field>

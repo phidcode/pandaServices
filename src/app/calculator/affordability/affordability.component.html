@@ -27,7 +27,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.ANNUAL_INCOME_B4TAX_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="annualIncome" id="annualIncome" formControlName="annualIncome">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="annualIncome" onfocus="this.value=''" id="annualIncome" formControlName="annualIncome">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>            
           </mat-form-field>
         </div>
         <div class="col-12 d-flex" style="text-align: left;">
@@ -36,7 +38,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.COAPP_INCOME_B4TAX_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" id="coApplicantIncome" formControlName="coApplicantIncome">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="coApplicantIncome" onfocus="this.value=''" id="coApplicantIncome" formControlName="coApplicantIncome">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>             
           </mat-form-field>
         </div>
         <div class="col-12 d-flex"> </div>
@@ -55,7 +59,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.PROPERTY_TAX_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="propertyTax" id="propertyTax" formControlName="propertyTax">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="propertyTax" onfocus="this.value=''" id="propertyTax" formControlName="propertyTax">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>             
           </mat-form-field>
           <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
@@ -69,7 +75,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CONDO_FEES_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="condoFees" id="condoFees" formControlName="condoFees">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="condoFees" onfocus="this.value=''" id="condoFees" formControlName="condoFees">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>                
           </mat-form-field>
           <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
@@ -83,7 +91,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.HEATING_COSTS_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-3" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="heatingCosts" id="heatingCosts" formControlName="heatingCosts">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="heatingCosts" onfocus="this.value=''" id="heatingCosts" formControlName="heatingCosts">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>            
           </mat-form-field>
           <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
@@ -106,7 +116,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CREDIT_CARD_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="creditCard" id="creditCard" formControlName="creditCard">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="creditCard" onfocus="this.value=''" id="creditCard" formControlName="creditCard">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>            
           </mat-form-field>
           <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="creditCardMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
@@ -119,7 +131,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CAR_PAYMENT_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="carPayment" id="carPayment" formControlName="carPayment">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="carPayment" onfocus="this.value=''" id="carPayment" formControlName="carPayment">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>            
           </mat-form-field>
           <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="carPaymentMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
@@ -132,7 +146,9 @@
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.OTHER_LOAN_EXPANSES_TOOLTIPTXT' | translate }}</span>
           </div>
           <mat-form-field class="col-4" style="margin-top: auto; margin-bottom: auto; text-align: center">
-            <input matInput type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses" id="otherLoanExpenses" formControlName="otherLoanExpenses">
+            <input matInput type="text" inputmode="numeric" min="0.00" name="otherLoanExpenses"  onfocus="this.value=''" id="otherLoanExpenses" formControlName="otherLoanExpenses">
+            <span matPrefix>$&nbsp;</span>
+            <span matSuffix></span>            
           </mat-form-field>
           <mat-select class="col-4" style="margin-top: auto; margin-bottom: auto;" id="otherLoanExpensesMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>

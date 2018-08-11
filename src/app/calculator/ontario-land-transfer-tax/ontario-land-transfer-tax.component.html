@@ -25,7 +25,7 @@
           <div class="col-12">
             <label class="col-6">{{ 'CALCULATOR_LAND_TRANSFER_TAX.PURCHASE_PRICE_TITLE' | translate }}</label>
             <mat-form-field class="col-6" style="margin-top: auto; margin-bottom: auto;">
-              <input matInput placeholder="{{ 'CALCULATOR_LAND_TRANSFER_TAX.PURCHASE_PRICE_PLACEHOLD' | translate }}" type="text" inputmode="numeric" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
+              <input matInput placeholder="{{ 'CALCULATOR_LAND_TRANSFER_TAX.PURCHASE_PRICE_PLACEHOLD' | translate }}" type="text" onfocus="this.value=''" inputmode="numeric" name="purchasePrice" id="purchasePrice" formControlName="purchasePrice">
               <span matPrefix>$&nbsp;</span>
               <span matSuffix></span>
             </mat-form-field>
