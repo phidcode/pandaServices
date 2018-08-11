@@ -1,7 +1,17 @@
 <app-header></app-header>
 
 <div class="welcome d-flex justify-content-center flex-column">
-  <p></p>
+  <div class="inner-wrapper mt-auto mb-auto container">
+    <div class="row">
+        <div class="col-md-7">
+            <h1 class="welcome-heading display-4 text-white">{{ 'DASHBOARD.DASHBOARD_TITLE' | translate }}</h1>
+            <p class="text-white">{{ 'DASHBOARD.DASHBOARD_INTRO' | translate }}</p>
+            <a class="nav-link" routerLink="/about" class="btn btn-lg btn-outline-white btn-pill align-self-center">Learn More About Us</a> -->
+        </div>
+    </div>
+  </div>  
+</div>
+
   <p></p>
   <div class="container">
     <div class="inner-wrapper mt-auto mb-auto container">
@@ -92,9 +102,7 @@
       </form>
     </div>
   </div>
-</div>
 
-<p></p>
 <div id="our-services" class="our-services section py-4">
   <h3 class="section-title text-center my-5">{{ 'DASHBOARD.TITLE1' | translate }}</h3>
   <div class="features py-4 mb-4">

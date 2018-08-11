@@ -181,6 +181,8 @@
     },
 
     "DASHBOARD": {
+      "DASHBOARD_TITLE":"Who We Are",
+      "DASHBOARD_INTRO":"Your mortgage gone digital. Complete mortgage from start to finish online. Innovation working for you",      
       "MORTGAGE_BUILDER_PURPOSE": "贷款目的：", 
       "MORTGAGE_BUILDER_TYPE": "贷款类型：",
       "MORTGAGE_BUILDER_TERM": "贷款期限：",

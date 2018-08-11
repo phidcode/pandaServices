@@ -25,10 +25,10 @@
   
     "ABOUT_US": {
       "ABOUT_US_TITLE": "About Us", 
-      "ABOUT_US_INTRO": "Founded in Toronto, we are one of the leading fintech companies in the residential mortgage space.", 
+      "ABOUT_US_INTRO": "Your mortgage gone digital. Complete your mortgage from start to finish online using our secured cloud-based technology. Innovation working for you.", 
       "OUR_STORY_TITLE": "Our Story",
-      "STORY1": "A proudly Canadian company, we are founded and based out of Toronto Ontario with one mission: Empower clients to build and obtain their mortgage with the best possible rates, backed by an experienced full service team. We offer a unique level of service that makes “shopping” the mortgage market easy. When you are ready to secure financing or are thinking of needing financing, be it for a purchase, refinance or switch, simply connect with us. We are able to provide you with unbiased advice and personal consultation throughout the process.",
-      "STORY2": "Our online DIY platform empowers our clients to fill out their application. We will evaluate the application and provide our clients the advice and plan they need to make the right decision with the best possible rate. All applications are secured and sent electronically to our network of lenders depending on specific financing requirements. Our service policy is to ensure all parties are kept informed throughout the transaction. Our commitment is to make the approval process seamless, efficient, and simple.",
+      "STORY1": "A proudly Canadian company, we are founded and based out of Toronto Ontario with one mission: Empower clients to build and obtain their mortgage with the best possible rates, backed by an experienced full service team. We offer a unique level of service that makes “shopping” the mortgage market easy. When you are ready to secure financing or are thinking of needing financing, be it for a purchase, refinance or switch, simply connect with us. We will provide you with unbiased advice and personal consultation throughout the process.",
+      "STORY2": "Our mission is to bring innovation right to your phone. Our secured cloud-based platform empowers our clients to get their mortgage completely online. We will evaluate the application and provide our clients the advice and plan they need to make the right decision with the best possible rate. All applications are secured and sent electronically to our network of lenders depending on specific financing requirements. Our service policy is to ensure all parties are kept informed throughout the transaction. Our commitment is to make the approval process seamless, efficient, and simple.",
       "OUR_SPECIALITIES_TITLE": "Our Specialities",
       "SPEC1_TITLE": "First Time Home Buyer", 
       "SPEC1_DESCRIPTION": "Buying your first home is a big financial decision and can be an overwhelming process, but you won’t be doing it alone. You’ll have a whole mortgage firm working with you.",
@@ -181,6 +181,8 @@
     },
 
     "DASHBOARD": {
+      "DASHBOARD_TITLE":"Who We Are",
+      "DASHBOARD_INTRO":"Your mortgage gone digital. Complete mortgage from start to finish online. Innovation working for you",
       "MORTGAGE_BUILDER_PURPOSE": "Mortgage Purpose:", 
       "MORTGAGE_BUILDER_TYPE": "Mortgage Type:",
       "MORTGAGE_BUILDER_TERM": "Mortgage Term:",
