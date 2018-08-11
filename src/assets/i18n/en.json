@@ -71,7 +71,7 @@
       "COAPP_INCOME_B4TAX_TOOLTIPTXT": "Your co-applicant's before-tax gross income. Your combined income will be used to calculate the mortgage you can afford.", 
       "LIVING_COST_TITLE": "Living Costs", 
       "LIVING_COST_TITLE_DESCRIPTION": "(Check to include the selected field)", 
-      "PROPERTY_TAX": "PropertyTax:", 
+      "PROPERTY_TAX": "Property Tax:", 
       "PROPERTY_TAX_TOOLTIPTXT": "A tax levied by the municipality in which your home is located. We have used an estimate based on the average in your province.", 
       "CONDO_FEES": "Condo Fees:", 
       "CONDO_FEES_TOOLTIPTXT": "Condo fees cover common building expenses and maintenance in multi-unit properties. We have used a default estimate of $300.", 

@@ -40,7 +40,6 @@ export class AffordabilityComponent implements OnInit {
         }),
         livingCostsForm: this.fb.group({
           propertyTax: [472.0, [Validators.required]],
-          // propertyTaxMonYr: ['1', [Validators.required]],
           chkPropertyTax: [false],
           condoFees: [300.0, [Validators.required]],
           chkCondoFees: [false],
