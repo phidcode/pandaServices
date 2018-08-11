@@ -472,7 +472,24 @@
 
     "PRIVACY": {
       "TITLE": "Privacy & Security Policy",
-      "TITLE_DETAILS": "Our Privacy & Security Policy"
+      "TITLE_DETAILS": "Our Privacy & Security Policy", 
+      "PARAGRAPH1_BODY": "MeeFinancial Inc. is committed to protecting the confidentiality and security of its clients' personal information. This page answers some of your most frequently asked questions, and lets you know exactly how we are protecting the information you entrust to us. MeeFiancial aims to comply with the spirit and letter of all applicable privacy legislation. We disclose the privacy & security practices for www.meefinancial.com and will notify you of the following: ", 
+      "PARAGRAPH1_L1": "What personally identifiable information is collected from you through the web site and how it is used and with whom it may be shared. ", 
+      "PARAGRAPH1_L2": "What choices are available to you regarding the use of your data. ", 
+      "PARAGRAPH1_L3": "The security procedures in place to protect the misuse of your information. ", 
+      "PARAGRAPH1_L4": "ow you can correct any inaccuracies in the information. ", 
+      "PARAGRAPH2_TITLE": "INFORMATION COLLECTION, USE, AND SHARING", 
+      "PARAGRAPH2_L1": "We are the sole owners of the information collected via this website. ", 
+      "PARAGRAPH2_L2": "We only have access to collect information that you voluntarily give us via email or other direct contact from you. ", 
+      "PARAGRAPH2_L3": "We will not sell or rent this information to anyone. ", 
+      "PARAGRAPH2_L4": "We will use your information to respond to you, regarding the reason you contacted us. ", 
+      "PARAGRAPH2_L5": "We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to assist with funding your mortgage. We may contact you via email in the future to inform you on promotions, new products or services, or changes to this privacy policy. ", 
+      "PARAGRAPH3_TITLE": "YOUR ACCESS TO AND CONTROL OVER INFORMATION",
+      "PARAGRAPH3_BODY": "You can contact us via the email address given on our website to remove the information you submitted. ",  
+      "PARAGRAPH4_TITLE": "SECURITY",
+      "PARAGRAPH4_BODY": "We take great measures to protect your information at MeeFinancial. Once you have submitted your information to us, we maintain above industry standard efforts to safeguard the confidentiality of your information. We also restrict internal access of stored data to select employees. If you have any concerns involving the security or privacy of your information, you can contact us at privacy@MeeFiancial.ca. ", 
+      "PARAGRAPH5_TITLE": "UPDATES",
+      "PARAGRAPH5_BODY": "Our Policy may change from time to time and all updates will be posted on this page. If you feel that we are not abiding by this policy, you should contact us immediately via our contact form or email us at privacy@MeeFinancial.ca. "
     }
 
   }
