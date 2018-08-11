@@ -46,7 +46,9 @@
         <div class="col-12 d-flex"> </div>
       </div>
     </div>
+
     <div class="col-12 col-lg-1 d-flex" ></div>
+
     <div class="col-12 col-lg-4 d-flex" formGroupName="livingCostsForm">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-10" style="height: auto">
@@ -54,7 +56,7 @@
           <span>{{ 'CALCULATOR_AFFORDABILITY.LIVING_COST_TITLE_DESCRIPTION' | translate }}</span>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
-          <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
+          <div class="col-lg-4 col-3 pr-0 tooltip" style="margin-top: auto; margin-bottom: auto;">
             {{ 'CALCULATOR_AFFORDABILITY.PROPERTY_TAX' | translate }}
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.PROPERTY_TAX_TOOLTIPTXT' | translate }}</span>
           </div>
@@ -63,14 +65,14 @@
             <span matPrefix>$&nbsp;</span>
             <span matSuffix></span>             
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+          <mat-select class="col-lg-3 col-4 pr-0" style="margin-top: auto; margin-bottom: auto;" id="propertyTaxMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
             <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
-          <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px; text-align: center" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax"></mat-checkbox>
+          <mat-checkbox class="col-1 pl-0" style="margin-top: auto; margin-bottom: 15px; text-align: center" type="checkbox" value="No" name="chkPropertyTax" id="chkPropertyTax" formControlName="chkPropertyTax"></mat-checkbox>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
-          <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
+          <div class="col-lg-4 col-3 pr-0 tooltip" style="margin-top: auto; margin-bottom: auto;">
             {{ 'CALCULATOR_AFFORDABILITY.CONDO_FEES' | translate }}
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.CONDO_FEES_TOOLTIPTXT' | translate }}</span>
           </div>
@@ -79,14 +81,14 @@
             <span matPrefix>$&nbsp;</span>
             <span matSuffix></span>                
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+          <mat-select class="col-lg-3 col-4 pr-0" style="margin-top: auto; margin-bottom: auto;" id="condoFeesMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
             <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
-          <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees"></mat-checkbox>
+          <mat-checkbox class="col-1 pl-0" style="margin-top: auto; margin-bottom: 15px;" type="checkbox" value="No" name="chkCondoFees" id="chkCondoFees" formControlName="chkCondoFees"></mat-checkbox>
         </div>
         <div class="col-lg-12 col-md-12 col-10 d-flex" style="text-align: left;">
-          <div class="col-lg-4 col-3 tooltip" style="margin-top: auto; margin-bottom: auto;">
+          <div class="col-lg-4 col-3 pr-0 tooltip" style="margin-top: auto; margin-bottom: auto;">
             {{ 'CALCULATOR_AFFORDABILITY.HEATING_COSTS' | translate }}
             <span class="tooltiptext">{{ 'CALCULATOR_AFFORDABILITY.HEATING_COSTS_TOOLTIPTXT' | translate }}</span>
           </div>
@@ -95,15 +97,17 @@
             <span matPrefix>$&nbsp;</span>
             <span matSuffix></span>            
           </mat-form-field>
-          <mat-select class="col-lg-3 col-4" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
+          <mat-select class="col-lg-3 col-4 pr-0" style="margin-top: auto; margin-bottom: auto;" id="heatingCostsMonYr" placeholder="{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}">
             <mat-option selected value="month">{{ 'CALCULATOR_AFFORDABILITY.PER_MONTH' | translate }}</mat-option>
             <mat-option value="year">{{ 'CALCULATOR_AFFORDABILITY.PER_YEAR' | translate }}</mat-option>
           </mat-select>
-          <mat-checkbox class="col-1" style="margin-top: auto; margin-bottom: 15px; margin-left: 0; margin-right: auto" type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts"></mat-checkbox>
+          <mat-checkbox class="col-1 pl-0" style="margin-top: auto; margin-bottom: 15px; margin-left: 0; margin-right: auto" type="checkbox" value="No" name="chkHeatingCosts" id="chkHeatingCosts" formControlName="chkHeatingCosts"></mat-checkbox>
         </div>
       </div>
     </div>
+    
     <div class="col-12 col-lg-1 d-flex" ></div>
+
     <div class="col-12 col-lg-3 d-flex" formGroupName="debtPaymentsForm">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-11" style="height: auto">
