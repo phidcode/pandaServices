@@ -325,10 +325,10 @@
     "MORTGAGE_BUILDER_CONSENT": {
       "DOC_REQ": "所需文件", 
       "DISCLOSURE": "条款细则", 
-      "CONTENT_P1": "I warrant and confirm that the information given in the mortgage application form is true and correct and I understand that it is being used to determine my credit responsibility. MeeFinancial is authorized to obtain any information required for these purposes from other sources (including, for example, credit bureau) and each such source is hereby authorized to provide us with such information. I also understand that the information given in the mortgage application form as well as other information we obtain in relation to my credit history may be disclosed to potential mortgage lenders, financial intermediary and mortgage insurers, organizations providing technological or other support services required in relation to this application and any other parties to obtain a financial relationship. MeeFinancial may retain this application and other personal information whether or not any transaction is ultimately complete.", 
-      "CONTENT_P2": "CANADA'S ANTI-SPAM LEGISLATIONCANADA'S ANTI-SPAM LEGISLATION was effective as of July 1, 2014.", 
-      "CONTENT_P3": "Under this legislation, I provide consent to receive email communications.", 
-      "CONTENT_P4": "I have read and agree to the terms and conditions.", 
+      "CONTENT_P1": "本人向MeeFinancial确认及保证本申请表所填写的资料全部属实无误，并明白所提供的资料将会被用作决定信用责任的用途。MeeFinancial将会被授权以此为目的向其他相关部门索取相关信息且相关部门将会被授权向我们提供相关信息。我亦明白贷款申请表中所提供的资料及其他与信用记录有关的相关信息将会向潜在贷款机构、金融媒介及贷款承保公司、提供关于申请表技术或其他服务支持的相关机构及其他团体透露以获取金融合作关系。不论交易最终是否完成，MeeFinancial将会保留此申请表以及其他个人信息。", 
+      "CONTENT_P2": "加拿大反垃圾电子邮件法案（CANADA'S ANTI-SPAM LEGISLATIONCANADA'S ANTI-SPAM LEGISLATION）于2014年7月1日正式生效。", 
+      "CONTENT_P3": "基于上述法案，我同意接收电子邮件。", 
+      "CONTENT_P4": "我已阅读并同意以上条款。", 
       "BACK_BUTTON": "上一步", 
       "SUBMIT_BUTTON": "提交申请"
     },
