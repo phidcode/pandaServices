@@ -63,3 +63,12 @@ export class PropertyInfo {
     fees: '';
     address: Address;
 }
+
+export const header = [
+    'type',
+    'term',
+    'occupancy',
+    'creditScore',
+    'purpose.type',
+    'purpose.',
+];

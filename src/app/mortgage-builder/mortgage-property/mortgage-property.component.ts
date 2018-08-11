@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './mortgage-property.component.html',
   styleUrls: ['./mortgage-property.component.css']
 })
-export class MortgagePropertyComponent implements OnInit {
+export class MortgagePropertyComponent implements OnInit, OnChanges {
 
   province = province;
   propertyType = propertyType;
@@ -20,13 +20,18 @@ export class MortgagePropertyComponent implements OnInit {
 
   mortgage: Mortgage;
 
-  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) { 
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
 
   ngOnInit() {
     this.createForm();
+    this.resetForm();
+  }
+
+  ngOnChanges() {
+    this.resetForm();
   }
 
   createForm() {

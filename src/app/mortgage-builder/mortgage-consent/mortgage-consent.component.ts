@@ -13,7 +13,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   templateUrl: './mortgage-consent.component.html',
   styleUrls: ['./mortgage-consent.component.css']
 })
-export class MortgageConsentComponent implements OnInit {
+export class MortgageConsentComponent implements OnInit, OnChanges {
 
   @Input() formGroup: FormGroup;
   mortgage: Mortgage;
@@ -26,6 +26,11 @@ export class MortgageConsentComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    this.resetForm();
+  }
+
+  ngOnChanges() {
+    this.resetForm();
   }
 
   createForm() {

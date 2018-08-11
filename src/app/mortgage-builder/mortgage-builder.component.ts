@@ -12,7 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class MortgageBuilderComponent implements OnInit {
 
   isLinear = true;
-  initialStep = 1;
+  initialStep = 0;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
@@ -22,7 +22,7 @@ export class MortgageBuilderComponent implements OnInit {
 
   mortgage: Mortgage;
 
-  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) { 
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
@@ -31,6 +31,7 @@ export class MortgageBuilderComponent implements OnInit {
     const mortgage: Mortgage = this.mbs.loadMortgageBuilder();
     const skipStepOne = mortgage !== undefined && mortgage.purpose.type !== null;
     this.initialStep = skipStepOne ? 1 : 0;
+    console.log('Initial Step:' + this.initialStep);
     this.createForm();
   }
 

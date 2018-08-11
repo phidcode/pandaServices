@@ -55,9 +55,11 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
   ];
 
   ngOnInit() {
+    this.resetForm();
   }
 
   ngOnChanges() {
+    this.resetForm();
   }
 
   resetForm() {

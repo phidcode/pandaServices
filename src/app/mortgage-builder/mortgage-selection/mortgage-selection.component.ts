@@ -32,7 +32,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService, public translate: TranslateService) { 
+  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService, public translate: TranslateService) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
@@ -43,6 +43,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    this.resetForm();
   }
 
   createForm() {
@@ -83,7 +84,7 @@ export class MortgageSelectionComponent implements OnInit, OnChanges {
         selectedMortgageAmount: info.mortgageAmount
       });
     }
-    console.log(this.mortgage);
+    // console.log(this.mortgage);
   }
 
   get otherDebts(): FormArray {

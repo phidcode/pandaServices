@@ -19,16 +19,18 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) { 
+  constructor(private mbs: MortgageBuilderService, public translate: TranslateService) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
 
   ngOnInit() {
     this.createForm();
+    this.resetForm();
   }
 
   ngOnChanges() {
+    this.resetForm();
   }
 
   createForm() {
@@ -48,8 +50,9 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
 
   resetForm() {
     this.mortgage = this.mbs.loadMortgageBuilder();
-    if (this.mortgage !== undefined && this.mortgage.personalInfo !== undefined) {
+    if (this.mortgage !== undefined && this.mortgage.personalInfo !== undefined && this.mortgage.jobInfo !== undefined) {
       const info = this.mortgage.personalInfo;
+      const jobInfo = this.mortgage.jobInfo;
       this.formGroup.reset({
         firstName: info.firstName,
         lastName: info.lastName,
@@ -58,15 +61,11 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
         streetAddress: info.address.street,
         city: info.address.city,
         province: info.address.province,
-        postalCode: info.address.postalCode
-      });
-    }
-    if (this.mortgage !== undefined && this.mortgage.jobInfo !== undefined) {
-      const info = this.mortgage.jobInfo;
-      this.formGroup.reset({
-        jobTitle: info.profession,
-        annualIncome: info.annualIncome,
-        jobIncomeType: info.incomeType
+        postalCode: info.address.postalCode,
+
+        jobTitle: jobInfo.profession,
+        annualIncome: jobInfo.annualIncome,
+        jobIncomeType: jobInfo.incomeType
       });
     }
   }

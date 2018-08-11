@@ -22,7 +22,7 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
 
   mortgage: Mortgage;
 
-  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService, public translate: TranslateService) { 
+  constructor(private fb: FormBuilder, private mbs: MortgageBuilderService, public translate: TranslateService) {
     translate.addLangs(['en', 'zh']);
     translate.setDefaultLang('en');
   }
@@ -30,7 +30,6 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.createForm();
     this.resetForm();
-    console.log(this.formGroup.value);
   }
 
   createForm() {
@@ -56,7 +55,6 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
 
   ngOnChanges() {
     this.resetForm();
-    console.log(this.formGroup.value);
   }
 
   save() {
