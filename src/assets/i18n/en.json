@@ -182,7 +182,8 @@
 
     "DASHBOARD": {
       "DASHBOARD_TITLE":"Who We Are",
-      "DASHBOARD_INTRO":"Your mortgage gone digital. Complete mortgage from start to finish online. Innovation working for you",
+      "DASHBOARD_INTRO":"Your mortgage gone digital. Complete mortgage from start to finish online. Innovation working for you.",
+      "DASHBOARD_BUTTON": "Learn More About Us", 
       "MORTGAGE_BUILDER_PURPOSE": "Mortgage Purpose:", 
       "MORTGAGE_BUILDER_TYPE": "Mortgage Type:",
       "MORTGAGE_BUILDER_TERM": "Mortgage Term:",
@@ -413,7 +414,7 @@
     },
 
     "Alberta": "Alberta", 
-    "British Columbia": "Briish Columbia", 
+    "British Columbia": "British Columbia", 
     "Manitoba": "Manitoba", 
     "New Brunswick": "New Brunswick", 
     "Newfoundland and Labrador": "Newfoundland and Labrador", 
