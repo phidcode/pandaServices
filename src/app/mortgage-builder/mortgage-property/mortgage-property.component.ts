@@ -39,7 +39,7 @@ export class MortgagePropertyComponent implements OnInit, OnChanges {
     this.formGroup.addControl('propertyUsage', new FormControl('', Validators.required));
     this.formGroup.addControl('streetAddress', new FormControl('', Validators.required));
     this.formGroup.addControl('city', new FormControl('', Validators.required));
-    this.formGroup.addControl('province', new FormControl('', Validators.required));
+    this.formGroup.addControl('province', new FormControl('Ontario', Validators.required));
     this.formGroup.addControl('postalCode', new FormControl('', Validators.required));
     this.formGroup.addControl('propertyTax', new FormControl('', Validators.required));
     this.formGroup.addControl('condoFee', new FormControl('', Validators.required));

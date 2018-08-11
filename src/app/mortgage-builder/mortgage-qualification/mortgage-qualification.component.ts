@@ -40,7 +40,7 @@ export class MortgageQualificationComponent implements OnInit, OnChanges {
     this.formGroup.addControl('contactNumber', new FormControl('', Validators.required));
     this.formGroup.addControl('streetAddress', new FormControl('', Validators.required));
     this.formGroup.addControl('city', new FormControl('', Validators.required));
-    this.formGroup.addControl('province', new FormControl('', Validators.required));
+    this.formGroup.addControl('province', new FormControl('Ontario', Validators.required));
     this.formGroup.addControl('postalCode', new FormControl('', Validators.required));
 
     this.formGroup.addControl('jobTitle', new FormControl('', Validators.required));

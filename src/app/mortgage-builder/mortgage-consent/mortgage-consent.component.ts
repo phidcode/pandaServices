@@ -48,11 +48,12 @@ export class MortgageConsentComponent implements OnInit, OnChanges {
     // console.log(mortgageBuilder);
     const dialogRef = this.dialog.open(MortgageConsentDialogComponent, {
       width: '250px',
-      data: { status: 'SUCCESS' }
+      data: { status: 'SUCCESS', mortgage: this.mortgage }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Redirect back to homepage');
+      this.mbs.saveMortgageBuilder(undefined);
       this.router.navigate(['/home']);
     });
   }
@@ -71,11 +72,20 @@ export class MortgageConsentComponent implements OnInit, OnChanges {
   selector: 'app-mortgage-consent-dialog',
   templateUrl: './mortgage-consent-dialog.component.html',
 })
-export class MortgageConsentDialogComponent {
+export class MortgageConsentDialogComponent implements OnInit {
+
+  firstName: string;
+  lastName: string;
 
   constructor(
     public dialogRef: MatDialogRef<MortgageConsentDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  ngOnInit() {
+    const mortgage: Mortgage = this.data.mortgage;
+    this.firstName = mortgage.personalInfo.firstName;
+    this.lastName = mortgage.personalInfo.lastName;
+  }
 
   onNoClick(): void {
     this.dialogRef.close();
