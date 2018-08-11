@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<mat-vertical-stepper [linear]="isLinear" [selectedIndex]="initialStep" #stepper>
+<mat-vertical-stepper [linear]="isLinear" #stepper>
 
   <mat-step [stepControl]="firstFormGroup">
     <ng-template matStepLabel>{{ 'MORTGAGE_BUILDER.STEP1' | translate }}</ng-template>
@@ -42,3 +42,9 @@
 <!-- {{mortgage|json}} -->
 <app-contact-us></app-contact-us>
 <app-footer></app-footer>
+<p>{{stepper.selectedIndex}}
+    <p>{{stepper.next}}
+    <p>{{stepper.previous}}
+    </p>{{stepper.reset}}
+    <p>{{stepper.selected.ariaLabel}}
+    <p>{{stepper.selected.completed}}
