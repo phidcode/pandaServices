@@ -42,11 +42,11 @@ export class MonthlyPaymentComponent implements OnInit {
   createForm() {
     this.monthlyPaymentCalculatorForm = this.fb.group({
       askingPrice: [0, [Validators.required, Validators.min(0)]],
-      rateDownPayment1: [5.0, [Validators.required, Validators.min(5.0)]],
-      rateDownPayment2: [10.0, [Validators.required, Validators.min(5.0)]],
-      rateDownPayment3: [15.0, [Validators.required, Validators.min(5.0)]],
-      yrsAmortizationPeriod1: [5, [Validators.required, Validators.min(0)]],
-      yrsAmortizationPeriod2: [15, [Validators.required, Validators.min(0)]],
+      rateDownPayment1: [20.0, [Validators.required, Validators.min(5.0)]],
+      rateDownPayment2: [15.0, [Validators.required, Validators.min(5.0)]],
+      rateDownPayment3: [10.0, [Validators.required, Validators.min(5.0)]],
+      yrsAmortizationPeriod1: [25, [Validators.required, Validators.min(0)]],
+      yrsAmortizationPeriod2: [25, [Validators.required, Validators.min(0)]],
       yrsAmortizationPeriod3: [25, [Validators.required, Validators.min(0)]],
       rateMortgage1: [3.08, [Validators.required, Validators.min(0.0)]],
       rateMortgage2: [3.08, [Validators.required, Validators.min(0.0)]],

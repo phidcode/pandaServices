@@ -4,7 +4,7 @@
       "HOW_TO": "How To",
       "FAQ": "FAQ",
       "CALCULATORS": "Calculators",
-      "MONTHLY_PAYMENT": "Monthly Payment",
+      "MONTHLY_PAYMENT": "Mortgage Payment",
       "AFFORDABILITY": "Affordability",
       "ONTARIO_LAND_TRANSFER_TAX": "Ontario Land Transfer Tax",
       "MORTGAGE_BUILDER": "Mortgage Builder",
@@ -111,10 +111,10 @@
     }, 
 
     "CALCULATOR_MONTHLY_PAYMENT": {
-      "MONTHLY_PAYMENT_TITLE": "Monthly Payment Calculator", 
+      "MONTHLY_PAYMENT_TITLE": "Mortgage Payment Calculator", 
       "MONTHLY_PAYMENT_INTRO": "This calculator helps determines your monthly mortgage payment", 
-      "MONTHLY_PAYMENT_CALCULATOR_TITLE": "Monthly Payment Calculator", 
-      "MONTHLY_PAYMENT_CALCULATOR_DETAILS": "Our monthly payment calculator calculates your monthly payment and shows you the corresponding amortization schedule. If you are purchasing a home, our payment calculator allows you to test down payment and amortization scenarios, and compare variable and fixed mortgage rates. We also help you calculate CMHC insurance and land transfer tax.", 
+      "MONTHLY_PAYMENT_CALCULATOR_TITLE": "Mortgage Payment Calculator", 
+      "MONTHLY_PAYMENT_CALCULATOR_DETAILS": "Our mortgage payment calculator calculates your monthly payment. If you are purchasing a home, our payment calculator allows you to try different down payment and amortization scenarios, and compare variable and fixed mortgage rates.  our payment calculator allows you to try different down payment and amortization scenarios, and compare variable and fixed mortgage rates. We also help you calculate CMHC insurance and land transfer tax.", 
       "ASKING_PRICE_TITLE": "Asking Price: ", 
       "ASKING_PRICE_PLACEHOLD": "Asking Price", 
       "SUBMIT_BUTTON": "GO", 
