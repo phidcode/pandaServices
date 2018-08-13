@@ -1,0 +1,57 @@
+<div class="col-12">
+  <form [formGroup]="mortgageReminderForm" (ngSubmit)="submitMortgageReminder(mortgageReminderForm.value)">
+  <mat-card>
+    <mat-card-title>Mortgage Reminder</mat-card-title>
+    <mat-card-content class="mortgage-reminder-container">
+      <!-- Date -->
+      <mat-form-field>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Click the button to choose a date ->" formControlName="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker touchUi #picker></mat-datepicker>
+      </mat-form-field>
+      <!-- Name -->
+      <mat-form-field>
+        <input matInput type="text" placeholder="Your Name" formControlName="name" required>
+        <!-- <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error> -->
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+      <!-- Phone -->
+      <mat-form-field>
+        <input matInput type="number" placeholder="Phone number" formControlName="phone" required>
+        <!-- <mat-error *ngIf="phone.invalid">{{getPhoneErrorMessage()}}</mat-error> -->
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+      <!-- Email -->
+      <mat-form-field>
+        <input matInput type="email" placeholder="Enter your email" formControlName="email" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error> -->
+        <mat-error *ngFor="let validation of reminder_validation_messages.email">
+          <mat-error *ngIf="mortgageReminderForm.get('email').hasError(validation.type) && (mortgageReminderForm.get('email').dirty || mortgageReminderForm.get('email').touched)">
+            {{validation.message}}
+          </mat-error>
+        </mat-error> 
+        <mat-icon matSuffix>email</mat-icon>
+      </mat-form-field>
+      <!-- Note -->
+      <mat-form-field>
+        <textarea matInput type="text" placeholder="Note" formControlName="note" required></textarea>
+        <!-- <mat-error *ngIf="note.invalid">{{getNoteErrorMessage()}}</mat-error> -->
+        <mat-icon matSuffix>translate</mat-icon>
+      </mat-form-field>
+      <!-- Location & Get Newsletter-->
+      <mat-form-field>
+        <mat-select placeholder="Ontario">
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-icon matSuffix>home</mat-icon>
+      </mat-form-field>
+      <section>
+        <mat-checkbox formControlName="chkNewsletter">Check this box to subscribe and get newsletter from us! </mat-checkbox>
+        <!-- <mat-icon matSuffix>done</mat-icon> -->
+      </section>
+      <!-- Submit Button -->
+      <button mat-raised-button color="primary" type="submit" [disabled]="!mortgageReminderForm.valid">Submit</button>
+    </mat-card-content>
+  </mat-card>
+  </form>
+</div>

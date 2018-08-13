@@ -34,7 +34,8 @@ import {
   MatTableModule,
   MatBadgeModule,
   MatDialogModule,
-  MatDialog,
+  MatDatepickerModule,
+  MatNativeDateModule,
 } from '@angular/material';
 
 import { SlickCarouselModule } from 'ngx-slick-carousel';
@@ -78,6 +79,7 @@ import { FormUploadComponent } from './upload/form-upload/form-upload.component'
 import { ListUploadComponent } from './upload/list-upload/list-upload.component';
 import { UploadComponent } from './upload/upload.component';
 import { MortgageConsentComponent, MortgageConsentDialogComponent } from './mortgage-builder/mortgage-consent/mortgage-consent.component';
+import { MortgageReminderComponent } from './mortgage-reminder/mortgage-reminder.component';
 
 
 // AoT requires an exported function for factories
@@ -120,6 +122,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     UploadComponent,
     MortgageConsentComponent,
     MortgageConsentDialogComponent,
+    MortgageReminderComponent,
   ],
   imports: [
     BrowserModule,
@@ -147,6 +150,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatTableModule,
     MatBadgeModule,
     MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RegistrationModule,
     AdminModule,
     AppRoutingModule,

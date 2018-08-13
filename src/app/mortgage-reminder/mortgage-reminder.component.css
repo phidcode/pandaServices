@@ -1,0 +1,8 @@
+.mortgage-reminder-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.mortgage-reminder-container > * {
+    width: 100%;
+}
