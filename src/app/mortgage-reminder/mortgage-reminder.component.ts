@@ -17,13 +17,17 @@ export class MortgageReminderComponent implements OnInit {
   maxDate = new Date(2020, 0, 1);
 
   reminder_validation_messages = {
+    'date': [
+      { type: 'required', message: 'Date is required.' }
+    ],
     'name': [
       { type: 'required', message: 'Name is required.' },
       { type: 'minlength', message: 'Must be no less than 2 characters.' }
     ],
     'phone': [
       { type: 'required', message: 'Phone is required' },
-      { type: 'pattern', message: 'Please enter a valid phone number.' }
+      { type: 'pattern', message: 'Please enter a valid phone number.' }, 
+      { type: 'minlength', message: 'Must be 10 digits.' }
     ],
     'email': [
       { type: 'required', message: 'Email is required' },
@@ -31,16 +35,36 @@ export class MortgageReminderComponent implements OnInit {
     ],
     'note': [
       { type: 'maxlength', message: 'Note must be less than 256 characters.' }
+    ], 
+    'province': [
+      { type: 'required', message: 'Province is required.' }
     ]
-  }
+  };
+
+  province = [
+    'Alberta',
+    'British Columbia',
+    'Manitoba',
+    'New Brunswick',
+    'Newfoundland and Labrador',
+    'Northwest Territories',
+    'Nova Scotia',
+    'Nunavut',
+    'Ontario',
+    'Prince Edward Island',
+    'Québec',
+    'Saskatchewan',
+    'Yukon'
+  ];
 
   constructor(private fb: FormBuilder, private af: AngularFirestore, public translate: TranslateService) {
     this.mortgageReminderForm = this.fb.group({
       date : new FormControl('', [Validators.required]),
       name : new FormControl('', [Validators.required, Validators.minLength(2)]),
-      phone : new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]),
-      email : new FormControl('', [Validators.required, Validators.email]),
+      phone : new FormControl('', Validators.compose([Validators.required, Validators.pattern(/^(\+\d{1,3}[- ]?)?\d{10}$/)])),
+      email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])),
       note : new FormControl('', [Validators.maxLength(256)]),
+      province : new FormControl('', Validators.required),
       chkNewsletter : new FormControl(false),
     });
     translate.addLangs(['en', 'zh']);
@@ -49,47 +73,16 @@ export class MortgageReminderComponent implements OnInit {
 
   submitMortgageReminder() {
     console.log(this.mortgageReminderForm.value);
-    const {date, name, phone, email, note, chkNewsletter} = this.mortgageReminderForm.value;
+    const {date, name, phone, email, note, province, chkNewsletter} = this.mortgageReminderForm.value;
     const submitDate = new Date(Date.now()).toLocaleString();
-    const reminder = {submitDate, date, name, phone, email, note, chkNewsletter}; 
+    const reminder = {submitDate, date, name, phone, email, note, province, chkNewsletter}; 
     this.af.collection(mortgageRemindersCollection).add(reminder).then();
+    // if (this.mortgageReminderForm.value.chkNewsletter == true) { 
+    //   this.af.collection(subscriberCollection).add(this.mortgageReminderForm.value.email).then(); 
+    // } 
     this.mortgageReminderForm.reset();
+    this.mortgageReminderForm.setErrors(null);
   }
-
-  // name = new FormControl('', [Validators.required, Validators.minLength(2)]);
-  // phone = new FormControl('', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]);
-  // email = new FormControl('', [Validators.required, Validators.email]);
-  // note = new FormControl('', [Validators.maxLength(256)]);
-  // chkNewsletter = false;
-
-  // getNameErrorMessage() {
-  //   console.log(this.name.errors);
-  //   return this.name.hasError('required') ? 'You must enter a value' :
-  //       this.name.hasError('minLength') ? 'Must be no less than 2 characters' :
-  //           '';
-  // }
-
-  // getPhoneErrorMessage() {
-  //   console.log(this.phone.errors);
-  //   return this.phone.hasError('required') ? 'You must enter a value' :
-  //       this.phone.hasError('pattern') ? 'Not a valid phone number' :
-  //       // this.phone.hasError('minLength') ? 'Must be 10 digits' :
-  //       // this.phone.hasError('maxLength') ? 'Must be 10 digits' :
-  //           '';
-  // }
-
-  // getEmailErrorMessage() {
-  //   console.log(this.email.errors);
-  //   return this.email.hasError('required') ? 'You must enter a value' :
-  //       this.email.hasError('email') ? 'Not a valid email' :
-  //           '';
-  // }
-
-  // getNoteErrorMessage() {
-  //   console.log(this.note.errors);
-  //   return this.note.hasError('maxLength') ? 'Must be no more than 256 characters' :
-  //           '';
-  // }
 
   ngOnInit() {
   }

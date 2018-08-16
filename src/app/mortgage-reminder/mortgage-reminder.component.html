@@ -1,57 +1,87 @@
-<div class="col-12">
-  <form [formGroup]="mortgageReminderForm" (ngSubmit)="submitMortgageReminder(mortgageReminderForm.value)">
+<div class="row" style="display: flex; margin-top: 5%; margin-bottom: 5%; margin-left: 15%; margin-right: 15%">
+<div class="col-lg-6 col-md-6 col-12">
+  <h2>Mortgage Reminder</h2>
+  <br><br><br>
+  <p>Feel free to set up a mortgage reminder here.</p>
+  <br><br><br>
+</div>
+<div class="col-lg-6 col-md-6 col-12">
   <mat-card>
-    <mat-card-title>Mortgage Reminder</mat-card-title>
-    <mat-card-content class="mortgage-reminder-container">
-      <!-- Date -->
-      <mat-form-field>
-        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Click the button to choose a date ->" formControlName="date" required>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker touchUi #picker></mat-datepicker>
-      </mat-form-field>
-      <!-- Name -->
-      <mat-form-field>
-        <input matInput type="text" placeholder="Your Name" formControlName="name" required>
-        <!-- <mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error> -->
-        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      </mat-form-field>
-      <!-- Phone -->
-      <mat-form-field>
-        <input matInput type="number" placeholder="Phone number" formControlName="phone" required>
-        <!-- <mat-error *ngIf="phone.invalid">{{getPhoneErrorMessage()}}</mat-error> -->
-        <mat-icon matSuffix>phone</mat-icon>
-      </mat-form-field>
-      <!-- Email -->
-      <mat-form-field>
-        <input matInput type="email" placeholder="Enter your email" formControlName="email" required>
-        <!-- <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error> -->
-        <mat-error *ngFor="let validation of reminder_validation_messages.email">
-          <mat-error *ngIf="mortgageReminderForm.get('email').hasError(validation.type) && (mortgageReminderForm.get('email').dirty || mortgageReminderForm.get('email').touched)">
-            {{validation.message}}
-          </mat-error>
-        </mat-error> 
-        <mat-icon matSuffix>email</mat-icon>
-      </mat-form-field>
-      <!-- Note -->
-      <mat-form-field>
-        <textarea matInput type="text" placeholder="Note" formControlName="note" required></textarea>
-        <!-- <mat-error *ngIf="note.invalid">{{getNoteErrorMessage()}}</mat-error> -->
-        <mat-icon matSuffix>translate</mat-icon>
-      </mat-form-field>
-      <!-- Location & Get Newsletter-->
-      <mat-form-field>
-        <mat-select placeholder="Ontario">
-          <mat-option value="option">Option</mat-option>
-        </mat-select>
-        <mat-icon matSuffix>home</mat-icon>
-      </mat-form-field>
-      <section>
-        <mat-checkbox formControlName="chkNewsletter">Check this box to subscribe and get newsletter from us! </mat-checkbox>
-        <!-- <mat-icon matSuffix>done</mat-icon> -->
-      </section>
-      <!-- Submit Button -->
-      <button mat-raised-button color="primary" type="submit" [disabled]="!mortgageReminderForm.valid">Submit</button>
-    </mat-card-content>
+    <form [formGroup]="mortgageReminderForm" (ngSubmit)="submitMortgageReminder(mortgageReminderForm.value)">
+      <mat-card-title>Mortgage Reminder</mat-card-title>
+      <mat-card-content class="mortgage-reminder-container">
+        <!-- Date -->
+        <mat-form-field>
+          <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Click the button to choose a date" formControlName="date" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker></mat-datepicker>
+          <mat-error *ngFor="let validation of reminder_validation_messages.date">
+            <mat-error *ngIf="mortgageReminderForm.get('date').hasError(validation.type) && (mortgageReminderForm.get('date').dirty || mortgageReminderForm.get('date').touched)">
+              {{validation.message}}
+            </mat-error>
+          </mat-error> 
+        </mat-form-field>
+        <!-- Name -->
+        <mat-form-field>
+          <input matInput type="text" placeholder="Your Name" formControlName="name" required>
+          <mat-error *ngFor="let validation of reminder_validation_messages.name">
+            <mat-error *ngIf="mortgageReminderForm.get('name').hasError(validation.type) && (mortgageReminderForm.get('name').dirty || mortgageReminderForm.get('name').touched)">
+              {{validation.message}}
+            </mat-error>
+          </mat-error> 
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <!-- Phone -->
+        <mat-form-field>
+          <input matInput type="number" placeholder="Phone number" formControlName="phone" required>
+          <mat-error *ngFor="let validation of reminder_validation_messages.phone">
+            <mat-error *ngIf="mortgageReminderForm.get('phone').hasError(validation.type) && (mortgageReminderForm.get('phone').dirty || mortgageReminderForm.get('phone').touched)">
+              {{validation.message}}
+            </mat-error>
+          </mat-error> 
+          <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+        <!-- Email -->
+        <mat-form-field>
+          <input matInput type="email" placeholder="Enter your email" formControlName="email" required>
+          <mat-error *ngFor="let validation of reminder_validation_messages.email">
+            <mat-error *ngIf="mortgageReminderForm.get('email').hasError(validation.type) && (mortgageReminderForm.get('email').dirty || mortgageReminderForm.get('email').touched)">
+              {{validation.message}}
+            </mat-error>
+          </mat-error> 
+          <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+        <!-- Note -->
+        <mat-form-field>
+          <textarea matInput #note type="text" maxlength="256" placeholder="Note" formControlName="note"></textarea>
+          <mat-icon matSuffix>translate</mat-icon>
+          <mat-hint align="end">{{note.value?.length || 0}}/256</mat-hint>
+          <mat-error *ngFor="let validation of reminder_validation_messages.note">
+            <mat-error *ngIf="mortgageReminderForm.get('note').hasError(validation.type) && (mortgageReminderForm.get('note').dirty || mortgageReminderForm.get('note').touched)">
+              {{validation.message}}
+            </mat-error>
+          </mat-error> 
+        </mat-form-field>
+        <!-- Location & Get Newsletter-->
+        <mat-form-field>
+          <mat-select placeholder="Province" formControlName="province">
+            <mat-option *ngFor="let option of province" [value]="option">{{option | translate}}</mat-option>
+          </mat-select>
+          <mat-error *ngFor="let validation of reminder_validation_messages.province">
+              <mat-error *ngIf="mortgageReminderForm.get('province').hasError(validation.type) && (mortgageReminderForm.get('province').dirty || mortgageReminderForm.get('province').touched)">
+                {{validation.message}}
+              </mat-error>
+            </mat-error> 
+          <mat-icon matSuffix>home</mat-icon>
+        </mat-form-field>
+        <section class="row">
+          <mat-checkbox class="col-1" formControlName="chkNewsletter"></mat-checkbox>
+          <p class="col">Check this box to subscribe and get newsletters from us!</p>
+        </section>
+        <!-- Submit Button -->
+        <button mat-raised-button color="primary" type="submit" [disabled]="!mortgageReminderForm.valid">Submit</button>
+      </mat-card-content>
+    </form>
   </mat-card>
-  </form>
+</div>
 </div>
