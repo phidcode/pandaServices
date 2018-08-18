@@ -11,6 +11,7 @@ import { FileUpload } from '../fileupload';
 export class FormUploadComponent implements OnInit, OnChanges {
 
   @Input() fileUploadList: FileUpload[];
+
   selectedFiles: FileList;
   currentFile: File;
   progress: { percentage: number } = { percentage: 0 };

@@ -1,5 +1,5 @@
 <div class="container" style="width:400px">
-  <app-form-upload [hidden]="isDisabled" [fileUploadList]="fileUploadList"></app-form-upload>
+  <app-form-upload [hidden]="fileUploadList.length >= 2" [fileUploadList]="fileUploadList"></app-form-upload>
   <br/>
   <br/>
   <app-list-upload [fileUploadList]="fileUploadList"></app-list-upload>

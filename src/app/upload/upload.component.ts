@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FileUpload } from './fileupload';
 
 @Component({
@@ -9,6 +9,7 @@ import { FileUpload } from './fileupload';
 export class UploadComponent implements OnInit, OnChanges {
 
   @Input() fileUploadList: FileUpload[];
+  numberOfFiles: number;
 
   isDisabled = false;
 
@@ -17,8 +18,10 @@ export class UploadComponent implements OnInit, OnChanges {
   ngOnInit() {
   }
 
-  ngOnChanges() {
-    // console.log('UploadComponent' + this.fileUploadList);
-    this.isDisabled = this.fileUploadList.length >= 2;
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('UploadComponent' + this.fileUploadList);
+    console.log(changes.fileUploadList);
+    this.numberOfFiles = this.fileUploadList.length;
+    this.isDisabled = this.numberOfFiles >= 2;
   }
 }
