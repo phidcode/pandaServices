@@ -25,12 +25,12 @@ export class MortgageReminderComponent implements OnInit {
       { type: 'minlength', message: 'Must be no less than 2 characters.' }
     ],
     'phone': [
-      { type: 'required', message: 'Phone is required' },
+      { type: 'required', message: 'Phone is required.' },
       { type: 'pattern', message: 'Please enter a valid phone number.' }, 
       { type: 'minlength', message: 'Must be 10 digits.' }
     ],
     'email': [
-      { type: 'required', message: 'Email is required' },
+      { type: 'required', message: 'Email is required.' },
       { type: 'pattern', message: 'Please enter a valid email.' }
     ],
     'note': [
@@ -57,6 +57,8 @@ export class MortgageReminderComponent implements OnInit {
     'Yukon'
   ];
 
+  button = 'Submit'; 
+
   constructor(private fb: FormBuilder, private af: AngularFirestore, public translate: TranslateService) {
     this.mortgageReminderForm = this.fb.group({
       date : new FormControl('', [Validators.required]),
@@ -77,11 +79,9 @@ export class MortgageReminderComponent implements OnInit {
     const submitDate = new Date(Date.now()).toLocaleString();
     const reminder = {submitDate, date, name, phone, email, note, province, chkNewsletter}; 
     this.af.collection(mortgageRemindersCollection).add(reminder).then();
-    // if (this.mortgageReminderForm.value.chkNewsletter == true) { 
-    //   this.af.collection(subscriberCollection).add(this.mortgageReminderForm.value.email).then(); 
-    // } 
     this.mortgageReminderForm.reset();
-    this.mortgageReminderForm.setErrors(null);
+    this.mortgageReminderForm.disable();
+    this.button = 'Reminder Sent';
   }
 
   ngOnInit() {

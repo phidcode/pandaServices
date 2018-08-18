@@ -470,6 +470,32 @@
     "Second Mortgage": "Second Mortgage", 
     "Other Debt": "Other Debt", 
 
+    "MORTGAGE_REMINDER": {
+      "TITLE" : "Mortgage Reminder", 
+      "BODY" : "Enter your name and email address below and we will send you an email 80-120 days prior to your renewal date so you can ensure you get the best rate! (Feel free to check the box below and subscribe!)", 
+      "FORM_TITLE" : "Please fill in the following information: ", 
+      "DATE_PLACEHOLD" : "Click the button to choose the renewal date", 
+      "NAME_PLACEHOLD" : "Your name", 
+      "PHONE_PLACEHOLD" : "Phone number", 
+      "EMAIL_PLACEHOLD" : "Enter your email", 
+      "NOTE_PLACEHOLD" : "Note", 
+      "PROV_PLACEHOLD" : "Province", 
+      "SUBSCRIBE" : "Check this box to subscribe and get newsletters from us!"
+    },
+
+    "Date is required." : "Date is required.", 
+    "Name is required." : "Name is required.", 
+    "Must be no less than 2 characters." : "Must be no less than 2 characters.", 
+    "Phone is required." : "Phone is required.", 
+    "Please enter a valid phone number." : "Please enter a valid phone number.", 
+    "Must be 10 digits." : "Must be 10 digits.", 
+    "Email is required." : "Email is required", 
+    "Please enter a valid email." : "Please enter a valid email.", 
+    "Note must be less than 256 characters." : "Note must be less than 256 characters.", 
+    "Province is required." : "Province is required.", 
+    "Submit" : "Submit", 
+    "Reminder Sent" : "Reminder Sent", 
+
     "PRIVACY": {
       "TITLE": "Privacy & Security Policy",
       "TITLE_DETAILS": "Our Privacy & Security Policy", 

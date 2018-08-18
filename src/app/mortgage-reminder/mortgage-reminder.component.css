@@ -7,6 +7,6 @@
     width: 100%;
 }
 
-div, form, h2, mat-card, mat-card-title, mat-card-content, mat-form-field {
+div, p, form, h2, mat-card, mat-card-title, mat-card-content, mat-form-field {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

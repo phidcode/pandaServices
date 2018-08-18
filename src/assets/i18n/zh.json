@@ -470,6 +470,32 @@
     "Second Mortgage": "额外贷款", 
     "Other Debt": "其他债务", 
 
+    "MORTGAGE_REMINDER": {
+      "TITLE" : "贷款更新提醒", 
+      "BODY" : "请如实填写您的姓名及电子邮箱地址，我们会在您贷款到期更新前80~120天给您发送提醒，让您随时跟进并获得最佳贷款利率。(欢迎选择下面的选择框关注我们！)", 
+      "FORM_TITLE" : "请填写以下信息：", 
+      "DATE_PLACEHOLD" : "按键选择贷款更新日期", 
+      "NAME_PLACEHOLD" : "姓名", 
+      "PHONE_PLACEHOLD" : "电话号码", 
+      "EMAIL_PLACEHOLD" : "电子邮箱地址", 
+      "NOTE_PLACEHOLD" : "备注", 
+      "PROV_PLACEHOLD" : "所在省份", 
+      "SUBSCRIBE" : "选择订阅我们获得最新贷款资讯。"
+    },
+
+    "Date is required." : "请填写贷款更新日期。", 
+    "Name is required." : "请填写姓名。", 
+    "Must be no less than 2 characters." : "姓名不能少于两个字符。", 
+    "Phone is required." : "请填写电话号码", 
+    "Please enter a valid phone number." : "请填写有效的电话号码。", 
+    "Must be 10 digits." : "电话号码必须为10位。", 
+    "Email is required." : "请填写电子邮箱地址。", 
+    "Please enter a valid email." : "请填写有效的电子邮箱地址。", 
+    "Note must be less than 256 characters." : "备注内容不能多于256个字符。", 
+    "Province is required." : "请填写所在省份。", 
+    "Submit" : "提交", 
+    "Reminder Sent" : "贷款更新提醒已发出", 
+
     "PRIVACY": {
       "TITLE": "隐私及安全",
       "TITLE_DETAILS": "我们的隐私及安全政策（仅提供英文版本）", 
