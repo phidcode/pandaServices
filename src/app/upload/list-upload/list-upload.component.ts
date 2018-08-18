@@ -24,7 +24,7 @@ export class ListUploadComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log('ListUpload' + this.fileUploadList);
+    // console.log('ListUpload' + this.fileUploadList);
   }
 
 }

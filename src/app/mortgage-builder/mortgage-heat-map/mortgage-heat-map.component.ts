@@ -70,7 +70,7 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
     this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder(lender);
     this.mbs.saveMortgageBuilder(mortgageBuilder);
-    console.log(lender);
+    // console.log(lender);
   }
 
   mortgageBuilder(lender: string) {

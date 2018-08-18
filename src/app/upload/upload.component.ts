@@ -10,12 +10,15 @@ export class UploadComponent implements OnInit, OnChanges {
 
   @Input() fileUploadList: FileUpload[];
 
+  isDisabled = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   ngOnChanges() {
-    console.log('UploadComponent' + this.fileUploadList);
+    // console.log('UploadComponent' + this.fileUploadList);
+    this.isDisabled = this.fileUploadList.length >= 2;
   }
 }

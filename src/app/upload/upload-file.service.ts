@@ -23,6 +23,7 @@ export class UploadFileService {
     // Upload the file
     const uploadTask = uploadRef.put(file);
 
+    console.log('FileSize:' + file.size);
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
         // in progress
@@ -31,23 +32,35 @@ export class UploadFileService {
       },
       (error) => {
         // fail
-        console.log(error);
+        console.log('Upload Error:' + error);
       },
       () => {
         // success
         uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
           console.log('File available at', downloadURL);
-          // fileUpload.url = downloadURL;
-          // fileUpload.uploadRefPath = uploadRefPath;
-          // fileUpload.name = fileUpload.file.name;
-          // fileUpload.file = undefined;
           const newFile = {
             url: downloadURL,
             uploadRefPath: uploadRefPath,
             name: file.name,
           };
           uploadFiles.push(newFile);
-        });
+        },
+          (error) => {
+            // Recreate the file URL incase of GET permission
+            console.log(error.message);
+            const domainBase = 'https://firebasestorage.googleapis.com';
+            const downloadBase = 'https://firebasestorage.googleapis.com';
+            const apiBaseUrl = '/v0';
+            const bucket = uploadTask.snapshot.metadata.bucket;
+            const fullPath = encodeURIComponent(uploadTask.snapshot.metadata.fullPath);
+            const downloadURL = downloadBase + apiBaseUrl + '/b/' + bucket + '/o/' + fullPath;
+            const newFile = {
+              url: downloadURL,
+              uploadRefPath: uploadRefPath,
+              name: file.name,
+            };
+            uploadFiles.push(newFile);
+          });
       }
     );
   }

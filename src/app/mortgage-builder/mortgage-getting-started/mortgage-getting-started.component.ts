@@ -61,7 +61,7 @@ export class MortgageGettingStartedComponent implements OnInit, OnChanges {
     this.mortgage = this.mbs.loadMortgageBuilder();
     const mortgageBuilder = this.mortgageBuilder();
     this.mbs.saveMortgageBuilder(mortgageBuilder);
-    console.log(mortgageBuilder);
+    // console.log(mortgageBuilder);
   }
 
   mortgageBuilder() {

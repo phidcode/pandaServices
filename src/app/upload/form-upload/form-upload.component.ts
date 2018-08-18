@@ -21,7 +21,7 @@ export class FormUploadComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log('FormUpload' + this.fileUploadList);
+    // console.log('FormUpload' + this.fileUploadList);
   }
   selectFile(event) {
     this.selectedFiles = event.target.files;
