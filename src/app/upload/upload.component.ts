@@ -19,9 +19,5 @@ export class UploadComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('UploadComponent' + this.fileUploadList);
-    console.log(changes.fileUploadList);
-    this.numberOfFiles = this.fileUploadList.length;
-    this.isDisabled = this.numberOfFiles >= 2;
   }
 }

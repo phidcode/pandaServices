@@ -11,10 +11,11 @@ import { FileUpload } from '../fileupload';
 export class FormUploadComponent implements OnInit, OnChanges {
 
   @Input() fileUploadList: FileUpload[];
-
+  errorMessages: string[];
   selectedFiles: FileList;
   currentFile: File;
   progress: { percentage: number } = { percentage: 0 };
+  maxFileSize = 10 * 1024 * 1024;
 
   constructor(private uploadService: UploadFileService) { }
 
@@ -29,10 +30,16 @@ export class FormUploadComponent implements OnInit, OnChanges {
   }
 
   upload() {
+    this.errorMessages = [];
     const file = this.selectedFiles.item(0);
     this.selectedFiles = undefined;
 
     this.currentFile = file;
-    this.uploadService.pushFileToStorage(file, this.progress, this.fileUploadList);
+    if (file.size > this.maxFileSize) {
+      console.log('File size is limited to 10mb or less.');
+      this.errorMessages.push('File size is limited to 10mb or less.');
+    } else {
+      this.uploadService.pushFileToStorage(file, this.progress, this.fileUploadList);
+    }
   }
 }

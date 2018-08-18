@@ -9,7 +9,9 @@
   <label class="btn btn-default"> <input type="file"
     (change)="selectFile($event)">
   </label>
-  
+  <div *ngFor="let error of errorMessages">
+    {{error}}
+  </div>
   <button class="btn btn-success" [disabled]="!selectedFiles"
     (click)="upload()">Upload</button>
   
