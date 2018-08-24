@@ -330,7 +330,11 @@
       "CONTENT_P3": "基于上述法案，我同意接收电子邮件。", 
       "CONTENT_P4": "我已阅读并同意以上条款。", 
       "BACK_BUTTON": "上一步", 
-      "SUBMIT_BUTTON": "提交申请"
+      "SUBMIT_BUTTON": "提交申请", 
+      "DIALOG_SUCCESS": "提交成功", 
+      "DIALOG_DEAR": "尊敬的 ", 
+      "DIALOG_MSG": "您的申请已提交成功，我们的代表将很快与您取得联系。请点击按钮返回主页。", 
+      "DIALOG_BTN": "返回主页"
     },
 
     "MORTGAGE_BUILDER_START": {

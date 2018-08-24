@@ -330,7 +330,11 @@
       "CONTENT_P3": "Under this legislation, I provide consent to receive email communications.", 
       "CONTENT_P4": "I have read and agree to the terms and conditions.", 
       "BACK_BUTTON": "Back", 
-      "SUBMIT_BUTTON": "Build My Mortgage"
+      "SUBMIT_BUTTON": "Build My Mortgage", 
+      "DIALOG_SUCCESS": "SUCCESS", 
+      "DIALOG_DEAR": "Dear ",
+      "DIALOG_MSG": "Your record has been registered successfully. A representitive will contact you shortly. Please click to re-direct back to homepage.", 
+      "DIALOG_BTN": "HOME"
     },
 
     "MORTGAGE_BUILDER_START": {

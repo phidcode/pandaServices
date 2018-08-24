@@ -1,9 +1,10 @@
-<h2 mat-dialog-title>SUCCESS</h2>
-<mat-dialog-content>
-    <h3>Dear {{firstName}} {{lastName}}</h3>
-    <p>Your record has been registered successfully. A representitive will contact you shortly. Please click to re-direct back to
-    homepage.
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-button mat-dialog-close>Home</button>
-</mat-dialog-actions>
+<div class="container row" style="margin-top: auto; margin-bottom: auto;width: 118%">
+    <h1 class="col-12" mat-dialog-title>{{ 'MORTGAGE_BUILDER_CONSENT.DIALOG_SUCCESS' | translate }}</h1>
+    <mat-dialog-content>
+        <h6 class="col-12">{{ 'MORTGAGE_BUILDER_CONSENT.DIALOG_DEAR' | translate }} {{firstName}} {{lastName}}</h6>
+        <p class="col-12">{{ 'MORTGAGE_BUILDER_CONSENT.DIALOG_MSG' | translate }}</p>
+    </mat-dialog-content>
+    <mat-dialog-actions class="col-12" style="margin-top: auto; margin-bottom: auto">
+        <button style="margin-right: auto; margin-left: auto; align-items: center" mat-button mat-dialog-close>{{ 'MORTGAGE_BUILDER_CONSENT.DIALOG_BTN' | translate }}</button>
+    </mat-dialog-actions>
+</div>
