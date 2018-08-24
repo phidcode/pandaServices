@@ -38,7 +38,3 @@
     width: 250px ; /* three containers (use 25% for four, and 50% for two, etc) */
     padding: 5px; /* if you want space between the images */    
 }
-
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
