@@ -382,8 +382,8 @@
       "CITY": "City", 
       "PROVINCE": "Province", 
       "POSTAL_CODE": "Postal Code", 
-      "PROPERTY_TAX": "Property Tax",
-      "CONDO_FEE": "Condo Fee",
+      "PROPERTY_TAX": "Property Tax Per Year",
+      "CONDO_FEE": "Condo Fee (if applicable)",
       "BACK_BUTTON": "Back",
       "NEXT_BUTTON": "Next"
     },

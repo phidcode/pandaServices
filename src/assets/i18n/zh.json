@@ -382,8 +382,8 @@
       "CITY": "城市", 
       "PROVINCE": "省份", 
       "POSTAL_CODE": "邮政编码", 
-      "PROPERTY_TAX": "房产税",
-      "CONDO_FEE": "物业管管理费",
+      "PROPERTY_TAX": "1年 房产税",
+      "CONDO_FEE": "物业管管理费 (如适用)",
       "BACK_BUTTON": "上一步",
       "NEXT_BUTTON": "下一步"
     },
