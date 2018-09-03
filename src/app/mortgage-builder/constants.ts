@@ -19,6 +19,9 @@ export const amortizationPeriod: Period[] =
         }, {
             title: '25 Years',
             value: 25
+        }, {
+            title: '30 Years',
+            value: 30
         }
     ];
 
