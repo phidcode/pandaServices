@@ -95,7 +95,8 @@
 
           <mat-card-footer class="row" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <a class="nav-link" routerLink="/mortgage">
-              <button type="button" class="btn btn-primary btn-md" (click)="save()">{{ 'DASHBOARD.MORTGAGE_BUILDER_SUBMIT_BUTTON' | translate }}</button>
+              <!-- <button type="button" class="btn btn-primary btn-md" (click)="save()">{{ 'DASHBOARD.MORTGAGE_BUILDER_SUBMIT_BUTTON' | translate }}</button> -->
+              <button mat-raised-button color="primary" type="button" (click)="save()">{{ 'DASHBOARD.MORTGAGE_BUILDER_SUBMIT_BUTTON' | translate }}</button>
             </a>
           </mat-card-footer>
         </mat-card>
