@@ -54,13 +54,14 @@
 
     "CONTACT_US": {
       "TITLE": "Let's Connect", 
-      "NAME": "Name (No less than 2 characters)",
+      "NAME": "Name",
       "EMAIL": "Email",
-      "MESSAGE": "Message (No less than 10 characters)",
-      "SUBMIT": "Submit", 
-      "MSG_SENT": "Message Sent", 
-      "CORRECT_EMAIL": "Please enter the correct email"
+      "MESSAGE": "Message"
     },
+
+    "Message Sent": "Message Sent", 
+    "Message must be no less than 10 characters.": "Message must be no less than 10 characters.", 
+    "Message is required.": "Message is required.", 
     
     "CALCULATOR_AFFORDABILITY": {
       "AFFORDABILITY_TITLE": "Affordability Calculator", 

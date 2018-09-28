@@ -54,13 +54,14 @@
 
     "CONTACT_US": {
       "TITLE": "联系我们", 
-      "NAME": "称谓（不少于两个字符）",
+      "NAME": "称谓",
       "EMAIL": "电子邮箱地址",
-      "MESSAGE": "内容（不少于十个字符）",
-      "SUBMIT": "提交", 
-      "MSG_SENT": "内容已提交", 
-      "CORRECT_EMAIL": "请输入正确的电子邮箱地址"
+      "MESSAGE": "内容"
     },
+
+    "Message Sent": "内容已提交", 
+    "Message must be no less than 10 characters.": "内容不能少于十个字符", 
+    "Message is required.": "请填写内容", 
     
     "CALCULATOR_AFFORDABILITY": {
       "AFFORDABILITY_TITLE": "负担能力计算", 

@@ -12,8 +12,24 @@ import { TranslateService } from '@ngx-translate/core';
 export class ContactUsComponent implements OnInit {
 
   form: FormGroup;
-  name: string;
   msg_sent = false;
+
+  contact_us_validation_messages = {
+    'name': [
+      { type: 'required', message: 'Name is required.' },
+      { type: 'minlength', message: 'Must be no less than 2 characters.' }
+    ],
+    'email': [
+      { type: 'required', message: 'Email is required.' },
+      { type: 'pattern', message: 'Please enter a valid email.' }
+    ],
+    'message': [
+      { type: 'required', message: 'Message is required.' },
+      { type: 'minlength', message: 'Message must be no less than 10 characters.' }
+    ], 
+  };
+
+  button = 'Submit'; 
 
   constructor(private fb: FormBuilder, private af: AngularFirestore, public translate: TranslateService) {
     this.createForm();
@@ -24,20 +40,21 @@ export class ContactUsComponent implements OnInit {
   createForm() {
     this.form = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
       message: ['', [Validators.required, Validators.minLength(10)]],
     });
   }
 
   onSubmit() {
     this.msg_sent = false;
+    console.log(this.form.value); 
     const {name, email, message} = this.form.value;
     const date = new Date(Date.now()).toLocaleString();
     const request = {date, name, email, message};
     this.af.collection(messagesCollection).add(request).then();
     this.form.reset();
-    this.msg_sent = true;
-    //setTimeout(function() { this.msg_sent = true; }, 5000);
+    this.form.disable();
+    this.button = 'Message Sent'; 
   }
 
   ngOnInit() { }
