@@ -30,20 +30,20 @@ export class MortgageHeatMapComponent implements OnInit, OnChanges {
   displayedColumns: string[] = ['term'];
 
   lenderA: Lender[] = [
-    { term: 1, type: 'Fixed', rate: '2.79%' },
-    { term: 2, type: 'Fixed', rate: '3.14%' },
-    { term: 3, type: 'Fixed', rate: '3.20%' },
-    { term: 4, type: 'Fixed', rate: '2.89% (Most Common)' },
-    { term: 5, type: 'Fixed', rate: '3.04%' },
-    { term: 3, type: 'Variable', rate: '3.56%' },
-    { term: 5, type: 'Variable', rate: '2.46%' },
+    { term: 1, type: 'Fixed', rate: '3.04%' },
+    { term: 2, type: 'Fixed', rate: '3.19%' },
+    { term: 3, type: 'Fixed', rate: '3.34%' },
+    { term: 4, type: 'Fixed', rate: '3.44% (Most Common)' },
+    { term: 5, type: 'Fixed', rate: '3.34%' },
+    { term: 3, type: 'Variable', rate: '3.55%' },
+    { term: 5, type: 'Variable', rate: '2.70%' },
   ];
 
   lenderB: Lender[] = [
     { term: 1, type: 'Fixed', rate: '3.09%' },
     { term: 2, type: 'Fixed', rate: '3.34%' },
     { term: 3, type: 'Fixed', rate: '3.53%' },
-    { term: 4, type: 'Fixed', rate: '3.09%' },
+    { term: 4, type: 'Fixed', rate: '3.59%' },
     { term: 5, type: 'Fixed', rate: '4.53%' },
     { term: 3, type: 'Variable', rate: '3.50%' },
     { term: 5, type: 'Variable', rate: '3.20%' },
