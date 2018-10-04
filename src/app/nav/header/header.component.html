@@ -33,32 +33,10 @@
           <a class="dropdown-item" routerLink="/calculator/ontarioLandTransferTax">{{ 'HEADER.ONTARIO_LAND_TRANSFER_TAX' | translate }}</a>
         </div>
       </li>
-      <!-- <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="javascript:void(0);" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Admin
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" routerLink="admin">User Info</a>
-            <a class="dropdown-item" routerLink="admin/contactUs">ContactUs Info</a>
-        </div>
-      </li> -->
-
-       <!-- <li class="nav-item">
-        <a class="nav-link" routerLink="/register">{{ 'HEADER.REGISTER' | translate }}
-          <i class="fas fa-user-plus"></i>
-        </a>
-      </li> -->
-
-      <!--
-      <li class="nav-item">
-        <a class="nav-link" routerLink="login">Login
-          <i class="fas fa-user"></i>
-        </a>
-      </li> -->
       <li class="nav-item">
         <a class="nav-link" routerLink="/mortgage">
           <!-- <button type="button" class="btn btn-primary btn-sm">{{ 'HEADER.MORTGAGE_BUILDER' | translate }}</button> -->
-          <button mat-raised-button color="primary" type="button">{{ 'HEADER.MORTGAGE_BUILDER' | translate }}</button>
+          <button mat-raised-button color="primary" type="button" style="margin-top: -20%">{{ 'HEADER.MORTGAGE_BUILDER' | translate }}</button>
         </a>
       </li>
       <li class="nav-item">
@@ -67,14 +45,6 @@
       <li class="nav-item">
         <a class="nav-link circle" (click)="switchLanguage('zh')" href="javascript:void(0);">中</a>
       </li>
-      <!-- <li class="nav-item">
-          <label>
-            {{ 'HEADER.SELECT_LANGUAGE' | translate }}
-            <select #langSelect (change)="translate.use(langSelect.value)">
-              <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-            </select>
-          </label>
-      </li> -->
     </ul>
   </div>
 </nav>
