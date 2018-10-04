@@ -26,7 +26,7 @@
           </mat-form-field>
           <!-- Message -->
           <mat-form-field class="col-12" style="margin-top:2%">
-            <textarea style="height:200px" matInput #message type="text" maxlength="256" placeholder="{{ 'CONTACT_US.MESSAGE' | translate }}" formControlName="message"></textarea>
+            <textarea style="height:150px" matInput #message type="text" maxlength="256" placeholder="{{ 'CONTACT_US.MESSAGE' | translate }}" formControlName="message"></textarea>
             <mat-icon matSuffix>translate</mat-icon>
             <mat-hint align="end">{{message.value?.length || 0}}/256</mat-hint>
             <mat-error *ngFor="let validation of contact_us_validation_messages.message">

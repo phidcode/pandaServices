@@ -6,10 +6,7 @@
         <div class="col-md-7">
             <h1 class="welcome-heading display-4 text-white">{{ 'DASHBOARD.DASHBOARD_TITLE' | translate }}</h1>
             <p class="text-white">{{ 'DASHBOARD.DASHBOARD_INTRO' | translate }}</p>
-            <!-- <a class="nav-link" routerLink="/about" class="btn btn-lg btn-outline-white btn-pill align-self-center">{{ 'DASHBOARD.DASHBOARD_BUTTON' | translate }}</a> -->
-
             <a class="nav-link" routerLink="/mortgage">
-              <!-- <button type="button" class="btn btn-primary btn-sm">{{ 'HEADER.MORTGAGE_BUILDER' | translate }}</button> -->
               <button mat-raised-button color="primary" type="button">{{ 'HEADER.MORTGAGE_BUILDER' | translate }}</button>
             </a>
         </div>
@@ -19,12 +16,11 @@
 
   <p></p>
   <div class="container">
-    <div class="inner-wrapper mt-auto mb-auto container">
-
+    <!-- <div class="inner-wrapper mt-auto mb-auto container">
       <form [formGroup]="formGroup">
-        <mat-card>
+        <mat-card> -->
           <!-- Regular Screen -->
-          <mat-card-content class="row d-none d-md-block">
+          <!-- <mat-card-content class="row d-none d-md-block">
             <mat-button-toggle-group class="col-12" formControlName="selectedPurpose">
               <mat-label class="col-2" style="font-weight: 500; margin-top: auto; margin-bottom: auto">{{ 'DASHBOARD.MORTGAGE_BUILDER_PURPOSE' | translate }}</mat-label>
               <mat-button-toggle class="col-2" style="margin-top: auto; margin-bottom: auto" *ngFor="let option of purpose" [value]="option.value">
@@ -55,10 +51,10 @@
                 {{option.title | translate}}
               </mat-button-toggle>
             </mat-button-toggle-group>
-          </mat-card-content>
+          </mat-card-content> -->
 
           <!-- Mobile Screen -->
-          <mat-card-content class="row d-md-none" style="margin-top: auto; margin-bottom: auto; text-align: left; display: block; position: relative; height: 50%">
+          <!-- <mat-card-content class="row d-md-none" style="margin-top: auto; margin-bottom: auto; text-align: left; display: block; position: relative; height: 50%">
             <mat-form-field appearance="fill" class="col-12" style="height: 10px; font-weight: 500; display: inline-block">
               <mat-select placeholder="{{ 'DASHBOARD.MORTGAGE_BUILDER_PURPOSE' | translate }}" formControlName="selectedPurpose">
                 <mat-option *ngFor="let option of purpose" [value]="option.value">
@@ -94,19 +90,18 @@
                 </mat-option>
               </mat-select>
             </mat-form-field>
-          </mat-card-content>
+          </mat-card-content> -->
 
-          <mat-card-actions></mat-card-actions>
+          <!-- <mat-card-actions></mat-card-actions>
 
           <mat-card-footer class="row" style="margin-top: auto; margin-bottom: auto; text-align: center">
             <a class="nav-link" routerLink="/mortgage">
-              <!-- <button type="button" class="btn btn-primary btn-md" (click)="save()">{{ 'DASHBOARD.MORTGAGE_BUILDER_SUBMIT_BUTTON' | translate }}</button> -->
               <button mat-raised-button color="primary" type="button" (click)="save()">{{ 'DASHBOARD.MORTGAGE_BUILDER_SUBMIT_BUTTON' | translate }}</button>
             </a>
           </mat-card-footer>
         </mat-card>
       </form>
-    </div>
+    </div> -->
   </div>
 
 <div id="our-services" class="our-services section py-4">
@@ -118,7 +113,6 @@
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
             <img src="assets/images/icons/first.png" height="50px">
-            <!-- <i class="fas fa-users"></i> -->
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER3TITLE' | translate }}</h5>
@@ -130,7 +124,6 @@
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
             <img src="assets/images/icons/renewal.png" height="50px">
-            <!-- <i class="fas fa-user"></i> -->
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER2TITLE' | translate }}</h5>
@@ -144,8 +137,7 @@
 
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
-            <img src="assets/images/icons/investmentproperty.png" height="50px">             
-            <!-- <i class="fas fa-star"></i> -->
+            <img src="assets/images/icons/investmentproperty.png" height="50px">
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER5TITLE' | translate }}</h5>
@@ -156,8 +148,7 @@
 
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
-            <img src="assets/images/icons/preapproval.png" height="50px">            
-            <!-- <i class="fas fa-star"></i> -->
+            <img src="assets/images/icons/preapproval.png" height="50px">
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER4TITLE' | translate }}</h5>
@@ -168,8 +159,7 @@
 
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
-            <img src="assets/images/icons/debtconsolidation.png" height="50px">                       
-            <!-- <i class="fas fa-star"></i> -->
+            <img src="assets/images/icons/debtconsolidation.png" height="50px">
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER8TITLE' | translate }}</h5>
@@ -180,8 +170,7 @@
 
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
-            <img src="assets/images/icons/HELOC.png" height="50px">              
-            <!-- <i class="fas fa-star"></i> -->
+            <img src="assets/images/icons/HELOC.png" height="50px">
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER7TITLE' | translate }}</h5>
@@ -192,8 +181,7 @@
 
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
-            <img src="assets/images/icons/privatemortgage.png" height="50px">             
-            <!-- <i class="fas fa-star"></i> -->
+            <img src="assets/images/icons/privatemortgage.png" height="50px">
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER6TITLE' | translate }}</h5>
@@ -205,7 +193,6 @@
         <div class="feature py-4 col-md-6 d-flex align-items-stretch">
           <div class="icon text-primary mr-3">
             <img src="assets/images/icons/commercial.png" height="50px">
-            <!-- <i class="fas fa-check-circle"></i> -->
           </div>
           <div class="px-4">
             <h5>{{ 'DASHBOARD.OFFER1TITLE' | translate }}</h5>
@@ -221,7 +208,7 @@
 
 <div class="blog section section-invert py-4">
   <h3 class="section-title text-center m-5">{{ 'DASHBOARD.TITLE2' | translate }}</h3>
-  <div class="row" style="margin: 5px; padding: 10px;">
+  <!-- <div class="container"> -->
     <div class="card-deck">
 
       <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
@@ -234,7 +221,7 @@
         </div>
       </div>
 
-      <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
+      <!-- <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
         <div class="card">
           <img class="card-img-top" src="assets/images/rawpixel-589073-unsplash.jpg" alt="Card image cap">
           <div class="card-body" style="height: auto">
@@ -242,7 +229,7 @@
             <p class="card-text">{{ 'DASHBOARD.WORK2CONTENT' | translate }}</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="col-md-12 col-lg-3 d-flex align-items-stretch">
         <div class="card">
@@ -265,7 +252,7 @@
       </div>
 
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 
 <app-applynow></app-applynow>
