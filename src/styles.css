@@ -5009,7 +5009,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: .75;
+    opacity: 0; /*.75;*/
     background: rgb(125, 130, 136);
   }
   
