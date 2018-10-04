@@ -39,7 +39,7 @@ input.example-right-align::-webkit-inner-spin-button {
   .welcome {
     position: relative;
     height: 50vh;
-    min-height: 300px;
+    min-height: 400px;
     background: url("../../../assets/images/rawpixel-602154-unsplash.jpg") no-repeat bottom center fixed;
     background-size: cover;
   }  
@@ -49,7 +49,7 @@ input.example-right-align::-webkit-inner-spin-button {
   .welcome {
     position: relative;
     height: 50vh;
-    min-height: 150px;
+    min-height: 400px;
     background: url("../../../assets/images/rawpixel-602154-unsplash_mobile.jpg") no-repeat bottom center fixed;
     background-size: cover;
   }  
