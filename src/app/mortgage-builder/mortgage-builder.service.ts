@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
-import { BehaviorSubject } from 'rxjs';
-import { Mortgage, Purpose, OtherDebts, PersonalInfo, JobInfo, PropertyInfo } from './data-model';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { Mortgage } from './data-model';
 import { mortgageCollection } from '../app.database';
 
 @Injectable({
@@ -11,7 +10,6 @@ export class MortgageBuilderService {
 
   collection: AngularFirestoreCollection<Mortgage>;
 
-  private mortgageData: BehaviorSubject<Mortgage>;
   private mortgage: Mortgage;
 
   constructor(private afs: AngularFirestore) {

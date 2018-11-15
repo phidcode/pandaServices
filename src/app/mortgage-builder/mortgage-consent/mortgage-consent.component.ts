@@ -47,7 +47,7 @@ export class MortgageConsentComponent implements OnInit, OnChanges {
     this.mbs.saveMortgageBuilderToFireStore(mortgageBuilder);
     // console.log(mortgageBuilder);
     const dialogRef = this.dialog.open(MortgageConsentDialogComponent, {
-      width: '250px',
+      width: '300px',
       data: { status: 'SUCCESS', mortgage: this.mortgage }
     });
 
@@ -60,6 +60,7 @@ export class MortgageConsentComponent implements OnInit, OnChanges {
 
   mortgageBuilder() {
     const m = this.formGroup.value;
+    console.log(m);
     this.mortgage.images = this.fileUploadList;
     this.mortgage.createDate = new Date(Date.now());
     return this.mortgage;

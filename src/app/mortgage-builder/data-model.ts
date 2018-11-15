@@ -10,6 +10,8 @@ export class Mortgage {
     lenderInfo?: LenderInfo;
     personalInfo?: PersonalInfo;
     jobInfo?: JobInfo;
+    personalInfo2nd?: PersonalInfo;
+    jobInfo2nd?: JobInfo;
     propertyInfo?: PropertyInfo;
     images: FileUpload[];
     createDate?: Date;
@@ -31,6 +33,11 @@ export class OtherDebts {
     type: '';
     amount: number;
     monthPayment: number;
+}
+
+export class ApplicantInfo {
+    personalInfo: PersonalInfo;
+    jobInfo: JobInfo;
 }
 
 export class PersonalInfo {
