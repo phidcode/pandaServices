@@ -4997,7 +4997,7 @@
     position: relative;
     height: 50vh;
     min-height: 400px;
-    background: url("assets/images/98184.webp") no-repeat bottom center fixed;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0, 0, 0, 0.4)), url("assets/images/dashboard.webp") no-repeat bottom center fixed;
     background-size: cover;
   }
   

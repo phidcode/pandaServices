@@ -40,7 +40,7 @@ input.example-right-align::-webkit-inner-spin-button {
     position: relative;
     height: 50vh;
     min-height: 400px;
-    background: url("../../../assets/images/rawpixel-602154-unsplash.jpg") no-repeat bottom center fixed;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/images/calculators.jpg") no-repeat bottom center fixed;
     background-size: cover;
   }  
 }
@@ -50,7 +50,7 @@ input.example-right-align::-webkit-inner-spin-button {
     position: relative;
     height: 50vh;
     min-height: 400px;
-    background: url("../../../assets/images/rawpixel-602154-unsplash_mobile.jpg") no-repeat bottom center fixed;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0, 0, 0, 0.5)), url("../../../assets/images/calculators_mobile.jpg") no-repeat bottom center fixed;
     background-size: cover;
   }  
 }

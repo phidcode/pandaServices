@@ -80,24 +80,23 @@
     max-width: 980px;
     margin: 0 auto 30px;
 }
- 
+
+@media (min-width: 401px) {
+    .welcome {
+        position: relative;
+        height: 50vh;
+        min-height: 400px;
+        background: linear-gradient(rgba(0,0,0,0.3), rgba(0, 0, 0, 0.3)), url("../../assets/images/howitworks.jpg") no-repeat bottom center fixed;
+        background-size: cover;
+    }
+}
+
 @media (max-width: 400px) {
     .welcome {
         position: relative;
         height: 50vh;
         min-height: 400px;
-        background: url("../../assets/images/rawpixel-589073-unsplash_mobile.jpg") no-repeat bottom center fixed;
+        background: url("../../assets/images/howitworks_mobile.jpg") no-repeat bottom center fixed;
         background-size: cover;
     }
 }
-
-@media (min-width: 400px) {
-    .welcome {
-        position: relative;
-        height: 50vh;
-        min-height: 400px;
-        background: url("../../assets/images/rawpixel-589073-unsplash.jpg") no-repeat bottom center fixed;
-        background-size: cover;
-    }
-}
-  
