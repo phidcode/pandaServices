@@ -1,8 +1,8 @@
 <div class="testimonials section py-4">
     <h3 class="section-title text-center m-5">{{ 'ADVICE.OUR_PARTNERS' | translate }}</h3>
-    <hr>
+    <!-- <hr> -->
 
-    <div class="container">
+    <div class="container py-2">
         <!-- You can now use your library component in app.component.html -->
         <ngx-slick-carousel class="carousel" 
         #slickModal="slick-carousel" 
@@ -10,9 +10,10 @@
         (init)="slickInit($event)"
         (breakpoint)="breakpoint($event)"
         (afterChange)="afterChange($event)"
-        (beforeChange)="beforeChange($event)">
+        (beforeChange)="beforeChange($event)"
+        style="box-shadow:none">
         <div ngxSlickItem *ngFor="let slide of slides" class="slide" >
-          <img src="{{ slide.img }}" alt="" height="50px">
+          <img src="{{ slide.img }}" alt="" height="55px">
         </div>
         </ngx-slick-carousel>
         <!-- <button (click)="addSlide()">Add</button>
